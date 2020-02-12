@@ -75,6 +75,7 @@ public class Note implements MIDIPlayable {
 
         MIDIPlayer.createSequence(200);
         MIDIPlayer.setTempoBPM(5);
+
         N1.play();
         N2.play();
         N2.play();

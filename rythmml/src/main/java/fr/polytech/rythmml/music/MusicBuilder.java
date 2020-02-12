@@ -3,18 +3,21 @@ package fr.polytech.rythmml.music;
 import fr.polytech.rythmml.note.notevalue.NoteValue;
 import fr.polytech.rythmml.section.Section;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicBuilder {
     // https://riptutorial.com/java/example/2746/enum-polymorphism-pattern
     NoteValue noteValue;
 
     private String title;
     private String author;
-    private Section section;
+    private List<Section> sections = new ArrayList<>();
 
     public MusicBuilder() {}
 
     public Music build() {
-        return new Music(this.title, this.author, this.section);
+        return new Music(this.title, this.author, this.sections);
     }
 
     public MusicBuilder setAuthor(String author) {
@@ -32,8 +35,8 @@ public class MusicBuilder {
         return this;
     }
 
-    public MusicBuilder setSection(Section section) {
-        this.section = section;
+    public MusicBuilder addSection(Section section) {
+        this.sections.add(section);
         return this;
     }
 }

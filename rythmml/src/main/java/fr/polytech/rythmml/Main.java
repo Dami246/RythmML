@@ -5,6 +5,8 @@ import fr.polytech.rythmml.bar.Bar;
 import fr.polytech.rythmml.bar.BarBuilder;
 import fr.polytech.rythmml.beat.Beat;
 import fr.polytech.rythmml.beat.BeatBuilder;
+import fr.polytech.rythmml.midi.MIDIPlayable;
+import fr.polytech.rythmml.midi.MIDIPlayer;
 import fr.polytech.rythmml.music.Music;
 import fr.polytech.rythmml.music.MusicBuilder;
 import fr.polytech.rythmml.note.Note;
@@ -48,11 +50,16 @@ public class Main {
 
         Section section1 = new SectionBuilder().addPattern(pattern1).build();
 
-        Music music = new MusicBuilder().setAuthor(author).setTitle(title).setSection(section1).build();
+        Music music = new MusicBuilder().setAuthor(author).setTitle(title).addSection(section1).build();
 
 
         System.out.println(PrettyPrinter.PrettyPrintBar(bar1));
         System.out.println(music);
+
+        MIDIPlayer.createSequence(200);
+        MIDIPlayer.setTempoBPM(10);
+        music.play();
+        MIDIPlayer.playSequence();
 
     }
 }

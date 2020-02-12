@@ -1,7 +1,7 @@
 package fr.polytech.rythmml.note.notevalue;
 
 public enum DrumNoteValue implements NoteValue {
-    BD(36), SD(0), CH(42), OH(46), CC(0), RC(0);
+    BD(36), SD(38), CH(42), OH(46), CC(49), RC(51);
     //TODO : Change 0
 
     int noteNumber;

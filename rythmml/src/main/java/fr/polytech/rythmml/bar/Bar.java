@@ -1,11 +1,12 @@
 package fr.polytech.rythmml.bar;
 
 import fr.polytech.rythmml.beat.Beat;
+import fr.polytech.rythmml.midi.MIDIPlayable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bar {
+public class Bar implements MIDIPlayable {
     List<Beat> listOfBeats;
 
     public Bar(List<Beat> listOfBeats){
@@ -21,5 +22,12 @@ public class Bar {
         return "Bar{" +
                 "listOfBeats=" + listOfBeats +
                 '}';
+    }
+
+    @Override
+    public void play() {
+        for (Beat beat: listOfBeats) {
+            beat.play();
+        }
     }
 }
