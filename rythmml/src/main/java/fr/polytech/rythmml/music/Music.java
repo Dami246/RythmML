@@ -10,7 +10,6 @@ public class Music {
 
     private String title;
     private String author;
-
     private Section section;
 
 
@@ -34,6 +33,14 @@ public class Music {
 
     public Section getSection() {
         return section;
+    }
+
+    public int getTempo(){
+        return 0;
+    }
+
+    public int getNbBar(){
+        return 0;
     }
 
 

@@ -17,7 +17,6 @@ import fr.polytech.rythmml.section.SectionBuilder;
 
 public class Main {
 
-
     public static void main(String[] args) {
         // testing models
         String title = "Billie Jean";
@@ -53,5 +52,4 @@ public class Main {
         System.out.println(music);
 
     }
-
 }
