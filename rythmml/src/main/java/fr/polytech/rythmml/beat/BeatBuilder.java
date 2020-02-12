@@ -27,8 +27,8 @@ public class BeatBuilder {
         return this;
     }
 
-    public BeatBuilder addNote(Note note) {
-        this.listOfNotes.add(note);
+    public BeatBuilder addNote(Note note) throws CloneNotSupportedException {
+        this.listOfNotes.add((Note) note.clone());
         return this;
     }
 }
