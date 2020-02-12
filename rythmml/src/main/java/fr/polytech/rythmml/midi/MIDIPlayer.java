@@ -52,7 +52,7 @@ public class MIDIPlayer {
             sequencer.open();
             sequencer.setSequence(sequence);
             sequencer.setTempoInBPM(tempo);
-            int durationOfTheTrackMS = 40000; //TODO : TEMP
+            int durationOfTheTrackMS = 5000; //TODO : TEMP
             sequencer.start();
             Thread.sleep(durationOfTheTrackMS);
         }

@@ -1,5 +1,6 @@
 package fr.polytech.rythmml.music;
 
+import fr.polytech.rythmml.beat.BeatBuilder;
 import fr.polytech.rythmml.note.notevalue.NoteValue;
 import fr.polytech.rythmml.section.Section;
 
@@ -39,4 +40,6 @@ public class MusicBuilder {
         this.sections.add(section);
         return this;
     }
+
+
 }

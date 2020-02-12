@@ -11,12 +11,12 @@ public class PrettyPrinter {
     }
 
     static public String prettyPrintBeat(Beat beat){
-        StringBuilder obeat = new StringBuilder();
+        StringBuilder oBeat = new StringBuilder();
         for(Note note : beat.getListOfNotes()){
-            obeat.append(prettyPrintNote(note));
-            obeat.append(" ");
+            oBeat.append(prettyPrintNote(note));
+            oBeat.append(" ");
         }
-        return obeat.toString();
+        return oBeat.toString();
     }
 
     static public String PrettyPrintBar(Bar bar){
@@ -27,6 +27,4 @@ public class PrettyPrinter {
         }
         return oBar.toString();
     }
-
-
 }

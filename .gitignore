@@ -592,3 +592,23 @@ DerivedData/
 
 .idea/encodings.xml
 /rythmml/target/
+
+rythmml/.idea/compiler.xml
+
+rythmml/.idea/encodings.xml
+
+rythmml/.idea/libraries/Maven__junit_junit_4_11.xml
+
+rythmml/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml
+
+rythmml/.idea/misc.xml
+
+rythmml/.idea/modules.xml
+
+rythmml/.idea/uiDesigner.xml
+
+rythmml/.idea/vcs.xml
+
+rythmml/.idea/workspace.xml
+
+rythmml/rythmml.iml

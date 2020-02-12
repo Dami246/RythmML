@@ -17,7 +17,7 @@ public class NoteBuilder {
     }
 
     public Note build() {
-        return new Note(noteValue,duration, positionInTime);
+        return new Note(noteValue,duration);
     }
 
     public NoteBuilder setNoteValue(NoteValue noteValue) {

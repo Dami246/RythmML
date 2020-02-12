@@ -11,6 +11,7 @@ import static fr.polytech.rythmml.midi.MIDIPlayer.createEvent;
 
 public class ConcreteMIDIVisitor implements MIDIVisitor {
 
+    public static int tick = 0;
     @Override
     public void visit(Music music) {
         for(Section s: music.getSections()){
@@ -51,7 +52,8 @@ public class ConcreteMIDIVisitor implements MIDIVisitor {
         final int NOTEON = 144;
         final int NOTEOFF = 128;
 
-        int tick = note.getPositionInTime().toTick();
+        int previousTick = tick;
+        tick+=10;
         createEvent(NOTEON,  note, tick);
         createEvent(NOTEOFF, note, tick + note.getDuration());
 

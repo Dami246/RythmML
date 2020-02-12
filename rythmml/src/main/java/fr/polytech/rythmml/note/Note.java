@@ -5,21 +5,26 @@ import fr.polytech.rythmml.midi.MIDIVisitable;
 import fr.polytech.rythmml.midi.MIDIVisitor;
 import fr.polytech.rythmml.note.notevalue.DrumNoteValue;
 import fr.polytech.rythmml.note.notevalue.NoteValue;
+import static fr.polytech.rythmml.midi.MIDIPlayer.createEvent;
 
-public class Note implements MIDIVisitable {
+public class Note implements MIDIVisitable, Cloneable {
+
     // https://riptutorial.com/java/example/2746/enum-polymorphism-pattern
     private NoteValue noteValue;
 
-    // number of ticks
+    // number of ticks of duration
     private int duration;
 
     // position in time
-    private PositionInTime positionInTime;
+    private int tickNb;
 
-    Note(NoteValue noteValue, int duration, PositionInTime positionInTime){
+    Note(NoteValue noteValue, int duration){
         this.noteValue = noteValue;
         this.duration = duration;
-        this.positionInTime = positionInTime;
+    }
+
+    public Object clone() throws CloneNotSupportedException{
+        return (Note)super.clone();
     }
 
     public NoteValue getNoteValue() {
@@ -33,10 +38,6 @@ public class Note implements MIDIVisitable {
         return duration;
     }
 
-    public PositionInTime getPositionInTime() {
-        return positionInTime;
-    }
-
     public int getVelocity() {
         return 90; //TODO : TEMP
     }
@@ -46,7 +47,6 @@ public class Note implements MIDIVisitable {
         return "Note{" +
                 "noteValue=" + noteValue +
                 ", duration=" + duration +
-                ", positionInTime=" + positionInTime +
                 '}';
     }
 
