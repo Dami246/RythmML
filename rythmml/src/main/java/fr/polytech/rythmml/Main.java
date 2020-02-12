@@ -4,6 +4,8 @@ import fr.polytech.rythmml.bar.Bar;
 import fr.polytech.rythmml.bar.BarBuilder;
 import fr.polytech.rythmml.beat.Beat;
 import fr.polytech.rythmml.beat.BeatBuilder;
+import fr.polytech.rythmml.music.Music;
+import fr.polytech.rythmml.music.MusicBuilder;
 import fr.polytech.rythmml.note.Note;
 import fr.polytech.rythmml.note.NoteBuilder;
 import fr.polytech.rythmml.note.PositionInTime;
@@ -46,7 +48,9 @@ public class Main {
 
         Section section1 = new SectionBuilder().addPattern(pattern1).build();
 
-        System.out.println(section1);
+        Music music = new MusicBuilder().setAuthor(author).setTitle(title).setSection(section1).build();
+
+        System.out.println(music);
 
     }
 
