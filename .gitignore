@@ -578,3 +578,12 @@ DerivedData/
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
+/java/.idea/
+
+.idea/misc.xml
+
+.idea/modules.xml
+
+.idea/RythmML.iml
+
+.idea/vcs.xml
