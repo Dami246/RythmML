@@ -53,8 +53,9 @@ public class Main {
         Music music = new MusicBuilder().setAuthor(author).setTitle(title).addSection(section1).build();
 
 
-        System.out.println(PrettyPrinter.PrettyPrintBar(bar1));
-        System.out.println(music);
+        //System.out.println(PrettyPrinter.prettyPrintBar(bar1));
+        System.out.println(PrettyPrinter.prettyPrintPattern(pattern1));
+        //System.out.println(music);
 
         MIDIPlayer.createSequence(200);
         MIDIPlayer.setTempoBPM(10);
