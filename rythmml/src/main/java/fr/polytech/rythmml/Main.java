@@ -5,7 +5,7 @@ import fr.polytech.rythmml.bar.Bar;
 import fr.polytech.rythmml.bar.BarBuilder;
 import fr.polytech.rythmml.beat.Beat;
 import fr.polytech.rythmml.beat.BeatBuilder;
-import fr.polytech.rythmml.midi.MIDIPlayable;
+import fr.polytech.rythmml.midi.ConcreteMIDIVisitor;
 import fr.polytech.rythmml.midi.MIDIPlayer;
 import fr.polytech.rythmml.music.Music;
 import fr.polytech.rythmml.music.MusicBuilder;
@@ -24,6 +24,7 @@ public class Main {
         // testing models
         String title = "Billie Jean";
         String author = "Walidou";
+        ConcreteMIDIVisitor midiVisitor = new ConcreteMIDIVisitor();
 
         Note N1 = new NoteBuilder().setNoteValue(DrumNoteValue.S).setDuration(2)
                 .setPositionInTime(new PositionInTime())
@@ -38,8 +39,12 @@ public class Main {
                 .setPositionInTime(new PositionInTime())
                 .build();
 
+        Note N4 = new NoteBuilder().setNoteValue(DrumNoteValue.CC).setDuration(2)
+                .setPositionInTime(new PositionInTime())
+                .build();
 
-        Beat beat1 = new BeatBuilder().addNote(N1).addNote(N2).setNbOfTicks(10).build();
+
+        Beat beat1 = new BeatBuilder().addNote(N1).addNote(N2).addNote(N4).setNbOfTicks(10).build();
         Beat beat2 = new BeatBuilder().addNote(N2).addNote(N3).addNote(N2).setNbOfTicks(10).build();
 
         Bar bar1 = new BarBuilder().addBeat(beat1).addBeat(beat2).addBeat(beat2).addBeat(beat1).build();
@@ -58,7 +63,7 @@ public class Main {
 
         MIDIPlayer.createSequence(200);
         MIDIPlayer.setTempoBPM(10);
-        music.play();
+        music.accept(midiVisitor);
         MIDIPlayer.playSequence();
 
     }
