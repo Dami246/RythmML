@@ -1,5 +1,6 @@
 package fr.polytech.rythmml;
 
+import fr.polytech.rythmml.Utils.PrettyPrinter;
 import fr.polytech.rythmml.bar.Bar;
 import fr.polytech.rythmml.bar.BarBuilder;
 import fr.polytech.rythmml.beat.Beat;
@@ -50,6 +51,8 @@ public class Main {
 
         Music music = new MusicBuilder().setAuthor(author).setTitle(title).setSection(section1).build();
 
+
+        System.out.println(PrettyPrinter.PrettyPrintBar(bar1));
         System.out.println(music);
 
     }
