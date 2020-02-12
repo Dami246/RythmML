@@ -11,7 +11,6 @@ public class BeatBuilder {
     int nbOfTicks;
     List<Note> listOfNotes;
 
-
     public BeatBuilder(){
         listOfNotes = new ArrayList<>();
     }
