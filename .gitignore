@@ -587,3 +587,8 @@ DerivedData/
 .idea/RythmML.iml
 
 .idea/vcs.xml
+
+.idea/compiler.xml
+
+.idea/encodings.xml
+/rythmml/target/

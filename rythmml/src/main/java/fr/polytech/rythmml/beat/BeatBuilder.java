@@ -1,8 +1,6 @@
 package fr.polytech.rythmml.beat;
 
 import fr.polytech.rythmml.note.Note;
-import fr.polytech.rythmml.note.PositionInTime;
-import fr.polytech.rythmml.note.notevalue.NoteValue;
 
 import java.util.ArrayList;
 import java.util.List;
