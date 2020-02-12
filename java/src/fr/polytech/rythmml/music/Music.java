@@ -37,4 +37,15 @@ public class Music {
     public Section getSection() {
         return section;
     }
+
+
+    @Override
+    public String toString() {
+        return "Music{" +
+                "noteValue=" + noteValue +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", section=" + section +
+                '}';
+    }
 }

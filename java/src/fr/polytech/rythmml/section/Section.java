@@ -24,4 +24,11 @@ public class Section {
             return null;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Section{" +
+                "patternList=" + patternList +
+                '}';
+    }
 }

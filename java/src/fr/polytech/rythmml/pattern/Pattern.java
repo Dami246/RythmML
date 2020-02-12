@@ -1,5 +1,7 @@
 package fr.polytech.rythmml.pattern;
 
+import fr.polytech.rythmml.bar.Bar;
+
 import java.util.List;
 
 public class Pattern {
@@ -20,5 +22,12 @@ public class Pattern {
         catch (IndexOutOfBoundsException exception) {
             return null;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Pattern{" +
+                "barList=" + barList +
+                '}';
     }
 }

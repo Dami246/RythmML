@@ -17,19 +17,23 @@ public class MusicBuilder {
         return new Music(this.title, this.author, this.section);
     }
 
-    public void setAuthor(String author) {
+    public MusicBuilder setAuthor(String author) {
         this.author = author;
+        return this;
     }
 
-    public void setNoteValue(NoteValue noteValue) {
+    public MusicBuilder setNoteValue(NoteValue noteValue) {
         this.noteValue = noteValue;
+        return this;
     }
 
-    public void setTitle(String title) {
+    public MusicBuilder setTitle(String title) {
         this.title = title;
+        return this;
     }
 
-    public void setSection(Section section) {
+    public MusicBuilder setSection(Section section) {
         this.section = section;
+        return this;
     }
 }

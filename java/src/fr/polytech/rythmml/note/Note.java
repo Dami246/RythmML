@@ -29,4 +29,13 @@ public class Note {
     public PositionInTime getPositionInTime() {
         return positionInTime;
     }
+
+    @Override
+    public String toString() {
+        return "Note{" +
+                "noteValue=" + noteValue +
+                ", duration=" + duration +
+                ", positionInTime=" + positionInTime +
+                '}';
+    }
 }
