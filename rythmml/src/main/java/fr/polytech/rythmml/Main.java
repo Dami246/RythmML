@@ -11,7 +11,6 @@ import fr.polytech.rythmml.music.Music;
 import fr.polytech.rythmml.music.MusicBuilder;
 import fr.polytech.rythmml.note.Note;
 import fr.polytech.rythmml.note.NoteBuilder;
-import fr.polytech.rythmml.note.PositionInTime;
 import fr.polytech.rythmml.note.notevalue.DrumNoteValue;
 import fr.polytech.rythmml.pattern.Pattern;
 import fr.polytech.rythmml.pattern.PatternBuilder;
@@ -27,20 +26,16 @@ public class Main {
         ConcreteMIDIVisitor midiVisitor = new ConcreteMIDIVisitor();
 
         Note N1 = new NoteBuilder().setNoteValue(DrumNoteValue.S).setDuration(2)
-                .setPositionInTime(new PositionInTime())
                 .build();
 
 
         Note N2 = new NoteBuilder().setNoteValue(DrumNoteValue.TO).setDuration(10)
-                .setPositionInTime(new PositionInTime())
                 .build();
 
         Note N3 = new NoteBuilder().setNoteValue(DrumNoteValue.WS).setDuration(15)
-                .setPositionInTime(new PositionInTime())
                 .build();
 
         Note N4 = new NoteBuilder().setNoteValue(DrumNoteValue.CC).setDuration(2)
-                .setPositionInTime(new PositionInTime())
                 .build();
 
 
