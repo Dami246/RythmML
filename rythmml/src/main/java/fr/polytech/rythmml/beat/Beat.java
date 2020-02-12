@@ -1,11 +1,12 @@
 package fr.polytech.rythmml.beat;
 
+import fr.polytech.rythmml.midi.MIDIPlayable;
 import fr.polytech.rythmml.note.Note;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Beat {
+public class Beat implements MIDIPlayable {
     int nbOfTicks;
     List<Note> listOfNotes;
 
@@ -28,5 +29,12 @@ public class Beat {
                 "nbOfTicks=" + nbOfTicks +
                 ", listOfNotes=" + listOfNotes +
                 '}';
+    }
+
+    @Override
+    public void play() {
+        for (Note n: listOfNotes) {
+            n.play();
+        }
     }
 }

@@ -1,10 +1,11 @@
 package fr.polytech.rythmml.pattern;
 
 import fr.polytech.rythmml.bar.Bar;
+import fr.polytech.rythmml.midi.MIDIPlayable;
 
 import java.util.List;
 
-public class Pattern {
+public class Pattern implements MIDIPlayable {
     List<Bar> barList;
 
     public Pattern(List<Bar> barList) {
@@ -29,5 +30,12 @@ public class Pattern {
         return "Pattern{" +
                 "barList=" + barList +
                 '}';
+    }
+
+    @Override
+    public void play() {
+        for (Bar bar : barList) {
+            bar.play();
+        }
     }
 }

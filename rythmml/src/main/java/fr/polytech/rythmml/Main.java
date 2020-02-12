@@ -5,6 +5,8 @@ import fr.polytech.rythmml.bar.Bar;
 import fr.polytech.rythmml.bar.BarBuilder;
 import fr.polytech.rythmml.beat.Beat;
 import fr.polytech.rythmml.beat.BeatBuilder;
+import fr.polytech.rythmml.midi.MIDIPlayable;
+import fr.polytech.rythmml.midi.MIDIPlayer;
 import fr.polytech.rythmml.music.Music;
 import fr.polytech.rythmml.music.MusicBuilder;
 import fr.polytech.rythmml.note.Note;
@@ -23,16 +25,16 @@ public class Main {
         String title = "Billie Jean";
         String author = "Walidou";
 
-        Note N1 = new NoteBuilder().setNoteValue(DrumNoteValue.BD).setDuration(2)
+        Note N1 = new NoteBuilder().setNoteValue(DrumNoteValue.S).setDuration(2)
                 .setPositionInTime(new PositionInTime())
                 .build();
 
 
-        Note N2 = new NoteBuilder().setNoteValue(DrumNoteValue.CC).setDuration(10)
+        Note N2 = new NoteBuilder().setNoteValue(DrumNoteValue.TO).setDuration(10)
                 .setPositionInTime(new PositionInTime())
                 .build();
 
-        Note N3 = new NoteBuilder().setNoteValue(DrumNoteValue.OH).setDuration(15)
+        Note N3 = new NoteBuilder().setNoteValue(DrumNoteValue.WS).setDuration(15)
                 .setPositionInTime(new PositionInTime())
                 .build();
 
@@ -48,11 +50,16 @@ public class Main {
 
         Section section1 = new SectionBuilder().addPattern(pattern1).build();
 
-        Music music = new MusicBuilder().setAuthor(author).setTitle(title).setSection(section1).build();
+        Music music = new MusicBuilder().setAuthor(author).setTitle(title).addSection(section1).build();
 
 
         System.out.println(PrettyPrinter.PrettyPrintBar(bar1));
         System.out.println(music);
+
+        MIDIPlayer.createSequence(200);
+        MIDIPlayer.setTempoBPM(10);
+        music.play();
+        MIDIPlayer.playSequence();
 
     }
 }

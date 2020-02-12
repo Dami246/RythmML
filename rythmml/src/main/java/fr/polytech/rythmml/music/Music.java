@@ -1,22 +1,29 @@
 package fr.polytech.rythmml.music;
 
+import fr.polytech.rythmml.midi.MIDIPlayable;
 import fr.polytech.rythmml.note.notevalue.NoteValue;
 import fr.polytech.rythmml.section.Section;
 
-public class Music {
+import java.util.List;
+
+public class Music implements MIDIPlayable {
 
     // https://riptutorial.com/java/example/2746/enum-polymorphism-pattern
     NoteValue noteValue;
 
     private String title;
     private String author;
+<<<<<<< HEAD
     private Section section;
+=======
+    private List<Section> sections;
+>>>>>>> master
 
 
-    public Music(String title, String author, Section section) {
+    public Music(String title, String author, List<Section> sections) {
         this.title = title;
         this.author = author;
-        this.section = section;
+        this.sections = sections;
     }
 
     public String getAuthor() {
@@ -31,6 +38,7 @@ public class Music {
         return noteValue;
     }
 
+<<<<<<< HEAD
     public Section getSection() {
         return section;
     }
@@ -43,6 +51,8 @@ public class Music {
         return 0;
     }
 
+=======
+>>>>>>> master
 
     @Override
     public String toString() {
@@ -50,7 +60,13 @@ public class Music {
                 "noteValue=" + noteValue +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
-                ", section=" + section +
                 '}';
+    }
+
+    @Override
+    public void play() {
+        for (Section section: sections) {
+            section.play();
+        }
     }
 }

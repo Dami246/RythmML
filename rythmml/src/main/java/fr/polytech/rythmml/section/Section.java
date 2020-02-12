@@ -1,10 +1,11 @@
 package fr.polytech.rythmml.section;
 
+import fr.polytech.rythmml.midi.MIDIPlayable;
 import fr.polytech.rythmml.pattern.Pattern;
 
 import java.util.List;
 
-public class Section {
+public class Section implements MIDIPlayable {
 
     private List<Pattern> patternList;
 
@@ -30,5 +31,12 @@ public class Section {
         return "Section{" +
                 "patternList=" + patternList +
                 '}';
+    }
+
+    @Override
+    public void play() {
+        for (Pattern p: patternList) {
+            p.play();
+        }
     }
 }
