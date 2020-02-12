@@ -2,12 +2,15 @@ package fr.polytech.rythmml.pattern;
 
 import fr.polytech.rythmml.bar.Bar;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PatternBuilder {
     List<Bar> barList;
 
-    public PatternBuilder() {}
+    public PatternBuilder() {
+        this.barList = new ArrayList<>();
+    }
 
     public Pattern build() {
         return new Pattern(this.barList);
