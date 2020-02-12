@@ -54,8 +54,8 @@ public class ConcreteMIDIVisitor implements MIDIVisitor {
 
         int previousTick = tick;
         tick+=10;
-        createEvent(NOTEON,  note, tick);
-        createEvent(NOTEOFF, note, tick + note.getDuration());
+        createEvent(NOTEON,  note, previousTick);
+        createEvent(NOTEOFF, note, previousTick + note.getDuration());
 
     }
 }
