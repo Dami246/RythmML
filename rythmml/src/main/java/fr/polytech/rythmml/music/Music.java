@@ -4,6 +4,7 @@ import fr.polytech.rythmml.midi.MIDIPlayable;
 import fr.polytech.rythmml.note.notevalue.NoteValue;
 import fr.polytech.rythmml.section.Section;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Music implements MIDIPlayable {
@@ -13,17 +14,13 @@ public class Music implements MIDIPlayable {
 
     private String title;
     private String author;
-<<<<<<< HEAD
-    private Section section;
-=======
     private List<Section> sections;
->>>>>>> master
 
 
     public Music(String title, String author, List<Section> sections) {
         this.title = title;
         this.author = author;
-        this.sections = sections;
+        this.sections = new ArrayList<>(sections);
     }
 
     public String getAuthor() {
@@ -38,11 +35,6 @@ public class Music implements MIDIPlayable {
         return noteValue;
     }
 
-<<<<<<< HEAD
-    public Section getSection() {
-        return section;
-    }
-
     public int getTempo(){
         return 0;
     }
@@ -51,8 +43,6 @@ public class Music implements MIDIPlayable {
         return 0;
     }
 
-=======
->>>>>>> master
 
     @Override
     public String toString() {

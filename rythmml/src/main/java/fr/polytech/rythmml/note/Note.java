@@ -88,4 +88,8 @@ public class Note implements MIDIPlayable, Cloneable {
         MIDIPlayer.playSequence();
 
     }
+
+    public void setTickNb(int tickNb) {
+        this.tickNb = tickNb;
+    }
 }

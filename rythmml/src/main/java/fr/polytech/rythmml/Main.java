@@ -20,7 +20,7 @@ import fr.polytech.rythmml.section.SectionBuilder;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         // testing models
         String title = "Billie Jean";
         String author = "Walidou";

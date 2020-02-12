@@ -9,15 +9,12 @@ public class NoteBuilder {
     // number of ticks
     int duration;
 
-    // position in time
-    PositionInTime positionInTime;
-
     public NoteBuilder(){
 
     }
 
     public Note build() {
-        return new Note(noteValue,duration, positionInTime);
+        return new Note(noteValue,duration);
     }
 
     public NoteBuilder setNoteValue(NoteValue noteValue) {
@@ -27,11 +24,6 @@ public class NoteBuilder {
 
     public NoteBuilder setDuration(int duration) {
         this.duration = duration;
-        return this;
-    }
-
-    public NoteBuilder setPositionInTime(PositionInTime positionInTime) {
-        this.positionInTime = positionInTime;
         return this;
     }
 }
