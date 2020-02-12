@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/fr.unice.polytech.dsl.rythmml.model/src-gen" creationIcons="false"
+    editDirectory="/fr.unice.polytech.dsl.rythmml.model.edit/src-gen" editorDirectory="/fr.unice.polytech.dsl.rythmml.model.editor/src-gen"
+    modelPluginID="fr.unice.polytech.dsl.rythmml.model" modelName="Rythmml" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>rythmml.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Rythmml" basePackage="fr.unice.polytech.dsl.rythmml.model"
+      disposableProviderFactory="true" ecorePackage="rythmml.ecore#/">
+    <genClasses ecoreClass="rythmml.ecore#//Music">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Music/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Music/author"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/section"/>
+    </genClasses>
+    <genClasses ecoreClass="rythmml.ecore#//Section">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Section/pattern"/>
+    </genClasses>
+    <genClasses ecoreClass="rythmml.ecore#//Pattern">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Pattern/bar"/>
+    </genClasses>
+    <genClasses ecoreClass="rythmml.ecore#//Bar">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Bar/beat"/>
+    </genClasses>
+    <genClasses ecoreClass="rythmml.ecore#//Beat">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Beat/nbDivision"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Beat/note"/>
+    </genClasses>
+    <genClasses ecoreClass="rythmml.ecore#//Note"/>
+  </genPackages>
+</genmodel:GenModel>
