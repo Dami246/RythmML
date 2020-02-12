@@ -1,12 +1,13 @@
 package fr.polytech.rythmml.music;
 
-import fr.polytech.rythmml.midi.MIDIPlayable;
+import fr.polytech.rythmml.midi.MIDIVisitable;
+import fr.polytech.rythmml.midi.MIDIVisitor;
 import fr.polytech.rythmml.note.notevalue.NoteValue;
 import fr.polytech.rythmml.section.Section;
 
 import java.util.List;
 
-public class Music implements MIDIPlayable {
+public class Music implements MIDIVisitable {
 
     // https://riptutorial.com/java/example/2746/enum-polymorphism-pattern
     NoteValue noteValue;
@@ -24,6 +25,14 @@ public class Music implements MIDIPlayable {
 
     public String getAuthor() {
         return author;
+    }
+
+    public List<Section> getSections() {
+        return sections;
+    }
+
+    public void setSections(List<Section> sections) {
+        this.sections = sections;
     }
 
     public String getTitle() {
@@ -45,9 +54,7 @@ public class Music implements MIDIPlayable {
     }
 
     @Override
-    public void play() {
-        for (Section section: sections) {
-            section.play();
-        }
+    public void accept(MIDIVisitor visitor) {
+        visitor.visit(this);
     }
 }

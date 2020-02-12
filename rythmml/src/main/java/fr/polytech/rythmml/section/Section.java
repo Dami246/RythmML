@@ -1,11 +1,12 @@
 package fr.polytech.rythmml.section;
 
-import fr.polytech.rythmml.midi.MIDIPlayable;
+import fr.polytech.rythmml.midi.MIDIVisitable;
+import fr.polytech.rythmml.midi.MIDIVisitor;
 import fr.polytech.rythmml.pattern.Pattern;
 
 import java.util.List;
 
-public class Section implements MIDIPlayable {
+public class Section implements MIDIVisitable {
 
     private List<Pattern> patternList;
 
@@ -34,9 +35,7 @@ public class Section implements MIDIPlayable {
     }
 
     @Override
-    public void play() {
-        for (Pattern p: patternList) {
-            p.play();
-        }
+    public void accept(MIDIVisitor visitor) {
+        visitor.visit(this);
     }
 }
