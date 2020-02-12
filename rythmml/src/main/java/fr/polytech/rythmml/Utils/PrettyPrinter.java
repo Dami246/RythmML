@@ -2,7 +2,6 @@ package fr.polytech.rythmml.Utils;
 
 import fr.polytech.rythmml.bar.Bar;
 import fr.polytech.rythmml.beat.Beat;
-import fr.polytech.rythmml.music.Music;
 import fr.polytech.rythmml.note.Note;
 
 public class PrettyPrinter {
