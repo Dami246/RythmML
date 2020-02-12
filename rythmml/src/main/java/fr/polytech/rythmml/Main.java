@@ -25,16 +25,16 @@ public class Main {
         String title = "Billie Jean";
         String author = "Walidou";
 
-        Note N1 = new NoteBuilder().setNoteValue(DrumNoteValue.BD).setDuration(2)
+        Note N1 = new NoteBuilder().setNoteValue(DrumNoteValue.S).setDuration(2)
                 .setPositionInTime(new PositionInTime())
                 .build();
 
 
-        Note N2 = new NoteBuilder().setNoteValue(DrumNoteValue.CC).setDuration(10)
+        Note N2 = new NoteBuilder().setNoteValue(DrumNoteValue.TO).setDuration(10)
                 .setPositionInTime(new PositionInTime())
                 .build();
 
-        Note N3 = new NoteBuilder().setNoteValue(DrumNoteValue.OH).setDuration(15)
+        Note N3 = new NoteBuilder().setNoteValue(DrumNoteValue.WS).setDuration(15)
                 .setPositionInTime(new PositionInTime())
                 .build();
 

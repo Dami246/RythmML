@@ -34,14 +34,6 @@ public class Music implements MIDIPlayable {
         return noteValue;
     }
 
-    public int getTempo(){
-        return 0;
-    }
-
-    public int getNbBar(){
-        return 0;
-    }
-
 
     @Override
     public String toString() {
