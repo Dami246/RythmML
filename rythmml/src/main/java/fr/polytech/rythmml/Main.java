@@ -25,30 +25,25 @@ public class Main {
         String author = "Walidou";
         ConcreteMIDIVisitor midiVisitor = new ConcreteMIDIVisitor();
 
-        Note N1 = new NoteBuilder().setNoteValue(DrumNoteValue.S).setDuration(2)
+        Note S = new NoteBuilder().setNoteValue(DrumNoteValue.SD).setDuration(1)
                 .build();
 
-
-        Note N2 = new NoteBuilder().setNoteValue(DrumNoteValue.TO).setDuration(10)
+        Note bd = new NoteBuilder().setNoteValue(DrumNoteValue.BD).setDuration(10)
                 .build();
 
-        Note N3 = new NoteBuilder().setNoteValue(DrumNoteValue.WS).setDuration(15)
+        Note xH = new NoteBuilder().setNoteValue(DrumNoteValue.CH).setDuration(1)
                 .build();
 
-        Note N4 = new NoteBuilder().setNoteValue(DrumNoteValue.CC).setDuration(200)
+        Beat beat1 = new BeatBuilder()
+                .addNote(xH,0).addNote(xH, 1).addNote(xH, 2).addNote(xH,3)
+                .addNote(S, 2)
+                .addNote(bd, 0)
+                .setNbOfTicks(10).setNbDivision(4).build();
+
+        Bar bar1 = new BarBuilder().addBeat(beat1).addBeat(beat1).build();
+
+        Pattern pattern1 = new PatternBuilder().addRepeatedBar(bar1, 20)
                 .build();
-
-        Note N5 = new NoteBuilder().setNoteValue(DrumNoteValue.TM).setDuration(200)
-                .build();
-
-        Beat beat1 = new BeatBuilder().addNote(N1,0).addNote(N2,2).addNote(N4,3).setNbOfTicks(10).setNbDivision(4).build();
-        Beat beat2 = new BeatBuilder().addNote(N2,0).addNote(N3,1).addNote(N2,3).setNbOfTicks(10).setNbDivision(4).build();
-
-        Bar bar1 = new BarBuilder().addBeat(beat1).addBeat(beat2).addBeat(beat2).addBeat(beat1).build();
-        Bar bar2 = new BarBuilder().addBeat(beat2).addBeat(beat2).build();
-
-
-        Pattern pattern1 = new PatternBuilder().addRepeatedBar(bar1, 4).addRepeatedBar(bar2, 4).build();
 
         Section section1 = new SectionBuilder().addPattern(pattern1).build();
 
@@ -60,7 +55,7 @@ public class Main {
         //System.out.println(music);
 
         MIDIPlayer.createSequence(1000);
-        MIDIPlayer.setTempoBPM(10);
+        MIDIPlayer.setTempoBPM(12);
         music.accept(midiVisitor);
         MIDIPlayer.playSequence();
 
