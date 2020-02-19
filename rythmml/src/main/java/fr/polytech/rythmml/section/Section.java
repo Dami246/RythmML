@@ -2,11 +2,12 @@ package fr.polytech.rythmml.section;
 
 import fr.polytech.rythmml.midi.MIDIVisitable;
 import fr.polytech.rythmml.midi.MIDIVisitor;
+import fr.polytech.rythmml.note.Note;
 import fr.polytech.rythmml.pattern.Pattern;
 
 import java.util.List;
 
-public class Section implements MIDIVisitable {
+public class Section implements MIDIVisitable, Cloneable {
 
     private List<Pattern> patternList;
 
@@ -25,6 +26,10 @@ public class Section implements MIDIVisitable {
         catch (IndexOutOfBoundsException exception) {
             return null;
         }
+    }
+
+    public Object clone() throws CloneNotSupportedException{
+        return (Section)super.clone();
     }
 
     @Override

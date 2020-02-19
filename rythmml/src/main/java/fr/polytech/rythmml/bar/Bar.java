@@ -3,12 +3,17 @@ package fr.polytech.rythmml.bar;
 import fr.polytech.rythmml.beat.Beat;
 import fr.polytech.rythmml.midi.MIDIVisitable;
 import fr.polytech.rythmml.midi.MIDIVisitor;
+import fr.polytech.rythmml.note.Note;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bar implements MIDIVisitable {
+public class Bar implements MIDIVisitable, Cloneable {
     List<Beat> listOfBeats;
+
+    public Object clone() throws CloneNotSupportedException{
+        return (Bar)super.clone();
+    }
 
     public Bar(List<Beat> listOfBeats){
         this.listOfBeats = new ArrayList<>(listOfBeats);

@@ -7,7 +7,7 @@ import fr.polytech.rythmml.note.Note;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Beat implements MIDIVisitable {
+public class Beat implements MIDIVisitable, Cloneable {
     int nbOfTicks;
     List<Note> listOfNotes;
     int nbdivision;
@@ -16,6 +16,10 @@ public class Beat implements MIDIVisitable {
         this.nbOfTicks = nbOfTicks;
         this.nbdivision = nbdivision;
         this.listOfNotes = new ArrayList<>(listOfNotes);
+    }
+
+    public Object clone() throws CloneNotSupportedException{
+        return (Beat)super.clone();
     }
 
     public int getNbOfTicks() {
