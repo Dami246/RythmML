@@ -28,6 +28,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Beat/nbDivision"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Beat/note"/>
     </genClasses>
-    <genClasses ecoreClass="rythmml.ecore#//Note"/>
+    <genClasses ecoreClass="rythmml.ecore#//Note">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Note/notevalue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Note/duration"/>
+    </genClasses>
+    <genClasses ecoreClass="rythmml.ecore#//NoteValue"/>
+    <genClasses ecoreClass="rythmml.ecore#//DrumNoteValue"/>
+    <genClasses image="false" ecoreClass="rythmml.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//NamedElement/name"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

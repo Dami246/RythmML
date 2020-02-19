@@ -24,5 +24,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="note" lowerBound="1" upperBound="-1"
         eType="#//Note"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Note"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Note">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="notevalue" lowerBound="1"
+        eType="#//NoteValue"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NoteValue" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DrumNoteValue" eSuperTypes="#//NoteValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

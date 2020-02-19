@@ -11,8 +11,6 @@ import java.util.List;
 public class Music implements MIDIVisitable {
 
     // https://riptutorial.com/java/example/2746/enum-polymorphism-pattern
-    NoteValue noteValue;
-
     private String title;
     private String author;
     private List<Section> sections;
@@ -40,9 +38,6 @@ public class Music implements MIDIVisitable {
         return title;
     }
 
-    public NoteValue getNoteValue() {
-        return noteValue;
-    }
 
     public int getTempo(){
         return 0;
@@ -55,8 +50,7 @@ public class Music implements MIDIVisitable {
     @Override
     public String toString() {
         return "Music{" +
-                "noteValue=" + noteValue +
-                ", title='" + title + '\'' +
+                "title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 '}';
     }

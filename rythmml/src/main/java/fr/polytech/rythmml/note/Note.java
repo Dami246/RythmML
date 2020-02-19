@@ -58,4 +58,8 @@ public class Note implements MIDIVisitable, Cloneable {
     public void setTickNb(int tickNb) {
         this.tickNb = tickNb;
     }
+
+    public int getTickNb() {
+        return tickNb;
+    }
 }

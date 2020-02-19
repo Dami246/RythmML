@@ -60,6 +60,8 @@ public class MusicBuilder {
                             int pos = ibar * bar.getListOfBeats().size() * 1000;
                             pos += ibeat * 1000;
                             pos += beat.getNbdivision() * 1000;
+
+                            note.setTickNb(pos);
                         }
                     }
                 }

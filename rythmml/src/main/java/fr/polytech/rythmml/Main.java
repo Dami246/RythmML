@@ -35,9 +35,11 @@ public class Main {
         Note N3 = new NoteBuilder().setNoteValue(DrumNoteValue.WS).setDuration(15)
                 .build();
 
-        Note N4 = new NoteBuilder().setNoteValue(DrumNoteValue.CC).setDuration(2)
+        Note N4 = new NoteBuilder().setNoteValue(DrumNoteValue.CC).setDuration(200)
                 .build();
 
+        Note N5 = new NoteBuilder().setNoteValue(DrumNoteValue.TM).setDuration(200)
+                .build();
 
         Beat beat1 = new BeatBuilder().addNote(N1).addNote(N2).addNote(N4).setNbOfTicks(10).setNbDivision(4).build();
         Beat beat2 = new BeatBuilder().addNote(N2).addNote(N3).addNote(N2).setNbOfTicks(10).setNbDivision(4).build();
@@ -46,7 +48,7 @@ public class Main {
         Bar bar2 = new BarBuilder().addBeat(beat2).addBeat(beat2).build();
 
 
-        Pattern pattern1 = new PatternBuilder().addRepeatedBar(bar1, 50).addRepeatedBar(bar2, 48).build();
+        Pattern pattern1 = new PatternBuilder().addRepeatedBar(bar1, 4).addRepeatedBar(bar2, 4).build();
 
         Section section1 = new SectionBuilder().addPattern(pattern1).build();
 
