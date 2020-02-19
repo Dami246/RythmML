@@ -33,9 +33,11 @@ public class BeatBuilder {
         return this;
     }
 
-    public BeatBuilder addNote(Note note) {
+    public BeatBuilder addNote(Note note, int division) {
         try {
-            this.listOfNotes.add((Note) note.clone());
+            Note newNote = (Note) note.clone();
+            newNote.setDivision(division);
+            this.listOfNotes.add(newNote);
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }

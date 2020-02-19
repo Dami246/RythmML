@@ -5,6 +5,9 @@ import fr.polytech.rythmml.midi.MIDIVisitable;
 import fr.polytech.rythmml.midi.MIDIVisitor;
 import fr.polytech.rythmml.note.notevalue.DrumNoteValue;
 import fr.polytech.rythmml.note.notevalue.NoteValue;
+
+import java.util.Objects;
+
 import static fr.polytech.rythmml.midi.MIDIPlayer.createEvent;
 
 public class Note implements MIDIVisitable, Cloneable {
@@ -18,19 +21,27 @@ public class Note implements MIDIVisitable, Cloneable {
     // position in time
     private int tickNb;
 
-    Note(NoteValue noteValue, int duration){
+    public int getDivision() {
+        return division;
+    }
+
+    // position in division
+    private int division;
+
+    Note(NoteValue noteValue, int duration) {
         this.noteValue = noteValue;
         this.duration = duration;
     }
 
-    public Object clone() throws CloneNotSupportedException{
-        return (Note)super.clone();
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 
     public NoteValue getNoteValue() {
         return noteValue;
     }
-    public int getNoteNumber(){
+
+    public int getNoteNumber() {
         return noteValue.getNoteNumber();
     }
 
@@ -42,13 +53,6 @@ public class Note implements MIDIVisitable, Cloneable {
         return 90; //TODO : TEMP
     }
 
-    @Override
-    public String toString() {
-        return "Note{" +
-                "noteValue=" + noteValue +
-                ", duration=" + duration +
-                '}';
-    }
 
     @Override
     public void accept(MIDIVisitor visitor) {
@@ -59,7 +63,13 @@ public class Note implements MIDIVisitable, Cloneable {
         this.tickNb = tickNb;
     }
 
+    public void setDivision(int division) {
+        this.division = division;
+    }
+
+
     public int getTickNb() {
         return tickNb;
     }
+
 }
