@@ -18,7 +18,12 @@ public class Pattern implements MIDIVisitable, Cloneable {
     }
 
     public Object clone() throws CloneNotSupportedException{
-        return (Pattern)super.clone();
+        Pattern newP = (Pattern)super.clone();
+        newP.barList = new ArrayList<>();
+        for (Bar b: barList) {
+            newP.barList.add((Bar)b.clone());
+        }
+        return newP;
     }
 
     public List<Bar> getBarList() {

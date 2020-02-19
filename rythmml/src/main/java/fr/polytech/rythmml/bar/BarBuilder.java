@@ -22,7 +22,12 @@ public class BarBuilder {
     }
 
     public BarBuilder addBeat(Beat beat) {
-        this.listOfBeats.add(beat);
+        try {
+            Beat newBeat = (Beat)beat.clone();
+            this.listOfBeats.add(newBeat);
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
         return this;
     }
 }

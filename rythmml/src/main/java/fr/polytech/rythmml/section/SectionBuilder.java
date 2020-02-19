@@ -21,7 +21,11 @@ public class SectionBuilder {
     }
 
     public SectionBuilder addPattern(Pattern pattern) {
-        this.patternList.add(pattern);
+        try {
+            this.patternList.add((Pattern)pattern.clone());
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
         return this;
     }
 

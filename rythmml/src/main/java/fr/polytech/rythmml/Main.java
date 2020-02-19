@@ -41,8 +41,8 @@ public class Main {
         Note N5 = new NoteBuilder().setNoteValue(DrumNoteValue.TM).setDuration(200)
                 .build();
 
-        Beat beat1 = new BeatBuilder().addNote(N1).addNote(N2).addNote(N4).setNbOfTicks(10).setNbDivision(4).build();
-        Beat beat2 = new BeatBuilder().addNote(N2).addNote(N3).addNote(N2).setNbOfTicks(10).setNbDivision(4).build();
+        Beat beat1 = new BeatBuilder().addNote(N1,0).addNote(N2,2).addNote(N4,3).setNbOfTicks(10).setNbDivision(4).build();
+        Beat beat2 = new BeatBuilder().addNote(N2,0).addNote(N3,1).addNote(N2,3).setNbOfTicks(10).setNbDivision(4).build();
 
         Bar bar1 = new BarBuilder().addBeat(beat1).addBeat(beat2).addBeat(beat2).addBeat(beat1).build();
         Bar bar2 = new BarBuilder().addBeat(beat2).addBeat(beat2).build();
@@ -59,7 +59,7 @@ public class Main {
         System.out.println(PrettyPrinter.prettyPrintPattern(pattern1));
         //System.out.println(music);
 
-        MIDIPlayer.createSequence(200);
+        MIDIPlayer.createSequence(1000);
         MIDIPlayer.setTempoBPM(10);
         music.accept(midiVisitor);
         MIDIPlayer.playSequence();

@@ -24,14 +24,22 @@ public class PatternBuilder {
     }
 
     public PatternBuilder addBar(Bar bar) {
-        this.barList.add(bar);
+        try {
+            this.barList.add((Bar)bar.clone());
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
         this.barsRepetitionList.add(1);
         return this;
     }
 
     public PatternBuilder addRepeatedBar(Bar bar, int nbRepetition) {
         for (int i = 0 ; i < nbRepetition ; i ++) {
-            this.barList.add(bar);
+            try {
+                this.barList.add((Bar)bar.clone());
+            } catch (CloneNotSupportedException e) {
+                e.printStackTrace();
+            }
         }
         this.barsRepetitionList.add(nbRepetition);
 

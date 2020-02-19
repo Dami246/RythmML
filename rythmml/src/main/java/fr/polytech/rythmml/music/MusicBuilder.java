@@ -19,7 +19,8 @@ public class MusicBuilder {
     private String author;
     private List<Section> sections = new ArrayList<>();
 
-    public MusicBuilder() {}
+    public MusicBuilder() {
+    }
 
     public Music build() {
         return new Music(this.title, this.author, this.sections);
@@ -36,11 +37,15 @@ public class MusicBuilder {
     }
 
     public MusicBuilder addSection(Section section) {
-        this.sections.add(section);
+        try {
+            this.sections.add((Section) section.clone());
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
         return this;
     }
 
-    public MusicBuilder prepare(){
+    public MusicBuilder prepare() {
         // for every section
         for (int isection = 0; isection < sections.size(); isection++) {
             // for every ipattern in the section
@@ -55,14 +60,17 @@ public class MusicBuilder {
                         // for every beat in the bar
                         Beat beat = bar.getListOfBeats().get(ibeat);
                         for (int inote = 0; inote < beat.getListOfNotes().size(); inote++) {
-                            // for every note in the beat
-                            Note note = beat.getListOfNotes().get(inote);
-                            int pos = ibar * bar.getListOfBeats().size() * 1000;
-                            pos += ibeat * 1000;
-                            pos += beat.getNbdivision() * 1000;
-
-                            note.setTickNb(pos);
-                        }
+                                // for every note in the beat
+                                Note note = beat.getListOfNotes().get(inote);
+                                int pos = ibar * bar.getListOfBeats().size() * 200;
+                                pos += ibeat * 200;
+                                pos += ((double) note.getDivision()/beat.getNbdivision()) * 200;
+                                System.out.println("______ ______");
+                                System.out.println(">>> " + isection + " " + ipattern + " " + ibar + " " + ibeat + " " + note.getDivision());
+                                System.out.println(pos);
+                                System.out.println("______ ______");
+                                note.setTickNb(pos);
+                            }
                     }
                 }
             }

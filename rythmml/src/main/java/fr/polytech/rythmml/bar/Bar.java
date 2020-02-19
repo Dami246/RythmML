@@ -12,7 +12,12 @@ public class Bar implements MIDIVisitable, Cloneable {
     List<Beat> listOfBeats;
 
     public Object clone() throws CloneNotSupportedException{
-        return (Bar)super.clone();
+        Bar newB = (Bar)super.clone();
+        newB.listOfBeats = new ArrayList<Beat>();
+        for (Beat b : listOfBeats) {
+            newB.listOfBeats.add((Beat)b.clone());
+        }
+        return newB;
     }
 
     public Bar(List<Beat> listOfBeats){

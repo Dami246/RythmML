@@ -28,13 +28,14 @@ public class Note implements MIDIVisitable, Cloneable {
     // position in division
     private int division;
 
-    Note(NoteValue noteValue, int duration) {
+    public Note(NoteValue noteValue, int duration){
         this.noteValue = noteValue;
         this.duration = duration;
     }
 
+    @Override
     public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+        return ((Note)super.clone());
     }
 
     public NoteValue getNoteValue() {
@@ -53,6 +54,28 @@ public class Note implements MIDIVisitable, Cloneable {
         return 90; //TODO : TEMP
     }
 
+//    @Override
+//    public String toString() {
+//        return "Note{" +
+//                "noteValue=" + noteValue +
+//                ", duration=" + duration +
+//                '}';
+//    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Note note = (Note) o;
+        return duration == note.duration &&
+                tickNb == note.tickNb &&
+                noteValue.equals(note.noteValue);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(noteValue, duration, tickNb);
+    }
 
     @Override
     public void accept(MIDIVisitor visitor) {

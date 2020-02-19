@@ -19,7 +19,12 @@ public class Beat implements MIDIVisitable, Cloneable {
     }
 
     public Object clone() throws CloneNotSupportedException{
-        return (Beat)super.clone();
+        Beat newBeat = (Beat)super.clone();
+        newBeat.listOfNotes = new ArrayList<>();
+        for (Note n : listOfNotes) {
+            newBeat.listOfNotes.add((Note)n.clone());
+        }
+        return newBeat;
     }
 
     public int getNbOfTicks() {
@@ -48,5 +53,9 @@ public class Beat implements MIDIVisitable, Cloneable {
                 ", listOfNotes=" + listOfNotes +
                 ", nbdivision=" + nbdivision +
                 '}';
+    }
+
+    public void setListOfNotes(List<Note> listOfNotes) {
+        this.listOfNotes = listOfNotes;
     }
 }
