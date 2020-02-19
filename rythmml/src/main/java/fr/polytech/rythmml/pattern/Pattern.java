@@ -1,21 +1,23 @@
 package fr.polytech.rythmml.pattern;
 
 import fr.polytech.rythmml.bar.Bar;
-import fr.polytech.rythmml.midi.MIDIVisitable;
-import fr.polytech.rythmml.midi.MIDIVisitor;
 
 import java.util.List;
 
-public class Pattern implements MIDIVisitable {
-    List<Bar> barList;
+public class Pattern {
+    private List<Bar> barList;
+    private List<Integer> barsRepetitionList;
 
-    public Pattern(List<Bar> barList) {
+    public Pattern(List<Bar> barList, List<Integer> barsRepetitionList) {
         this.barList = barList;
+        this.barsRepetitionList = barsRepetitionList;
     }
 
     public List<Bar> getBarList() {
         return barList;
     }
+
+    public List<Integer> getBarsRepetitionList() { return barsRepetitionList; }
 
     public Bar getBarByIndex(int i) {
         try {
@@ -32,9 +34,5 @@ public class Pattern implements MIDIVisitable {
                 "barList=" + barList +
                 '}';
     }
-
-    @Override
-    public void accept(MIDIVisitor visitor) {
-        visitor.visit(this);
-    }
 }
+
