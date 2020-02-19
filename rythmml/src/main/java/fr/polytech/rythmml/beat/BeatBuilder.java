@@ -7,18 +7,24 @@ import java.util.List;
 
 public class BeatBuilder {
     int nbOfTicks;
+    int nbdivision;
     List<Note> listOfNotes;
 
-    public BeatBuilder(){
+    public BeatBuilder() {
         listOfNotes = new ArrayList<>();
     }
 
     public Beat build() {
-        return new Beat(nbOfTicks,listOfNotes);
+        return new Beat(nbOfTicks, nbdivision, listOfNotes);
     }
 
     public BeatBuilder setNbOfTicks(int nbOfTicks) {
         this.nbOfTicks = nbOfTicks;
+        return this;
+    }
+
+    public BeatBuilder setNbDivision(int nbdivision) {
+        this.nbdivision = nbdivision;
         return this;
     }
 
@@ -27,7 +33,7 @@ public class BeatBuilder {
         return this;
     }
 
-    public BeatBuilder addNote(Note note){
+    public BeatBuilder addNote(Note note) {
         try {
             this.listOfNotes.add((Note) note.clone());
         } catch (CloneNotSupportedException e) {

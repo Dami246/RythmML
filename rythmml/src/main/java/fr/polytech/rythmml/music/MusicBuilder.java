@@ -57,6 +57,9 @@ public class MusicBuilder {
                         for (int inote = 0; inote < beat.getListOfNotes().size(); inote++) {
                             // for every note in the beat
                             Note note = beat.getListOfNotes().get(inote);
+                            int pos = ibar * bar.getListOfBeats().size() * 1000;
+                            pos += ibeat * 1000;
+                            pos += beat.getNbdivision() * 1000;
                         }
                     }
                 }

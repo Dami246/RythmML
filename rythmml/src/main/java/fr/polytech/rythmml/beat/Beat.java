@@ -10,9 +10,11 @@ import java.util.List;
 public class Beat implements MIDIVisitable {
     int nbOfTicks;
     List<Note> listOfNotes;
+    int nbdivision;
 
-    public Beat(int nbOfTicks, List<Note> listOfNotes){
+    public Beat(int nbOfTicks, int nbdivision, List<Note> listOfNotes) {
         this.nbOfTicks = nbOfTicks;
+        this.nbdivision = nbdivision;
         this.listOfNotes = new ArrayList<>(listOfNotes);
     }
 
@@ -20,8 +22,19 @@ public class Beat implements MIDIVisitable {
         return nbOfTicks;
     }
 
+    public int getNbdivision() {
+        return nbdivision;
+    }
+
     public List<Note> getListOfNotes() {
         return listOfNotes;
+    }
+
+
+
+    @Override
+    public void accept(MIDIVisitor visitor) {
+        visitor.visit(this);
     }
 
     @Override
@@ -29,11 +42,7 @@ public class Beat implements MIDIVisitable {
         return "Beat{" +
                 "nbOfTicks=" + nbOfTicks +
                 ", listOfNotes=" + listOfNotes +
+                ", nbdivision=" + nbdivision +
                 '}';
-    }
-
-    @Override
-    public void accept(MIDIVisitor visitor) {
-        visitor.visit(this);
     }
 }
