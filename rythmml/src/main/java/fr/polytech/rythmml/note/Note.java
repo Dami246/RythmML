@@ -50,6 +50,7 @@ public class Note implements MIDIVisitable, Cloneable {
         return duration;
     }
 
+
     public int getVelocity() {
         return 90; //TODO : TEMP
     }

@@ -25,20 +25,20 @@ public class Main {
         String author = "Walidou";
         ConcreteMIDIVisitor midiVisitor = new ConcreteMIDIVisitor();
 
-        Note S = new NoteBuilder().setNoteValue(DrumNoteValue.SD).setDuration(1)
+        Note S = new NoteBuilder().setNoteValue(DrumNoteValue.SD).setDuration(10)
                 .build();
 
-        Note bd = new NoteBuilder().setNoteValue(DrumNoteValue.BD).setDuration(10)
+        Note bd = new NoteBuilder().setNoteValue(DrumNoteValue.BD).setDuration(100)
                 .build();
 
-        Note xH = new NoteBuilder().setNoteValue(DrumNoteValue.CH).setDuration(1)
+        Note xH = new NoteBuilder().setNoteValue(DrumNoteValue.CH).setDuration(2)
                 .build();
 
         Beat beat1 = new BeatBuilder()
                 .addNote(xH,0).addNote(xH, 1).addNote(xH, 2).addNote(xH,3)
                 .addNote(S, 2)
                 .addNote(bd, 0)
-                .setNbOfTicks(10).setNbDivision(4).build();
+                .setNbOfTicks(200).setNbDivision(4).build();
 
         Bar bar1 = new BarBuilder().addBeat(beat1).addBeat(beat1).build();
 
@@ -50,12 +50,10 @@ public class Main {
         Music music = new MusicBuilder().setAuthor(author).setTitle(title).addSection(section1).prepare().build();
 
 
-        //System.out.println(PrettyPrinter.prettyPrintBar(bar1));
         System.out.println(PrettyPrinter.prettyPrintPattern(pattern1));
-        //System.out.println(music);
 
-        MIDIPlayer.createSequence(1000);
-        MIDIPlayer.setTempoBPM(12);
+        MIDIPlayer.createSequence(200); //in slice per beat
+        MIDIPlayer.setTempoBPM(60);
         music.accept(midiVisitor);
         MIDIPlayer.playSequence();
 
