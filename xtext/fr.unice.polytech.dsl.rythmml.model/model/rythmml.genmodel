@@ -10,10 +10,29 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Rythmml" basePackage="fr.unice.polytech.dsl.rythmml.model"
       disposableProviderFactory="true" ecorePackage="rythmml.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rythmml.ecore#//DrumNoteValue">
+      <genEnumLiterals ecoreEnumLiteral="rythmml.ecore#//DrumNoteValue/SD"/>
+      <genEnumLiterals ecoreEnumLiteral="rythmml.ecore#//DrumNoteValue/BD"/>
+      <genEnumLiterals ecoreEnumLiteral="rythmml.ecore#//DrumNoteValue/CH"/>
+      <genEnumLiterals ecoreEnumLiteral="rythmml.ecore#//DrumNoteValue/OH"/>
+      <genEnumLiterals ecoreEnumLiteral="rythmml.ecore#//DrumNoteValue/CC"/>
+      <genEnumLiterals ecoreEnumLiteral="rythmml.ecore#//DrumNoteValue/RC"/>
+      <genEnumLiterals ecoreEnumLiteral="rythmml.ecore#//DrumNoteValue/TM"/>
+      <genEnumLiterals ecoreEnumLiteral="rythmml.ecore#//DrumNoteValue/TO"/>
+      <genEnumLiterals ecoreEnumLiteral="rythmml.ecore#//DrumNoteValue/S"/>
+      <genEnumLiterals ecoreEnumLiteral="rythmml.ecore#//DrumNoteValue/WS"/>
+      <genEnumLiterals ecoreEnumLiteral="rythmml.ecore#//DrumNoteValue/L"/>
+    </genEnums>
     <genClasses ecoreClass="rythmml.ecore#//Music">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Music/title"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Music/author"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/section"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/section"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Music/bpm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Music/resolutionPerSlide"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/pattern"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/bar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/beat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/note"/>
     </genClasses>
     <genClasses ecoreClass="rythmml.ecore#//Section">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Section/pattern"/>
@@ -25,15 +44,13 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Bar/beat"/>
     </genClasses>
     <genClasses ecoreClass="rythmml.ecore#//Beat">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Beat/nbDivision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Beat/totalDivNumber"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Beat/note"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Beat/notePositions"/>
     </genClasses>
     <genClasses ecoreClass="rythmml.ecore#//Note">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Note/notevalue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Note/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Note/value"/>
     </genClasses>
-    <genClasses ecoreClass="rythmml.ecore#//NoteValue"/>
-    <genClasses ecoreClass="rythmml.ecore#//DrumNoteValue"/>
     <genClasses image="false" ecoreClass="rythmml.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//NamedElement/name"/>
     </genClasses>

@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: fr.unice.polytech.dsl.rythmml.xtext
+Bundle-ManifestVersion: 2
+Bundle-Name: fr.unice.polytech.dsl.rythmml.xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: fr.unice.polytech.dsl.rythmml.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: fr.unice.polytech.dsl.rythmml.model,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib;bundle-version="2.14.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: fr.unice.polytech.dsl.rythmml.parser.antlr.internal,
+ fr.unice.polytech.dsl.rythmml.validation,
+ fr.unice.polytech.dsl.rythmml,
+ fr.unice.polytech.dsl.rythmml.formatting2,
+ fr.unice.polytech.dsl.rythmml.services,
+ fr.unice.polytech.dsl.rythmml.scoping,
+ fr.unice.polytech.dsl.rythmml.parser.antlr,
+ fr.unice.polytech.dsl.rythmml.serializer,
+ fr.unice.polytech.dsl.rythmml.generator
+Import-Package: org.apache.log4j
