@@ -2519,31 +2519,31 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Music__Group_0_7__0__Impl"
-    // InternalRyml.g:808:1: rule__Music__Group_0_7__0__Impl : ( ( rule__Music__NoteAssignment_0_7_0 ) ) ;
+    // InternalRyml.g:808:1: rule__Music__Group_0_7__0__Impl : ( ( rule__Music__OwnedNotesAssignment_0_7_0 ) ) ;
     public final void rule__Music__Group_0_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:812:1: ( ( ( rule__Music__NoteAssignment_0_7_0 ) ) )
-            // InternalRyml.g:813:1: ( ( rule__Music__NoteAssignment_0_7_0 ) )
+            // InternalRyml.g:812:1: ( ( ( rule__Music__OwnedNotesAssignment_0_7_0 ) ) )
+            // InternalRyml.g:813:1: ( ( rule__Music__OwnedNotesAssignment_0_7_0 ) )
             {
-            // InternalRyml.g:813:1: ( ( rule__Music__NoteAssignment_0_7_0 ) )
-            // InternalRyml.g:814:2: ( rule__Music__NoteAssignment_0_7_0 )
+            // InternalRyml.g:813:1: ( ( rule__Music__OwnedNotesAssignment_0_7_0 ) )
+            // InternalRyml.g:814:2: ( rule__Music__OwnedNotesAssignment_0_7_0 )
             {
-             before(grammarAccess.getMusicAccess().getNoteAssignment_0_7_0()); 
-            // InternalRyml.g:815:2: ( rule__Music__NoteAssignment_0_7_0 )
-            // InternalRyml.g:815:3: rule__Music__NoteAssignment_0_7_0
+             before(grammarAccess.getMusicAccess().getOwnedNotesAssignment_0_7_0()); 
+            // InternalRyml.g:815:2: ( rule__Music__OwnedNotesAssignment_0_7_0 )
+            // InternalRyml.g:815:3: rule__Music__OwnedNotesAssignment_0_7_0
             {
             pushFollow(FOLLOW_2);
-            rule__Music__NoteAssignment_0_7_0();
+            rule__Music__OwnedNotesAssignment_0_7_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getMusicAccess().getNoteAssignment_0_7_0()); 
+             after(grammarAccess.getMusicAccess().getOwnedNotesAssignment_0_7_0()); 
 
             }
 
@@ -2599,20 +2599,20 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Music__Group_0_7__1__Impl"
-    // InternalRyml.g:834:1: rule__Music__Group_0_7__1__Impl : ( ( rule__Music__NoteAssignment_0_7_1 )* ) ;
+    // InternalRyml.g:834:1: rule__Music__Group_0_7__1__Impl : ( ( rule__Music__OwnedNotesAssignment_0_7_1 )* ) ;
     public final void rule__Music__Group_0_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:838:1: ( ( ( rule__Music__NoteAssignment_0_7_1 )* ) )
-            // InternalRyml.g:839:1: ( ( rule__Music__NoteAssignment_0_7_1 )* )
+            // InternalRyml.g:838:1: ( ( ( rule__Music__OwnedNotesAssignment_0_7_1 )* ) )
+            // InternalRyml.g:839:1: ( ( rule__Music__OwnedNotesAssignment_0_7_1 )* )
             {
-            // InternalRyml.g:839:1: ( ( rule__Music__NoteAssignment_0_7_1 )* )
-            // InternalRyml.g:840:2: ( rule__Music__NoteAssignment_0_7_1 )*
+            // InternalRyml.g:839:1: ( ( rule__Music__OwnedNotesAssignment_0_7_1 )* )
+            // InternalRyml.g:840:2: ( rule__Music__OwnedNotesAssignment_0_7_1 )*
             {
-             before(grammarAccess.getMusicAccess().getNoteAssignment_0_7_1()); 
-            // InternalRyml.g:841:2: ( rule__Music__NoteAssignment_0_7_1 )*
+             before(grammarAccess.getMusicAccess().getOwnedNotesAssignment_0_7_1()); 
+            // InternalRyml.g:841:2: ( rule__Music__OwnedNotesAssignment_0_7_1 )*
             loop8:
             do {
                 int alt8=2;
@@ -2625,10 +2625,10 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalRyml.g:841:3: rule__Music__NoteAssignment_0_7_1
+            	    // InternalRyml.g:841:3: rule__Music__OwnedNotesAssignment_0_7_1
             	    {
             	    pushFollow(FOLLOW_8);
-            	    rule__Music__NoteAssignment_0_7_1();
+            	    rule__Music__OwnedNotesAssignment_0_7_1();
 
             	    state._fsp--;
 
@@ -2641,7 +2641,7 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getMusicAccess().getNoteAssignment_0_7_1()); 
+             after(grammarAccess.getMusicAccess().getOwnedNotesAssignment_0_7_1()); 
 
             }
 
@@ -2702,31 +2702,31 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Music__Group_1__0__Impl"
-    // InternalRyml.g:862:1: rule__Music__Group_1__0__Impl : ( ( rule__Music__BeatAssignment_1_0 ) ) ;
+    // InternalRyml.g:862:1: rule__Music__Group_1__0__Impl : ( ( rule__Music__OwnedBeatsAssignment_1_0 ) ) ;
     public final void rule__Music__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:866:1: ( ( ( rule__Music__BeatAssignment_1_0 ) ) )
-            // InternalRyml.g:867:1: ( ( rule__Music__BeatAssignment_1_0 ) )
+            // InternalRyml.g:866:1: ( ( ( rule__Music__OwnedBeatsAssignment_1_0 ) ) )
+            // InternalRyml.g:867:1: ( ( rule__Music__OwnedBeatsAssignment_1_0 ) )
             {
-            // InternalRyml.g:867:1: ( ( rule__Music__BeatAssignment_1_0 ) )
-            // InternalRyml.g:868:2: ( rule__Music__BeatAssignment_1_0 )
+            // InternalRyml.g:867:1: ( ( rule__Music__OwnedBeatsAssignment_1_0 ) )
+            // InternalRyml.g:868:2: ( rule__Music__OwnedBeatsAssignment_1_0 )
             {
-             before(grammarAccess.getMusicAccess().getBeatAssignment_1_0()); 
-            // InternalRyml.g:869:2: ( rule__Music__BeatAssignment_1_0 )
-            // InternalRyml.g:869:3: rule__Music__BeatAssignment_1_0
+             before(grammarAccess.getMusicAccess().getOwnedBeatsAssignment_1_0()); 
+            // InternalRyml.g:869:2: ( rule__Music__OwnedBeatsAssignment_1_0 )
+            // InternalRyml.g:869:3: rule__Music__OwnedBeatsAssignment_1_0
             {
             pushFollow(FOLLOW_2);
-            rule__Music__BeatAssignment_1_0();
+            rule__Music__OwnedBeatsAssignment_1_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getMusicAccess().getBeatAssignment_1_0()); 
+             after(grammarAccess.getMusicAccess().getOwnedBeatsAssignment_1_0()); 
 
             }
 
@@ -2782,30 +2782,30 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Music__Group_1__1__Impl"
-    // InternalRyml.g:888:1: rule__Music__Group_1__1__Impl : ( ( rule__Music__BeatAssignment_1_1 )* ) ;
+    // InternalRyml.g:888:1: rule__Music__Group_1__1__Impl : ( ( rule__Music__OwnedBeatsAssignment_1_1 )* ) ;
     public final void rule__Music__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:892:1: ( ( ( rule__Music__BeatAssignment_1_1 )* ) )
-            // InternalRyml.g:893:1: ( ( rule__Music__BeatAssignment_1_1 )* )
+            // InternalRyml.g:892:1: ( ( ( rule__Music__OwnedBeatsAssignment_1_1 )* ) )
+            // InternalRyml.g:893:1: ( ( rule__Music__OwnedBeatsAssignment_1_1 )* )
             {
-            // InternalRyml.g:893:1: ( ( rule__Music__BeatAssignment_1_1 )* )
-            // InternalRyml.g:894:2: ( rule__Music__BeatAssignment_1_1 )*
+            // InternalRyml.g:893:1: ( ( rule__Music__OwnedBeatsAssignment_1_1 )* )
+            // InternalRyml.g:894:2: ( rule__Music__OwnedBeatsAssignment_1_1 )*
             {
-             before(grammarAccess.getMusicAccess().getBeatAssignment_1_1()); 
-            // InternalRyml.g:895:2: ( rule__Music__BeatAssignment_1_1 )*
+             before(grammarAccess.getMusicAccess().getOwnedBeatsAssignment_1_1()); 
+            // InternalRyml.g:895:2: ( rule__Music__OwnedBeatsAssignment_1_1 )*
             loop9:
             do {
                 int alt9=2;
                 alt9 = dfa9.predict(input);
                 switch (alt9) {
             	case 1 :
-            	    // InternalRyml.g:895:3: rule__Music__BeatAssignment_1_1
+            	    // InternalRyml.g:895:3: rule__Music__OwnedBeatsAssignment_1_1
             	    {
             	    pushFollow(FOLLOW_10);
-            	    rule__Music__BeatAssignment_1_1();
+            	    rule__Music__OwnedBeatsAssignment_1_1();
 
             	    state._fsp--;
 
@@ -2818,7 +2818,7 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getMusicAccess().getBeatAssignment_1_1()); 
+             after(grammarAccess.getMusicAccess().getOwnedBeatsAssignment_1_1()); 
 
             }
 
@@ -2879,31 +2879,31 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Music__Group_2__0__Impl"
-    // InternalRyml.g:916:1: rule__Music__Group_2__0__Impl : ( ( rule__Music__BarAssignment_2_0 ) ) ;
+    // InternalRyml.g:916:1: rule__Music__Group_2__0__Impl : ( ( rule__Music__OwnedBarsAssignment_2_0 ) ) ;
     public final void rule__Music__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:920:1: ( ( ( rule__Music__BarAssignment_2_0 ) ) )
-            // InternalRyml.g:921:1: ( ( rule__Music__BarAssignment_2_0 ) )
+            // InternalRyml.g:920:1: ( ( ( rule__Music__OwnedBarsAssignment_2_0 ) ) )
+            // InternalRyml.g:921:1: ( ( rule__Music__OwnedBarsAssignment_2_0 ) )
             {
-            // InternalRyml.g:921:1: ( ( rule__Music__BarAssignment_2_0 ) )
-            // InternalRyml.g:922:2: ( rule__Music__BarAssignment_2_0 )
+            // InternalRyml.g:921:1: ( ( rule__Music__OwnedBarsAssignment_2_0 ) )
+            // InternalRyml.g:922:2: ( rule__Music__OwnedBarsAssignment_2_0 )
             {
-             before(grammarAccess.getMusicAccess().getBarAssignment_2_0()); 
-            // InternalRyml.g:923:2: ( rule__Music__BarAssignment_2_0 )
-            // InternalRyml.g:923:3: rule__Music__BarAssignment_2_0
+             before(grammarAccess.getMusicAccess().getOwnedBarsAssignment_2_0()); 
+            // InternalRyml.g:923:2: ( rule__Music__OwnedBarsAssignment_2_0 )
+            // InternalRyml.g:923:3: rule__Music__OwnedBarsAssignment_2_0
             {
             pushFollow(FOLLOW_2);
-            rule__Music__BarAssignment_2_0();
+            rule__Music__OwnedBarsAssignment_2_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getMusicAccess().getBarAssignment_2_0()); 
+             after(grammarAccess.getMusicAccess().getOwnedBarsAssignment_2_0()); 
 
             }
 
@@ -2959,20 +2959,20 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Music__Group_2__1__Impl"
-    // InternalRyml.g:942:1: rule__Music__Group_2__1__Impl : ( ( rule__Music__BarAssignment_2_1 )* ) ;
+    // InternalRyml.g:942:1: rule__Music__Group_2__1__Impl : ( ( rule__Music__OwnedBarsAssignment_2_1 )* ) ;
     public final void rule__Music__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:946:1: ( ( ( rule__Music__BarAssignment_2_1 )* ) )
-            // InternalRyml.g:947:1: ( ( rule__Music__BarAssignment_2_1 )* )
+            // InternalRyml.g:946:1: ( ( ( rule__Music__OwnedBarsAssignment_2_1 )* ) )
+            // InternalRyml.g:947:1: ( ( rule__Music__OwnedBarsAssignment_2_1 )* )
             {
-            // InternalRyml.g:947:1: ( ( rule__Music__BarAssignment_2_1 )* )
-            // InternalRyml.g:948:2: ( rule__Music__BarAssignment_2_1 )*
+            // InternalRyml.g:947:1: ( ( rule__Music__OwnedBarsAssignment_2_1 )* )
+            // InternalRyml.g:948:2: ( rule__Music__OwnedBarsAssignment_2_1 )*
             {
-             before(grammarAccess.getMusicAccess().getBarAssignment_2_1()); 
-            // InternalRyml.g:949:2: ( rule__Music__BarAssignment_2_1 )*
+             before(grammarAccess.getMusicAccess().getOwnedBarsAssignment_2_1()); 
+            // InternalRyml.g:949:2: ( rule__Music__OwnedBarsAssignment_2_1 )*
             loop10:
             do {
                 int alt10=2;
@@ -3024,10 +3024,10 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalRyml.g:949:3: rule__Music__BarAssignment_2_1
+            	    // InternalRyml.g:949:3: rule__Music__OwnedBarsAssignment_2_1
             	    {
             	    pushFollow(FOLLOW_12);
-            	    rule__Music__BarAssignment_2_1();
+            	    rule__Music__OwnedBarsAssignment_2_1();
 
             	    state._fsp--;
 
@@ -3040,7 +3040,7 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getMusicAccess().getBarAssignment_2_1()); 
+             after(grammarAccess.getMusicAccess().getOwnedBarsAssignment_2_1()); 
 
             }
 
@@ -3197,31 +3197,31 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Music__Group_3__1__Impl"
-    // InternalRyml.g:997:1: rule__Music__Group_3__1__Impl : ( ( rule__Music__SectionAssignment_3_1 ) ) ;
+    // InternalRyml.g:997:1: rule__Music__Group_3__1__Impl : ( ( rule__Music__OwnedSectionsAssignment_3_1 ) ) ;
     public final void rule__Music__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:1001:1: ( ( ( rule__Music__SectionAssignment_3_1 ) ) )
-            // InternalRyml.g:1002:1: ( ( rule__Music__SectionAssignment_3_1 ) )
+            // InternalRyml.g:1001:1: ( ( ( rule__Music__OwnedSectionsAssignment_3_1 ) ) )
+            // InternalRyml.g:1002:1: ( ( rule__Music__OwnedSectionsAssignment_3_1 ) )
             {
-            // InternalRyml.g:1002:1: ( ( rule__Music__SectionAssignment_3_1 ) )
-            // InternalRyml.g:1003:2: ( rule__Music__SectionAssignment_3_1 )
+            // InternalRyml.g:1002:1: ( ( rule__Music__OwnedSectionsAssignment_3_1 ) )
+            // InternalRyml.g:1003:2: ( rule__Music__OwnedSectionsAssignment_3_1 )
             {
-             before(grammarAccess.getMusicAccess().getSectionAssignment_3_1()); 
-            // InternalRyml.g:1004:2: ( rule__Music__SectionAssignment_3_1 )
-            // InternalRyml.g:1004:3: rule__Music__SectionAssignment_3_1
+             before(grammarAccess.getMusicAccess().getOwnedSectionsAssignment_3_1()); 
+            // InternalRyml.g:1004:2: ( rule__Music__OwnedSectionsAssignment_3_1 )
+            // InternalRyml.g:1004:3: rule__Music__OwnedSectionsAssignment_3_1
             {
             pushFollow(FOLLOW_2);
-            rule__Music__SectionAssignment_3_1();
+            rule__Music__OwnedSectionsAssignment_3_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getMusicAccess().getSectionAssignment_3_1()); 
+             after(grammarAccess.getMusicAccess().getOwnedSectionsAssignment_3_1()); 
 
             }
 
@@ -3277,20 +3277,20 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Music__Group_3__2__Impl"
-    // InternalRyml.g:1023:1: rule__Music__Group_3__2__Impl : ( ( rule__Music__SectionAssignment_3_2 )* ) ;
+    // InternalRyml.g:1023:1: rule__Music__Group_3__2__Impl : ( ( rule__Music__OwnedSectionsAssignment_3_2 )* ) ;
     public final void rule__Music__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:1027:1: ( ( ( rule__Music__SectionAssignment_3_2 )* ) )
-            // InternalRyml.g:1028:1: ( ( rule__Music__SectionAssignment_3_2 )* )
+            // InternalRyml.g:1027:1: ( ( ( rule__Music__OwnedSectionsAssignment_3_2 )* ) )
+            // InternalRyml.g:1028:1: ( ( rule__Music__OwnedSectionsAssignment_3_2 )* )
             {
-            // InternalRyml.g:1028:1: ( ( rule__Music__SectionAssignment_3_2 )* )
-            // InternalRyml.g:1029:2: ( rule__Music__SectionAssignment_3_2 )*
+            // InternalRyml.g:1028:1: ( ( rule__Music__OwnedSectionsAssignment_3_2 )* )
+            // InternalRyml.g:1029:2: ( rule__Music__OwnedSectionsAssignment_3_2 )*
             {
-             before(grammarAccess.getMusicAccess().getSectionAssignment_3_2()); 
-            // InternalRyml.g:1030:2: ( rule__Music__SectionAssignment_3_2 )*
+             before(grammarAccess.getMusicAccess().getOwnedSectionsAssignment_3_2()); 
+            // InternalRyml.g:1030:2: ( rule__Music__OwnedSectionsAssignment_3_2 )*
             loop12:
             do {
                 int alt12=2;
@@ -3342,10 +3342,10 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
                 switch (alt12) {
             	case 1 :
-            	    // InternalRyml.g:1030:3: rule__Music__SectionAssignment_3_2
+            	    // InternalRyml.g:1030:3: rule__Music__OwnedSectionsAssignment_3_2
             	    {
             	    pushFollow(FOLLOW_14);
-            	    rule__Music__SectionAssignment_3_2();
+            	    rule__Music__OwnedSectionsAssignment_3_2();
 
             	    state._fsp--;
 
@@ -3358,7 +3358,7 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getMusicAccess().getSectionAssignment_3_2()); 
+             after(grammarAccess.getMusicAccess().getOwnedSectionsAssignment_3_2()); 
 
             }
 
@@ -3419,31 +3419,31 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Music__Group_3_0__0__Impl"
-    // InternalRyml.g:1051:1: rule__Music__Group_3_0__0__Impl : ( ( rule__Music__PatternAssignment_3_0_0 ) ) ;
+    // InternalRyml.g:1051:1: rule__Music__Group_3_0__0__Impl : ( ( rule__Music__OwnedPatternsAssignment_3_0_0 ) ) ;
     public final void rule__Music__Group_3_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:1055:1: ( ( ( rule__Music__PatternAssignment_3_0_0 ) ) )
-            // InternalRyml.g:1056:1: ( ( rule__Music__PatternAssignment_3_0_0 ) )
+            // InternalRyml.g:1055:1: ( ( ( rule__Music__OwnedPatternsAssignment_3_0_0 ) ) )
+            // InternalRyml.g:1056:1: ( ( rule__Music__OwnedPatternsAssignment_3_0_0 ) )
             {
-            // InternalRyml.g:1056:1: ( ( rule__Music__PatternAssignment_3_0_0 ) )
-            // InternalRyml.g:1057:2: ( rule__Music__PatternAssignment_3_0_0 )
+            // InternalRyml.g:1056:1: ( ( rule__Music__OwnedPatternsAssignment_3_0_0 ) )
+            // InternalRyml.g:1057:2: ( rule__Music__OwnedPatternsAssignment_3_0_0 )
             {
-             before(grammarAccess.getMusicAccess().getPatternAssignment_3_0_0()); 
-            // InternalRyml.g:1058:2: ( rule__Music__PatternAssignment_3_0_0 )
-            // InternalRyml.g:1058:3: rule__Music__PatternAssignment_3_0_0
+             before(grammarAccess.getMusicAccess().getOwnedPatternsAssignment_3_0_0()); 
+            // InternalRyml.g:1058:2: ( rule__Music__OwnedPatternsAssignment_3_0_0 )
+            // InternalRyml.g:1058:3: rule__Music__OwnedPatternsAssignment_3_0_0
             {
             pushFollow(FOLLOW_2);
-            rule__Music__PatternAssignment_3_0_0();
+            rule__Music__OwnedPatternsAssignment_3_0_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getMusicAccess().getPatternAssignment_3_0_0()); 
+             after(grammarAccess.getMusicAccess().getOwnedPatternsAssignment_3_0_0()); 
 
             }
 
@@ -3499,20 +3499,20 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Music__Group_3_0__1__Impl"
-    // InternalRyml.g:1077:1: rule__Music__Group_3_0__1__Impl : ( ( rule__Music__PatternAssignment_3_0_1 )* ) ;
+    // InternalRyml.g:1077:1: rule__Music__Group_3_0__1__Impl : ( ( rule__Music__OwnedPatternsAssignment_3_0_1 )* ) ;
     public final void rule__Music__Group_3_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:1081:1: ( ( ( rule__Music__PatternAssignment_3_0_1 )* ) )
-            // InternalRyml.g:1082:1: ( ( rule__Music__PatternAssignment_3_0_1 )* )
+            // InternalRyml.g:1081:1: ( ( ( rule__Music__OwnedPatternsAssignment_3_0_1 )* ) )
+            // InternalRyml.g:1082:1: ( ( rule__Music__OwnedPatternsAssignment_3_0_1 )* )
             {
-            // InternalRyml.g:1082:1: ( ( rule__Music__PatternAssignment_3_0_1 )* )
-            // InternalRyml.g:1083:2: ( rule__Music__PatternAssignment_3_0_1 )*
+            // InternalRyml.g:1082:1: ( ( rule__Music__OwnedPatternsAssignment_3_0_1 )* )
+            // InternalRyml.g:1083:2: ( rule__Music__OwnedPatternsAssignment_3_0_1 )*
             {
-             before(grammarAccess.getMusicAccess().getPatternAssignment_3_0_1()); 
-            // InternalRyml.g:1084:2: ( rule__Music__PatternAssignment_3_0_1 )*
+             before(grammarAccess.getMusicAccess().getOwnedPatternsAssignment_3_0_1()); 
+            // InternalRyml.g:1084:2: ( rule__Music__OwnedPatternsAssignment_3_0_1 )*
             loop13:
             do {
                 int alt13=2;
@@ -3525,10 +3525,10 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
                 switch (alt13) {
             	case 1 :
-            	    // InternalRyml.g:1084:3: rule__Music__PatternAssignment_3_0_1
+            	    // InternalRyml.g:1084:3: rule__Music__OwnedPatternsAssignment_3_0_1
             	    {
             	    pushFollow(FOLLOW_16);
-            	    rule__Music__PatternAssignment_3_0_1();
+            	    rule__Music__OwnedPatternsAssignment_3_0_1();
 
             	    state._fsp--;
 
@@ -3541,7 +3541,7 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getMusicAccess().getPatternAssignment_3_0_1()); 
+             after(grammarAccess.getMusicAccess().getOwnedPatternsAssignment_3_0_1()); 
 
             }
 
@@ -3837,31 +3837,31 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Section__Group__3__Impl"
-    // InternalRyml.g:1186:1: rule__Section__Group__3__Impl : ( ( rule__Section__PatternAssignment_3 ) ) ;
+    // InternalRyml.g:1186:1: rule__Section__Group__3__Impl : ( ( rule__Section__PatternsAssignment_3 ) ) ;
     public final void rule__Section__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:1190:1: ( ( ( rule__Section__PatternAssignment_3 ) ) )
-            // InternalRyml.g:1191:1: ( ( rule__Section__PatternAssignment_3 ) )
+            // InternalRyml.g:1190:1: ( ( ( rule__Section__PatternsAssignment_3 ) ) )
+            // InternalRyml.g:1191:1: ( ( rule__Section__PatternsAssignment_3 ) )
             {
-            // InternalRyml.g:1191:1: ( ( rule__Section__PatternAssignment_3 ) )
-            // InternalRyml.g:1192:2: ( rule__Section__PatternAssignment_3 )
+            // InternalRyml.g:1191:1: ( ( rule__Section__PatternsAssignment_3 ) )
+            // InternalRyml.g:1192:2: ( rule__Section__PatternsAssignment_3 )
             {
-             before(grammarAccess.getSectionAccess().getPatternAssignment_3()); 
-            // InternalRyml.g:1193:2: ( rule__Section__PatternAssignment_3 )
-            // InternalRyml.g:1193:3: rule__Section__PatternAssignment_3
+             before(grammarAccess.getSectionAccess().getPatternsAssignment_3()); 
+            // InternalRyml.g:1193:2: ( rule__Section__PatternsAssignment_3 )
+            // InternalRyml.g:1193:3: rule__Section__PatternsAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__Section__PatternAssignment_3();
+            rule__Section__PatternsAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSectionAccess().getPatternAssignment_3()); 
+             after(grammarAccess.getSectionAccess().getPatternsAssignment_3()); 
 
             }
 
@@ -4090,31 +4090,31 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Section__Group_4__1__Impl"
-    // InternalRyml.g:1266:1: rule__Section__Group_4__1__Impl : ( ( rule__Section__PatternAssignment_4_1 ) ) ;
+    // InternalRyml.g:1266:1: rule__Section__Group_4__1__Impl : ( ( rule__Section__PatternsAssignment_4_1 ) ) ;
     public final void rule__Section__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:1270:1: ( ( ( rule__Section__PatternAssignment_4_1 ) ) )
-            // InternalRyml.g:1271:1: ( ( rule__Section__PatternAssignment_4_1 ) )
+            // InternalRyml.g:1270:1: ( ( ( rule__Section__PatternsAssignment_4_1 ) ) )
+            // InternalRyml.g:1271:1: ( ( rule__Section__PatternsAssignment_4_1 ) )
             {
-            // InternalRyml.g:1271:1: ( ( rule__Section__PatternAssignment_4_1 ) )
-            // InternalRyml.g:1272:2: ( rule__Section__PatternAssignment_4_1 )
+            // InternalRyml.g:1271:1: ( ( rule__Section__PatternsAssignment_4_1 ) )
+            // InternalRyml.g:1272:2: ( rule__Section__PatternsAssignment_4_1 )
             {
-             before(grammarAccess.getSectionAccess().getPatternAssignment_4_1()); 
-            // InternalRyml.g:1273:2: ( rule__Section__PatternAssignment_4_1 )
-            // InternalRyml.g:1273:3: rule__Section__PatternAssignment_4_1
+             before(grammarAccess.getSectionAccess().getPatternsAssignment_4_1()); 
+            // InternalRyml.g:1273:2: ( rule__Section__PatternsAssignment_4_1 )
+            // InternalRyml.g:1273:3: rule__Section__PatternsAssignment_4_1
             {
             pushFollow(FOLLOW_2);
-            rule__Section__PatternAssignment_4_1();
+            rule__Section__PatternsAssignment_4_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSectionAccess().getPatternAssignment_4_1()); 
+             after(grammarAccess.getSectionAccess().getPatternsAssignment_4_1()); 
 
             }
 
@@ -4572,31 +4572,31 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pattern__Group__3__Impl"
-    // InternalRyml.g:1429:1: rule__Pattern__Group__3__Impl : ( ( rule__Pattern__BarAssignment_3 ) ) ;
+    // InternalRyml.g:1429:1: rule__Pattern__Group__3__Impl : ( ( rule__Pattern__BarsAssignment_3 ) ) ;
     public final void rule__Pattern__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:1433:1: ( ( ( rule__Pattern__BarAssignment_3 ) ) )
-            // InternalRyml.g:1434:1: ( ( rule__Pattern__BarAssignment_3 ) )
+            // InternalRyml.g:1433:1: ( ( ( rule__Pattern__BarsAssignment_3 ) ) )
+            // InternalRyml.g:1434:1: ( ( rule__Pattern__BarsAssignment_3 ) )
             {
-            // InternalRyml.g:1434:1: ( ( rule__Pattern__BarAssignment_3 ) )
-            // InternalRyml.g:1435:2: ( rule__Pattern__BarAssignment_3 )
+            // InternalRyml.g:1434:1: ( ( rule__Pattern__BarsAssignment_3 ) )
+            // InternalRyml.g:1435:2: ( rule__Pattern__BarsAssignment_3 )
             {
-             before(grammarAccess.getPatternAccess().getBarAssignment_3()); 
-            // InternalRyml.g:1436:2: ( rule__Pattern__BarAssignment_3 )
-            // InternalRyml.g:1436:3: rule__Pattern__BarAssignment_3
+             before(grammarAccess.getPatternAccess().getBarsAssignment_3()); 
+            // InternalRyml.g:1436:2: ( rule__Pattern__BarsAssignment_3 )
+            // InternalRyml.g:1436:3: rule__Pattern__BarsAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__Pattern__BarAssignment_3();
+            rule__Pattern__BarsAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPatternAccess().getBarAssignment_3()); 
+             after(grammarAccess.getPatternAccess().getBarsAssignment_3()); 
 
             }
 
@@ -4825,31 +4825,31 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pattern__Group_4__1__Impl"
-    // InternalRyml.g:1509:1: rule__Pattern__Group_4__1__Impl : ( ( rule__Pattern__BarAssignment_4_1 ) ) ;
+    // InternalRyml.g:1509:1: rule__Pattern__Group_4__1__Impl : ( ( rule__Pattern__BarsAssignment_4_1 ) ) ;
     public final void rule__Pattern__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:1513:1: ( ( ( rule__Pattern__BarAssignment_4_1 ) ) )
-            // InternalRyml.g:1514:1: ( ( rule__Pattern__BarAssignment_4_1 ) )
+            // InternalRyml.g:1513:1: ( ( ( rule__Pattern__BarsAssignment_4_1 ) ) )
+            // InternalRyml.g:1514:1: ( ( rule__Pattern__BarsAssignment_4_1 ) )
             {
-            // InternalRyml.g:1514:1: ( ( rule__Pattern__BarAssignment_4_1 ) )
-            // InternalRyml.g:1515:2: ( rule__Pattern__BarAssignment_4_1 )
+            // InternalRyml.g:1514:1: ( ( rule__Pattern__BarsAssignment_4_1 ) )
+            // InternalRyml.g:1515:2: ( rule__Pattern__BarsAssignment_4_1 )
             {
-             before(grammarAccess.getPatternAccess().getBarAssignment_4_1()); 
-            // InternalRyml.g:1516:2: ( rule__Pattern__BarAssignment_4_1 )
-            // InternalRyml.g:1516:3: rule__Pattern__BarAssignment_4_1
+             before(grammarAccess.getPatternAccess().getBarsAssignment_4_1()); 
+            // InternalRyml.g:1516:2: ( rule__Pattern__BarsAssignment_4_1 )
+            // InternalRyml.g:1516:3: rule__Pattern__BarsAssignment_4_1
             {
             pushFollow(FOLLOW_2);
-            rule__Pattern__BarAssignment_4_1();
+            rule__Pattern__BarsAssignment_4_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPatternAccess().getBarAssignment_4_1()); 
+             after(grammarAccess.getPatternAccess().getBarsAssignment_4_1()); 
 
             }
 
@@ -5145,31 +5145,31 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Bar__Group__3__Impl"
-    // InternalRyml.g:1618:1: rule__Bar__Group__3__Impl : ( ( rule__Bar__BeatAssignment_3 ) ) ;
+    // InternalRyml.g:1618:1: rule__Bar__Group__3__Impl : ( ( rule__Bar__BeatsAssignment_3 ) ) ;
     public final void rule__Bar__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:1622:1: ( ( ( rule__Bar__BeatAssignment_3 ) ) )
-            // InternalRyml.g:1623:1: ( ( rule__Bar__BeatAssignment_3 ) )
+            // InternalRyml.g:1622:1: ( ( ( rule__Bar__BeatsAssignment_3 ) ) )
+            // InternalRyml.g:1623:1: ( ( rule__Bar__BeatsAssignment_3 ) )
             {
-            // InternalRyml.g:1623:1: ( ( rule__Bar__BeatAssignment_3 ) )
-            // InternalRyml.g:1624:2: ( rule__Bar__BeatAssignment_3 )
+            // InternalRyml.g:1623:1: ( ( rule__Bar__BeatsAssignment_3 ) )
+            // InternalRyml.g:1624:2: ( rule__Bar__BeatsAssignment_3 )
             {
-             before(grammarAccess.getBarAccess().getBeatAssignment_3()); 
-            // InternalRyml.g:1625:2: ( rule__Bar__BeatAssignment_3 )
-            // InternalRyml.g:1625:3: rule__Bar__BeatAssignment_3
+             before(grammarAccess.getBarAccess().getBeatsAssignment_3()); 
+            // InternalRyml.g:1625:2: ( rule__Bar__BeatsAssignment_3 )
+            // InternalRyml.g:1625:3: rule__Bar__BeatsAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__Bar__BeatAssignment_3();
+            rule__Bar__BeatsAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getBarAccess().getBeatAssignment_3()); 
+             after(grammarAccess.getBarAccess().getBeatsAssignment_3()); 
 
             }
 
@@ -5398,31 +5398,31 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Bar__Group_4__1__Impl"
-    // InternalRyml.g:1698:1: rule__Bar__Group_4__1__Impl : ( ( rule__Bar__BeatAssignment_4_1 ) ) ;
+    // InternalRyml.g:1698:1: rule__Bar__Group_4__1__Impl : ( ( rule__Bar__BeatsAssignment_4_1 ) ) ;
     public final void rule__Bar__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:1702:1: ( ( ( rule__Bar__BeatAssignment_4_1 ) ) )
-            // InternalRyml.g:1703:1: ( ( rule__Bar__BeatAssignment_4_1 ) )
+            // InternalRyml.g:1702:1: ( ( ( rule__Bar__BeatsAssignment_4_1 ) ) )
+            // InternalRyml.g:1703:1: ( ( rule__Bar__BeatsAssignment_4_1 ) )
             {
-            // InternalRyml.g:1703:1: ( ( rule__Bar__BeatAssignment_4_1 ) )
-            // InternalRyml.g:1704:2: ( rule__Bar__BeatAssignment_4_1 )
+            // InternalRyml.g:1703:1: ( ( rule__Bar__BeatsAssignment_4_1 ) )
+            // InternalRyml.g:1704:2: ( rule__Bar__BeatsAssignment_4_1 )
             {
-             before(grammarAccess.getBarAccess().getBeatAssignment_4_1()); 
-            // InternalRyml.g:1705:2: ( rule__Bar__BeatAssignment_4_1 )
-            // InternalRyml.g:1705:3: rule__Bar__BeatAssignment_4_1
+             before(grammarAccess.getBarAccess().getBeatsAssignment_4_1()); 
+            // InternalRyml.g:1705:2: ( rule__Bar__BeatsAssignment_4_1 )
+            // InternalRyml.g:1705:3: rule__Bar__BeatsAssignment_4_1
             {
             pushFollow(FOLLOW_2);
-            rule__Bar__BeatAssignment_4_1();
+            rule__Bar__BeatsAssignment_4_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getBarAccess().getBeatAssignment_4_1()); 
+             after(grammarAccess.getBarAccess().getBeatsAssignment_4_1()); 
 
             }
 
@@ -5889,31 +5889,31 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Beat__Group__5__Impl"
-    // InternalRyml.g:1861:1: rule__Beat__Group__5__Impl : ( ( rule__Beat__NoteAssignment_5 ) ) ;
+    // InternalRyml.g:1861:1: rule__Beat__Group__5__Impl : ( ( rule__Beat__NotesAssignment_5 ) ) ;
     public final void rule__Beat__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:1865:1: ( ( ( rule__Beat__NoteAssignment_5 ) ) )
-            // InternalRyml.g:1866:1: ( ( rule__Beat__NoteAssignment_5 ) )
+            // InternalRyml.g:1865:1: ( ( ( rule__Beat__NotesAssignment_5 ) ) )
+            // InternalRyml.g:1866:1: ( ( rule__Beat__NotesAssignment_5 ) )
             {
-            // InternalRyml.g:1866:1: ( ( rule__Beat__NoteAssignment_5 ) )
-            // InternalRyml.g:1867:2: ( rule__Beat__NoteAssignment_5 )
+            // InternalRyml.g:1866:1: ( ( rule__Beat__NotesAssignment_5 ) )
+            // InternalRyml.g:1867:2: ( rule__Beat__NotesAssignment_5 )
             {
-             before(grammarAccess.getBeatAccess().getNoteAssignment_5()); 
-            // InternalRyml.g:1868:2: ( rule__Beat__NoteAssignment_5 )
-            // InternalRyml.g:1868:3: rule__Beat__NoteAssignment_5
+             before(grammarAccess.getBeatAccess().getNotesAssignment_5()); 
+            // InternalRyml.g:1868:2: ( rule__Beat__NotesAssignment_5 )
+            // InternalRyml.g:1868:3: rule__Beat__NotesAssignment_5
             {
             pushFollow(FOLLOW_2);
-            rule__Beat__NoteAssignment_5();
+            rule__Beat__NotesAssignment_5();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getBeatAccess().getNoteAssignment_5()); 
+             after(grammarAccess.getBeatAccess().getNotesAssignment_5()); 
 
             }
 
@@ -6462,31 +6462,31 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Beat__Group_8__1__Impl"
-    // InternalRyml.g:2050:1: rule__Beat__Group_8__1__Impl : ( ( rule__Beat__NoteAssignment_8_1 ) ) ;
+    // InternalRyml.g:2050:1: rule__Beat__Group_8__1__Impl : ( ( rule__Beat__NotesAssignment_8_1 ) ) ;
     public final void rule__Beat__Group_8__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRyml.g:2054:1: ( ( ( rule__Beat__NoteAssignment_8_1 ) ) )
-            // InternalRyml.g:2055:1: ( ( rule__Beat__NoteAssignment_8_1 ) )
+            // InternalRyml.g:2054:1: ( ( ( rule__Beat__NotesAssignment_8_1 ) ) )
+            // InternalRyml.g:2055:1: ( ( rule__Beat__NotesAssignment_8_1 ) )
             {
-            // InternalRyml.g:2055:1: ( ( rule__Beat__NoteAssignment_8_1 ) )
-            // InternalRyml.g:2056:2: ( rule__Beat__NoteAssignment_8_1 )
+            // InternalRyml.g:2055:1: ( ( rule__Beat__NotesAssignment_8_1 ) )
+            // InternalRyml.g:2056:2: ( rule__Beat__NotesAssignment_8_1 )
             {
-             before(grammarAccess.getBeatAccess().getNoteAssignment_8_1()); 
-            // InternalRyml.g:2057:2: ( rule__Beat__NoteAssignment_8_1 )
-            // InternalRyml.g:2057:3: rule__Beat__NoteAssignment_8_1
+             before(grammarAccess.getBeatAccess().getNotesAssignment_8_1()); 
+            // InternalRyml.g:2057:2: ( rule__Beat__NotesAssignment_8_1 )
+            // InternalRyml.g:2057:3: rule__Beat__NotesAssignment_8_1
             {
             pushFollow(FOLLOW_2);
-            rule__Beat__NoteAssignment_8_1();
+            rule__Beat__NotesAssignment_8_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getBeatAccess().getNoteAssignment_8_1()); 
+             after(grammarAccess.getBeatAccess().getNotesAssignment_8_1()); 
 
             }
 
@@ -7698,9 +7698,9 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Music__ResolutionPerSlideAssignment_0_6_1"
 
 
-    // $ANTLR start "rule__Music__NoteAssignment_0_7_0"
-    // InternalRyml.g:2439:1: rule__Music__NoteAssignment_0_7_0 : ( ruleNote ) ;
-    public final void rule__Music__NoteAssignment_0_7_0() throws RecognitionException {
+    // $ANTLR start "rule__Music__OwnedNotesAssignment_0_7_0"
+    // InternalRyml.g:2439:1: rule__Music__OwnedNotesAssignment_0_7_0 : ( ruleNote ) ;
+    public final void rule__Music__OwnedNotesAssignment_0_7_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7711,13 +7711,13 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2444:2: ( ruleNote )
             // InternalRyml.g:2445:3: ruleNote
             {
-             before(grammarAccess.getMusicAccess().getNoteNoteParserRuleCall_0_7_0_0()); 
+             before(grammarAccess.getMusicAccess().getOwnedNotesNoteParserRuleCall_0_7_0_0()); 
             pushFollow(FOLLOW_2);
             ruleNote();
 
             state._fsp--;
 
-             after(grammarAccess.getMusicAccess().getNoteNoteParserRuleCall_0_7_0_0()); 
+             after(grammarAccess.getMusicAccess().getOwnedNotesNoteParserRuleCall_0_7_0_0()); 
 
             }
 
@@ -7736,12 +7736,12 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Music__NoteAssignment_0_7_0"
+    // $ANTLR end "rule__Music__OwnedNotesAssignment_0_7_0"
 
 
-    // $ANTLR start "rule__Music__NoteAssignment_0_7_1"
-    // InternalRyml.g:2454:1: rule__Music__NoteAssignment_0_7_1 : ( ruleNote ) ;
-    public final void rule__Music__NoteAssignment_0_7_1() throws RecognitionException {
+    // $ANTLR start "rule__Music__OwnedNotesAssignment_0_7_1"
+    // InternalRyml.g:2454:1: rule__Music__OwnedNotesAssignment_0_7_1 : ( ruleNote ) ;
+    public final void rule__Music__OwnedNotesAssignment_0_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7752,13 +7752,13 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2459:2: ( ruleNote )
             // InternalRyml.g:2460:3: ruleNote
             {
-             before(grammarAccess.getMusicAccess().getNoteNoteParserRuleCall_0_7_1_0()); 
+             before(grammarAccess.getMusicAccess().getOwnedNotesNoteParserRuleCall_0_7_1_0()); 
             pushFollow(FOLLOW_2);
             ruleNote();
 
             state._fsp--;
 
-             after(grammarAccess.getMusicAccess().getNoteNoteParserRuleCall_0_7_1_0()); 
+             after(grammarAccess.getMusicAccess().getOwnedNotesNoteParserRuleCall_0_7_1_0()); 
 
             }
 
@@ -7777,12 +7777,12 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Music__NoteAssignment_0_7_1"
+    // $ANTLR end "rule__Music__OwnedNotesAssignment_0_7_1"
 
 
-    // $ANTLR start "rule__Music__BeatAssignment_1_0"
-    // InternalRyml.g:2469:1: rule__Music__BeatAssignment_1_0 : ( ruleBeat ) ;
-    public final void rule__Music__BeatAssignment_1_0() throws RecognitionException {
+    // $ANTLR start "rule__Music__OwnedBeatsAssignment_1_0"
+    // InternalRyml.g:2469:1: rule__Music__OwnedBeatsAssignment_1_0 : ( ruleBeat ) ;
+    public final void rule__Music__OwnedBeatsAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7793,13 +7793,13 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2474:2: ( ruleBeat )
             // InternalRyml.g:2475:3: ruleBeat
             {
-             before(grammarAccess.getMusicAccess().getBeatBeatParserRuleCall_1_0_0()); 
+             before(grammarAccess.getMusicAccess().getOwnedBeatsBeatParserRuleCall_1_0_0()); 
             pushFollow(FOLLOW_2);
             ruleBeat();
 
             state._fsp--;
 
-             after(grammarAccess.getMusicAccess().getBeatBeatParserRuleCall_1_0_0()); 
+             after(grammarAccess.getMusicAccess().getOwnedBeatsBeatParserRuleCall_1_0_0()); 
 
             }
 
@@ -7818,12 +7818,12 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Music__BeatAssignment_1_0"
+    // $ANTLR end "rule__Music__OwnedBeatsAssignment_1_0"
 
 
-    // $ANTLR start "rule__Music__BeatAssignment_1_1"
-    // InternalRyml.g:2484:1: rule__Music__BeatAssignment_1_1 : ( ruleBeat ) ;
-    public final void rule__Music__BeatAssignment_1_1() throws RecognitionException {
+    // $ANTLR start "rule__Music__OwnedBeatsAssignment_1_1"
+    // InternalRyml.g:2484:1: rule__Music__OwnedBeatsAssignment_1_1 : ( ruleBeat ) ;
+    public final void rule__Music__OwnedBeatsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7834,13 +7834,13 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2489:2: ( ruleBeat )
             // InternalRyml.g:2490:3: ruleBeat
             {
-             before(grammarAccess.getMusicAccess().getBeatBeatParserRuleCall_1_1_0()); 
+             before(grammarAccess.getMusicAccess().getOwnedBeatsBeatParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
             ruleBeat();
 
             state._fsp--;
 
-             after(grammarAccess.getMusicAccess().getBeatBeatParserRuleCall_1_1_0()); 
+             after(grammarAccess.getMusicAccess().getOwnedBeatsBeatParserRuleCall_1_1_0()); 
 
             }
 
@@ -7859,12 +7859,12 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Music__BeatAssignment_1_1"
+    // $ANTLR end "rule__Music__OwnedBeatsAssignment_1_1"
 
 
-    // $ANTLR start "rule__Music__BarAssignment_2_0"
-    // InternalRyml.g:2499:1: rule__Music__BarAssignment_2_0 : ( ruleBar ) ;
-    public final void rule__Music__BarAssignment_2_0() throws RecognitionException {
+    // $ANTLR start "rule__Music__OwnedBarsAssignment_2_0"
+    // InternalRyml.g:2499:1: rule__Music__OwnedBarsAssignment_2_0 : ( ruleBar ) ;
+    public final void rule__Music__OwnedBarsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7875,13 +7875,13 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2504:2: ( ruleBar )
             // InternalRyml.g:2505:3: ruleBar
             {
-             before(grammarAccess.getMusicAccess().getBarBarParserRuleCall_2_0_0()); 
+             before(grammarAccess.getMusicAccess().getOwnedBarsBarParserRuleCall_2_0_0()); 
             pushFollow(FOLLOW_2);
             ruleBar();
 
             state._fsp--;
 
-             after(grammarAccess.getMusicAccess().getBarBarParserRuleCall_2_0_0()); 
+             after(grammarAccess.getMusicAccess().getOwnedBarsBarParserRuleCall_2_0_0()); 
 
             }
 
@@ -7900,12 +7900,12 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Music__BarAssignment_2_0"
+    // $ANTLR end "rule__Music__OwnedBarsAssignment_2_0"
 
 
-    // $ANTLR start "rule__Music__BarAssignment_2_1"
-    // InternalRyml.g:2514:1: rule__Music__BarAssignment_2_1 : ( ruleBar ) ;
-    public final void rule__Music__BarAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__Music__OwnedBarsAssignment_2_1"
+    // InternalRyml.g:2514:1: rule__Music__OwnedBarsAssignment_2_1 : ( ruleBar ) ;
+    public final void rule__Music__OwnedBarsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7916,13 +7916,13 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2519:2: ( ruleBar )
             // InternalRyml.g:2520:3: ruleBar
             {
-             before(grammarAccess.getMusicAccess().getBarBarParserRuleCall_2_1_0()); 
+             before(grammarAccess.getMusicAccess().getOwnedBarsBarParserRuleCall_2_1_0()); 
             pushFollow(FOLLOW_2);
             ruleBar();
 
             state._fsp--;
 
-             after(grammarAccess.getMusicAccess().getBarBarParserRuleCall_2_1_0()); 
+             after(grammarAccess.getMusicAccess().getOwnedBarsBarParserRuleCall_2_1_0()); 
 
             }
 
@@ -7941,12 +7941,12 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Music__BarAssignment_2_1"
+    // $ANTLR end "rule__Music__OwnedBarsAssignment_2_1"
 
 
-    // $ANTLR start "rule__Music__PatternAssignment_3_0_0"
-    // InternalRyml.g:2529:1: rule__Music__PatternAssignment_3_0_0 : ( rulePattern ) ;
-    public final void rule__Music__PatternAssignment_3_0_0() throws RecognitionException {
+    // $ANTLR start "rule__Music__OwnedPatternsAssignment_3_0_0"
+    // InternalRyml.g:2529:1: rule__Music__OwnedPatternsAssignment_3_0_0 : ( rulePattern ) ;
+    public final void rule__Music__OwnedPatternsAssignment_3_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7957,13 +7957,13 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2534:2: ( rulePattern )
             // InternalRyml.g:2535:3: rulePattern
             {
-             before(grammarAccess.getMusicAccess().getPatternPatternParserRuleCall_3_0_0_0()); 
+             before(grammarAccess.getMusicAccess().getOwnedPatternsPatternParserRuleCall_3_0_0_0()); 
             pushFollow(FOLLOW_2);
             rulePattern();
 
             state._fsp--;
 
-             after(grammarAccess.getMusicAccess().getPatternPatternParserRuleCall_3_0_0_0()); 
+             after(grammarAccess.getMusicAccess().getOwnedPatternsPatternParserRuleCall_3_0_0_0()); 
 
             }
 
@@ -7982,12 +7982,12 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Music__PatternAssignment_3_0_0"
+    // $ANTLR end "rule__Music__OwnedPatternsAssignment_3_0_0"
 
 
-    // $ANTLR start "rule__Music__PatternAssignment_3_0_1"
-    // InternalRyml.g:2544:1: rule__Music__PatternAssignment_3_0_1 : ( rulePattern ) ;
-    public final void rule__Music__PatternAssignment_3_0_1() throws RecognitionException {
+    // $ANTLR start "rule__Music__OwnedPatternsAssignment_3_0_1"
+    // InternalRyml.g:2544:1: rule__Music__OwnedPatternsAssignment_3_0_1 : ( rulePattern ) ;
+    public final void rule__Music__OwnedPatternsAssignment_3_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7998,13 +7998,13 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2549:2: ( rulePattern )
             // InternalRyml.g:2550:3: rulePattern
             {
-             before(grammarAccess.getMusicAccess().getPatternPatternParserRuleCall_3_0_1_0()); 
+             before(grammarAccess.getMusicAccess().getOwnedPatternsPatternParserRuleCall_3_0_1_0()); 
             pushFollow(FOLLOW_2);
             rulePattern();
 
             state._fsp--;
 
-             after(grammarAccess.getMusicAccess().getPatternPatternParserRuleCall_3_0_1_0()); 
+             after(grammarAccess.getMusicAccess().getOwnedPatternsPatternParserRuleCall_3_0_1_0()); 
 
             }
 
@@ -8023,12 +8023,12 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Music__PatternAssignment_3_0_1"
+    // $ANTLR end "rule__Music__OwnedPatternsAssignment_3_0_1"
 
 
-    // $ANTLR start "rule__Music__SectionAssignment_3_1"
-    // InternalRyml.g:2559:1: rule__Music__SectionAssignment_3_1 : ( ruleSection ) ;
-    public final void rule__Music__SectionAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__Music__OwnedSectionsAssignment_3_1"
+    // InternalRyml.g:2559:1: rule__Music__OwnedSectionsAssignment_3_1 : ( ruleSection ) ;
+    public final void rule__Music__OwnedSectionsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8039,13 +8039,13 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2564:2: ( ruleSection )
             // InternalRyml.g:2565:3: ruleSection
             {
-             before(grammarAccess.getMusicAccess().getSectionSectionParserRuleCall_3_1_0()); 
+             before(grammarAccess.getMusicAccess().getOwnedSectionsSectionParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
             ruleSection();
 
             state._fsp--;
 
-             after(grammarAccess.getMusicAccess().getSectionSectionParserRuleCall_3_1_0()); 
+             after(grammarAccess.getMusicAccess().getOwnedSectionsSectionParserRuleCall_3_1_0()); 
 
             }
 
@@ -8064,12 +8064,12 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Music__SectionAssignment_3_1"
+    // $ANTLR end "rule__Music__OwnedSectionsAssignment_3_1"
 
 
-    // $ANTLR start "rule__Music__SectionAssignment_3_2"
-    // InternalRyml.g:2574:1: rule__Music__SectionAssignment_3_2 : ( ruleSection ) ;
-    public final void rule__Music__SectionAssignment_3_2() throws RecognitionException {
+    // $ANTLR start "rule__Music__OwnedSectionsAssignment_3_2"
+    // InternalRyml.g:2574:1: rule__Music__OwnedSectionsAssignment_3_2 : ( ruleSection ) ;
+    public final void rule__Music__OwnedSectionsAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8080,13 +8080,13 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2579:2: ( ruleSection )
             // InternalRyml.g:2580:3: ruleSection
             {
-             before(grammarAccess.getMusicAccess().getSectionSectionParserRuleCall_3_2_0()); 
+             before(grammarAccess.getMusicAccess().getOwnedSectionsSectionParserRuleCall_3_2_0()); 
             pushFollow(FOLLOW_2);
             ruleSection();
 
             state._fsp--;
 
-             after(grammarAccess.getMusicAccess().getSectionSectionParserRuleCall_3_2_0()); 
+             after(grammarAccess.getMusicAccess().getOwnedSectionsSectionParserRuleCall_3_2_0()); 
 
             }
 
@@ -8105,7 +8105,7 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Music__SectionAssignment_3_2"
+    // $ANTLR end "rule__Music__OwnedSectionsAssignment_3_2"
 
 
     // $ANTLR start "rule__Section__NameAssignment_1"
@@ -8149,9 +8149,9 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Section__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Section__PatternAssignment_3"
-    // InternalRyml.g:2604:1: rule__Section__PatternAssignment_3 : ( ( ruleEString ) ) ;
-    public final void rule__Section__PatternAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Section__PatternsAssignment_3"
+    // InternalRyml.g:2604:1: rule__Section__PatternsAssignment_3 : ( ( ruleEString ) ) ;
+    public final void rule__Section__PatternsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8162,21 +8162,21 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2609:2: ( ( ruleEString ) )
             // InternalRyml.g:2610:3: ( ruleEString )
             {
-             before(grammarAccess.getSectionAccess().getPatternPatternCrossReference_3_0()); 
+             before(grammarAccess.getSectionAccess().getPatternsPatternCrossReference_3_0()); 
             // InternalRyml.g:2611:3: ( ruleEString )
             // InternalRyml.g:2612:4: ruleEString
             {
-             before(grammarAccess.getSectionAccess().getPatternPatternEStringParserRuleCall_3_0_1()); 
+             before(grammarAccess.getSectionAccess().getPatternsPatternEStringParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getSectionAccess().getPatternPatternEStringParserRuleCall_3_0_1()); 
+             after(grammarAccess.getSectionAccess().getPatternsPatternEStringParserRuleCall_3_0_1()); 
 
             }
 
-             after(grammarAccess.getSectionAccess().getPatternPatternCrossReference_3_0()); 
+             after(grammarAccess.getSectionAccess().getPatternsPatternCrossReference_3_0()); 
 
             }
 
@@ -8195,12 +8195,12 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Section__PatternAssignment_3"
+    // $ANTLR end "rule__Section__PatternsAssignment_3"
 
 
-    // $ANTLR start "rule__Section__PatternAssignment_4_1"
-    // InternalRyml.g:2623:1: rule__Section__PatternAssignment_4_1 : ( ( ruleEString ) ) ;
-    public final void rule__Section__PatternAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__Section__PatternsAssignment_4_1"
+    // InternalRyml.g:2623:1: rule__Section__PatternsAssignment_4_1 : ( ( ruleEString ) ) ;
+    public final void rule__Section__PatternsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8211,21 +8211,21 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2628:2: ( ( ruleEString ) )
             // InternalRyml.g:2629:3: ( ruleEString )
             {
-             before(grammarAccess.getSectionAccess().getPatternPatternCrossReference_4_1_0()); 
+             before(grammarAccess.getSectionAccess().getPatternsPatternCrossReference_4_1_0()); 
             // InternalRyml.g:2630:3: ( ruleEString )
             // InternalRyml.g:2631:4: ruleEString
             {
-             before(grammarAccess.getSectionAccess().getPatternPatternEStringParserRuleCall_4_1_0_1()); 
+             before(grammarAccess.getSectionAccess().getPatternsPatternEStringParserRuleCall_4_1_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getSectionAccess().getPatternPatternEStringParserRuleCall_4_1_0_1()); 
+             after(grammarAccess.getSectionAccess().getPatternsPatternEStringParserRuleCall_4_1_0_1()); 
 
             }
 
-             after(grammarAccess.getSectionAccess().getPatternPatternCrossReference_4_1_0()); 
+             after(grammarAccess.getSectionAccess().getPatternsPatternCrossReference_4_1_0()); 
 
             }
 
@@ -8244,7 +8244,7 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Section__PatternAssignment_4_1"
+    // $ANTLR end "rule__Section__PatternsAssignment_4_1"
 
 
     // $ANTLR start "rule__Pattern__NameAssignment_1"
@@ -8288,9 +8288,9 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Pattern__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Pattern__BarAssignment_3"
-    // InternalRyml.g:2657:1: rule__Pattern__BarAssignment_3 : ( ( ruleEString ) ) ;
-    public final void rule__Pattern__BarAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Pattern__BarsAssignment_3"
+    // InternalRyml.g:2657:1: rule__Pattern__BarsAssignment_3 : ( ( ruleEString ) ) ;
+    public final void rule__Pattern__BarsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8301,21 +8301,21 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2662:2: ( ( ruleEString ) )
             // InternalRyml.g:2663:3: ( ruleEString )
             {
-             before(grammarAccess.getPatternAccess().getBarBarCrossReference_3_0()); 
+             before(grammarAccess.getPatternAccess().getBarsBarCrossReference_3_0()); 
             // InternalRyml.g:2664:3: ( ruleEString )
             // InternalRyml.g:2665:4: ruleEString
             {
-             before(grammarAccess.getPatternAccess().getBarBarEStringParserRuleCall_3_0_1()); 
+             before(grammarAccess.getPatternAccess().getBarsBarEStringParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getPatternAccess().getBarBarEStringParserRuleCall_3_0_1()); 
+             after(grammarAccess.getPatternAccess().getBarsBarEStringParserRuleCall_3_0_1()); 
 
             }
 
-             after(grammarAccess.getPatternAccess().getBarBarCrossReference_3_0()); 
+             after(grammarAccess.getPatternAccess().getBarsBarCrossReference_3_0()); 
 
             }
 
@@ -8334,12 +8334,12 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Pattern__BarAssignment_3"
+    // $ANTLR end "rule__Pattern__BarsAssignment_3"
 
 
-    // $ANTLR start "rule__Pattern__BarAssignment_4_1"
-    // InternalRyml.g:2676:1: rule__Pattern__BarAssignment_4_1 : ( ( ruleEString ) ) ;
-    public final void rule__Pattern__BarAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__Pattern__BarsAssignment_4_1"
+    // InternalRyml.g:2676:1: rule__Pattern__BarsAssignment_4_1 : ( ( ruleEString ) ) ;
+    public final void rule__Pattern__BarsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8350,21 +8350,21 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2681:2: ( ( ruleEString ) )
             // InternalRyml.g:2682:3: ( ruleEString )
             {
-             before(grammarAccess.getPatternAccess().getBarBarCrossReference_4_1_0()); 
+             before(grammarAccess.getPatternAccess().getBarsBarCrossReference_4_1_0()); 
             // InternalRyml.g:2683:3: ( ruleEString )
             // InternalRyml.g:2684:4: ruleEString
             {
-             before(grammarAccess.getPatternAccess().getBarBarEStringParserRuleCall_4_1_0_1()); 
+             before(grammarAccess.getPatternAccess().getBarsBarEStringParserRuleCall_4_1_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getPatternAccess().getBarBarEStringParserRuleCall_4_1_0_1()); 
+             after(grammarAccess.getPatternAccess().getBarsBarEStringParserRuleCall_4_1_0_1()); 
 
             }
 
-             after(grammarAccess.getPatternAccess().getBarBarCrossReference_4_1_0()); 
+             after(grammarAccess.getPatternAccess().getBarsBarCrossReference_4_1_0()); 
 
             }
 
@@ -8383,7 +8383,7 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Pattern__BarAssignment_4_1"
+    // $ANTLR end "rule__Pattern__BarsAssignment_4_1"
 
 
     // $ANTLR start "rule__Bar__NameAssignment_1"
@@ -8427,9 +8427,9 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Bar__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Bar__BeatAssignment_3"
-    // InternalRyml.g:2710:1: rule__Bar__BeatAssignment_3 : ( ( ruleEString ) ) ;
-    public final void rule__Bar__BeatAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Bar__BeatsAssignment_3"
+    // InternalRyml.g:2710:1: rule__Bar__BeatsAssignment_3 : ( ( ruleEString ) ) ;
+    public final void rule__Bar__BeatsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8440,21 +8440,21 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2715:2: ( ( ruleEString ) )
             // InternalRyml.g:2716:3: ( ruleEString )
             {
-             before(grammarAccess.getBarAccess().getBeatBeatCrossReference_3_0()); 
+             before(grammarAccess.getBarAccess().getBeatsBeatCrossReference_3_0()); 
             // InternalRyml.g:2717:3: ( ruleEString )
             // InternalRyml.g:2718:4: ruleEString
             {
-             before(grammarAccess.getBarAccess().getBeatBeatEStringParserRuleCall_3_0_1()); 
+             before(grammarAccess.getBarAccess().getBeatsBeatEStringParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getBarAccess().getBeatBeatEStringParserRuleCall_3_0_1()); 
+             after(grammarAccess.getBarAccess().getBeatsBeatEStringParserRuleCall_3_0_1()); 
 
             }
 
-             after(grammarAccess.getBarAccess().getBeatBeatCrossReference_3_0()); 
+             after(grammarAccess.getBarAccess().getBeatsBeatCrossReference_3_0()); 
 
             }
 
@@ -8473,12 +8473,12 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Bar__BeatAssignment_3"
+    // $ANTLR end "rule__Bar__BeatsAssignment_3"
 
 
-    // $ANTLR start "rule__Bar__BeatAssignment_4_1"
-    // InternalRyml.g:2729:1: rule__Bar__BeatAssignment_4_1 : ( ( ruleEString ) ) ;
-    public final void rule__Bar__BeatAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__Bar__BeatsAssignment_4_1"
+    // InternalRyml.g:2729:1: rule__Bar__BeatsAssignment_4_1 : ( ( ruleEString ) ) ;
+    public final void rule__Bar__BeatsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8489,21 +8489,21 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2734:2: ( ( ruleEString ) )
             // InternalRyml.g:2735:3: ( ruleEString )
             {
-             before(grammarAccess.getBarAccess().getBeatBeatCrossReference_4_1_0()); 
+             before(grammarAccess.getBarAccess().getBeatsBeatCrossReference_4_1_0()); 
             // InternalRyml.g:2736:3: ( ruleEString )
             // InternalRyml.g:2737:4: ruleEString
             {
-             before(grammarAccess.getBarAccess().getBeatBeatEStringParserRuleCall_4_1_0_1()); 
+             before(grammarAccess.getBarAccess().getBeatsBeatEStringParserRuleCall_4_1_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getBarAccess().getBeatBeatEStringParserRuleCall_4_1_0_1()); 
+             after(grammarAccess.getBarAccess().getBeatsBeatEStringParserRuleCall_4_1_0_1()); 
 
             }
 
-             after(grammarAccess.getBarAccess().getBeatBeatCrossReference_4_1_0()); 
+             after(grammarAccess.getBarAccess().getBeatsBeatCrossReference_4_1_0()); 
 
             }
 
@@ -8522,7 +8522,7 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Bar__BeatAssignment_4_1"
+    // $ANTLR end "rule__Bar__BeatsAssignment_4_1"
 
 
     // $ANTLR start "rule__Beat__NameAssignment_1"
@@ -8607,9 +8607,9 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Beat__TotalDivNumberAssignment_3_1"
 
 
-    // $ANTLR start "rule__Beat__NoteAssignment_5"
-    // InternalRyml.g:2778:1: rule__Beat__NoteAssignment_5 : ( ( ruleEString ) ) ;
-    public final void rule__Beat__NoteAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__Beat__NotesAssignment_5"
+    // InternalRyml.g:2778:1: rule__Beat__NotesAssignment_5 : ( ( ruleEString ) ) ;
+    public final void rule__Beat__NotesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8620,21 +8620,21 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2783:2: ( ( ruleEString ) )
             // InternalRyml.g:2784:3: ( ruleEString )
             {
-             before(grammarAccess.getBeatAccess().getNoteNoteCrossReference_5_0()); 
+             before(grammarAccess.getBeatAccess().getNotesNoteCrossReference_5_0()); 
             // InternalRyml.g:2785:3: ( ruleEString )
             // InternalRyml.g:2786:4: ruleEString
             {
-             before(grammarAccess.getBeatAccess().getNoteNoteEStringParserRuleCall_5_0_1()); 
+             before(grammarAccess.getBeatAccess().getNotesNoteEStringParserRuleCall_5_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getBeatAccess().getNoteNoteEStringParserRuleCall_5_0_1()); 
+             after(grammarAccess.getBeatAccess().getNotesNoteEStringParserRuleCall_5_0_1()); 
 
             }
 
-             after(grammarAccess.getBeatAccess().getNoteNoteCrossReference_5_0()); 
+             after(grammarAccess.getBeatAccess().getNotesNoteCrossReference_5_0()); 
 
             }
 
@@ -8653,7 +8653,7 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Beat__NoteAssignment_5"
+    // $ANTLR end "rule__Beat__NotesAssignment_5"
 
 
     // $ANTLR start "rule__Beat__NotePositionsAssignment_7"
@@ -8697,9 +8697,9 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Beat__NotePositionsAssignment_7"
 
 
-    // $ANTLR start "rule__Beat__NoteAssignment_8_1"
-    // InternalRyml.g:2812:1: rule__Beat__NoteAssignment_8_1 : ( ( ruleEString ) ) ;
-    public final void rule__Beat__NoteAssignment_8_1() throws RecognitionException {
+    // $ANTLR start "rule__Beat__NotesAssignment_8_1"
+    // InternalRyml.g:2812:1: rule__Beat__NotesAssignment_8_1 : ( ( ruleEString ) ) ;
+    public final void rule__Beat__NotesAssignment_8_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8710,21 +8710,21 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             // InternalRyml.g:2817:2: ( ( ruleEString ) )
             // InternalRyml.g:2818:3: ( ruleEString )
             {
-             before(grammarAccess.getBeatAccess().getNoteNoteCrossReference_8_1_0()); 
+             before(grammarAccess.getBeatAccess().getNotesNoteCrossReference_8_1_0()); 
             // InternalRyml.g:2819:3: ( ruleEString )
             // InternalRyml.g:2820:4: ruleEString
             {
-             before(grammarAccess.getBeatAccess().getNoteNoteEStringParserRuleCall_8_1_0_1()); 
+             before(grammarAccess.getBeatAccess().getNotesNoteEStringParserRuleCall_8_1_0_1()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getBeatAccess().getNoteNoteEStringParserRuleCall_8_1_0_1()); 
+             after(grammarAccess.getBeatAccess().getNotesNoteEStringParserRuleCall_8_1_0_1()); 
 
             }
 
-             after(grammarAccess.getBeatAccess().getNoteNoteCrossReference_8_1_0()); 
+             after(grammarAccess.getBeatAccess().getNotesNoteCrossReference_8_1_0()); 
 
             }
 
@@ -8743,7 +8743,7 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Beat__NoteAssignment_8_1"
+    // $ANTLR end "rule__Beat__NotesAssignment_8_1"
 
 
     // $ANTLR start "rule__Beat__NotePositionsAssignment_8_3"
@@ -8918,7 +8918,7 @@ public class InternalRymlParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "()* loopback of 895:2: ( rule__Music__BeatAssignment_1_1 )*";
+            return "()* loopback of 895:2: ( rule__Music__OwnedBeatsAssignment_1_1 )*";
         }
     }
  

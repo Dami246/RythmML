@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Beat#getTotalDivNumber <em>Total Div Number</em>}</li>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Beat#getNote <em>Note</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Beat#getNotes <em>Notes</em>}</li>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Beat#getNotePositions <em>Note Positions</em>}</li>
  * </ul>
  *
@@ -50,20 +50,20 @@ public interface Beat extends NamedElement {
 	void setTotalDivNumber(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Note</b></em>' reference list.
+	 * Returns the value of the '<em><b>Notes</b></em>' reference list.
 	 * The list contents are of type {@link fr.unice.polytech.dsl.rythmml.model.rythmml.Note}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Note</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Notes</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Note</em>' reference list.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getBeat_Note()
+	 * @return the value of the '<em>Notes</em>' reference list.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getBeat_Notes()
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<Note> getNote();
+	EList<Note> getNotes();
 
 	/**
 	 * Returns the value of the '<em><b>Note Positions</b></em>' attribute list.

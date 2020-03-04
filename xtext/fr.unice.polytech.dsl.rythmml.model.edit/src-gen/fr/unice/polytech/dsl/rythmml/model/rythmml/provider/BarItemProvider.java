@@ -54,7 +54,7 @@ public class BarItemProvider extends ItemProviderAdapter implements IEditingDoma
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addBeatPropertyDescriptor(object);
+			addBeatsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,17 +76,17 @@ public class BarItemProvider extends ItemProviderAdapter implements IEditingDoma
 	}
 
 	/**
-	 * This adds a property descriptor for the Beat feature.
+	 * This adds a property descriptor for the Beats feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addBeatPropertyDescriptor(Object object) {
+	protected void addBeatsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Bar_beat_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Bar_beat_feature", "_UI_Bar_type"),
-						RythmmlPackage.Literals.BAR__BEAT, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Bar_beats_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Bar_beats_feature", "_UI_Bar_type"),
+						RythmmlPackage.Literals.BAR__BEATS, true, false, true, null, null, null));
 	}
 
 	/**

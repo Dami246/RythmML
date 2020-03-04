@@ -15,19 +15,19 @@ class RymlFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(Music music, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (note : music.note) {
+		for (note : music.ownedNotes) {
 			note.format
 		}
-		for (beat : music.beat) {
+		for (beat : music.ownedBeats) {
 			beat.format
 		}
-		for (bar : music.bar) {
+		for (bar : music.ownedBars) {
 			bar.format
 		}
-		for (pattern : music.pattern) {
+		for (pattern : music.ownedPatterns) {
 			pattern.format
 		}
-		for (section : music.section) {
+		for (section : music.ownedSections) {
 			section.format
 		}
 	}

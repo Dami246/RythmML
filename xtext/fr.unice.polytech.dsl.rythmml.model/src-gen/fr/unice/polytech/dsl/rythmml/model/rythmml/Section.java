@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Section#getPattern <em>Pattern</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Section#getPatterns <em>Patterns</em>}</li>
  * </ul>
  *
  * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getSection()
@@ -22,19 +22,19 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Section extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Pattern</b></em>' reference list.
+	 * Returns the value of the '<em><b>Patterns</b></em>' reference list.
 	 * The list contents are of type {@link fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Pattern</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Patterns</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pattern</em>' reference list.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getSection_Pattern()
+	 * @return the value of the '<em>Patterns</em>' reference list.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getSection_Patterns()
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<Pattern> getPattern();
+	EList<Pattern> getPatterns();
 
 } // Section

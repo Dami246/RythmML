@@ -37,13 +37,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.MusicImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.MusicImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.MusicImpl#getAuthor <em>Author</em>}</li>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.MusicImpl#getSection <em>Section</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.MusicImpl#getOwnedSections <em>Owned Sections</em>}</li>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.MusicImpl#getBpm <em>Bpm</em>}</li>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.MusicImpl#getResolutionPerSlide <em>Resolution Per Slide</em>}</li>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.MusicImpl#getPattern <em>Pattern</em>}</li>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.MusicImpl#getBar <em>Bar</em>}</li>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.MusicImpl#getBeat <em>Beat</em>}</li>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.MusicImpl#getNote <em>Note</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.MusicImpl#getOwnedPatterns <em>Owned Patterns</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.MusicImpl#getOwnedBars <em>Owned Bars</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.MusicImpl#getOwnedBeats <em>Owned Beats</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.MusicImpl#getOwnedNotes <em>Owned Notes</em>}</li>
  * </ul>
  *
  * @generated
@@ -110,14 +110,14 @@ public class MusicImpl extends MinimalEObjectImpl.Container implements Music {
 	protected String author = AUTHOR_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSection() <em>Section</em>}' containment reference list.
+	 * The cached value of the '{@link #getOwnedSections() <em>Owned Sections</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSection()
+	 * @see #getOwnedSections()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Section> section;
+	protected EList<Section> ownedSections;
 
 	/**
 	 * The default value of the '{@link #getBpm() <em>Bpm</em>}' attribute.
@@ -160,44 +160,44 @@ public class MusicImpl extends MinimalEObjectImpl.Container implements Music {
 	protected int resolutionPerSlide = RESOLUTION_PER_SLIDE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPattern() <em>Pattern</em>}' containment reference list.
+	 * The cached value of the '{@link #getOwnedPatterns() <em>Owned Patterns</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPattern()
+	 * @see #getOwnedPatterns()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Pattern> pattern;
+	protected EList<Pattern> ownedPatterns;
 
 	/**
-	 * The cached value of the '{@link #getBar() <em>Bar</em>}' containment reference list.
+	 * The cached value of the '{@link #getOwnedBars() <em>Owned Bars</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBar()
+	 * @see #getOwnedBars()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Bar> bar;
+	protected EList<Bar> ownedBars;
 
 	/**
-	 * The cached value of the '{@link #getBeat() <em>Beat</em>}' containment reference list.
+	 * The cached value of the '{@link #getOwnedBeats() <em>Owned Beats</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBeat()
+	 * @see #getOwnedBeats()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Beat> beat;
+	protected EList<Beat> ownedBeats;
 
 	/**
-	 * The cached value of the '{@link #getNote() <em>Note</em>}' containment reference list.
+	 * The cached value of the '{@link #getOwnedNotes() <em>Owned Notes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNote()
+	 * @see #getOwnedNotes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Note> note;
+	protected EList<Note> ownedNotes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,11 +286,12 @@ public class MusicImpl extends MinimalEObjectImpl.Container implements Music {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Section> getSection() {
-		if (section == null) {
-			section = new EObjectContainmentEList<Section>(Section.class, this, RythmmlPackage.MUSIC__SECTION);
+	public EList<Section> getOwnedSections() {
+		if (ownedSections == null) {
+			ownedSections = new EObjectContainmentEList<Section>(Section.class, this,
+					RythmmlPackage.MUSIC__OWNED_SECTIONS);
 		}
-		return section;
+		return ownedSections;
 	}
 
 	/**
@@ -341,11 +342,12 @@ public class MusicImpl extends MinimalEObjectImpl.Container implements Music {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Pattern> getPattern() {
-		if (pattern == null) {
-			pattern = new EObjectContainmentEList<Pattern>(Pattern.class, this, RythmmlPackage.MUSIC__PATTERN);
+	public EList<Pattern> getOwnedPatterns() {
+		if (ownedPatterns == null) {
+			ownedPatterns = new EObjectContainmentEList<Pattern>(Pattern.class, this,
+					RythmmlPackage.MUSIC__OWNED_PATTERNS);
 		}
-		return pattern;
+		return ownedPatterns;
 	}
 
 	/**
@@ -353,11 +355,11 @@ public class MusicImpl extends MinimalEObjectImpl.Container implements Music {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Bar> getBar() {
-		if (bar == null) {
-			bar = new EObjectContainmentEList<Bar>(Bar.class, this, RythmmlPackage.MUSIC__BAR);
+	public EList<Bar> getOwnedBars() {
+		if (ownedBars == null) {
+			ownedBars = new EObjectContainmentEList<Bar>(Bar.class, this, RythmmlPackage.MUSIC__OWNED_BARS);
 		}
-		return bar;
+		return ownedBars;
 	}
 
 	/**
@@ -365,11 +367,11 @@ public class MusicImpl extends MinimalEObjectImpl.Container implements Music {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Beat> getBeat() {
-		if (beat == null) {
-			beat = new EObjectContainmentEList<Beat>(Beat.class, this, RythmmlPackage.MUSIC__BEAT);
+	public EList<Beat> getOwnedBeats() {
+		if (ownedBeats == null) {
+			ownedBeats = new EObjectContainmentEList<Beat>(Beat.class, this, RythmmlPackage.MUSIC__OWNED_BEATS);
 		}
-		return beat;
+		return ownedBeats;
 	}
 
 	/**
@@ -377,11 +379,11 @@ public class MusicImpl extends MinimalEObjectImpl.Container implements Music {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Note> getNote() {
-		if (note == null) {
-			note = new EObjectContainmentEList<Note>(Note.class, this, RythmmlPackage.MUSIC__NOTE);
+	public EList<Note> getOwnedNotes() {
+		if (ownedNotes == null) {
+			ownedNotes = new EObjectContainmentEList<Note>(Note.class, this, RythmmlPackage.MUSIC__OWNED_NOTES);
 		}
-		return note;
+		return ownedNotes;
 	}
 
 	/**
@@ -392,16 +394,16 @@ public class MusicImpl extends MinimalEObjectImpl.Container implements Music {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case RythmmlPackage.MUSIC__SECTION:
-			return ((InternalEList<?>) getSection()).basicRemove(otherEnd, msgs);
-		case RythmmlPackage.MUSIC__PATTERN:
-			return ((InternalEList<?>) getPattern()).basicRemove(otherEnd, msgs);
-		case RythmmlPackage.MUSIC__BAR:
-			return ((InternalEList<?>) getBar()).basicRemove(otherEnd, msgs);
-		case RythmmlPackage.MUSIC__BEAT:
-			return ((InternalEList<?>) getBeat()).basicRemove(otherEnd, msgs);
-		case RythmmlPackage.MUSIC__NOTE:
-			return ((InternalEList<?>) getNote()).basicRemove(otherEnd, msgs);
+		case RythmmlPackage.MUSIC__OWNED_SECTIONS:
+			return ((InternalEList<?>) getOwnedSections()).basicRemove(otherEnd, msgs);
+		case RythmmlPackage.MUSIC__OWNED_PATTERNS:
+			return ((InternalEList<?>) getOwnedPatterns()).basicRemove(otherEnd, msgs);
+		case RythmmlPackage.MUSIC__OWNED_BARS:
+			return ((InternalEList<?>) getOwnedBars()).basicRemove(otherEnd, msgs);
+		case RythmmlPackage.MUSIC__OWNED_BEATS:
+			return ((InternalEList<?>) getOwnedBeats()).basicRemove(otherEnd, msgs);
+		case RythmmlPackage.MUSIC__OWNED_NOTES:
+			return ((InternalEList<?>) getOwnedNotes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -420,20 +422,20 @@ public class MusicImpl extends MinimalEObjectImpl.Container implements Music {
 			return getTitle();
 		case RythmmlPackage.MUSIC__AUTHOR:
 			return getAuthor();
-		case RythmmlPackage.MUSIC__SECTION:
-			return getSection();
+		case RythmmlPackage.MUSIC__OWNED_SECTIONS:
+			return getOwnedSections();
 		case RythmmlPackage.MUSIC__BPM:
 			return getBpm();
 		case RythmmlPackage.MUSIC__RESOLUTION_PER_SLIDE:
 			return getResolutionPerSlide();
-		case RythmmlPackage.MUSIC__PATTERN:
-			return getPattern();
-		case RythmmlPackage.MUSIC__BAR:
-			return getBar();
-		case RythmmlPackage.MUSIC__BEAT:
-			return getBeat();
-		case RythmmlPackage.MUSIC__NOTE:
-			return getNote();
+		case RythmmlPackage.MUSIC__OWNED_PATTERNS:
+			return getOwnedPatterns();
+		case RythmmlPackage.MUSIC__OWNED_BARS:
+			return getOwnedBars();
+		case RythmmlPackage.MUSIC__OWNED_BEATS:
+			return getOwnedBeats();
+		case RythmmlPackage.MUSIC__OWNED_NOTES:
+			return getOwnedNotes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -456,9 +458,9 @@ public class MusicImpl extends MinimalEObjectImpl.Container implements Music {
 		case RythmmlPackage.MUSIC__AUTHOR:
 			setAuthor((String) newValue);
 			return;
-		case RythmmlPackage.MUSIC__SECTION:
-			getSection().clear();
-			getSection().addAll((Collection<? extends Section>) newValue);
+		case RythmmlPackage.MUSIC__OWNED_SECTIONS:
+			getOwnedSections().clear();
+			getOwnedSections().addAll((Collection<? extends Section>) newValue);
 			return;
 		case RythmmlPackage.MUSIC__BPM:
 			setBpm((Integer) newValue);
@@ -466,21 +468,21 @@ public class MusicImpl extends MinimalEObjectImpl.Container implements Music {
 		case RythmmlPackage.MUSIC__RESOLUTION_PER_SLIDE:
 			setResolutionPerSlide((Integer) newValue);
 			return;
-		case RythmmlPackage.MUSIC__PATTERN:
-			getPattern().clear();
-			getPattern().addAll((Collection<? extends Pattern>) newValue);
+		case RythmmlPackage.MUSIC__OWNED_PATTERNS:
+			getOwnedPatterns().clear();
+			getOwnedPatterns().addAll((Collection<? extends Pattern>) newValue);
 			return;
-		case RythmmlPackage.MUSIC__BAR:
-			getBar().clear();
-			getBar().addAll((Collection<? extends Bar>) newValue);
+		case RythmmlPackage.MUSIC__OWNED_BARS:
+			getOwnedBars().clear();
+			getOwnedBars().addAll((Collection<? extends Bar>) newValue);
 			return;
-		case RythmmlPackage.MUSIC__BEAT:
-			getBeat().clear();
-			getBeat().addAll((Collection<? extends Beat>) newValue);
+		case RythmmlPackage.MUSIC__OWNED_BEATS:
+			getOwnedBeats().clear();
+			getOwnedBeats().addAll((Collection<? extends Beat>) newValue);
 			return;
-		case RythmmlPackage.MUSIC__NOTE:
-			getNote().clear();
-			getNote().addAll((Collection<? extends Note>) newValue);
+		case RythmmlPackage.MUSIC__OWNED_NOTES:
+			getOwnedNotes().clear();
+			getOwnedNotes().addAll((Collection<? extends Note>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -503,8 +505,8 @@ public class MusicImpl extends MinimalEObjectImpl.Container implements Music {
 		case RythmmlPackage.MUSIC__AUTHOR:
 			setAuthor(AUTHOR_EDEFAULT);
 			return;
-		case RythmmlPackage.MUSIC__SECTION:
-			getSection().clear();
+		case RythmmlPackage.MUSIC__OWNED_SECTIONS:
+			getOwnedSections().clear();
 			return;
 		case RythmmlPackage.MUSIC__BPM:
 			setBpm(BPM_EDEFAULT);
@@ -512,17 +514,17 @@ public class MusicImpl extends MinimalEObjectImpl.Container implements Music {
 		case RythmmlPackage.MUSIC__RESOLUTION_PER_SLIDE:
 			setResolutionPerSlide(RESOLUTION_PER_SLIDE_EDEFAULT);
 			return;
-		case RythmmlPackage.MUSIC__PATTERN:
-			getPattern().clear();
+		case RythmmlPackage.MUSIC__OWNED_PATTERNS:
+			getOwnedPatterns().clear();
 			return;
-		case RythmmlPackage.MUSIC__BAR:
-			getBar().clear();
+		case RythmmlPackage.MUSIC__OWNED_BARS:
+			getOwnedBars().clear();
 			return;
-		case RythmmlPackage.MUSIC__BEAT:
-			getBeat().clear();
+		case RythmmlPackage.MUSIC__OWNED_BEATS:
+			getOwnedBeats().clear();
 			return;
-		case RythmmlPackage.MUSIC__NOTE:
-			getNote().clear();
+		case RythmmlPackage.MUSIC__OWNED_NOTES:
+			getOwnedNotes().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -542,20 +544,20 @@ public class MusicImpl extends MinimalEObjectImpl.Container implements Music {
 			return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 		case RythmmlPackage.MUSIC__AUTHOR:
 			return AUTHOR_EDEFAULT == null ? author != null : !AUTHOR_EDEFAULT.equals(author);
-		case RythmmlPackage.MUSIC__SECTION:
-			return section != null && !section.isEmpty();
+		case RythmmlPackage.MUSIC__OWNED_SECTIONS:
+			return ownedSections != null && !ownedSections.isEmpty();
 		case RythmmlPackage.MUSIC__BPM:
 			return bpm != BPM_EDEFAULT;
 		case RythmmlPackage.MUSIC__RESOLUTION_PER_SLIDE:
 			return resolutionPerSlide != RESOLUTION_PER_SLIDE_EDEFAULT;
-		case RythmmlPackage.MUSIC__PATTERN:
-			return pattern != null && !pattern.isEmpty();
-		case RythmmlPackage.MUSIC__BAR:
-			return bar != null && !bar.isEmpty();
-		case RythmmlPackage.MUSIC__BEAT:
-			return beat != null && !beat.isEmpty();
-		case RythmmlPackage.MUSIC__NOTE:
-			return note != null && !note.isEmpty();
+		case RythmmlPackage.MUSIC__OWNED_PATTERNS:
+			return ownedPatterns != null && !ownedPatterns.isEmpty();
+		case RythmmlPackage.MUSIC__OWNED_BARS:
+			return ownedBars != null && !ownedBars.isEmpty();
+		case RythmmlPackage.MUSIC__OWNED_BEATS:
+			return ownedBeats != null && !ownedBeats.isEmpty();
+		case RythmmlPackage.MUSIC__OWNED_NOTES:
+			return ownedNotes != null && !ownedNotes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

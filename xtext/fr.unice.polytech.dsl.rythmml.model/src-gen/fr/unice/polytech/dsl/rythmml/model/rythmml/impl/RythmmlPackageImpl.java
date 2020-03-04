@@ -180,7 +180,7 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMusic_Section() {
+	public EReference getMusic_OwnedSections() {
 		return (EReference) musicEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -207,7 +207,7 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMusic_Pattern() {
+	public EReference getMusic_OwnedPatterns() {
 		return (EReference) musicEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -216,7 +216,7 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMusic_Bar() {
+	public EReference getMusic_OwnedBars() {
 		return (EReference) musicEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -225,7 +225,7 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMusic_Beat() {
+	public EReference getMusic_OwnedBeats() {
 		return (EReference) musicEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -234,7 +234,7 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMusic_Note() {
+	public EReference getMusic_OwnedNotes() {
 		return (EReference) musicEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -252,7 +252,7 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSection_Pattern() {
+	public EReference getSection_Patterns() {
 		return (EReference) sectionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -270,8 +270,17 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPattern_Bar() {
+	public EReference getPattern_Bars() {
 		return (EReference) patternEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPattern_Multipliers() {
+		return (EAttribute) patternEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -288,7 +297,7 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBar_Beat() {
+	public EReference getBar_Beats() {
 		return (EReference) barEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -315,7 +324,7 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBeat_Note() {
+	public EReference getBeat_Notes() {
 		return (EReference) beatEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -405,26 +414,27 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 		musicEClass = createEClass(MUSIC);
 		createEAttribute(musicEClass, MUSIC__TITLE);
 		createEAttribute(musicEClass, MUSIC__AUTHOR);
-		createEReference(musicEClass, MUSIC__SECTION);
+		createEReference(musicEClass, MUSIC__OWNED_SECTIONS);
 		createEAttribute(musicEClass, MUSIC__BPM);
 		createEAttribute(musicEClass, MUSIC__RESOLUTION_PER_SLIDE);
-		createEReference(musicEClass, MUSIC__PATTERN);
-		createEReference(musicEClass, MUSIC__BAR);
-		createEReference(musicEClass, MUSIC__BEAT);
-		createEReference(musicEClass, MUSIC__NOTE);
+		createEReference(musicEClass, MUSIC__OWNED_PATTERNS);
+		createEReference(musicEClass, MUSIC__OWNED_BARS);
+		createEReference(musicEClass, MUSIC__OWNED_BEATS);
+		createEReference(musicEClass, MUSIC__OWNED_NOTES);
 
 		sectionEClass = createEClass(SECTION);
-		createEReference(sectionEClass, SECTION__PATTERN);
+		createEReference(sectionEClass, SECTION__PATTERNS);
 
 		patternEClass = createEClass(PATTERN);
-		createEReference(patternEClass, PATTERN__BAR);
+		createEReference(patternEClass, PATTERN__BARS);
+		createEAttribute(patternEClass, PATTERN__MULTIPLIERS);
 
 		barEClass = createEClass(BAR);
-		createEReference(barEClass, BAR__BEAT);
+		createEReference(barEClass, BAR__BEATS);
 
 		beatEClass = createEClass(BEAT);
 		createEAttribute(beatEClass, BEAT__TOTAL_DIV_NUMBER);
-		createEReference(beatEClass, BEAT__NOTE);
+		createEReference(beatEClass, BEAT__NOTES);
 		createEAttribute(beatEClass, BEAT__NOTE_POSITIONS);
 
 		noteEClass = createEClass(NOTE);
@@ -479,46 +489,49 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMusic_Author(), ecorePackage.getEString(), "author", null, 0, 1, Music.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMusic_Section(), this.getSection(), null, "section", null, 1, -1, Music.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getMusic_OwnedSections(), this.getSection(), null, "ownedSections", null, 1, -1, Music.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMusic_Bpm(), ecorePackage.getEInt(), "bpm", null, 0, 1, Music.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMusic_ResolutionPerSlide(), ecorePackage.getEInt(), "resolutionPerSlide", null, 0, 1,
 				Music.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getMusic_Pattern(), this.getPattern(), null, "pattern", null, 0, -1, Music.class, !IS_TRANSIENT,
+		initEReference(getMusic_OwnedPatterns(), this.getPattern(), null, "ownedPatterns", null, 0, -1, Music.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMusic_OwnedBars(), this.getBar(), null, "ownedBars", null, 0, -1, Music.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getMusic_Bar(), this.getBar(), null, "bar", null, 0, -1, Music.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getMusic_Beat(), this.getBeat(), null, "beat", null, 0, -1, Music.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getMusic_Note(), this.getNote(), null, "note", null, 0, -1, Music.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getMusic_OwnedBeats(), this.getBeat(), null, "ownedBeats", null, 0, -1, Music.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMusic_OwnedNotes(), this.getNote(), null, "ownedNotes", null, 0, -1, Music.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sectionEClass, Section.class, "Section", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSection_Pattern(), this.getPattern(), null, "pattern", null, 1, -1, Section.class,
+		initEReference(getSection_Patterns(), this.getPattern(), null, "patterns", null, 1, -1, Section.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(patternEClass, Pattern.class, "Pattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPattern_Bar(), this.getBar(), null, "bar", null, 1, -1, Pattern.class, !IS_TRANSIENT,
+		initEReference(getPattern_Bars(), this.getBar(), null, "bars", null, 1, -1, Pattern.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEAttribute(getPattern_Multipliers(), ecorePackage.getEInt(), "multipliers", null, 0, -1, Pattern.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(barEClass, Bar.class, "Bar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBar_Beat(), this.getBeat(), null, "beat", null, 1, -1, Bar.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBar_Beats(), this.getBeat(), null, "beats", null, 1, -1, Bar.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(beatEClass, Beat.class, "Beat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBeat_TotalDivNumber(), ecorePackage.getEInt(), "totalDivNumber", null, 0, 1, Beat.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getBeat_Note(), this.getNote(), null, "note", null, 1, -1, Beat.class, !IS_TRANSIENT,
+		initEReference(getBeat_Notes(), this.getNote(), null, "notes", null, 1, -1, Beat.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEAttribute(getBeat_NotePositions(), ecorePackage.getEInt(), "notePositions", null, 0, -1, Beat.class,

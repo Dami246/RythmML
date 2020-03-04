@@ -63,7 +63,7 @@ public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Bar returns Bar
 	 *
 	 * Constraint:
-	 *     (name=EString beat+=[Beat|EString] beat+=[Beat|EString]*)
+	 *     (name=EString beats+=[Beat|EString] beats+=[Beat|EString]*)
 	 */
 	protected void sequence_Bar(ISerializationContext context, Bar semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -75,7 +75,7 @@ public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Beat returns Beat
 	 *
 	 * Constraint:
-	 *     (name=EString totalDivNumber=EInt? note+=[Note|EString] notePositions+=EInt (note+=[Note|EString] notePositions+=EInt)*)
+	 *     (name=EString totalDivNumber=EInt? notes+=[Note|EString] notePositions+=EInt (notes+=[Note|EString] notePositions+=EInt)*)
 	 */
 	protected void sequence_Beat(ISerializationContext context, Beat semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -94,11 +94,11 @@ public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *             author=EString? 
 	 *             bpm=EInt? 
 	 *             resolutionPerSlide=EInt? 
-	 *             (note+=Note note+=Note*)?
+	 *             (ownedNotes+=Note ownedNotes+=Note*)?
 	 *         ) | 
-	 *         (beat+=Beat beat+=Beat*) | 
-	 *         (bar+=Bar bar+=Bar*) | 
-	 *         ((pattern+=Pattern pattern+=Pattern*)? section+=Section section+=Section*)
+	 *         (ownedBeats+=Beat ownedBeats+=Beat*) | 
+	 *         (ownedBars+=Bar ownedBars+=Bar*) | 
+	 *         ((ownedPatterns+=Pattern ownedPatterns+=Pattern*)? ownedSections+=Section ownedSections+=Section*)
 	 *     )+
 	 */
 	protected void sequence_Music(ISerializationContext context, Music semanticObject) {
@@ -123,7 +123,7 @@ public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Pattern returns Pattern
 	 *
 	 * Constraint:
-	 *     (name=EString bar+=[Bar|EString] bar+=[Bar|EString]*)
+	 *     (name=EString bars+=[Bar|EString] bars+=[Bar|EString]*)
 	 */
 	protected void sequence_Pattern(ISerializationContext context, Pattern semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -135,7 +135,7 @@ public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Section returns Section
 	 *
 	 * Constraint:
-	 *     (name=EString pattern+=[Pattern|EString] pattern+=[Pattern|EString]*)
+	 *     (name=EString patterns+=[Pattern|EString] patterns+=[Pattern|EString]*)
 	 */
 	protected void sequence_Section(ISerializationContext context, Section semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

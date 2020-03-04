@@ -22,25 +22,25 @@ public class RymlSwitchPrinter extends RythmmlSwitch<String>{
 		stringBuilder.append(RymlUtils.mainBegin());
 		stringBuilder.append("ConcreteMIDIVisitor midiVisitor = new ConcreteMIDIVisitor(); \n\n");
 		
-		for(Note n : music.getNote()) //Declare all notes
+		for(Note n : music.getOwnedNotes()) //Declare all notes
 			stringBuilder.append(this.caseNote(n));
 		
-		for(Beat b : music.getBeat()) //Declare all beats
+		for(Beat b : music.getOwnedBeats()) //Declare all beats
 			stringBuilder.append(this.caseBeat(b));
 		
-		for(Bar b : music.getBar()) //Declare all bar
+		for(Bar b : music.getOwnedBars()) //Declare all bar
 			stringBuilder.append(this.caseBar(b));
 		
-		for(Pattern pattern : music.getPattern()) //Declare all pattern
+		for(Pattern pattern : music.getOwnedPatterns()) //Declare all pattern
 			stringBuilder.append(this.casePattern(pattern));
 		
-		for(Section s : music.getSection())
+		for(Section s : music.getOwnedSections())
 			stringBuilder.append(this.caseSection(s));
 		
 		stringBuilder.append(String.format("Music %s = new MusicBuilder()", music.getName()));
 		stringBuilder.append(String.format(".setAuthor(\"%s\").setTitle(\"%s\")", music.getAuthor(), music.getTitle()));
 		
-		for(Section s : music.getSection()) {
+		for(Section s : music.getOwnedSections()) {
 			stringBuilder.append(String.format(".addSection(%s)", s.getName()));
 		}
 		
@@ -61,7 +61,7 @@ public class RymlSwitchPrinter extends RythmmlSwitch<String>{
 		StringBuilder stringBuilder = new StringBuilder();
 		
 		stringBuilder.append(String.format("Section %s = new SectionBuilder()", section.getName()));
-		for(Pattern p : section.getPattern())
+		for(Pattern p : section.getPatterns())
 			stringBuilder.append(String.format(".addPattern(%s)", p.getName()));
 		
 		stringBuilder.append(".build(); \n");
@@ -74,7 +74,7 @@ public class RymlSwitchPrinter extends RythmmlSwitch<String>{
 		
 		stringBuilder.append(String.format("Pattern %s = new PatternBuilder()", pattern.getName()));
 		
-		for(Bar b : pattern.getBar())
+		for(Bar b : pattern.getBars())
 			stringBuilder.append(String.format(".addBar(%s)", b.getName()));
 		
 		stringBuilder.append(".build(); \n");
@@ -87,7 +87,7 @@ public class RymlSwitchPrinter extends RythmmlSwitch<String>{
 		
 		stringBuilder.append(String.format("Bar %s = new BarBuilder()", bar.getName()));
 		
-		for(Beat beat : bar.getBeat()) {
+		for(Beat beat : bar.getBeats()) {
 			stringBuilder.append(String.format(".addBeat(%s)", beat.getName()));
 		}
 		stringBuilder.append(".build(); \n");
@@ -99,9 +99,9 @@ public class RymlSwitchPrinter extends RythmmlSwitch<String>{
 		StringBuilder stringBuilder = new StringBuilder();
 		
 		stringBuilder.append(String.format("Beat %s = new BeatBuilder()", beat.getName()));
-		for(int i = 0; i< beat.getNote().size(); ++i)
+		for(int i = 0; i< beat.getNotes().size(); ++i)
 			stringBuilder.append(String.format(".addNote(%s,%d)"
-					, beat.getNote().get(i).getName(), beat.getNotePositions().get(i)));
+					, beat.getNotes().get(i).getName(), beat.getNotePositions().get(i)));
 		
 		stringBuilder.append(".build(); \n");
 		return stringBuilder.toString();

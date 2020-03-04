@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.SectionImpl#getName <em>Name</em>}</li>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.SectionImpl#getPattern <em>Pattern</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.SectionImpl#getPatterns <em>Patterns</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,14 +55,14 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPattern() <em>Pattern</em>}' reference list.
+	 * The cached value of the '{@link #getPatterns() <em>Patterns</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPattern()
+	 * @see #getPatterns()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Pattern> pattern;
+	protected EList<Pattern> patterns;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,11 +109,11 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Pattern> getPattern() {
-		if (pattern == null) {
-			pattern = new EObjectResolvingEList<Pattern>(Pattern.class, this, RythmmlPackage.SECTION__PATTERN);
+	public EList<Pattern> getPatterns() {
+		if (patterns == null) {
+			patterns = new EObjectResolvingEList<Pattern>(Pattern.class, this, RythmmlPackage.SECTION__PATTERNS);
 		}
-		return pattern;
+		return patterns;
 	}
 
 	/**
@@ -126,8 +126,8 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 		switch (featureID) {
 		case RythmmlPackage.SECTION__NAME:
 			return getName();
-		case RythmmlPackage.SECTION__PATTERN:
-			return getPattern();
+		case RythmmlPackage.SECTION__PATTERNS:
+			return getPatterns();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -144,9 +144,9 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 		case RythmmlPackage.SECTION__NAME:
 			setName((String) newValue);
 			return;
-		case RythmmlPackage.SECTION__PATTERN:
-			getPattern().clear();
-			getPattern().addAll((Collection<? extends Pattern>) newValue);
+		case RythmmlPackage.SECTION__PATTERNS:
+			getPatterns().clear();
+			getPatterns().addAll((Collection<? extends Pattern>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -163,8 +163,8 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 		case RythmmlPackage.SECTION__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case RythmmlPackage.SECTION__PATTERN:
-			getPattern().clear();
+		case RythmmlPackage.SECTION__PATTERNS:
+			getPatterns().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -180,8 +180,8 @@ public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 		switch (featureID) {
 		case RythmmlPackage.SECTION__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case RythmmlPackage.SECTION__PATTERN:
-			return pattern != null && !pattern.isEmpty();
+		case RythmmlPackage.SECTION__PATTERNS:
+			return patterns != null && !patterns.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

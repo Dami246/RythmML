@@ -15,13 +15,13 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getTitle <em>Title</em>}</li>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getAuthor <em>Author</em>}</li>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getSection <em>Section</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getOwnedSections <em>Owned Sections</em>}</li>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getBpm <em>Bpm</em>}</li>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getResolutionPerSlide <em>Resolution Per Slide</em>}</li>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getPattern <em>Pattern</em>}</li>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getBar <em>Bar</em>}</li>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getBeat <em>Beat</em>}</li>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getNote <em>Note</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getOwnedPatterns <em>Owned Patterns</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getOwnedBars <em>Owned Bars</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getOwnedBeats <em>Owned Beats</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getOwnedNotes <em>Owned Notes</em>}</li>
  * </ul>
  *
  * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getMusic()
@@ -82,20 +82,20 @@ public interface Music extends NamedElement {
 	void setAuthor(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Section</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Owned Sections</b></em>' containment reference list.
 	 * The list contents are of type {@link fr.unice.polytech.dsl.rythmml.model.rythmml.Section}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Section</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Owned Sections</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Section</em>' containment reference list.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getMusic_Section()
+	 * @return the value of the '<em>Owned Sections</em>' containment reference list.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getMusic_OwnedSections()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Section> getSection();
+	EList<Section> getOwnedSections();
 
 	/**
 	 * Returns the value of the '<em><b>Bpm</b></em>' attribute.
@@ -150,67 +150,67 @@ public interface Music extends NamedElement {
 	void setResolutionPerSlide(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Pattern</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Owned Patterns</b></em>' containment reference list.
 	 * The list contents are of type {@link fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Pattern</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Owned Patterns</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pattern</em>' containment reference list.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getMusic_Pattern()
+	 * @return the value of the '<em>Owned Patterns</em>' containment reference list.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getMusic_OwnedPatterns()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Pattern> getPattern();
+	EList<Pattern> getOwnedPatterns();
 
 	/**
-	 * Returns the value of the '<em><b>Bar</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Owned Bars</b></em>' containment reference list.
 	 * The list contents are of type {@link fr.unice.polytech.dsl.rythmml.model.rythmml.Bar}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Bar</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Owned Bars</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Bar</em>' containment reference list.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getMusic_Bar()
+	 * @return the value of the '<em>Owned Bars</em>' containment reference list.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getMusic_OwnedBars()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Bar> getBar();
+	EList<Bar> getOwnedBars();
 
 	/**
-	 * Returns the value of the '<em><b>Beat</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Owned Beats</b></em>' containment reference list.
 	 * The list contents are of type {@link fr.unice.polytech.dsl.rythmml.model.rythmml.Beat}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Beat</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Owned Beats</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Beat</em>' containment reference list.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getMusic_Beat()
+	 * @return the value of the '<em>Owned Beats</em>' containment reference list.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getMusic_OwnedBeats()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Beat> getBeat();
+	EList<Beat> getOwnedBeats();
 
 	/**
-	 * Returns the value of the '<em><b>Note</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Owned Notes</b></em>' containment reference list.
 	 * The list contents are of type {@link fr.unice.polytech.dsl.rythmml.model.rythmml.Note}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Note</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Owned Notes</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Note</em>' containment reference list.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getMusic_Note()
+	 * @return the value of the '<em>Owned Notes</em>' containment reference list.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getMusic_OwnedNotes()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Note> getNote();
+	EList<Note> getOwnedNotes();
 
 } // Music

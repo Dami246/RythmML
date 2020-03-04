@@ -12,11 +12,11 @@ Music returns Music:
 		('author :' author=EString)?
 		('bpm :' bpm=EInt)?
 		('resolution per beats : ' resolutionPerSlide=EInt)?
-		(note+=Note (note+=Note)*)?
-		&(beat+=Beat (beat+=Beat)*)?
-		&(bar+=Bar (bar+=Bar)*)?
-		&(pattern+=Pattern (pattern+=Pattern)*)?
-		section+=Section (section+=Section)*
+		(ownedNotes+=Note (ownedNotes+=Note)*)?
+		&(ownedBeats+=Beat (ownedBeats+=Beat)*)?
+		&(ownedBars+=Bar (ownedBars+=Bar)*)?
+		&(ownedPatterns+=Pattern (ownedPatterns+=Pattern)*)?
+		ownedSections+=Section (ownedSections+=Section)*
 	;
 
 EString returns ecore::EString:
@@ -26,7 +26,7 @@ Section returns Section:
 	'Section'
 	name=EString
 	':'
-		pattern+=[Pattern|EString] ( "|" pattern+=[Pattern|EString])*;
+		patterns+=[Pattern|EString] ( "|" patterns+=[Pattern|EString])*;
 
 EInt returns ecore::EInt:
 	'-'? INT;
@@ -35,20 +35,20 @@ Pattern returns Pattern:
 	'Pattern'
 	name=EString
 	':'
-		bar+=[Bar|EString] ( "|" bar+=[Bar|EString])*;
+		bars+=[Bar|EString] ( "|" bars+=[Bar|EString])*;
 
 Bar returns Bar:
 	'Bar'
 	name=EString
 	':'
-		beat+=[Beat|EString] ( "|" beat+=[Beat|EString])*;
+		beats+=[Beat|EString] ( "|" beats+=[Beat|EString])*;
 
 Beat returns Beat:
 	'Beat'
 	name=EString
 	':'
 		('Nb of ticks : ' totalDivNumber=EInt)?
-		'Notes :' note+=[Note|EString] ',' notePositions+=EInt ( "|" note+=[Note|EString] ',' notePositions+=EInt)*;
+		'Notes :' notes+=[Note|EString] ',' notePositions+=EInt ( "|" notes+=[Note|EString] ',' notePositions+=EInt)*;
 
 Note returns Note:
 	'Note'

@@ -54,7 +54,7 @@ public class SectionItemProvider extends ItemProviderAdapter implements IEditing
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addPatternPropertyDescriptor(object);
+			addPatternsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,18 +76,18 @@ public class SectionItemProvider extends ItemProviderAdapter implements IEditing
 	}
 
 	/**
-	 * This adds a property descriptor for the Pattern feature.
+	 * This adds a property descriptor for the Patterns feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPatternPropertyDescriptor(Object object) {
+	protected void addPatternsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Section_pattern_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Section_pattern_feature",
+						getResourceLocator(), getString("_UI_Section_patterns_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Section_patterns_feature",
 								"_UI_Section_type"),
-						RythmmlPackage.Literals.SECTION__PATTERN, true, false, true, null, null, null));
+						RythmmlPackage.Literals.SECTION__PATTERNS, true, false, true, null, null, null));
 	}
 
 	/**

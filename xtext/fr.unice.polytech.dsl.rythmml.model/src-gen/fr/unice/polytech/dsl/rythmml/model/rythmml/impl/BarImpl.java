@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BarImpl#getName <em>Name</em>}</li>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BarImpl#getBeat <em>Beat</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BarImpl#getBeats <em>Beats</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,14 +55,14 @@ public class BarImpl extends MinimalEObjectImpl.Container implements Bar {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getBeat() <em>Beat</em>}' reference list.
+	 * The cached value of the '{@link #getBeats() <em>Beats</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBeat()
+	 * @see #getBeats()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Beat> beat;
+	protected EList<Beat> beats;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,11 +109,11 @@ public class BarImpl extends MinimalEObjectImpl.Container implements Bar {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Beat> getBeat() {
-		if (beat == null) {
-			beat = new EObjectResolvingEList<Beat>(Beat.class, this, RythmmlPackage.BAR__BEAT);
+	public EList<Beat> getBeats() {
+		if (beats == null) {
+			beats = new EObjectResolvingEList<Beat>(Beat.class, this, RythmmlPackage.BAR__BEATS);
 		}
-		return beat;
+		return beats;
 	}
 
 	/**
@@ -126,8 +126,8 @@ public class BarImpl extends MinimalEObjectImpl.Container implements Bar {
 		switch (featureID) {
 		case RythmmlPackage.BAR__NAME:
 			return getName();
-		case RythmmlPackage.BAR__BEAT:
-			return getBeat();
+		case RythmmlPackage.BAR__BEATS:
+			return getBeats();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -144,9 +144,9 @@ public class BarImpl extends MinimalEObjectImpl.Container implements Bar {
 		case RythmmlPackage.BAR__NAME:
 			setName((String) newValue);
 			return;
-		case RythmmlPackage.BAR__BEAT:
-			getBeat().clear();
-			getBeat().addAll((Collection<? extends Beat>) newValue);
+		case RythmmlPackage.BAR__BEATS:
+			getBeats().clear();
+			getBeats().addAll((Collection<? extends Beat>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -163,8 +163,8 @@ public class BarImpl extends MinimalEObjectImpl.Container implements Bar {
 		case RythmmlPackage.BAR__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case RythmmlPackage.BAR__BEAT:
-			getBeat().clear();
+		case RythmmlPackage.BAR__BEATS:
+			getBeats().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -180,8 +180,8 @@ public class BarImpl extends MinimalEObjectImpl.Container implements Bar {
 		switch (featureID) {
 		case RythmmlPackage.BAR__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case RythmmlPackage.BAR__BEAT:
-			return beat != null && !beat.isEmpty();
+		case RythmmlPackage.BAR__BEATS:
+			return beats != null && !beats.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

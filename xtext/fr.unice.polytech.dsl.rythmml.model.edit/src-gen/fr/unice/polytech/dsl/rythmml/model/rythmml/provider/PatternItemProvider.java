@@ -54,7 +54,8 @@ public class PatternItemProvider extends ItemProviderAdapter implements IEditing
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addBarPropertyDescriptor(object);
+			addBarsPropertyDescriptor(object);
+			addMultipliersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,17 +77,33 @@ public class PatternItemProvider extends ItemProviderAdapter implements IEditing
 	}
 
 	/**
-	 * This adds a property descriptor for the Bar feature.
+	 * This adds a property descriptor for the Bars feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addBarPropertyDescriptor(Object object) {
+	protected void addBarsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Pattern_bar_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Pattern_bar_feature", "_UI_Pattern_type"),
-						RythmmlPackage.Literals.PATTERN__BAR, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Pattern_bars_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Pattern_bars_feature", "_UI_Pattern_type"),
+						RythmmlPackage.Literals.PATTERN__BARS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Multipliers feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMultipliersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Pattern_multipliers_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Pattern_multipliers_feature",
+								"_UI_Pattern_type"),
+						RythmmlPackage.Literals.PATTERN__MULTIPLIERS, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -136,6 +153,7 @@ public class PatternItemProvider extends ItemProviderAdapter implements IEditing
 
 		switch (notification.getFeatureID(Pattern.class)) {
 		case RythmmlPackage.PATTERN__NAME:
+		case RythmmlPackage.PATTERN__MULTIPLIERS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

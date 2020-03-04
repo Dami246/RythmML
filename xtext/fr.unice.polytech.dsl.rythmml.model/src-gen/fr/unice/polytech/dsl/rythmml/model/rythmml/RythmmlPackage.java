@@ -132,13 +132,13 @@ public interface RythmmlPackage extends EPackage {
 	int MUSIC__AUTHOR = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Section</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Sections</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MUSIC__SECTION = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int MUSIC__OWNED_SECTIONS = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Bpm</b></em>' attribute.
@@ -159,40 +159,40 @@ public interface RythmmlPackage extends EPackage {
 	int MUSIC__RESOLUTION_PER_SLIDE = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Patterns</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MUSIC__PATTERN = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int MUSIC__OWNED_PATTERNS = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Bar</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Bars</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MUSIC__BAR = NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int MUSIC__OWNED_BARS = NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
-	 * The feature id for the '<em><b>Beat</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Beats</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MUSIC__BEAT = NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int MUSIC__OWNED_BEATS = NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Note</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Notes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MUSIC__NOTE = NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int MUSIC__OWNED_NOTES = NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Music</em>' class.
@@ -232,13 +232,13 @@ public interface RythmmlPackage extends EPackage {
 	int SECTION__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' reference list.
+	 * The feature id for the '<em><b>Patterns</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__PATTERN = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int SECTION__PATTERNS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Section</em>' class.
@@ -278,13 +278,22 @@ public interface RythmmlPackage extends EPackage {
 	int PATTERN__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Bar</b></em>' reference list.
+	 * The feature id for the '<em><b>Bars</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN__BAR = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int PATTERN__BARS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Multipliers</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PATTERN__MULTIPLIERS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Pattern</em>' class.
@@ -293,7 +302,7 @@ public interface RythmmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int PATTERN_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Pattern</em>' class.
@@ -324,13 +333,13 @@ public interface RythmmlPackage extends EPackage {
 	int BAR__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Beat</b></em>' reference list.
+	 * The feature id for the '<em><b>Beats</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BAR__BEAT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int BAR__BEATS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Bar</em>' class.
@@ -379,13 +388,13 @@ public interface RythmmlPackage extends EPackage {
 	int BEAT__TOTAL_DIV_NUMBER = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Note</b></em>' reference list.
+	 * The feature id for the '<em><b>Notes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEAT__NOTE = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int BEAT__NOTES = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Note Positions</b></em>' attribute list.
@@ -503,15 +512,15 @@ public interface RythmmlPackage extends EPackage {
 	EAttribute getMusic_Author();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getSection <em>Section</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getOwnedSections <em>Owned Sections</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Section</em>'.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getSection()
+	 * @return the meta object for the containment reference list '<em>Owned Sections</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getOwnedSections()
 	 * @see #getMusic()
 	 * @generated
 	 */
-	EReference getMusic_Section();
+	EReference getMusic_OwnedSections();
 
 	/**
 	 * Returns the meta object for the attribute '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getBpm <em>Bpm</em>}'.
@@ -536,48 +545,48 @@ public interface RythmmlPackage extends EPackage {
 	EAttribute getMusic_ResolutionPerSlide();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getPattern <em>Pattern</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getOwnedPatterns <em>Owned Patterns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Pattern</em>'.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getPattern()
+	 * @return the meta object for the containment reference list '<em>Owned Patterns</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getOwnedPatterns()
 	 * @see #getMusic()
 	 * @generated
 	 */
-	EReference getMusic_Pattern();
+	EReference getMusic_OwnedPatterns();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getBar <em>Bar</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getOwnedBars <em>Owned Bars</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Bar</em>'.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getBar()
+	 * @return the meta object for the containment reference list '<em>Owned Bars</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getOwnedBars()
 	 * @see #getMusic()
 	 * @generated
 	 */
-	EReference getMusic_Bar();
+	EReference getMusic_OwnedBars();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getBeat <em>Beat</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getOwnedBeats <em>Owned Beats</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Beat</em>'.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getBeat()
+	 * @return the meta object for the containment reference list '<em>Owned Beats</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getOwnedBeats()
 	 * @see #getMusic()
 	 * @generated
 	 */
-	EReference getMusic_Beat();
+	EReference getMusic_OwnedBeats();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getNote <em>Note</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getOwnedNotes <em>Owned Notes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Note</em>'.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getNote()
+	 * @return the meta object for the containment reference list '<em>Owned Notes</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Music#getOwnedNotes()
 	 * @see #getMusic()
 	 * @generated
 	 */
-	EReference getMusic_Note();
+	EReference getMusic_OwnedNotes();
 
 	/**
 	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Section <em>Section</em>}'.
@@ -590,15 +599,15 @@ public interface RythmmlPackage extends EPackage {
 	EClass getSection();
 
 	/**
-	 * Returns the meta object for the reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Section#getPattern <em>Pattern</em>}'.
+	 * Returns the meta object for the reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Section#getPatterns <em>Patterns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Pattern</em>'.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Section#getPattern()
+	 * @return the meta object for the reference list '<em>Patterns</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Section#getPatterns()
 	 * @see #getSection()
 	 * @generated
 	 */
-	EReference getSection_Pattern();
+	EReference getSection_Patterns();
 
 	/**
 	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern <em>Pattern</em>}'.
@@ -611,15 +620,26 @@ public interface RythmmlPackage extends EPackage {
 	EClass getPattern();
 
 	/**
-	 * Returns the meta object for the reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern#getBar <em>Bar</em>}'.
+	 * Returns the meta object for the reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern#getBars <em>Bars</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Bar</em>'.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern#getBar()
+	 * @return the meta object for the reference list '<em>Bars</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern#getBars()
 	 * @see #getPattern()
 	 * @generated
 	 */
-	EReference getPattern_Bar();
+	EReference getPattern_Bars();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern#getMultipliers <em>Multipliers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Multipliers</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern#getMultipliers()
+	 * @see #getPattern()
+	 * @generated
+	 */
+	EAttribute getPattern_Multipliers();
 
 	/**
 	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Bar <em>Bar</em>}'.
@@ -632,15 +652,15 @@ public interface RythmmlPackage extends EPackage {
 	EClass getBar();
 
 	/**
-	 * Returns the meta object for the reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Bar#getBeat <em>Beat</em>}'.
+	 * Returns the meta object for the reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Bar#getBeats <em>Beats</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Beat</em>'.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Bar#getBeat()
+	 * @return the meta object for the reference list '<em>Beats</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Bar#getBeats()
 	 * @see #getBar()
 	 * @generated
 	 */
-	EReference getBar_Beat();
+	EReference getBar_Beats();
 
 	/**
 	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Beat <em>Beat</em>}'.
@@ -664,15 +684,15 @@ public interface RythmmlPackage extends EPackage {
 	EAttribute getBeat_TotalDivNumber();
 
 	/**
-	 * Returns the meta object for the reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Beat#getNote <em>Note</em>}'.
+	 * Returns the meta object for the reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Beat#getNotes <em>Notes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Note</em>'.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Beat#getNote()
+	 * @return the meta object for the reference list '<em>Notes</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Beat#getNotes()
 	 * @see #getBeat()
 	 * @generated
 	 */
-	EReference getBeat_Note();
+	EReference getBeat_Notes();
 
 	/**
 	 * Returns the meta object for the attribute list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Beat#getNotePositions <em>Note Positions</em>}'.
@@ -787,12 +807,12 @@ public interface RythmmlPackage extends EPackage {
 		EAttribute MUSIC__AUTHOR = eINSTANCE.getMusic_Author();
 
 		/**
-		 * The meta object literal for the '<em><b>Section</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Owned Sections</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MUSIC__SECTION = eINSTANCE.getMusic_Section();
+		EReference MUSIC__OWNED_SECTIONS = eINSTANCE.getMusic_OwnedSections();
 
 		/**
 		 * The meta object literal for the '<em><b>Bpm</b></em>' attribute feature.
@@ -811,36 +831,36 @@ public interface RythmmlPackage extends EPackage {
 		EAttribute MUSIC__RESOLUTION_PER_SLIDE = eINSTANCE.getMusic_ResolutionPerSlide();
 
 		/**
-		 * The meta object literal for the '<em><b>Pattern</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Owned Patterns</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MUSIC__PATTERN = eINSTANCE.getMusic_Pattern();
+		EReference MUSIC__OWNED_PATTERNS = eINSTANCE.getMusic_OwnedPatterns();
 
 		/**
-		 * The meta object literal for the '<em><b>Bar</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Owned Bars</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MUSIC__BAR = eINSTANCE.getMusic_Bar();
+		EReference MUSIC__OWNED_BARS = eINSTANCE.getMusic_OwnedBars();
 
 		/**
-		 * The meta object literal for the '<em><b>Beat</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Owned Beats</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MUSIC__BEAT = eINSTANCE.getMusic_Beat();
+		EReference MUSIC__OWNED_BEATS = eINSTANCE.getMusic_OwnedBeats();
 
 		/**
-		 * The meta object literal for the '<em><b>Note</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Owned Notes</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MUSIC__NOTE = eINSTANCE.getMusic_Note();
+		EReference MUSIC__OWNED_NOTES = eINSTANCE.getMusic_OwnedNotes();
 
 		/**
 		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.SectionImpl <em>Section</em>}' class.
@@ -853,12 +873,12 @@ public interface RythmmlPackage extends EPackage {
 		EClass SECTION = eINSTANCE.getSection();
 
 		/**
-		 * The meta object literal for the '<em><b>Pattern</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Patterns</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SECTION__PATTERN = eINSTANCE.getSection_Pattern();
+		EReference SECTION__PATTERNS = eINSTANCE.getSection_Patterns();
 
 		/**
 		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.PatternImpl <em>Pattern</em>}' class.
@@ -871,12 +891,20 @@ public interface RythmmlPackage extends EPackage {
 		EClass PATTERN = eINSTANCE.getPattern();
 
 		/**
-		 * The meta object literal for the '<em><b>Bar</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Bars</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PATTERN__BAR = eINSTANCE.getPattern_Bar();
+		EReference PATTERN__BARS = eINSTANCE.getPattern_Bars();
+
+		/**
+		 * The meta object literal for the '<em><b>Multipliers</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PATTERN__MULTIPLIERS = eINSTANCE.getPattern_Multipliers();
 
 		/**
 		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BarImpl <em>Bar</em>}' class.
@@ -889,12 +917,12 @@ public interface RythmmlPackage extends EPackage {
 		EClass BAR = eINSTANCE.getBar();
 
 		/**
-		 * The meta object literal for the '<em><b>Beat</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Beats</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BAR__BEAT = eINSTANCE.getBar_Beat();
+		EReference BAR__BEATS = eINSTANCE.getBar_Beats();
 
 		/**
 		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BeatImpl <em>Beat</em>}' class.
@@ -915,12 +943,12 @@ public interface RythmmlPackage extends EPackage {
 		EAttribute BEAT__TOTAL_DIV_NUMBER = eINSTANCE.getBeat_TotalDivNumber();
 
 		/**
-		 * The meta object literal for the '<em><b>Note</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Notes</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BEAT__NOTE = eINSTANCE.getBeat_Note();
+		EReference BEAT__NOTES = eINSTANCE.getBeat_Notes();
 
 		/**
 		 * The meta object literal for the '<em><b>Note Positions</b></em>' attribute list feature.

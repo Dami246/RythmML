@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BeatImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BeatImpl#getTotalDivNumber <em>Total Div Number</em>}</li>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BeatImpl#getNote <em>Note</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BeatImpl#getNotes <em>Notes</em>}</li>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BeatImpl#getNotePositions <em>Note Positions</em>}</li>
  * </ul>
  *
@@ -78,14 +78,14 @@ public class BeatImpl extends MinimalEObjectImpl.Container implements Beat {
 	protected int totalDivNumber = TOTAL_DIV_NUMBER_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getNote() <em>Note</em>}' reference list.
+	 * The cached value of the '{@link #getNotes() <em>Notes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNote()
+	 * @see #getNotes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Note> note;
+	protected EList<Note> notes;
 
 	/**
 	 * The cached value of the '{@link #getNotePositions() <em>Note Positions</em>}' attribute list.
@@ -164,11 +164,11 @@ public class BeatImpl extends MinimalEObjectImpl.Container implements Beat {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Note> getNote() {
-		if (note == null) {
-			note = new EObjectResolvingEList<Note>(Note.class, this, RythmmlPackage.BEAT__NOTE);
+	public EList<Note> getNotes() {
+		if (notes == null) {
+			notes = new EObjectResolvingEList<Note>(Note.class, this, RythmmlPackage.BEAT__NOTES);
 		}
-		return note;
+		return notes;
 	}
 
 	/**
@@ -195,8 +195,8 @@ public class BeatImpl extends MinimalEObjectImpl.Container implements Beat {
 			return getName();
 		case RythmmlPackage.BEAT__TOTAL_DIV_NUMBER:
 			return getTotalDivNumber();
-		case RythmmlPackage.BEAT__NOTE:
-			return getNote();
+		case RythmmlPackage.BEAT__NOTES:
+			return getNotes();
 		case RythmmlPackage.BEAT__NOTE_POSITIONS:
 			return getNotePositions();
 		}
@@ -218,9 +218,9 @@ public class BeatImpl extends MinimalEObjectImpl.Container implements Beat {
 		case RythmmlPackage.BEAT__TOTAL_DIV_NUMBER:
 			setTotalDivNumber((Integer) newValue);
 			return;
-		case RythmmlPackage.BEAT__NOTE:
-			getNote().clear();
-			getNote().addAll((Collection<? extends Note>) newValue);
+		case RythmmlPackage.BEAT__NOTES:
+			getNotes().clear();
+			getNotes().addAll((Collection<? extends Note>) newValue);
 			return;
 		case RythmmlPackage.BEAT__NOTE_POSITIONS:
 			getNotePositions().clear();
@@ -244,8 +244,8 @@ public class BeatImpl extends MinimalEObjectImpl.Container implements Beat {
 		case RythmmlPackage.BEAT__TOTAL_DIV_NUMBER:
 			setTotalDivNumber(TOTAL_DIV_NUMBER_EDEFAULT);
 			return;
-		case RythmmlPackage.BEAT__NOTE:
-			getNote().clear();
+		case RythmmlPackage.BEAT__NOTES:
+			getNotes().clear();
 			return;
 		case RythmmlPackage.BEAT__NOTE_POSITIONS:
 			getNotePositions().clear();
@@ -266,8 +266,8 @@ public class BeatImpl extends MinimalEObjectImpl.Container implements Beat {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case RythmmlPackage.BEAT__TOTAL_DIV_NUMBER:
 			return totalDivNumber != TOTAL_DIV_NUMBER_EDEFAULT;
-		case RythmmlPackage.BEAT__NOTE:
-			return note != null && !note.isEmpty();
+		case RythmmlPackage.BEAT__NOTES:
+			return notes != null && !notes.isEmpty();
 		case RythmmlPackage.BEAT__NOTE_POSITIONS:
 			return notePositions != null && !notePositions.isEmpty();
 		}

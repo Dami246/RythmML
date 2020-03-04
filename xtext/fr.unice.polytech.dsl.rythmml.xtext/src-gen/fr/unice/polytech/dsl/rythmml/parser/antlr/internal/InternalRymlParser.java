@@ -136,7 +136,7 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMusic"
-    // InternalRyml.g:72:1: ruleMusic returns [EObject current=null] : ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* ) ) ) ) )+ {...}?) ) ) ;
+    // InternalRyml.g:72:1: ruleMusic returns [EObject current=null] : ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* ) ) ) ) )+ {...}?) ) ) ;
     public final EObject ruleMusic() throws RecognitionException {
         EObject current = null;
 
@@ -156,47 +156,47 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
 
         AntlrDatatypeRuleToken lv_resolutionPerSlide_11_0 = null;
 
-        EObject lv_note_12_0 = null;
+        EObject lv_ownedNotes_12_0 = null;
 
-        EObject lv_note_13_0 = null;
+        EObject lv_ownedNotes_13_0 = null;
 
-        EObject lv_beat_14_0 = null;
+        EObject lv_ownedBeats_14_0 = null;
 
-        EObject lv_beat_15_0 = null;
+        EObject lv_ownedBeats_15_0 = null;
 
-        EObject lv_bar_16_0 = null;
+        EObject lv_ownedBars_16_0 = null;
 
-        EObject lv_bar_17_0 = null;
+        EObject lv_ownedBars_17_0 = null;
 
-        EObject lv_pattern_18_0 = null;
+        EObject lv_ownedPatterns_18_0 = null;
 
-        EObject lv_pattern_19_0 = null;
+        EObject lv_ownedPatterns_19_0 = null;
 
-        EObject lv_section_20_0 = null;
+        EObject lv_ownedSections_20_0 = null;
 
-        EObject lv_section_21_0 = null;
+        EObject lv_ownedSections_21_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalRyml.g:78:2: ( ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* ) ) ) ) )+ {...}?) ) ) )
-            // InternalRyml.g:79:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* ) ) ) ) )+ {...}?) ) )
+            // InternalRyml.g:78:2: ( ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* ) ) ) ) )+ {...}?) ) ) )
+            // InternalRyml.g:79:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* ) ) ) ) )+ {...}?) ) )
             {
-            // InternalRyml.g:79:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* ) ) ) ) )+ {...}?) ) )
-            // InternalRyml.g:80:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* ) ) ) ) )+ {...}?) )
+            // InternalRyml.g:79:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* ) ) ) ) )+ {...}?) ) )
+            // InternalRyml.g:80:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* ) ) ) ) )+ {...}?) )
             {
-            // InternalRyml.g:80:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* ) ) ) ) )+ {...}?) )
-            // InternalRyml.g:81:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* ) ) ) ) )+ {...}?)
+            // InternalRyml.g:80:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* ) ) ) ) )+ {...}?) )
+            // InternalRyml.g:81:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* ) ) ) ) )+ {...}?)
             {
              
             			  getUnorderedGroupHelper().enter(grammarAccess.getMusicAccess().getUnorderedGroup());
             			
-            // InternalRyml.g:84:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* ) ) ) ) )+ {...}?)
-            // InternalRyml.g:85:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* ) ) ) ) )+ {...}?
+            // InternalRyml.g:84:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* ) ) ) ) )+ {...}?)
+            // InternalRyml.g:85:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* ) ) ) ) )+ {...}?
             {
-            // InternalRyml.g:85:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* ) ) ) ) )+
+            // InternalRyml.g:85:5: ( ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* ) ) ) ) | ({...}? => ( ({...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* ) ) ) ) )+
             int cnt12=0;
             loop12:
             do {
@@ -219,28 +219,28 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
 
                 switch (alt12) {
             	case 1 :
-            	    // InternalRyml.g:86:3: ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? ) ) ) )
+            	    // InternalRyml.g:86:3: ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? ) ) ) )
             	    {
-            	    // InternalRyml.g:86:3: ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? ) ) ) )
-            	    // InternalRyml.g:87:4: {...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? ) ) )
+            	    // InternalRyml.g:86:3: ({...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? ) ) ) )
+            	    // InternalRyml.g:87:4: {...}? => ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getMusicAccess().getUnorderedGroup(), 0) ) {
             	        throw new FailedPredicateException(input, "ruleMusic", "getUnorderedGroupHelper().canSelect(grammarAccess.getMusicAccess().getUnorderedGroup(), 0)");
             	    }
-            	    // InternalRyml.g:87:99: ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? ) ) )
-            	    // InternalRyml.g:88:5: ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? ) )
+            	    // InternalRyml.g:87:99: ( ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? ) ) )
+            	    // InternalRyml.g:88:5: ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? ) )
             	    {
 
             	    					getUnorderedGroupHelper().select(grammarAccess.getMusicAccess().getUnorderedGroup(), 0);
             	    				
-            	    // InternalRyml.g:91:8: ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? ) )
-            	    // InternalRyml.g:91:9: {...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? )
+            	    // InternalRyml.g:91:8: ({...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? ) )
+            	    // InternalRyml.g:91:9: {...}? => (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleMusic", "true");
             	    }
-            	    // InternalRyml.g:91:18: (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )? )
-            	    // InternalRyml.g:91:19: otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )?
+            	    // InternalRyml.g:91:18: (otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )? )
+            	    // InternalRyml.g:91:19: otherlv_1= 'Music' ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' (otherlv_4= 'title :' ( (lv_title_5_0= ruleEString ) ) )? (otherlv_6= 'author :' ( (lv_author_7_0= ruleEString ) ) )? (otherlv_8= 'bpm :' ( (lv_bpm_9_0= ruleEInt ) ) )? (otherlv_10= 'resolution per beats : ' ( (lv_resolutionPerSlide_11_0= ruleEInt ) ) )? ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )?
             	    {
             	    otherlv_1=(Token)match(input,11,FOLLOW_3); 
 
@@ -489,7 +489,7 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalRyml.g:218:8: ( ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )* )?
+            	    // InternalRyml.g:218:8: ( ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )* )?
             	    int alt6=2;
             	    int LA6_0 = input.LA(1);
 
@@ -498,19 +498,19 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt6) {
             	        case 1 :
-            	            // InternalRyml.g:219:9: ( (lv_note_12_0= ruleNote ) ) ( (lv_note_13_0= ruleNote ) )*
+            	            // InternalRyml.g:219:9: ( (lv_ownedNotes_12_0= ruleNote ) ) ( (lv_ownedNotes_13_0= ruleNote ) )*
             	            {
-            	            // InternalRyml.g:219:9: ( (lv_note_12_0= ruleNote ) )
-            	            // InternalRyml.g:220:10: (lv_note_12_0= ruleNote )
+            	            // InternalRyml.g:219:9: ( (lv_ownedNotes_12_0= ruleNote ) )
+            	            // InternalRyml.g:220:10: (lv_ownedNotes_12_0= ruleNote )
             	            {
-            	            // InternalRyml.g:220:10: (lv_note_12_0= ruleNote )
-            	            // InternalRyml.g:221:11: lv_note_12_0= ruleNote
+            	            // InternalRyml.g:220:10: (lv_ownedNotes_12_0= ruleNote )
+            	            // InternalRyml.g:221:11: lv_ownedNotes_12_0= ruleNote
             	            {
 
-            	            											newCompositeNode(grammarAccess.getMusicAccess().getNoteNoteParserRuleCall_0_7_0_0());
+            	            											newCompositeNode(grammarAccess.getMusicAccess().getOwnedNotesNoteParserRuleCall_0_7_0_0());
             	            										
             	            pushFollow(FOLLOW_5);
-            	            lv_note_12_0=ruleNote();
+            	            lv_ownedNotes_12_0=ruleNote();
 
             	            state._fsp--;
 
@@ -520,8 +520,8 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	            											}
             	            											add(
             	            												current,
-            	            												"note",
-            	            												lv_note_12_0,
+            	            												"ownedNotes",
+            	            												lv_ownedNotes_12_0,
             	            												"fr.unice.polytech.dsl.rythmml.Ryml.Note");
             	            											afterParserOrEnumRuleCall();
             	            										
@@ -531,7 +531,7 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            // InternalRyml.g:238:9: ( (lv_note_13_0= ruleNote ) )*
+            	            // InternalRyml.g:238:9: ( (lv_ownedNotes_13_0= ruleNote ) )*
             	            loop5:
             	            do {
             	                int alt5=2;
@@ -544,16 +544,16 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
 
             	                switch (alt5) {
             	            	case 1 :
-            	            	    // InternalRyml.g:239:10: (lv_note_13_0= ruleNote )
+            	            	    // InternalRyml.g:239:10: (lv_ownedNotes_13_0= ruleNote )
             	            	    {
-            	            	    // InternalRyml.g:239:10: (lv_note_13_0= ruleNote )
-            	            	    // InternalRyml.g:240:11: lv_note_13_0= ruleNote
+            	            	    // InternalRyml.g:239:10: (lv_ownedNotes_13_0= ruleNote )
+            	            	    // InternalRyml.g:240:11: lv_ownedNotes_13_0= ruleNote
             	            	    {
 
-            	            	    											newCompositeNode(grammarAccess.getMusicAccess().getNoteNoteParserRuleCall_0_7_1_0());
+            	            	    											newCompositeNode(grammarAccess.getMusicAccess().getOwnedNotesNoteParserRuleCall_0_7_1_0());
             	            	    										
             	            	    pushFollow(FOLLOW_5);
-            	            	    lv_note_13_0=ruleNote();
+            	            	    lv_ownedNotes_13_0=ruleNote();
 
             	            	    state._fsp--;
 
@@ -563,8 +563,8 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	            	    											}
             	            	    											add(
             	            	    												current,
-            	            	    												"note",
-            	            	    												lv_note_13_0,
+            	            	    												"ownedNotes",
+            	            	    												lv_ownedNotes_13_0,
             	            	    												"fr.unice.polytech.dsl.rythmml.Ryml.Note");
             	            	    											afterParserOrEnumRuleCall();
             	            	    										
@@ -605,40 +605,40 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalRyml.g:264:3: ({...}? => ( ({...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* ) ) ) )
+            	    // InternalRyml.g:264:3: ({...}? => ( ({...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* ) ) ) )
             	    {
-            	    // InternalRyml.g:264:3: ({...}? => ( ({...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* ) ) ) )
-            	    // InternalRyml.g:265:4: {...}? => ( ({...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* ) ) )
+            	    // InternalRyml.g:264:3: ({...}? => ( ({...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* ) ) ) )
+            	    // InternalRyml.g:265:4: {...}? => ( ({...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getMusicAccess().getUnorderedGroup(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleMusic", "getUnorderedGroupHelper().canSelect(grammarAccess.getMusicAccess().getUnorderedGroup(), 1)");
             	    }
-            	    // InternalRyml.g:265:99: ( ({...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* ) ) )
-            	    // InternalRyml.g:266:5: ({...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* ) )
+            	    // InternalRyml.g:265:99: ( ({...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* ) ) )
+            	    // InternalRyml.g:266:5: ({...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* ) )
             	    {
 
             	    					getUnorderedGroupHelper().select(grammarAccess.getMusicAccess().getUnorderedGroup(), 1);
             	    				
-            	    // InternalRyml.g:269:8: ({...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* ) )
-            	    // InternalRyml.g:269:9: {...}? => ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* )
+            	    // InternalRyml.g:269:8: ({...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* ) )
+            	    // InternalRyml.g:269:9: {...}? => ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleMusic", "true");
             	    }
-            	    // InternalRyml.g:269:18: ( ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )* )
-            	    // InternalRyml.g:269:19: ( (lv_beat_14_0= ruleBeat ) ) ( (lv_beat_15_0= ruleBeat ) )*
+            	    // InternalRyml.g:269:18: ( ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )* )
+            	    // InternalRyml.g:269:19: ( (lv_ownedBeats_14_0= ruleBeat ) ) ( (lv_ownedBeats_15_0= ruleBeat ) )*
             	    {
-            	    // InternalRyml.g:269:19: ( (lv_beat_14_0= ruleBeat ) )
-            	    // InternalRyml.g:270:9: (lv_beat_14_0= ruleBeat )
+            	    // InternalRyml.g:269:19: ( (lv_ownedBeats_14_0= ruleBeat ) )
+            	    // InternalRyml.g:270:9: (lv_ownedBeats_14_0= ruleBeat )
             	    {
-            	    // InternalRyml.g:270:9: (lv_beat_14_0= ruleBeat )
-            	    // InternalRyml.g:271:10: lv_beat_14_0= ruleBeat
+            	    // InternalRyml.g:270:9: (lv_ownedBeats_14_0= ruleBeat )
+            	    // InternalRyml.g:271:10: lv_ownedBeats_14_0= ruleBeat
             	    {
 
-            	    										newCompositeNode(grammarAccess.getMusicAccess().getBeatBeatParserRuleCall_1_0_0());
+            	    										newCompositeNode(grammarAccess.getMusicAccess().getOwnedBeatsBeatParserRuleCall_1_0_0());
             	    									
             	    pushFollow(FOLLOW_5);
-            	    lv_beat_14_0=ruleBeat();
+            	    lv_ownedBeats_14_0=ruleBeat();
 
             	    state._fsp--;
 
@@ -648,8 +648,8 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	    										}
             	    										add(
             	    											current,
-            	    											"beat",
-            	    											lv_beat_14_0,
+            	    											"ownedBeats",
+            	    											lv_ownedBeats_14_0,
             	    											"fr.unice.polytech.dsl.rythmml.Ryml.Beat");
             	    										afterParserOrEnumRuleCall();
             	    									
@@ -659,23 +659,23 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalRyml.g:288:8: ( (lv_beat_15_0= ruleBeat ) )*
+            	    // InternalRyml.g:288:8: ( (lv_ownedBeats_15_0= ruleBeat ) )*
             	    loop7:
             	    do {
             	        int alt7=2;
             	        alt7 = dfa7.predict(input);
             	        switch (alt7) {
             	    	case 1 :
-            	    	    // InternalRyml.g:289:9: (lv_beat_15_0= ruleBeat )
+            	    	    // InternalRyml.g:289:9: (lv_ownedBeats_15_0= ruleBeat )
             	    	    {
-            	    	    // InternalRyml.g:289:9: (lv_beat_15_0= ruleBeat )
-            	    	    // InternalRyml.g:290:10: lv_beat_15_0= ruleBeat
+            	    	    // InternalRyml.g:289:9: (lv_ownedBeats_15_0= ruleBeat )
+            	    	    // InternalRyml.g:290:10: lv_ownedBeats_15_0= ruleBeat
             	    	    {
 
-            	    	    										newCompositeNode(grammarAccess.getMusicAccess().getBeatBeatParserRuleCall_1_1_0());
+            	    	    										newCompositeNode(grammarAccess.getMusicAccess().getOwnedBeatsBeatParserRuleCall_1_1_0());
             	    	    									
             	    	    pushFollow(FOLLOW_5);
-            	    	    lv_beat_15_0=ruleBeat();
+            	    	    lv_ownedBeats_15_0=ruleBeat();
 
             	    	    state._fsp--;
 
@@ -685,8 +685,8 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	    	    										}
             	    	    										add(
             	    	    											current,
-            	    	    											"beat",
-            	    	    											lv_beat_15_0,
+            	    	    											"ownedBeats",
+            	    	    											lv_ownedBeats_15_0,
             	    	    											"fr.unice.polytech.dsl.rythmml.Ryml.Beat");
             	    	    										afterParserOrEnumRuleCall();
             	    	    									
@@ -721,40 +721,40 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalRyml.g:313:3: ({...}? => ( ({...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* ) ) ) )
+            	    // InternalRyml.g:313:3: ({...}? => ( ({...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* ) ) ) )
             	    {
-            	    // InternalRyml.g:313:3: ({...}? => ( ({...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* ) ) ) )
-            	    // InternalRyml.g:314:4: {...}? => ( ({...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* ) ) )
+            	    // InternalRyml.g:313:3: ({...}? => ( ({...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* ) ) ) )
+            	    // InternalRyml.g:314:4: {...}? => ( ({...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getMusicAccess().getUnorderedGroup(), 2) ) {
             	        throw new FailedPredicateException(input, "ruleMusic", "getUnorderedGroupHelper().canSelect(grammarAccess.getMusicAccess().getUnorderedGroup(), 2)");
             	    }
-            	    // InternalRyml.g:314:99: ( ({...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* ) ) )
-            	    // InternalRyml.g:315:5: ({...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* ) )
+            	    // InternalRyml.g:314:99: ( ({...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* ) ) )
+            	    // InternalRyml.g:315:5: ({...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* ) )
             	    {
 
             	    					getUnorderedGroupHelper().select(grammarAccess.getMusicAccess().getUnorderedGroup(), 2);
             	    				
-            	    // InternalRyml.g:318:8: ({...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* ) )
-            	    // InternalRyml.g:318:9: {...}? => ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* )
+            	    // InternalRyml.g:318:8: ({...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* ) )
+            	    // InternalRyml.g:318:9: {...}? => ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleMusic", "true");
             	    }
-            	    // InternalRyml.g:318:18: ( ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )* )
-            	    // InternalRyml.g:318:19: ( (lv_bar_16_0= ruleBar ) ) ( (lv_bar_17_0= ruleBar ) )*
+            	    // InternalRyml.g:318:18: ( ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )* )
+            	    // InternalRyml.g:318:19: ( (lv_ownedBars_16_0= ruleBar ) ) ( (lv_ownedBars_17_0= ruleBar ) )*
             	    {
-            	    // InternalRyml.g:318:19: ( (lv_bar_16_0= ruleBar ) )
-            	    // InternalRyml.g:319:9: (lv_bar_16_0= ruleBar )
+            	    // InternalRyml.g:318:19: ( (lv_ownedBars_16_0= ruleBar ) )
+            	    // InternalRyml.g:319:9: (lv_ownedBars_16_0= ruleBar )
             	    {
-            	    // InternalRyml.g:319:9: (lv_bar_16_0= ruleBar )
-            	    // InternalRyml.g:320:10: lv_bar_16_0= ruleBar
+            	    // InternalRyml.g:319:9: (lv_ownedBars_16_0= ruleBar )
+            	    // InternalRyml.g:320:10: lv_ownedBars_16_0= ruleBar
             	    {
 
-            	    										newCompositeNode(grammarAccess.getMusicAccess().getBarBarParserRuleCall_2_0_0());
+            	    										newCompositeNode(grammarAccess.getMusicAccess().getOwnedBarsBarParserRuleCall_2_0_0());
             	    									
             	    pushFollow(FOLLOW_5);
-            	    lv_bar_16_0=ruleBar();
+            	    lv_ownedBars_16_0=ruleBar();
 
             	    state._fsp--;
 
@@ -764,8 +764,8 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	    										}
             	    										add(
             	    											current,
-            	    											"bar",
-            	    											lv_bar_16_0,
+            	    											"ownedBars",
+            	    											lv_ownedBars_16_0,
             	    											"fr.unice.polytech.dsl.rythmml.Ryml.Bar");
             	    										afterParserOrEnumRuleCall();
             	    									
@@ -775,7 +775,7 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalRyml.g:337:8: ( (lv_bar_17_0= ruleBar ) )*
+            	    // InternalRyml.g:337:8: ( (lv_ownedBars_17_0= ruleBar ) )*
             	    loop8:
             	    do {
             	        int alt8=2;
@@ -827,16 +827,16 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
 
             	        switch (alt8) {
             	    	case 1 :
-            	    	    // InternalRyml.g:338:9: (lv_bar_17_0= ruleBar )
+            	    	    // InternalRyml.g:338:9: (lv_ownedBars_17_0= ruleBar )
             	    	    {
-            	    	    // InternalRyml.g:338:9: (lv_bar_17_0= ruleBar )
-            	    	    // InternalRyml.g:339:10: lv_bar_17_0= ruleBar
+            	    	    // InternalRyml.g:338:9: (lv_ownedBars_17_0= ruleBar )
+            	    	    // InternalRyml.g:339:10: lv_ownedBars_17_0= ruleBar
             	    	    {
 
-            	    	    										newCompositeNode(grammarAccess.getMusicAccess().getBarBarParserRuleCall_2_1_0());
+            	    	    										newCompositeNode(grammarAccess.getMusicAccess().getOwnedBarsBarParserRuleCall_2_1_0());
             	    	    									
             	    	    pushFollow(FOLLOW_5);
-            	    	    lv_bar_17_0=ruleBar();
+            	    	    lv_ownedBars_17_0=ruleBar();
 
             	    	    state._fsp--;
 
@@ -846,8 +846,8 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	    	    										}
             	    	    										add(
             	    	    											current,
-            	    	    											"bar",
-            	    	    											lv_bar_17_0,
+            	    	    											"ownedBars",
+            	    	    											lv_ownedBars_17_0,
             	    	    											"fr.unice.polytech.dsl.rythmml.Ryml.Bar");
             	    	    										afterParserOrEnumRuleCall();
             	    	    									
@@ -882,30 +882,30 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalRyml.g:362:3: ({...}? => ( ({...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* ) ) ) )
+            	    // InternalRyml.g:362:3: ({...}? => ( ({...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* ) ) ) )
             	    {
-            	    // InternalRyml.g:362:3: ({...}? => ( ({...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* ) ) ) )
-            	    // InternalRyml.g:363:4: {...}? => ( ({...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* ) ) )
+            	    // InternalRyml.g:362:3: ({...}? => ( ({...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* ) ) ) )
+            	    // InternalRyml.g:363:4: {...}? => ( ({...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getMusicAccess().getUnorderedGroup(), 3) ) {
             	        throw new FailedPredicateException(input, "ruleMusic", "getUnorderedGroupHelper().canSelect(grammarAccess.getMusicAccess().getUnorderedGroup(), 3)");
             	    }
-            	    // InternalRyml.g:363:99: ( ({...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* ) ) )
-            	    // InternalRyml.g:364:5: ({...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* ) )
+            	    // InternalRyml.g:363:99: ( ({...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* ) ) )
+            	    // InternalRyml.g:364:5: ({...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* ) )
             	    {
 
             	    					getUnorderedGroupHelper().select(grammarAccess.getMusicAccess().getUnorderedGroup(), 3);
             	    				
-            	    // InternalRyml.g:367:8: ({...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* ) )
-            	    // InternalRyml.g:367:9: {...}? => ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* )
+            	    // InternalRyml.g:367:8: ({...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* ) )
+            	    // InternalRyml.g:367:9: {...}? => ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleMusic", "true");
             	    }
-            	    // InternalRyml.g:367:18: ( ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )* )
-            	    // InternalRyml.g:367:19: ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )? ( (lv_section_20_0= ruleSection ) ) ( (lv_section_21_0= ruleSection ) )*
+            	    // InternalRyml.g:367:18: ( ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )* )
+            	    // InternalRyml.g:367:19: ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )? ( (lv_ownedSections_20_0= ruleSection ) ) ( (lv_ownedSections_21_0= ruleSection ) )*
             	    {
-            	    // InternalRyml.g:367:19: ( ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )* )?
+            	    // InternalRyml.g:367:19: ( ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )* )?
             	    int alt10=2;
             	    int LA10_0 = input.LA(1);
 
@@ -914,19 +914,19 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	    }
             	    switch (alt10) {
             	        case 1 :
-            	            // InternalRyml.g:368:9: ( (lv_pattern_18_0= rulePattern ) ) ( (lv_pattern_19_0= rulePattern ) )*
+            	            // InternalRyml.g:368:9: ( (lv_ownedPatterns_18_0= rulePattern ) ) ( (lv_ownedPatterns_19_0= rulePattern ) )*
             	            {
-            	            // InternalRyml.g:368:9: ( (lv_pattern_18_0= rulePattern ) )
-            	            // InternalRyml.g:369:10: (lv_pattern_18_0= rulePattern )
+            	            // InternalRyml.g:368:9: ( (lv_ownedPatterns_18_0= rulePattern ) )
+            	            // InternalRyml.g:369:10: (lv_ownedPatterns_18_0= rulePattern )
             	            {
-            	            // InternalRyml.g:369:10: (lv_pattern_18_0= rulePattern )
-            	            // InternalRyml.g:370:11: lv_pattern_18_0= rulePattern
+            	            // InternalRyml.g:369:10: (lv_ownedPatterns_18_0= rulePattern )
+            	            // InternalRyml.g:370:11: lv_ownedPatterns_18_0= rulePattern
             	            {
 
-            	            											newCompositeNode(grammarAccess.getMusicAccess().getPatternPatternParserRuleCall_3_0_0_0());
+            	            											newCompositeNode(grammarAccess.getMusicAccess().getOwnedPatternsPatternParserRuleCall_3_0_0_0());
             	            										
             	            pushFollow(FOLLOW_7);
-            	            lv_pattern_18_0=rulePattern();
+            	            lv_ownedPatterns_18_0=rulePattern();
 
             	            state._fsp--;
 
@@ -936,8 +936,8 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	            											}
             	            											add(
             	            												current,
-            	            												"pattern",
-            	            												lv_pattern_18_0,
+            	            												"ownedPatterns",
+            	            												lv_ownedPatterns_18_0,
             	            												"fr.unice.polytech.dsl.rythmml.Ryml.Pattern");
             	            											afterParserOrEnumRuleCall();
             	            										
@@ -947,7 +947,7 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            // InternalRyml.g:387:9: ( (lv_pattern_19_0= rulePattern ) )*
+            	            // InternalRyml.g:387:9: ( (lv_ownedPatterns_19_0= rulePattern ) )*
             	            loop9:
             	            do {
             	                int alt9=2;
@@ -960,16 +960,16 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
 
             	                switch (alt9) {
             	            	case 1 :
-            	            	    // InternalRyml.g:388:10: (lv_pattern_19_0= rulePattern )
+            	            	    // InternalRyml.g:388:10: (lv_ownedPatterns_19_0= rulePattern )
             	            	    {
-            	            	    // InternalRyml.g:388:10: (lv_pattern_19_0= rulePattern )
-            	            	    // InternalRyml.g:389:11: lv_pattern_19_0= rulePattern
+            	            	    // InternalRyml.g:388:10: (lv_ownedPatterns_19_0= rulePattern )
+            	            	    // InternalRyml.g:389:11: lv_ownedPatterns_19_0= rulePattern
             	            	    {
 
-            	            	    											newCompositeNode(grammarAccess.getMusicAccess().getPatternPatternParserRuleCall_3_0_1_0());
+            	            	    											newCompositeNode(grammarAccess.getMusicAccess().getOwnedPatternsPatternParserRuleCall_3_0_1_0());
             	            	    										
             	            	    pushFollow(FOLLOW_7);
-            	            	    lv_pattern_19_0=rulePattern();
+            	            	    lv_ownedPatterns_19_0=rulePattern();
 
             	            	    state._fsp--;
 
@@ -979,8 +979,8 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	            	    											}
             	            	    											add(
             	            	    												current,
-            	            	    												"pattern",
-            	            	    												lv_pattern_19_0,
+            	            	    												"ownedPatterns",
+            	            	    												lv_ownedPatterns_19_0,
             	            	    												"fr.unice.polytech.dsl.rythmml.Ryml.Pattern");
             	            	    											afterParserOrEnumRuleCall();
             	            	    										
@@ -1002,17 +1002,17 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalRyml.g:407:8: ( (lv_section_20_0= ruleSection ) )
-            	    // InternalRyml.g:408:9: (lv_section_20_0= ruleSection )
+            	    // InternalRyml.g:407:8: ( (lv_ownedSections_20_0= ruleSection ) )
+            	    // InternalRyml.g:408:9: (lv_ownedSections_20_0= ruleSection )
             	    {
-            	    // InternalRyml.g:408:9: (lv_section_20_0= ruleSection )
-            	    // InternalRyml.g:409:10: lv_section_20_0= ruleSection
+            	    // InternalRyml.g:408:9: (lv_ownedSections_20_0= ruleSection )
+            	    // InternalRyml.g:409:10: lv_ownedSections_20_0= ruleSection
             	    {
 
-            	    										newCompositeNode(grammarAccess.getMusicAccess().getSectionSectionParserRuleCall_3_1_0());
+            	    										newCompositeNode(grammarAccess.getMusicAccess().getOwnedSectionsSectionParserRuleCall_3_1_0());
             	    									
             	    pushFollow(FOLLOW_7);
-            	    lv_section_20_0=ruleSection();
+            	    lv_ownedSections_20_0=ruleSection();
 
             	    state._fsp--;
 
@@ -1022,8 +1022,8 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	    										}
             	    										add(
             	    											current,
-            	    											"section",
-            	    											lv_section_20_0,
+            	    											"ownedSections",
+            	    											lv_ownedSections_20_0,
             	    											"fr.unice.polytech.dsl.rythmml.Ryml.Section");
             	    										afterParserOrEnumRuleCall();
             	    									
@@ -1033,7 +1033,7 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalRyml.g:426:8: ( (lv_section_21_0= ruleSection ) )*
+            	    // InternalRyml.g:426:8: ( (lv_ownedSections_21_0= ruleSection ) )*
             	    loop11:
             	    do {
             	        int alt11=2;
@@ -1085,16 +1085,16 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
 
             	        switch (alt11) {
             	    	case 1 :
-            	    	    // InternalRyml.g:427:9: (lv_section_21_0= ruleSection )
+            	    	    // InternalRyml.g:427:9: (lv_ownedSections_21_0= ruleSection )
             	    	    {
-            	    	    // InternalRyml.g:427:9: (lv_section_21_0= ruleSection )
-            	    	    // InternalRyml.g:428:10: lv_section_21_0= ruleSection
+            	    	    // InternalRyml.g:427:9: (lv_ownedSections_21_0= ruleSection )
+            	    	    // InternalRyml.g:428:10: lv_ownedSections_21_0= ruleSection
             	    	    {
 
-            	    	    										newCompositeNode(grammarAccess.getMusicAccess().getSectionSectionParserRuleCall_3_2_0());
+            	    	    										newCompositeNode(grammarAccess.getMusicAccess().getOwnedSectionsSectionParserRuleCall_3_2_0());
             	    	    									
             	    	    pushFollow(FOLLOW_5);
-            	    	    lv_section_21_0=ruleSection();
+            	    	    lv_ownedSections_21_0=ruleSection();
 
             	    	    state._fsp--;
 
@@ -1104,8 +1104,8 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	    	    										}
             	    	    										add(
             	    	    											current,
-            	    	    											"section",
-            	    	    											lv_section_21_0,
+            	    	    											"ownedSections",
+            	    	    											lv_ownedSections_21_0,
             	    	    											"fr.unice.polytech.dsl.rythmml.Ryml.Section");
             	    	    										afterParserOrEnumRuleCall();
             	    	    									
@@ -1407,7 +1407,7 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             					}
             				
 
-            					newCompositeNode(grammarAccess.getSectionAccess().getPatternPatternCrossReference_3_0());
+            					newCompositeNode(grammarAccess.getSectionAccess().getPatternsPatternCrossReference_3_0());
             				
             pushFollow(FOLLOW_8);
             ruleEString();
@@ -1454,7 +1454,7 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	    						}
             	    					
 
-            	    						newCompositeNode(grammarAccess.getSectionAccess().getPatternPatternCrossReference_4_1_0());
+            	    						newCompositeNode(grammarAccess.getSectionAccess().getPatternsPatternCrossReference_4_1_0());
             	    					
             	    pushFollow(FOLLOW_8);
             	    ruleEString();
@@ -1714,7 +1714,7 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             					}
             				
 
-            					newCompositeNode(grammarAccess.getPatternAccess().getBarBarCrossReference_3_0());
+            					newCompositeNode(grammarAccess.getPatternAccess().getBarsBarCrossReference_3_0());
             				
             pushFollow(FOLLOW_8);
             ruleEString();
@@ -1761,7 +1761,7 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	    						}
             	    					
 
-            	    						newCompositeNode(grammarAccess.getPatternAccess().getBarBarCrossReference_4_1_0());
+            	    						newCompositeNode(grammarAccess.getPatternAccess().getBarsBarCrossReference_4_1_0());
             	    					
             	    pushFollow(FOLLOW_8);
             	    ruleEString();
@@ -1916,7 +1916,7 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             					}
             				
 
-            					newCompositeNode(grammarAccess.getBarAccess().getBeatBeatCrossReference_3_0());
+            					newCompositeNode(grammarAccess.getBarAccess().getBeatsBeatCrossReference_3_0());
             				
             pushFollow(FOLLOW_8);
             ruleEString();
@@ -1963,7 +1963,7 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	    						}
             	    					
 
-            	    						newCompositeNode(grammarAccess.getBarAccess().getBeatBeatCrossReference_4_1_0());
+            	    						newCompositeNode(grammarAccess.getBarAccess().getBeatsBeatCrossReference_4_1_0());
             	    					
             	    pushFollow(FOLLOW_8);
             	    ruleEString();
@@ -2184,7 +2184,7 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             					}
             				
 
-            					newCompositeNode(grammarAccess.getBeatAccess().getNoteNoteCrossReference_5_0());
+            					newCompositeNode(grammarAccess.getBeatAccess().getNotesNoteCrossReference_5_0());
             				
             pushFollow(FOLLOW_12);
             ruleEString();
@@ -2266,7 +2266,7 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             	    						}
             	    					
 
-            	    						newCompositeNode(grammarAccess.getBeatAccess().getNoteNoteCrossReference_8_1_0());
+            	    						newCompositeNode(grammarAccess.getBeatAccess().getNotesNoteCrossReference_8_1_0());
             	    					
             	    pushFollow(FOLLOW_12);
             	    ruleEString();
@@ -2857,7 +2857,7 @@ public class InternalRymlParser extends AbstractInternalAntlrParser {
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "()* loopback of 288:8: ( (lv_beat_15_0= ruleBeat ) )*";
+            return "()* loopback of 288:8: ( (lv_ownedBeats_15_0= ruleBeat ) )*";
         }
     }
  

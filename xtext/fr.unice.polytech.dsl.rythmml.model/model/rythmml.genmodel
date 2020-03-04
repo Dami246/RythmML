@@ -26,26 +26,27 @@
     <genClasses ecoreClass="rythmml.ecore#//Music">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Music/title"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Music/author"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/section"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/ownedSections"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Music/bpm"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Music/resolutionPerSlide"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/pattern"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/bar"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/beat"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/note"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/ownedPatterns"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/ownedBars"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/ownedBeats"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rythmml.ecore#//Music/ownedNotes"/>
     </genClasses>
     <genClasses ecoreClass="rythmml.ecore#//Section">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Section/pattern"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Section/patterns"/>
     </genClasses>
     <genClasses ecoreClass="rythmml.ecore#//Pattern">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Pattern/bar"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Pattern/bars"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Pattern/multipliers"/>
     </genClasses>
     <genClasses ecoreClass="rythmml.ecore#//Bar">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Bar/beat"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Bar/beats"/>
     </genClasses>
     <genClasses ecoreClass="rythmml.ecore#//Beat">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Beat/totalDivNumber"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Beat/note"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Beat/notes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Beat/notePositions"/>
     </genClasses>
     <genClasses ecoreClass="rythmml.ecore#//Note">

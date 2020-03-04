@@ -59,7 +59,7 @@ public class MusicItemProvider extends ItemProviderAdapter implements IEditingDo
 			addNamePropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addAuthorPropertyDescriptor(object);
-			addSectionPropertyDescriptor(object);
+			addOwnedSectionsPropertyDescriptor(object);
 			addBpmPropertyDescriptor(object);
 			addResolutionPerSlidePropertyDescriptor(object);
 		}
@@ -113,17 +113,18 @@ public class MusicItemProvider extends ItemProviderAdapter implements IEditingDo
 	}
 
 	/**
-	 * This adds a property descriptor for the Section feature.
+	 * This adds a property descriptor for the Owned Sections feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSectionPropertyDescriptor(Object object) {
+	protected void addOwnedSectionsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Music_section_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Music_section_feature", "_UI_Music_type"),
-						RythmmlPackage.Literals.MUSIC__SECTION, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Music_ownedSections_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Music_ownedSections_feature",
+								"_UI_Music_type"),
+						RythmmlPackage.Literals.MUSIC__OWNED_SECTIONS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -169,11 +170,11 @@ public class MusicItemProvider extends ItemProviderAdapter implements IEditingDo
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RythmmlPackage.Literals.MUSIC__SECTION);
-			childrenFeatures.add(RythmmlPackage.Literals.MUSIC__PATTERN);
-			childrenFeatures.add(RythmmlPackage.Literals.MUSIC__BAR);
-			childrenFeatures.add(RythmmlPackage.Literals.MUSIC__BEAT);
-			childrenFeatures.add(RythmmlPackage.Literals.MUSIC__NOTE);
+			childrenFeatures.add(RythmmlPackage.Literals.MUSIC__OWNED_SECTIONS);
+			childrenFeatures.add(RythmmlPackage.Literals.MUSIC__OWNED_PATTERNS);
+			childrenFeatures.add(RythmmlPackage.Literals.MUSIC__OWNED_BARS);
+			childrenFeatures.add(RythmmlPackage.Literals.MUSIC__OWNED_BEATS);
+			childrenFeatures.add(RythmmlPackage.Literals.MUSIC__OWNED_NOTES);
 		}
 		return childrenFeatures;
 	}
@@ -244,11 +245,11 @@ public class MusicItemProvider extends ItemProviderAdapter implements IEditingDo
 		case RythmmlPackage.MUSIC__RESOLUTION_PER_SLIDE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case RythmmlPackage.MUSIC__SECTION:
-		case RythmmlPackage.MUSIC__PATTERN:
-		case RythmmlPackage.MUSIC__BAR:
-		case RythmmlPackage.MUSIC__BEAT:
-		case RythmmlPackage.MUSIC__NOTE:
+		case RythmmlPackage.MUSIC__OWNED_SECTIONS:
+		case RythmmlPackage.MUSIC__OWNED_PATTERNS:
+		case RythmmlPackage.MUSIC__OWNED_BARS:
+		case RythmmlPackage.MUSIC__OWNED_BEATS:
+		case RythmmlPackage.MUSIC__OWNED_NOTES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -266,20 +267,20 @@ public class MusicItemProvider extends ItemProviderAdapter implements IEditingDo
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(
-				createChildParameter(RythmmlPackage.Literals.MUSIC__SECTION, RythmmlFactory.eINSTANCE.createSection()));
+		newChildDescriptors.add(createChildParameter(RythmmlPackage.Literals.MUSIC__OWNED_SECTIONS,
+				RythmmlFactory.eINSTANCE.createSection()));
+
+		newChildDescriptors.add(createChildParameter(RythmmlPackage.Literals.MUSIC__OWNED_PATTERNS,
+				RythmmlFactory.eINSTANCE.createPattern()));
 
 		newChildDescriptors.add(
-				createChildParameter(RythmmlPackage.Literals.MUSIC__PATTERN, RythmmlFactory.eINSTANCE.createPattern()));
+				createChildParameter(RythmmlPackage.Literals.MUSIC__OWNED_BARS, RythmmlFactory.eINSTANCE.createBar()));
 
-		newChildDescriptors
-				.add(createChildParameter(RythmmlPackage.Literals.MUSIC__BAR, RythmmlFactory.eINSTANCE.createBar()));
+		newChildDescriptors.add(createChildParameter(RythmmlPackage.Literals.MUSIC__OWNED_BEATS,
+				RythmmlFactory.eINSTANCE.createBeat()));
 
-		newChildDescriptors
-				.add(createChildParameter(RythmmlPackage.Literals.MUSIC__BEAT, RythmmlFactory.eINSTANCE.createBeat()));
-
-		newChildDescriptors
-				.add(createChildParameter(RythmmlPackage.Literals.MUSIC__NOTE, RythmmlFactory.eINSTANCE.createNote()));
+		newChildDescriptors.add(createChildParameter(RythmmlPackage.Literals.MUSIC__OWNED_NOTES,
+				RythmmlFactory.eINSTANCE.createNote()));
 	}
 
 	/**

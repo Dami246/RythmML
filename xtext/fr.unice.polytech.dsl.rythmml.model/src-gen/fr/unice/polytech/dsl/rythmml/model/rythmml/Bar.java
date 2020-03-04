@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Bar#getBeat <em>Beat</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Bar#getBeats <em>Beats</em>}</li>
  * </ul>
  *
  * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getBar()
@@ -22,19 +22,19 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Bar extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Beat</b></em>' reference list.
+	 * Returns the value of the '<em><b>Beats</b></em>' reference list.
 	 * The list contents are of type {@link fr.unice.polytech.dsl.rythmml.model.rythmml.Beat}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Beat</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Beats</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Beat</em>' reference list.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getBar_Beat()
+	 * @return the value of the '<em>Beats</em>' reference list.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getBar_Beats()
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<Beat> getBeat();
+	EList<Beat> getBeats();
 
 } // Bar

@@ -219,17 +219,17 @@ ruleMusic returns [EObject current=null]
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getMusicAccess().getNoteNoteParserRuleCall_0_7_0_0());
+											newCompositeNode(grammarAccess.getMusicAccess().getOwnedNotesNoteParserRuleCall_0_7_0_0());
 										}
-										lv_note_12_0=ruleNote
+										lv_ownedNotes_12_0=ruleNote
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getMusicRule());
 											}
 											add(
 												$current,
-												"note",
-												lv_note_12_0,
+												"ownedNotes",
+												lv_ownedNotes_12_0,
 												"fr.unice.polytech.dsl.rythmml.Ryml.Note");
 											afterParserOrEnumRuleCall();
 										}
@@ -238,17 +238,17 @@ ruleMusic returns [EObject current=null]
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getMusicAccess().getNoteNoteParserRuleCall_0_7_1_0());
+											newCompositeNode(grammarAccess.getMusicAccess().getOwnedNotesNoteParserRuleCall_0_7_1_0());
 										}
-										lv_note_13_0=ruleNote
+										lv_ownedNotes_13_0=ruleNote
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getMusicRule());
 											}
 											add(
 												$current,
-												"note",
-												lv_note_13_0,
+												"ownedNotes",
+												lv_ownedNotes_13_0,
 												"fr.unice.polytech.dsl.rythmml.Ryml.Note");
 											afterParserOrEnumRuleCall();
 										}
@@ -269,17 +269,17 @@ ruleMusic returns [EObject current=null]
 							({true}?=>((
 								(
 									{
-										newCompositeNode(grammarAccess.getMusicAccess().getBeatBeatParserRuleCall_1_0_0());
+										newCompositeNode(grammarAccess.getMusicAccess().getOwnedBeatsBeatParserRuleCall_1_0_0());
 									}
-									lv_beat_14_0=ruleBeat
+									lv_ownedBeats_14_0=ruleBeat
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getMusicRule());
 										}
 										add(
 											$current,
-											"beat",
-											lv_beat_14_0,
+											"ownedBeats",
+											lv_ownedBeats_14_0,
 											"fr.unice.polytech.dsl.rythmml.Ryml.Beat");
 										afterParserOrEnumRuleCall();
 									}
@@ -288,17 +288,17 @@ ruleMusic returns [EObject current=null]
 							(
 								(
 									{
-										newCompositeNode(grammarAccess.getMusicAccess().getBeatBeatParserRuleCall_1_1_0());
+										newCompositeNode(grammarAccess.getMusicAccess().getOwnedBeatsBeatParserRuleCall_1_1_0());
 									}
-									lv_beat_15_0=ruleBeat
+									lv_ownedBeats_15_0=ruleBeat
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getMusicRule());
 										}
 										add(
 											$current,
-											"beat",
-											lv_beat_15_0,
+											"ownedBeats",
+											lv_ownedBeats_15_0,
 											"fr.unice.polytech.dsl.rythmml.Ryml.Beat");
 										afterParserOrEnumRuleCall();
 									}
@@ -318,17 +318,17 @@ ruleMusic returns [EObject current=null]
 							({true}?=>((
 								(
 									{
-										newCompositeNode(grammarAccess.getMusicAccess().getBarBarParserRuleCall_2_0_0());
+										newCompositeNode(grammarAccess.getMusicAccess().getOwnedBarsBarParserRuleCall_2_0_0());
 									}
-									lv_bar_16_0=ruleBar
+									lv_ownedBars_16_0=ruleBar
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getMusicRule());
 										}
 										add(
 											$current,
-											"bar",
-											lv_bar_16_0,
+											"ownedBars",
+											lv_ownedBars_16_0,
 											"fr.unice.polytech.dsl.rythmml.Ryml.Bar");
 										afterParserOrEnumRuleCall();
 									}
@@ -337,17 +337,17 @@ ruleMusic returns [EObject current=null]
 							(
 								(
 									{
-										newCompositeNode(grammarAccess.getMusicAccess().getBarBarParserRuleCall_2_1_0());
+										newCompositeNode(grammarAccess.getMusicAccess().getOwnedBarsBarParserRuleCall_2_1_0());
 									}
-									lv_bar_17_0=ruleBar
+									lv_ownedBars_17_0=ruleBar
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getMusicRule());
 										}
 										add(
 											$current,
-											"bar",
-											lv_bar_17_0,
+											"ownedBars",
+											lv_ownedBars_17_0,
 											"fr.unice.polytech.dsl.rythmml.Ryml.Bar");
 										afterParserOrEnumRuleCall();
 									}
@@ -368,17 +368,17 @@ ruleMusic returns [EObject current=null]
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getMusicAccess().getPatternPatternParserRuleCall_3_0_0_0());
+											newCompositeNode(grammarAccess.getMusicAccess().getOwnedPatternsPatternParserRuleCall_3_0_0_0());
 										}
-										lv_pattern_18_0=rulePattern
+										lv_ownedPatterns_18_0=rulePattern
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getMusicRule());
 											}
 											add(
 												$current,
-												"pattern",
-												lv_pattern_18_0,
+												"ownedPatterns",
+												lv_ownedPatterns_18_0,
 												"fr.unice.polytech.dsl.rythmml.Ryml.Pattern");
 											afterParserOrEnumRuleCall();
 										}
@@ -387,17 +387,17 @@ ruleMusic returns [EObject current=null]
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getMusicAccess().getPatternPatternParserRuleCall_3_0_1_0());
+											newCompositeNode(grammarAccess.getMusicAccess().getOwnedPatternsPatternParserRuleCall_3_0_1_0());
 										}
-										lv_pattern_19_0=rulePattern
+										lv_ownedPatterns_19_0=rulePattern
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getMusicRule());
 											}
 											add(
 												$current,
-												"pattern",
-												lv_pattern_19_0,
+												"ownedPatterns",
+												lv_ownedPatterns_19_0,
 												"fr.unice.polytech.dsl.rythmml.Ryml.Pattern");
 											afterParserOrEnumRuleCall();
 										}
@@ -407,17 +407,17 @@ ruleMusic returns [EObject current=null]
 							(
 								(
 									{
-										newCompositeNode(grammarAccess.getMusicAccess().getSectionSectionParserRuleCall_3_1_0());
+										newCompositeNode(grammarAccess.getMusicAccess().getOwnedSectionsSectionParserRuleCall_3_1_0());
 									}
-									lv_section_20_0=ruleSection
+									lv_ownedSections_20_0=ruleSection
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getMusicRule());
 										}
 										add(
 											$current,
-											"section",
-											lv_section_20_0,
+											"ownedSections",
+											lv_ownedSections_20_0,
 											"fr.unice.polytech.dsl.rythmml.Ryml.Section");
 										afterParserOrEnumRuleCall();
 									}
@@ -426,17 +426,17 @@ ruleMusic returns [EObject current=null]
 							(
 								(
 									{
-										newCompositeNode(grammarAccess.getMusicAccess().getSectionSectionParserRuleCall_3_2_0());
+										newCompositeNode(grammarAccess.getMusicAccess().getOwnedSectionsSectionParserRuleCall_3_2_0());
 									}
-									lv_section_21_0=ruleSection
+									lv_ownedSections_21_0=ruleSection
 									{
 										if ($current==null) {
 											$current = createModelElementForParent(grammarAccess.getMusicRule());
 										}
 										add(
 											$current,
-											"section",
-											lv_section_21_0,
+											"ownedSections",
+											lv_ownedSections_21_0,
 											"fr.unice.polytech.dsl.rythmml.Ryml.Section");
 										afterParserOrEnumRuleCall();
 									}
@@ -543,7 +543,7 @@ ruleSection returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getSectionAccess().getPatternPatternCrossReference_3_0());
+					newCompositeNode(grammarAccess.getSectionAccess().getPatternsPatternCrossReference_3_0());
 				}
 				ruleEString
 				{
@@ -564,7 +564,7 @@ ruleSection returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getSectionAccess().getPatternPatternCrossReference_4_1_0());
+						newCompositeNode(grammarAccess.getSectionAccess().getPatternsPatternCrossReference_4_1_0());
 					}
 					ruleEString
 					{
@@ -660,7 +660,7 @@ rulePattern returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getPatternAccess().getBarBarCrossReference_3_0());
+					newCompositeNode(grammarAccess.getPatternAccess().getBarsBarCrossReference_3_0());
 				}
 				ruleEString
 				{
@@ -681,7 +681,7 @@ rulePattern returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getPatternAccess().getBarBarCrossReference_4_1_0());
+						newCompositeNode(grammarAccess.getPatternAccess().getBarsBarCrossReference_4_1_0());
 					}
 					ruleEString
 					{
@@ -744,7 +744,7 @@ ruleBar returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getBarAccess().getBeatBeatCrossReference_3_0());
+					newCompositeNode(grammarAccess.getBarAccess().getBeatsBeatCrossReference_3_0());
 				}
 				ruleEString
 				{
@@ -765,7 +765,7 @@ ruleBar returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getBarAccess().getBeatBeatCrossReference_4_1_0());
+						newCompositeNode(grammarAccess.getBarAccess().getBeatsBeatCrossReference_4_1_0());
 					}
 					ruleEString
 					{
@@ -857,7 +857,7 @@ ruleBeat returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getBeatAccess().getNoteNoteCrossReference_5_0());
+					newCompositeNode(grammarAccess.getBeatAccess().getNotesNoteCrossReference_5_0());
 				}
 				ruleEString
 				{
@@ -901,7 +901,7 @@ ruleBeat returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getBeatAccess().getNoteNoteCrossReference_8_1_0());
+						newCompositeNode(grammarAccess.getBeatAccess().getNotesNoteCrossReference_8_1_0());
 					}
 					ruleEString
 					{

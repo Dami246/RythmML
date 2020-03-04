@@ -26,24 +26,24 @@ public class RymlFormatter extends AbstractFormatter2 {
   private RymlGrammarAccess _rymlGrammarAccess;
   
   protected void _format(final Music music, @Extension final IFormattableDocument document) {
-    EList<Note> _note = music.getNote();
-    for (final Note note : _note) {
+    EList<Note> _ownedNotes = music.getOwnedNotes();
+    for (final Note note : _ownedNotes) {
       document.<Note>format(note);
     }
-    EList<Beat> _beat = music.getBeat();
-    for (final Beat beat : _beat) {
+    EList<Beat> _ownedBeats = music.getOwnedBeats();
+    for (final Beat beat : _ownedBeats) {
       document.<Beat>format(beat);
     }
-    EList<Bar> _bar = music.getBar();
-    for (final Bar bar : _bar) {
+    EList<Bar> _ownedBars = music.getOwnedBars();
+    for (final Bar bar : _ownedBars) {
       document.<Bar>format(bar);
     }
-    EList<Pattern> _pattern = music.getPattern();
-    for (final Pattern pattern : _pattern) {
+    EList<Pattern> _ownedPatterns = music.getOwnedPatterns();
+    for (final Pattern pattern : _ownedPatterns) {
       document.<Pattern>format(pattern);
     }
-    EList<Section> _section = music.getSection();
-    for (final Section section : _section) {
+    EList<Section> _ownedSections = music.getOwnedSections();
+    for (final Section section : _ownedSections) {
       document.<Section>format(section);
     }
   }

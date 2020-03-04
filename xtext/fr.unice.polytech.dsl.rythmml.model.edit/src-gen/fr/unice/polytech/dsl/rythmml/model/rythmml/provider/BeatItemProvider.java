@@ -55,7 +55,7 @@ public class BeatItemProvider extends ItemProviderAdapter implements IEditingDom
 
 			addNamePropertyDescriptor(object);
 			addTotalDivNumberPropertyDescriptor(object);
-			addNotePropertyDescriptor(object);
+			addNotesPropertyDescriptor(object);
 			addNotePositionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -94,17 +94,17 @@ public class BeatItemProvider extends ItemProviderAdapter implements IEditingDom
 	}
 
 	/**
-	 * This adds a property descriptor for the Note feature.
+	 * This adds a property descriptor for the Notes feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNotePropertyDescriptor(Object object) {
+	protected void addNotesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Beat_note_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Beat_note_feature", "_UI_Beat_type"),
-						RythmmlPackage.Literals.BEAT__NOTE, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Beat_notes_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Beat_notes_feature", "_UI_Beat_type"),
+						RythmmlPackage.Literals.BEAT__NOTES, true, false, true, null, null, null));
 	}
 
 	/**
