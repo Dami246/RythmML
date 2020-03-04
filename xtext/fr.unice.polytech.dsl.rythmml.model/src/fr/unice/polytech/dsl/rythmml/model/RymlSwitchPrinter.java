@@ -17,15 +17,9 @@ import fr.unice.polytech.dsl.rythmml.model.rythmml.util.RythmmlSwitch;
 public class RymlSwitchPrinter extends RythmmlSwitch<String>{
 
 	@Override
-	protected String doSwitch(int classifierID, EObject theEObject) {
-		// TODO Auto-generated method stub
-		return super.doSwitch(classifierID, theEObject);
-	}
-
-	@Override
 	public String caseMusic(Music music) {
 		StringBuilder stringBuilder = new StringBuilder();
-		
+		stringBuilder.append(RymlUtils.mainBegin());
 		stringBuilder.append("ConcreteMIDIVisitor midiVisitor = new ConcreteMIDIVisitor(); \n\n");
 		
 		for(Note n : music.getNote()) //Declare all notes
@@ -55,8 +49,10 @@ public class RymlSwitchPrinter extends RythmmlSwitch<String>{
 		stringBuilder.append(String.format("\nMIDIPlayer.createSequence(%d);\n" + 
 				"MIDIPlayer.setTempoBPM(%d);\n" + 
 				"%s.accept(midiVisitor);\n" + 
-				"MIDIPlayer.playSequence();", 
+				"MIDIPlayer.playSequence();\n", 
 				music.getResolutionPerSlide(), music.getBpm(), music.getName()));
+		
+		stringBuilder.append(RymlUtils.mainEnd());
 		return stringBuilder.toString();
 	}
 
