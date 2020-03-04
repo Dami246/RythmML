@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<rythmml:Music xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rythmml="http://www.example.org/rythmml" name="bj" title="Billie Jean" author="Walidou" bpm="200" resolutionPerSlide="200">
+  <section name="s" pattern="//@pattern.0"/>
+  <pattern name="first_pattern" bar="//@bar.0"/>
+  <bar name="bar1" beat="//@beat.0 //@beat.1"/>
+  <beat name="beat1" totalDivNumber="200" note="//@note.0 //@note.1">
+    <notePositions>0</notePositions>
+    <notePositions>1</notePositions>
+  </beat>
+  <beat name="beat2" totalDivNumber="200" note="//@note.2 //@note.0">
+    <notePositions>0</notePositions>
+    <notePositions>1</notePositions>
+  </beat>
+  <note name="sd"/>
+  <note name="cd" value="BD"/>
+  <note name="l" value="L"/>
+</rythmml:Music>
