@@ -102,6 +102,21 @@ public class RythmmlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseClassicalBar(ClassicalBar object) {
+			return createClassicalBarAdapter();
+		}
+
+		@Override
+		public Adapter caseModifiedBar(ModifiedBar object) {
+			return createModifiedBarAdapter();
+		}
+
+		@Override
+		public Adapter caseBarMultiplier(BarMultiplier object) {
+			return createBarMultiplierAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -215,6 +230,48 @@ public class RythmmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.ClassicalBar <em>Classical Bar</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.ClassicalBar
+	 * @generated
+	 */
+	public Adapter createClassicalBarAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar <em>Modified Bar</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar
+	 * @generated
+	 */
+	public Adapter createModifiedBarAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier <em>Bar Multiplier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier
+	 * @generated
+	 */
+	public Adapter createBarMultiplierAdapter() {
 		return null;
 	}
 

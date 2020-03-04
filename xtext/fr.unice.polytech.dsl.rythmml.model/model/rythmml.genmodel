@@ -38,8 +38,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Section/patterns"/>
     </genClasses>
     <genClasses ecoreClass="rythmml.ecore#//Pattern">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Pattern/bars"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Pattern/multipliers"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Pattern/bars"/>
     </genClasses>
     <genClasses ecoreClass="rythmml.ecore#//Bar">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Bar/beats"/>
@@ -54,6 +53,14 @@
     </genClasses>
     <genClasses image="false" ecoreClass="rythmml.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="rythmml.ecore#//ClassicalBar"/>
+    <genClasses ecoreClass="rythmml.ecore#//ModifiedBar">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//ModifiedBar/bar"/>
+    </genClasses>
+    <genClasses ecoreClass="rythmml.ecore#//BarMultiplier">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//BarMultiplier/bar"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//BarMultiplier/multiplier"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

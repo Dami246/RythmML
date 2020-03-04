@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getBar()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Bar extends NamedElement {

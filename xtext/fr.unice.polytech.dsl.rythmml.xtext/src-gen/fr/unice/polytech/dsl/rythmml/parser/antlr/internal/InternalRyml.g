@@ -366,48 +366,57 @@ ruleMusic returns [EObject current=null]
 				}
 							({true}?=>((
 								(
-									(
-										{
-											newCompositeNode(grammarAccess.getMusicAccess().getOwnedPatternsPatternParserRuleCall_3_0_0_0());
+									{
+										newCompositeNode(grammarAccess.getMusicAccess().getOwnedPatternsPatternParserRuleCall_3_0_0());
+									}
+									lv_ownedPatterns_18_0=rulePattern
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getMusicRule());
 										}
-										lv_ownedPatterns_18_0=rulePattern
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getMusicRule());
-											}
-											add(
-												$current,
-												"ownedPatterns",
-												lv_ownedPatterns_18_0,
-												"fr.unice.polytech.dsl.rythmml.Ryml.Pattern");
-											afterParserOrEnumRuleCall();
-										}
-									)
+										add(
+											$current,
+											"ownedPatterns",
+											lv_ownedPatterns_18_0,
+											"fr.unice.polytech.dsl.rythmml.Ryml.Pattern");
+										afterParserOrEnumRuleCall();
+									}
 								)
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getMusicAccess().getOwnedPatternsPatternParserRuleCall_3_0_1_0());
-										}
-										lv_ownedPatterns_19_0=rulePattern
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getMusicRule());
-											}
-											add(
-												$current,
-												"ownedPatterns",
-												lv_ownedPatterns_19_0,
-												"fr.unice.polytech.dsl.rythmml.Ryml.Pattern");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)*
-							)?
+							)
 							(
 								(
 									{
-										newCompositeNode(grammarAccess.getMusicAccess().getOwnedSectionsSectionParserRuleCall_3_1_0());
+										newCompositeNode(grammarAccess.getMusicAccess().getOwnedPatternsPatternParserRuleCall_3_1_0());
+									}
+									lv_ownedPatterns_19_0=rulePattern
+									{
+										if ($current==null) {
+											$current = createModelElementForParent(grammarAccess.getMusicRule());
+										}
+										add(
+											$current,
+											"ownedPatterns",
+											lv_ownedPatterns_19_0,
+											"fr.unice.polytech.dsl.rythmml.Ryml.Pattern");
+										afterParserOrEnumRuleCall();
+									}
+								)
+							)*
+							))
+				{ 
+					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMusicAccess().getUnorderedGroup());
+				}
+			)
+		)|
+		(
+			{getUnorderedGroupHelper().canSelect(grammarAccess.getMusicAccess().getUnorderedGroup(), 4)}?=>(
+				{
+					getUnorderedGroupHelper().select(grammarAccess.getMusicAccess().getUnorderedGroup(), 4);
+				}
+							({true}?=>((
+								(
+									{
+										newCompositeNode(grammarAccess.getMusicAccess().getOwnedSectionsSectionParserRuleCall_4_0_0());
 									}
 									lv_ownedSections_20_0=ruleSection
 									{
@@ -426,7 +435,7 @@ ruleMusic returns [EObject current=null]
 							(
 								(
 									{
-										newCompositeNode(grammarAccess.getMusicAccess().getOwnedSectionsSectionParserRuleCall_3_2_0());
+										newCompositeNode(grammarAccess.getMusicAccess().getOwnedSectionsSectionParserRuleCall_4_1_0());
 									}
 									lv_ownedSections_21_0=ruleSection
 									{
@@ -655,15 +664,18 @@ rulePattern returns [EObject current=null]
 		(
 			(
 				{
+					newCompositeNode(grammarAccess.getPatternAccess().getBarsBarMultiplierParserRuleCall_3_0());
+				}
+				lv_bars_3_0=ruleBarMultiplier
+				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getPatternRule());
+						$current = createModelElementForParent(grammarAccess.getPatternRule());
 					}
-				}
-				{
-					newCompositeNode(grammarAccess.getPatternAccess().getBarsBarCrossReference_3_0());
-				}
-				ruleEString
-				{
+					add(
+						$current,
+						"bars",
+						lv_bars_3_0,
+						"fr.unice.polytech.dsl.rythmml.Ryml.BarMultiplier");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -676,20 +688,83 @@ rulePattern returns [EObject current=null]
 			(
 				(
 					{
+						newCompositeNode(grammarAccess.getPatternAccess().getBarsBarMultiplierParserRuleCall_4_1_0());
+					}
+					lv_bars_5_0=ruleBarMultiplier
+					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getPatternRule());
+							$current = createModelElementForParent(grammarAccess.getPatternRule());
 						}
-					}
-					{
-						newCompositeNode(grammarAccess.getPatternAccess().getBarsBarCrossReference_4_1_0());
-					}
-					ruleEString
-					{
+						add(
+							$current,
+							"bars",
+							lv_bars_5_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.BarMultiplier");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
+	)
+;
+
+// Entry rule entryRuleBarMultiplier
+entryRuleBarMultiplier returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBarMultiplierRule()); }
+	iv_ruleBarMultiplier=ruleBarMultiplier
+	{ $current=$iv_ruleBarMultiplier.current; }
+	EOF;
+
+// Rule BarMultiplier
+ruleBarMultiplier returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBarMultiplierRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getBarMultiplierAccess().getBarBarCrossReference_0_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_1='x'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getBarMultiplierAccess().getXKeyword_1_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getBarMultiplierAccess().getMultiplierEIntParserRuleCall_1_1_0());
+					}
+					lv_multiplier_2_0=ruleEInt
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getBarMultiplierRule());
+						}
+						set(
+							$current,
+							"multiplier",
+							lv_multiplier_2_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
 	)
 ;
 
@@ -709,19 +784,55 @@ ruleBar returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		{
+			newCompositeNode(grammarAccess.getBarAccess().getClassicalBarParserRuleCall_0());
+		}
+		this_ClassicalBar_0=ruleClassicalBar
+		{
+			$current = $this_ClassicalBar_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getBarAccess().getModifiedBarParserRuleCall_1());
+		}
+		this_ModifiedBar_1=ruleModifiedBar
+		{
+			$current = $this_ModifiedBar_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleClassicalBar
+entryRuleClassicalBar returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getClassicalBarRule()); }
+	iv_ruleClassicalBar=ruleClassicalBar
+	{ $current=$iv_ruleClassicalBar.current; }
+	EOF;
+
+// Rule ClassicalBar
+ruleClassicalBar returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
 		otherlv_0='Bar'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getBarAccess().getBarKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getClassicalBarAccess().getBarKeyword_0());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getBarAccess().getNameEStringParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getClassicalBarAccess().getNameEStringParserRuleCall_1_0());
 				}
 				lv_name_1_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getBarRule());
+						$current = createModelElementForParent(grammarAccess.getClassicalBarRule());
 					}
 					set(
 						$current,
@@ -734,17 +845,17 @@ ruleBar returns [EObject current=null]
 		)
 		otherlv_2=':'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getBarAccess().getColonKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getClassicalBarAccess().getColonKeyword_2());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getBarRule());
+						$current = createModelElement(grammarAccess.getClassicalBarRule());
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getBarAccess().getBeatsBeatCrossReference_3_0());
+					newCompositeNode(grammarAccess.getClassicalBarAccess().getBeatsBeatCrossReference_3_0());
 				}
 				ruleEString
 				{
@@ -755,17 +866,17 @@ ruleBar returns [EObject current=null]
 		(
 			otherlv_4='|'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getBarAccess().getVerticalLineKeyword_4_0());
+				newLeafNode(otherlv_4, grammarAccess.getClassicalBarAccess().getVerticalLineKeyword_4_0());
 			}
 			(
 				(
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getBarRule());
+							$current = createModelElement(grammarAccess.getClassicalBarRule());
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getBarAccess().getBeatsBeatCrossReference_4_1_0());
+						newCompositeNode(grammarAccess.getClassicalBarAccess().getBeatsBeatCrossReference_4_1_0());
 					}
 					ruleEString
 					{
@@ -774,6 +885,68 @@ ruleBar returns [EObject current=null]
 				)
 			)
 		)*
+	)
+;
+
+// Entry rule entryRuleModifiedBar
+entryRuleModifiedBar returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getModifiedBarRule()); }
+	iv_ruleModifiedBar=ruleModifiedBar
+	{ $current=$iv_ruleModifiedBar.current; }
+	EOF;
+
+// Rule ModifiedBar
+ruleModifiedBar returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Bar'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getModifiedBarAccess().getBarKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getModifiedBarAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getModifiedBarRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"fr.unice.polytech.dsl.rythmml.Ryml.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2=' based on :'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getModifiedBarAccess().getBasedOnKeyword_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getModifiedBarRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getModifiedBarAccess().getBarBarCrossReference_3_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 

@@ -3,8 +3,11 @@
 package fr.unice.polytech.dsl.rythmml.model.rythmml.impl;
 
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Bar;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Beat;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.ClassicalBar;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.DrumNoteValue;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Music;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.NamedElement;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Note;
@@ -76,6 +79,27 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 * @generated
 	 */
 	private EClass namedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass classicalBarEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modifiedBarEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass barMultiplierEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -279,15 +303,6 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPattern_Multipliers() {
-		return (EAttribute) patternEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getBar() {
 		return barEClass;
 	}
@@ -378,6 +393,60 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getClassicalBar() {
+		return classicalBarEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getModifiedBar() {
+		return modifiedBarEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModifiedBar_Bar() {
+		return (EReference) modifiedBarEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBarMultiplier() {
+		return barMultiplierEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBarMultiplier_Bar() {
+		return (EReference) barMultiplierEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBarMultiplier_Multiplier() {
+		return (EAttribute) barMultiplierEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getDrumNoteValue() {
 		return drumNoteValueEEnum;
 	}
@@ -427,7 +496,6 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 
 		patternEClass = createEClass(PATTERN);
 		createEReference(patternEClass, PATTERN__BARS);
-		createEAttribute(patternEClass, PATTERN__MULTIPLIERS);
 
 		barEClass = createEClass(BAR);
 		createEReference(barEClass, BAR__BEATS);
@@ -442,6 +510,15 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
+
+		classicalBarEClass = createEClass(CLASSICAL_BAR);
+
+		modifiedBarEClass = createEClass(MODIFIED_BAR);
+		createEReference(modifiedBarEClass, MODIFIED_BAR__BAR);
+
+		barMultiplierEClass = createEClass(BAR_MULTIPLIER);
+		createEReference(barMultiplierEClass, BAR_MULTIPLIER__BAR);
+		createEAttribute(barMultiplierEClass, BAR_MULTIPLIER__MULTIPLIER);
 
 		// Create enums
 		drumNoteValueEEnum = createEEnum(DRUM_NOTE_VALUE);
@@ -482,6 +559,8 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 		barEClass.getESuperTypes().add(this.getNamedElement());
 		beatEClass.getESuperTypes().add(this.getNamedElement());
 		noteEClass.getESuperTypes().add(this.getNamedElement());
+		classicalBarEClass.getESuperTypes().add(this.getBar());
+		modifiedBarEClass.getESuperTypes().add(this.getBar());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(musicEClass, Music.class, "Music", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -489,7 +568,7 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMusic_Author(), ecorePackage.getEString(), "author", null, 0, 1, Music.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMusic_OwnedSections(), this.getSection(), null, "ownedSections", null, 1, -1, Music.class,
+		initEReference(getMusic_OwnedSections(), this.getSection(), null, "ownedSections", null, 0, -1, Music.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMusic_Bpm(), ecorePackage.getEInt(), "bpm", null, 0, 1, Music.class, !IS_TRANSIENT,
@@ -516,13 +595,11 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(patternEClass, Pattern.class, "Pattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPattern_Bars(), this.getBar(), null, "bars", null, 1, -1, Pattern.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEAttribute(getPattern_Multipliers(), ecorePackage.getEInt(), "multipliers", null, 0, -1, Pattern.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPattern_Bars(), this.getBarMultiplier(), null, "bars", null, 0, -1, Pattern.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(barEClass, Bar.class, "Bar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(barEClass, Bar.class, "Bar", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBar_Beats(), this.getBeat(), null, "beats", null, 1, -1, Bar.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
@@ -546,6 +623,24 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(classicalBarEClass, ClassicalBar.class, "ClassicalBar", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(modifiedBarEClass, ModifiedBar.class, "ModifiedBar", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getModifiedBar_Bar(), this.getBar(), null, "bar", null, 1, 1, ModifiedBar.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(barMultiplierEClass, BarMultiplier.class, "BarMultiplier", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBarMultiplier_Bar(), this.getBar(), null, "bar", null, 1, 1, BarMultiplier.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBarMultiplier_Multiplier(), ecorePackage.getEInt(), "multiplier", "1", 1, 1,
+				BarMultiplier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(drumNoteValueEEnum, DrumNoteValue.class, "DrumNoteValue");

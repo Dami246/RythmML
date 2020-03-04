@@ -2,8 +2,7 @@
  */
 package fr.unice.polytech.dsl.rythmml.model.rythmml.provider;
 
-import fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern;
-import fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlFactory;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage;
 
 import java.util.Collection;
@@ -14,7 +13,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -27,12 +25,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern} object.
+ * This is the item provider adapter for a {@link fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PatternItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class BarMultiplierItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -40,7 +38,7 @@ public class PatternItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PatternItemProvider(AdapterFactory adapterFactory) {
+	public BarMultiplierItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -55,81 +53,52 @@ public class PatternItemProvider extends ItemProviderAdapter implements IEditing
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addBarsPropertyDescriptor(object);
+			addBarPropertyDescriptor(object);
+			addMultiplierPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Bar feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addBarPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_NamedElement_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature",
-								"_UI_NamedElement_type"),
-						RythmmlPackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+						getResourceLocator(), getString("_UI_BarMultiplier_bar_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_BarMultiplier_bar_feature",
+								"_UI_BarMultiplier_type"),
+						RythmmlPackage.Literals.BAR_MULTIPLIER__BAR, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Bars feature.
+	 * This adds a property descriptor for the Multiplier feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addBarsPropertyDescriptor(Object object) {
+	protected void addMultiplierPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Pattern_bars_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Pattern_bars_feature", "_UI_Pattern_type"),
-						RythmmlPackage.Literals.PATTERN__BARS, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_BarMultiplier_multiplier_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_BarMultiplier_multiplier_feature",
+								"_UI_BarMultiplier_type"),
+						RythmmlPackage.Literals.BAR_MULTIPLIER__MULTIPLIER, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(RythmmlPackage.Literals.PATTERN__BARS);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns Pattern.gif.
+	 * This returns BarMultiplier.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Pattern"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/BarMultiplier"));
 	}
 
 	/**
@@ -150,9 +119,8 @@ public class PatternItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Pattern) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Pattern_type")
-				: getString("_UI_Pattern_type") + " " + label;
+		BarMultiplier barMultiplier = (BarMultiplier) object;
+		return getString("_UI_BarMultiplier_type") + " " + barMultiplier.getMultiplier();
 	}
 
 	/**
@@ -166,12 +134,9 @@ public class PatternItemProvider extends ItemProviderAdapter implements IEditing
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Pattern.class)) {
-		case RythmmlPackage.PATTERN__NAME:
+		switch (notification.getFeatureID(BarMultiplier.class)) {
+		case RythmmlPackage.BAR_MULTIPLIER__MULTIPLIER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case RythmmlPackage.PATTERN__BARS:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -187,9 +152,6 @@ public class PatternItemProvider extends ItemProviderAdapter implements IEditing
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(RythmmlPackage.Literals.PATTERN__BARS,
-				RythmmlFactory.eINSTANCE.createBarMultiplier()));
 	}
 
 	/**

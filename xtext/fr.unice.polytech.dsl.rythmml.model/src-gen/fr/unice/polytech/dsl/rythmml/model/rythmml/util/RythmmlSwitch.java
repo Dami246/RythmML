@@ -127,6 +127,35 @@ public class RythmmlSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case RythmmlPackage.CLASSICAL_BAR: {
+			ClassicalBar classicalBar = (ClassicalBar) theEObject;
+			T result = caseClassicalBar(classicalBar);
+			if (result == null)
+				result = caseBar(classicalBar);
+			if (result == null)
+				result = caseNamedElement(classicalBar);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RythmmlPackage.MODIFIED_BAR: {
+			ModifiedBar modifiedBar = (ModifiedBar) theEObject;
+			T result = caseModifiedBar(modifiedBar);
+			if (result == null)
+				result = caseBar(modifiedBar);
+			if (result == null)
+				result = caseNamedElement(modifiedBar);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case RythmmlPackage.BAR_MULTIPLIER: {
+			BarMultiplier barMultiplier = (BarMultiplier) theEObject;
+			T result = caseBarMultiplier(barMultiplier);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -234,6 +263,51 @@ public class RythmmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Classical Bar</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Classical Bar</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseClassicalBar(ClassicalBar object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Modified Bar</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Modified Bar</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModifiedBar(ModifiedBar object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bar Multiplier</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bar Multiplier</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBarMultiplier(BarMultiplier object) {
 		return null;
 	}
 

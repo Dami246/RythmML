@@ -16,7 +16,7 @@ Music returns Music:
 		&(ownedBeats+=Beat (ownedBeats+=Beat)*)?
 		&(ownedBars+=Bar (ownedBars+=Bar)*)?
 		&(ownedPatterns+=Pattern (ownedPatterns+=Pattern)*)?
-		ownedSections+=Section (ownedSections+=Section)*
+		&(ownedSections+=Section (ownedSections+=Section)*)?
 	;
 
 EString returns ecore::EString:
@@ -35,26 +35,31 @@ Pattern returns Pattern:
 	'Pattern'
 	name=EString
 	':'
-		bars+=[Bar|EString] ( "|" bars+=[Bar|EString])*;
+		bars+=BarMultiplier  ( "|" bars+=BarMultiplier)*;
+
+BarMultiplier returns BarMultiplier:
+	bar=[Bar|EString] ('x' multiplier=EInt)?
+;
 
 Bar returns Bar:
+	(ClassicalBar | ModifiedBar);
+
+ClassicalBar returns ClassicalBar: 
 	'Bar'
 	name=EString
 	':'
 		beats+=[Beat|EString] ( "|" beats+=[Beat|EString])*;
 
+ModifiedBar returns ModifiedBar:
+	'Bar' name=EString ' based on :' bar=[Bar|EString];
+
 Beat returns Beat:
-	'Beat'
-	name=EString
-	':'
+	'Beat' name=EString ':'
 		('Nb of ticks : ' totalDivNumber=EInt)?
 		'Notes :' notes+=[Note|EString] ',' notePositions+=EInt ( "|" notes+=[Note|EString] ',' notePositions+=EInt)*;
 
 Note returns Note:
-	'Note'
-	name=EString
-	':'
-	(value=DrumNoteValue)?;
+	'Note' name=EString ':'(value=DrumNoteValue)?;
 
 enum DrumNoteValue returns DrumNoteValue:
 				SD = 'SD' | BD = 'BD' | CH = 'CH' | OH = 'OH' | CC = 'CC' | RC = 'RC' | TM = 'TM' | TO = 'TO' | S = 'S' | WS = 'WS' | L = 'L';

@@ -4,8 +4,10 @@
 package fr.unice.polytech.dsl.rythmml.serializer;
 
 import com.google.inject.Inject;
-import fr.unice.polytech.dsl.rythmml.model.rythmml.Bar;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Beat;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.ClassicalBar;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Music;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Note;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern;
@@ -19,7 +21,9 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -35,11 +39,17 @@ public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == RythmmlPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case RythmmlPackage.BAR:
-				sequence_Bar(context, (Bar) semanticObject); 
+			case RythmmlPackage.BAR_MULTIPLIER:
+				sequence_BarMultiplier(context, (BarMultiplier) semanticObject); 
 				return; 
 			case RythmmlPackage.BEAT:
 				sequence_Beat(context, (Beat) semanticObject); 
+				return; 
+			case RythmmlPackage.CLASSICAL_BAR:
+				sequence_ClassicalBar(context, (ClassicalBar) semanticObject); 
+				return; 
+			case RythmmlPackage.MODIFIED_BAR:
+				sequence_ModifiedBar(context, (ModifiedBar) semanticObject); 
 				return; 
 			case RythmmlPackage.MUSIC:
 				sequence_Music(context, (Music) semanticObject); 
@@ -60,12 +70,12 @@ public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Bar returns Bar
+	 *     BarMultiplier returns BarMultiplier
 	 *
 	 * Constraint:
-	 *     (name=EString beats+=[Beat|EString] beats+=[Beat|EString]*)
+	 *     (bar=[Bar|EString] multiplier=EInt?)
 	 */
-	protected void sequence_Bar(ISerializationContext context, Bar semanticObject) {
+	protected void sequence_BarMultiplier(ISerializationContext context, BarMultiplier semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -79,6 +89,41 @@ public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Beat(ISerializationContext context, Beat semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Bar returns ClassicalBar
+	 *     ClassicalBar returns ClassicalBar
+	 *
+	 * Constraint:
+	 *     (name=EString beats+=[Beat|EString] beats+=[Beat|EString]*)
+	 */
+	protected void sequence_ClassicalBar(ISerializationContext context, ClassicalBar semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Bar returns ModifiedBar
+	 *     ModifiedBar returns ModifiedBar
+	 *
+	 * Constraint:
+	 *     (name=EString bar=[Bar|EString])
+	 */
+	protected void sequence_ModifiedBar(ISerializationContext context, ModifiedBar semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.NAMED_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.NAMED_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.MODIFIED_BAR__BAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.MODIFIED_BAR__BAR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getModifiedBarAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getModifiedBarAccess().getBarBarEStringParserRuleCall_3_0_1(), semanticObject.eGet(RythmmlPackage.Literals.MODIFIED_BAR__BAR, false));
+		feeder.finish();
 	}
 	
 	
@@ -98,7 +143,8 @@ public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         ) | 
 	 *         (ownedBeats+=Beat ownedBeats+=Beat*) | 
 	 *         (ownedBars+=Bar ownedBars+=Bar*) | 
-	 *         ((ownedPatterns+=Pattern ownedPatterns+=Pattern*)? ownedSections+=Section ownedSections+=Section*)
+	 *         (ownedPatterns+=Pattern ownedPatterns+=Pattern*) | 
+	 *         (ownedSections+=Section ownedSections+=Section*)
 	 *     )+
 	 */
 	protected void sequence_Music(ISerializationContext context, Music semanticObject) {
@@ -123,7 +169,7 @@ public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Pattern returns Pattern
 	 *
 	 * Constraint:
-	 *     (name=EString bars+=[Bar|EString] bars+=[Bar|EString]*)
+	 *     (name=EString bars+=BarMultiplier bars+=BarMultiplier*)
 	 */
 	protected void sequence_Pattern(ISerializationContext context, Pattern semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

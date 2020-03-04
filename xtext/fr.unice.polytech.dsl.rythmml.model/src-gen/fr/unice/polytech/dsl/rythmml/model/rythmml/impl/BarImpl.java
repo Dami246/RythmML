@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class BarImpl extends MinimalEObjectImpl.Container implements Bar {
+public abstract class BarImpl extends MinimalEObjectImpl.Container implements Bar {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

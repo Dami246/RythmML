@@ -92,7 +92,7 @@ public interface Music extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Sections</em>' containment reference list.
 	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getMusic_OwnedSections()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Section> getOwnedSections();

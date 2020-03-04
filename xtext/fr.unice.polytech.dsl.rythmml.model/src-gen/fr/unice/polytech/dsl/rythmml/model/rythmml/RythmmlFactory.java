@@ -49,15 +49,6 @@ public interface RythmmlFactory extends EFactory {
 	Pattern createPattern();
 
 	/**
-	 * Returns a new object of class '<em>Bar</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bar</em>'.
-	 * @generated
-	 */
-	Bar createBar();
-
-	/**
 	 * Returns a new object of class '<em>Beat</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,6 +65,33 @@ public interface RythmmlFactory extends EFactory {
 	 * @generated
 	 */
 	Note createNote();
+
+	/**
+	 * Returns a new object of class '<em>Classical Bar</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Classical Bar</em>'.
+	 * @generated
+	 */
+	ClassicalBar createClassicalBar();
+
+	/**
+	 * Returns a new object of class '<em>Modified Bar</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Modified Bar</em>'.
+	 * @generated
+	 */
+	ModifiedBar createModifiedBar();
+
+	/**
+	 * Returns a new object of class '<em>Bar Multiplier</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bar Multiplier</em>'.
+	 * @generated
+	 */
+	BarMultiplier createBarMultiplier();
 
 	/**
 	 * Returns the package supported by this factory.

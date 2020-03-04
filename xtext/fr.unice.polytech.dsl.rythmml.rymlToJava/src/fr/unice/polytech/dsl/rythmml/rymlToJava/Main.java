@@ -53,7 +53,7 @@ public class Main {
 		Resource xmiResource = resourceSet.createResource(URI.createURI(destinationPath));
 		// add the root (often forgotten)
 		xmiResource.getContents().add(xtextResource.getContents().get(0));
-
+		
 		xmiResource.save(null);
 	}
 

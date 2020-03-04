@@ -6,7 +6,10 @@ import java.util.Iterator;
 import org.eclipse.emf.ecore.EObject;
 
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Bar;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Beat;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.ClassicalBar;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Music;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.NamedElement;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Note;
@@ -74,8 +77,9 @@ public class RymlSwitchPrinter extends RythmmlSwitch<String>{
 		
 		stringBuilder.append(String.format("Pattern %s = new PatternBuilder()", pattern.getName()));
 		
-		for(Bar b : pattern.getBars())
-			stringBuilder.append(String.format(".addBar(%s)", b.getName()));
+		for(BarMultiplier b : pattern.getBars()) {
+			stringBuilder.append(String.format(".addRepeatedBar(%s, %d)", b.getBar().getName(), b.getMultiplier()));
+		}
 		
 		stringBuilder.append(".build(); \n");
 		return stringBuilder.toString();
@@ -83,6 +87,12 @@ public class RymlSwitchPrinter extends RythmmlSwitch<String>{
 
 	@Override
 	public String caseBar(Bar bar) {
+		if(bar instanceof ClassicalBar) return caseClassicalBar((ClassicalBar)bar);
+		else return caseModifiedBar((ModifiedBar)bar);
+	}
+	
+	@Override
+	public String caseClassicalBar(ClassicalBar bar) {
 		StringBuilder stringBuilder = new StringBuilder();
 		
 		stringBuilder.append(String.format("Bar %s = new BarBuilder()", bar.getName()));
@@ -90,6 +100,16 @@ public class RymlSwitchPrinter extends RythmmlSwitch<String>{
 		for(Beat beat : bar.getBeats()) {
 			stringBuilder.append(String.format(".addBeat(%s)", beat.getName()));
 		}
+		stringBuilder.append(".build(); \n");
+		return stringBuilder.toString();
+	}
+	
+	@Override
+	public String caseModifiedBar(ModifiedBar bar) {
+		StringBuilder stringBuilder = new StringBuilder();
+		
+		stringBuilder.append(String.format("Bar %s = new BarBuilder()", bar.getName()));
+		//TODO
 		stringBuilder.append(".build(); \n");
 		return stringBuilder.toString();
 	}

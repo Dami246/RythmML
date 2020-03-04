@@ -273,8 +273,11 @@ public class MusicItemProvider extends ItemProviderAdapter implements IEditingDo
 		newChildDescriptors.add(createChildParameter(RythmmlPackage.Literals.MUSIC__OWNED_PATTERNS,
 				RythmmlFactory.eINSTANCE.createPattern()));
 
-		newChildDescriptors.add(
-				createChildParameter(RythmmlPackage.Literals.MUSIC__OWNED_BARS, RythmmlFactory.eINSTANCE.createBar()));
+		newChildDescriptors.add(createChildParameter(RythmmlPackage.Literals.MUSIC__OWNED_BARS,
+				RythmmlFactory.eINSTANCE.createClassicalBar()));
+
+		newChildDescriptors.add(createChildParameter(RythmmlPackage.Literals.MUSIC__OWNED_BARS,
+				RythmmlFactory.eINSTANCE.createModifiedBar()));
 
 		newChildDescriptors.add(createChildParameter(RythmmlPackage.Literals.MUSIC__OWNED_BEATS,
 				RythmmlFactory.eINSTANCE.createBeat()));

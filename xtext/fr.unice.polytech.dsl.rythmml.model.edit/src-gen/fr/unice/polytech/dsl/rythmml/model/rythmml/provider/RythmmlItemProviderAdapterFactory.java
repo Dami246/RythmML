@@ -142,29 +142,6 @@ public class RythmmlItemProviderAdapterFactory extends RythmmlAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.unice.polytech.dsl.rythmml.model.rythmml.Bar} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BarItemProvider barItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link fr.unice.polytech.dsl.rythmml.model.rythmml.Bar}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBarAdapter() {
-		if (barItemProvider == null) {
-			barItemProvider = new BarItemProvider(this);
-		}
-
-		return barItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link fr.unice.polytech.dsl.rythmml.model.rythmml.Beat} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -208,6 +185,75 @@ public class RythmmlItemProviderAdapterFactory extends RythmmlAdapterFactory
 		}
 
 		return noteItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.unice.polytech.dsl.rythmml.model.rythmml.ClassicalBar} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ClassicalBarItemProvider classicalBarItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.unice.polytech.dsl.rythmml.model.rythmml.ClassicalBar}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createClassicalBarAdapter() {
+		if (classicalBarItemProvider == null) {
+			classicalBarItemProvider = new ClassicalBarItemProvider(this);
+		}
+
+		return classicalBarItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModifiedBarItemProvider modifiedBarItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createModifiedBarAdapter() {
+		if (modifiedBarItemProvider == null) {
+			modifiedBarItemProvider = new ModifiedBarItemProvider(this);
+		}
+
+		return modifiedBarItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BarMultiplierItemProvider barMultiplierItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBarMultiplierAdapter() {
+		if (barMultiplierItemProvider == null) {
+			barMultiplierItemProvider = new BarMultiplierItemProvider(this);
+		}
+
+		return barMultiplierItemProvider;
 	}
 
 	/**
@@ -315,12 +361,16 @@ public class RythmmlItemProviderAdapterFactory extends RythmmlAdapterFactory
 			sectionItemProvider.dispose();
 		if (patternItemProvider != null)
 			patternItemProvider.dispose();
-		if (barItemProvider != null)
-			barItemProvider.dispose();
 		if (beatItemProvider != null)
 			beatItemProvider.dispose();
 		if (noteItemProvider != null)
 			noteItemProvider.dispose();
+		if (classicalBarItemProvider != null)
+			classicalBarItemProvider.dispose();
+		if (modifiedBarItemProvider != null)
+			modifiedBarItemProvider.dispose();
+		if (barMultiplierItemProvider != null)
+			barMultiplierItemProvider.dispose();
 	}
 
 }

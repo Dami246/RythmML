@@ -2,7 +2,7 @@
  */
 package fr.unice.polytech.dsl.rythmml.model.rythmml.impl;
 
-import fr.unice.polytech.dsl.rythmml.model.rythmml.Bar;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage;
 
@@ -10,15 +10,16 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.PatternImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.PatternImpl#getBars <em>Bars</em>}</li>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.PatternImpl#getMultipliers <em>Multipliers</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,24 +57,14 @@ public class PatternImpl extends MinimalEObjectImpl.Container implements Pattern
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getBars() <em>Bars</em>}' reference list.
+	 * The cached value of the '{@link #getBars() <em>Bars</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBars()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Bar> bars;
-
-	/**
-	 * The cached value of the '{@link #getMultipliers() <em>Multipliers</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMultipliers()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Integer> multipliers;
+	protected EList<BarMultiplier> bars;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,9 +111,9 @@ public class PatternImpl extends MinimalEObjectImpl.Container implements Pattern
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Bar> getBars() {
+	public EList<BarMultiplier> getBars() {
 		if (bars == null) {
-			bars = new EObjectResolvingEList<Bar>(Bar.class, this, RythmmlPackage.PATTERN__BARS);
+			bars = new EObjectContainmentEList<BarMultiplier>(BarMultiplier.class, this, RythmmlPackage.PATTERN__BARS);
 		}
 		return bars;
 	}
@@ -133,11 +123,13 @@ public class PatternImpl extends MinimalEObjectImpl.Container implements Pattern
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Integer> getMultipliers() {
-		if (multipliers == null) {
-			multipliers = new EDataTypeUniqueEList<Integer>(Integer.class, this, RythmmlPackage.PATTERN__MULTIPLIERS);
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case RythmmlPackage.PATTERN__BARS:
+			return ((InternalEList<?>) getBars()).basicRemove(otherEnd, msgs);
 		}
-		return multipliers;
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -152,8 +144,6 @@ public class PatternImpl extends MinimalEObjectImpl.Container implements Pattern
 			return getName();
 		case RythmmlPackage.PATTERN__BARS:
 			return getBars();
-		case RythmmlPackage.PATTERN__MULTIPLIERS:
-			return getMultipliers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -172,11 +162,7 @@ public class PatternImpl extends MinimalEObjectImpl.Container implements Pattern
 			return;
 		case RythmmlPackage.PATTERN__BARS:
 			getBars().clear();
-			getBars().addAll((Collection<? extends Bar>) newValue);
-			return;
-		case RythmmlPackage.PATTERN__MULTIPLIERS:
-			getMultipliers().clear();
-			getMultipliers().addAll((Collection<? extends Integer>) newValue);
+			getBars().addAll((Collection<? extends BarMultiplier>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -196,9 +182,6 @@ public class PatternImpl extends MinimalEObjectImpl.Container implements Pattern
 		case RythmmlPackage.PATTERN__BARS:
 			getBars().clear();
 			return;
-		case RythmmlPackage.PATTERN__MULTIPLIERS:
-			getMultipliers().clear();
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -215,8 +198,6 @@ public class PatternImpl extends MinimalEObjectImpl.Container implements Pattern
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case RythmmlPackage.PATTERN__BARS:
 			return bars != null && !bars.isEmpty();
-		case RythmmlPackage.PATTERN__MULTIPLIERS:
-			return multipliers != null && !multipliers.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -234,8 +215,6 @@ public class PatternImpl extends MinimalEObjectImpl.Container implements Pattern
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", multipliers: ");
-		result.append(multipliers);
 		result.append(')');
 		return result.toString();
 	}

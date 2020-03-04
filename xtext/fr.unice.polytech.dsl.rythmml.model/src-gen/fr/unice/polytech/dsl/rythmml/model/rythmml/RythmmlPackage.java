@@ -278,7 +278,7 @@ public interface RythmmlPackage extends EPackage {
 	int PATTERN__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Bars</b></em>' reference list.
+	 * The feature id for the '<em><b>Bars</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -287,22 +287,13 @@ public interface RythmmlPackage extends EPackage {
 	int PATTERN__BARS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Multipliers</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PATTERN__MULTIPLIERS = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int PATTERN_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Pattern</em>' class.
@@ -470,6 +461,153 @@ public interface RythmmlPackage extends EPackage {
 	int NOTE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.ClassicalBarImpl <em>Classical Bar</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.ClassicalBarImpl
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.RythmmlPackageImpl#getClassicalBar()
+	 * @generated
+	 */
+	int CLASSICAL_BAR = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSICAL_BAR__NAME = BAR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Beats</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSICAL_BAR__BEATS = BAR__BEATS;
+
+	/**
+	 * The number of structural features of the '<em>Classical Bar</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSICAL_BAR_FEATURE_COUNT = BAR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Classical Bar</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSICAL_BAR_OPERATION_COUNT = BAR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.ModifiedBarImpl <em>Modified Bar</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.ModifiedBarImpl
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.RythmmlPackageImpl#getModifiedBar()
+	 * @generated
+	 */
+	int MODIFIED_BAR = 8;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODIFIED_BAR__NAME = BAR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Beats</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODIFIED_BAR__BEATS = BAR__BEATS;
+
+	/**
+	 * The feature id for the '<em><b>Bar</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODIFIED_BAR__BAR = BAR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Modified Bar</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODIFIED_BAR_FEATURE_COUNT = BAR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Modified Bar</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODIFIED_BAR_OPERATION_COUNT = BAR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BarMultiplierImpl <em>Bar Multiplier</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BarMultiplierImpl
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.RythmmlPackageImpl#getBarMultiplier()
+	 * @generated
+	 */
+	int BAR_MULTIPLIER = 9;
+
+	/**
+	 * The feature id for the '<em><b>Bar</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BAR_MULTIPLIER__BAR = 0;
+
+	/**
+	 * The feature id for the '<em><b>Multiplier</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BAR_MULTIPLIER__MULTIPLIER = 1;
+
+	/**
+	 * The number of structural features of the '<em>Bar Multiplier</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BAR_MULTIPLIER_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Bar Multiplier</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BAR_MULTIPLIER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.DrumNoteValue <em>Drum Note Value</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -477,7 +615,7 @@ public interface RythmmlPackage extends EPackage {
 	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.RythmmlPackageImpl#getDrumNoteValue()
 	 * @generated
 	 */
-	int DRUM_NOTE_VALUE = 7;
+	int DRUM_NOTE_VALUE = 10;
 
 	/**
 	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music <em>Music</em>}'.
@@ -620,26 +758,15 @@ public interface RythmmlPackage extends EPackage {
 	EClass getPattern();
 
 	/**
-	 * Returns the meta object for the reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern#getBars <em>Bars</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern#getBars <em>Bars</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Bars</em>'.
+	 * @return the meta object for the containment reference list '<em>Bars</em>'.
 	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern#getBars()
 	 * @see #getPattern()
 	 * @generated
 	 */
 	EReference getPattern_Bars();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern#getMultipliers <em>Multipliers</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Multipliers</em>'.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern#getMultipliers()
-	 * @see #getPattern()
-	 * @generated
-	 */
-	EAttribute getPattern_Multipliers();
 
 	/**
 	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Bar <em>Bar</em>}'.
@@ -746,6 +873,69 @@ public interface RythmmlPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNamedElement_Name();
+
+	/**
+	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.ClassicalBar <em>Classical Bar</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Classical Bar</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.ClassicalBar
+	 * @generated
+	 */
+	EClass getClassicalBar();
+
+	/**
+	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar <em>Modified Bar</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Modified Bar</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar
+	 * @generated
+	 */
+	EClass getModifiedBar();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar#getBar <em>Bar</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Bar</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar#getBar()
+	 * @see #getModifiedBar()
+	 * @generated
+	 */
+	EReference getModifiedBar_Bar();
+
+	/**
+	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier <em>Bar Multiplier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bar Multiplier</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier
+	 * @generated
+	 */
+	EClass getBarMultiplier();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier#getBar <em>Bar</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Bar</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier#getBar()
+	 * @see #getBarMultiplier()
+	 * @generated
+	 */
+	EReference getBarMultiplier_Bar();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier#getMultiplier <em>Multiplier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Multiplier</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier#getMultiplier()
+	 * @see #getBarMultiplier()
+	 * @generated
+	 */
+	EAttribute getBarMultiplier_Multiplier();
 
 	/**
 	 * Returns the meta object for enum '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.DrumNoteValue <em>Drum Note Value</em>}'.
@@ -891,20 +1081,12 @@ public interface RythmmlPackage extends EPackage {
 		EClass PATTERN = eINSTANCE.getPattern();
 
 		/**
-		 * The meta object literal for the '<em><b>Bars</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Bars</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference PATTERN__BARS = eINSTANCE.getPattern_Bars();
-
-		/**
-		 * The meta object literal for the '<em><b>Multipliers</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PATTERN__MULTIPLIERS = eINSTANCE.getPattern_Multipliers();
 
 		/**
 		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BarImpl <em>Bar</em>}' class.
@@ -993,6 +1175,60 @@ public interface RythmmlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
+
+		/**
+		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.ClassicalBarImpl <em>Classical Bar</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.ClassicalBarImpl
+		 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.RythmmlPackageImpl#getClassicalBar()
+		 * @generated
+		 */
+		EClass CLASSICAL_BAR = eINSTANCE.getClassicalBar();
+
+		/**
+		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.ModifiedBarImpl <em>Modified Bar</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.ModifiedBarImpl
+		 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.RythmmlPackageImpl#getModifiedBar()
+		 * @generated
+		 */
+		EClass MODIFIED_BAR = eINSTANCE.getModifiedBar();
+
+		/**
+		 * The meta object literal for the '<em><b>Bar</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODIFIED_BAR__BAR = eINSTANCE.getModifiedBar_Bar();
+
+		/**
+		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BarMultiplierImpl <em>Bar Multiplier</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BarMultiplierImpl
+		 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.RythmmlPackageImpl#getBarMultiplier()
+		 * @generated
+		 */
+		EClass BAR_MULTIPLIER = eINSTANCE.getBarMultiplier();
+
+		/**
+		 * The meta object literal for the '<em><b>Bar</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BAR_MULTIPLIER__BAR = eINSTANCE.getBarMultiplier_Bar();
+
+		/**
+		 * The meta object literal for the '<em><b>Multiplier</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BAR_MULTIPLIER__MULTIPLIER = eINSTANCE.getBarMultiplier_Multiplier();
 
 		/**
 		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.DrumNoteValue <em>Drum Note Value</em>}' enum.

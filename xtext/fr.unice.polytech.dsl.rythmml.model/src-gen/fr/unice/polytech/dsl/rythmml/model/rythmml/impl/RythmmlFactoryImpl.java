@@ -63,12 +63,16 @@ public class RythmmlFactoryImpl extends EFactoryImpl implements RythmmlFactory {
 			return createSection();
 		case RythmmlPackage.PATTERN:
 			return createPattern();
-		case RythmmlPackage.BAR:
-			return createBar();
 		case RythmmlPackage.BEAT:
 			return createBeat();
 		case RythmmlPackage.NOTE:
 			return createNote();
+		case RythmmlPackage.CLASSICAL_BAR:
+			return createClassicalBar();
+		case RythmmlPackage.MODIFIED_BAR:
+			return createModifiedBar();
+		case RythmmlPackage.BAR_MULTIPLIER:
+			return createBarMultiplier();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -139,16 +143,6 @@ public class RythmmlFactoryImpl extends EFactoryImpl implements RythmmlFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Bar createBar() {
-		BarImpl bar = new BarImpl();
-		return bar;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Beat createBeat() {
 		BeatImpl beat = new BeatImpl();
 		return beat;
@@ -162,6 +156,36 @@ public class RythmmlFactoryImpl extends EFactoryImpl implements RythmmlFactory {
 	public Note createNote() {
 		NoteImpl note = new NoteImpl();
 		return note;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ClassicalBar createClassicalBar() {
+		ClassicalBarImpl classicalBar = new ClassicalBarImpl();
+		return classicalBar;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ModifiedBar createModifiedBar() {
+		ModifiedBarImpl modifiedBar = new ModifiedBarImpl();
+		return modifiedBar;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BarMultiplier createBarMultiplier() {
+		BarMultiplierImpl barMultiplier = new BarMultiplierImpl();
+		return barMultiplier;
 	}
 
 	/**
