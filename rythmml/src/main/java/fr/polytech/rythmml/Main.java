@@ -3,6 +3,7 @@ package fr.polytech.rythmml;
 import fr.polytech.rythmml.Utils.PrettyPrinter;
 import fr.polytech.rythmml.bar.Bar;
 import fr.polytech.rythmml.bar.BarBuilder;
+import fr.polytech.rythmml.bar.BarVariationBuilder;
 import fr.polytech.rythmml.beat.Beat;
 import fr.polytech.rythmml.beat.BeatBuilder;
 import fr.polytech.rythmml.midi.ConcreteMIDIVisitor;
@@ -41,8 +42,13 @@ public class Main {
                 .setNbOfTicks(200).setNbDivision(4).build();
 
         Bar bar1 = new BarBuilder().addBeat(beat1).addBeat(beat1).build();
+        Bar barVaried = new BarVariationBuilder(bar1).replaceNote(bd, xH).build();
+        Bar barVaried2 = new BarVariationBuilder(bar1).removeNote(bd).build();
+        System.out.println(PrettyPrinter.prettyPrintBar(bar1));
+        System.out.println(PrettyPrinter.prettyPrintBar(barVaried));
+        System.out.println(PrettyPrinter.prettyPrintBar(barVaried2));
 
-        Pattern pattern1 = new PatternBuilder().addRepeatedBar(bar1, 20)
+        Pattern pattern1 = new PatternBuilder().addRepeatedBar(bar1, 2).addRepeatedBar(barVaried2,2)
                 .build();
 
         Section section1 = new SectionBuilder().addPattern(pattern1).build();
@@ -50,7 +56,7 @@ public class Main {
         Music music = new MusicBuilder().setAuthor(author).setTitle(title).addSection(section1).prepare().build();
 
 
-        System.out.println(PrettyPrinter.prettyPrintPattern(pattern1));
+        // System.out.println(PrettyPrinter.prettyPrintPattern(pattern1));
 
         MIDIPlayer.createSequence(200); //in slice per beat
         MIDIPlayer.setTempoBPM(60);

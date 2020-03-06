@@ -65,10 +65,10 @@ public class MusicBuilder {
                                 int pos = ibar * bar.getListOfBeats().size() * 200; //TODO
                                 pos += ibeat * 200;
                                 pos += ((double) note.getDivision()/beat.getNbdivision()) * 200;
-                                System.out.println("______ ______");
-                                System.out.println(">>> " + isection + " " + ipattern + " " + ibar + " " + ibeat + " " + note.getDivision());
-                                System.out.println(pos);
-                                System.out.println("______ ______");
+                                // System.out.println("______ ______");
+                                // System.out.println(">>> " + isection + " " + ipattern + " " + ibar + " " + ibeat + " " + note.getDivision());
+                                // System.out.println(pos);
+                                // System.out.println("______ ______");
                                 note.setTickNb(pos);
                             }
                     }

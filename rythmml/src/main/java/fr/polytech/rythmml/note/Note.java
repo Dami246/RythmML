@@ -91,6 +91,9 @@ public class Note implements MIDIVisitable, Cloneable {
         this.division = division;
     }
 
+    public void setNoteValue(NoteValue noteValue) {
+        this.noteValue = noteValue;
+    }
 
     public int getTickNb() {
         return tickNb;
