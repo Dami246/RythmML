@@ -68,8 +68,17 @@ public class Main {
         System.out.println(PrettyPrinter.prettyPrintBar(barVaried5));
 
 
-        Pattern pattern1 = new PatternBuilder().addRepeatedBar(bar1, 20)
+        System.out.println("-----");
+        Bar barMixed = new BarVariationBuilder(bar1).replaceNote(BD, CH).removeNote(BD).build();
+        System.out.println(PrettyPrinter.prettyPrintBar(barMixed));
+        System.out.println("-----");
+
+
+        Pattern pattern1 = new PatternBuilder().addRepeatedBar(bar1, 4).addRepeatedBar(barVaried, 4).addRepeatedBar(barVaried2, 4).addRepeatedBar(barVaried3, 4)
+                .addRepeatedBar(barVaried4, 4).addRepeatedBar(barVaried5, 4)
                 .build();
+
+        System.out.println(PrettyPrinter.prettyPrintPattern(pattern1));
 
         Section section1 = new SectionBuilder().addPattern(pattern1).build();
 

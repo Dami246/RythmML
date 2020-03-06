@@ -10,45 +10,38 @@ import java.util.List;
 public class BarVariationBuilder {
 
     Bar referenceBar;
+    Bar clonedBar;
+
     List<Beat> listOfBeats;
 
     public BarVariationBuilder(Bar bar) {
         listOfBeats = new ArrayList<>();
         referenceBar = bar;
+        try {
+            clonedBar = (Bar) referenceBar.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
     }
 
     public Bar build() {
-        return new Bar(listOfBeats);
+        return clonedBar;
     }
 
     public BarVariationBuilder replaceNote(Note oldNote, Note newNote) {
-        for (Beat beat : referenceBar.listOfBeats) {
-            Beat newBeat = null;
-            try {
-                newBeat = (Beat) beat.clone();
-            } catch (CloneNotSupportedException e) {
-                e.printStackTrace();
-            }
-            for (Note note : newBeat.getListOfNotes()) {
+        for (Beat beat : clonedBar.listOfBeats) {
+            for (Note note : beat.getListOfNotes()) {
                 if (note.equals(oldNote)) {
                     note.setNoteValue(newNote.getNoteValue());
                 }
             }
-            listOfBeats.add(newBeat);
         }
         return this;
     }
 
     public BarVariationBuilder removeNote(Note toRemoveNote) {
-        for (Beat beat : referenceBar.listOfBeats) {
-            Beat newBeat = null;
-            try {
-                newBeat = (Beat) beat.clone();
-            } catch (CloneNotSupportedException e) {
-                e.printStackTrace();
-            }
-            newBeat.getListOfNotes().removeIf(note -> note.equals(toRemoveNote));
-            listOfBeats.add(newBeat);
+        for (Beat beat : clonedBar.listOfBeats) {
+            beat.getListOfNotes().removeIf(note -> note.equals(toRemoveNote));
         }
         return this;
     }
@@ -56,23 +49,15 @@ public class BarVariationBuilder {
     public BarVariationBuilder replaceNoteInSpecificBeat(int beatNumber, Note oldNote, Note newNote)  {
         int realBeatNumber = beatNumber - 1;
         int counter = 0;
-        for (Beat beat : referenceBar.listOfBeats) {
-            Beat newBeat = null;
-            try {
-                newBeat = (Beat) beat.clone();
-            } catch (CloneNotSupportedException e) {
-                e.printStackTrace();
-            }
-            for (Note note : newBeat.getListOfNotes()) {
+        for (Beat beat : clonedBar.listOfBeats) {
+            for (Note note : beat.getListOfNotes()) {
                 if (realBeatNumber == counter) {
                     if (note.equals(oldNote)) {
-                        System.out.println("find one");
                         note.setNoteValue(newNote.getNoteValue());
                     }
                 }
             }
             counter++;
-            listOfBeats.add(newBeat);
         }
         return this;
     }
@@ -80,18 +65,10 @@ public class BarVariationBuilder {
     public BarVariationBuilder removeNoteInSpecificBeat(int beatNumber, Note noteToRemove)  {
         int realBeatNumber = beatNumber - 1;
         int counter = 0;
-        for (Beat beat : referenceBar.listOfBeats) {
-            Beat newBeat = null;
-            try {
-                newBeat = (Beat) beat.clone();
-            } catch (CloneNotSupportedException e) {
-                e.printStackTrace();
-            }
+        for (Beat beat : clonedBar.listOfBeats) {
             if (realBeatNumber == counter) {
-                newBeat.getListOfNotes().removeIf(note -> note.equals(noteToRemove));
+                beat.getListOfNotes().removeIf(note -> note.equals(noteToRemove));
             }
-
-            listOfBeats.add(newBeat);
             counter++;
         }
         return this;
@@ -100,18 +77,11 @@ public class BarVariationBuilder {
     public BarVariationBuilder addNoteInSpecificBeat(int beatNumber, Note noteToAdd, int division)  {
         int realBeatNumber = beatNumber - 1;
         int counter = 0;
-        for (Beat beat : referenceBar.listOfBeats) {
-            Beat newBeat = null;
-            try {
-                newBeat = (Beat) beat.clone();
-            } catch (CloneNotSupportedException e) {
-                e.printStackTrace();
-            }
+        for (Beat beat : clonedBar.listOfBeats) {
             if (realBeatNumber == counter) {
                 noteToAdd.setDivision(division);
-                newBeat.addNote(noteToAdd, division);
+                beat.addNote(noteToAdd, division);
             }
-            listOfBeats.add(newBeat);
             counter++;
         }
         return this;
