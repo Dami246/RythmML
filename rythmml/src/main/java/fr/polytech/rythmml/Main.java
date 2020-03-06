@@ -20,46 +20,51 @@ import fr.polytech.rythmml.section.SectionBuilder;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws CloneNotSupportedException {
         // testing models
         String title = "Billie Jean";
         String author = "Walidou";
         ConcreteMIDIVisitor midiVisitor = new ConcreteMIDIVisitor();
 
-        Note S = new NoteBuilder().setNoteValue(DrumNoteValue.SD)
+        Note SD = new NoteBuilder().setNoteValue(DrumNoteValue.SD)
                 .build();
 
-        Note bd = new NoteBuilder().setNoteValue(DrumNoteValue.BD)
+        Note BD = new NoteBuilder().setNoteValue(DrumNoteValue.BD)
                 .build();
 
-        Note xH = new NoteBuilder().setNoteValue(DrumNoteValue.CH)
+        Note CH = new NoteBuilder().setNoteValue(DrumNoteValue.CH)
                 .build();
-
-//        Beat beat1 = new BeatBuilder()
-//                .addNote(xH,0).addNote(xH, 1).addNote(xH, 2).addNote(xH,3)
-//                .addNote(S, 2)
-//                .addNote(bd, 0)
-//                .setNbOfTicks(200).setNbDivision(4).build();
 
         Beat beat1 = new BeatBuilder()
-                .addNote(xH, 5)
-                .addNote(bd, 0)
-                .setNbDivision(200).build();
+                .addNote(CH, 0)
+                .addNote(BD, 0)
+                .setNbDivision(4).build();
 
         Beat beat2 = new BeatBuilder()
-                .addNote(xH, 0)
-                .setNbDivision(200).build();
+                .addNote(CH, 0)
+                .setNbDivision(4).build();
 
         Beat beat3 = new BeatBuilder()
-                .addNote(xH, 5)
-                .addNote(S, 0)
-                .setNbDivision(200).build();
+                .addNote(CH, 0)
+                .addNote(SD, 0)
+                .setNbDivision(4).build();
 
         Beat beat4 = new BeatBuilder()
-                .addNote(xH, 0)
-                .setNbDivision(200).build();
+                .addNote(CH, 0)
+                .setNbDivision(4).build();
 
         Bar bar1 = new BarBuilder().addBeat(beat1).addBeat(beat2).addBeat(beat3).addBeat(beat4).build();
+        Bar barVaried = new BarVariationBuilder(bar1).replaceNote(BD, CH).build();
+        Bar barVaried2 = new BarVariationBuilder(bar1).removeNote(BD).build();
+        Bar barVaried3 = new BarVariationBuilder(bar1).replaceNoteInSpecificBeat(3, CH, SD).build();
+        Bar barVaried4 = new BarVariationBuilder(bar1).removeNoteInSpecificBeat(3, CH).build();
+
+        System.out.println(PrettyPrinter.prettyPrintBar(bar1));
+        System.out.println(PrettyPrinter.prettyPrintBar(barVaried));
+        System.out.println(PrettyPrinter.prettyPrintBar(barVaried2));
+        System.out.println(PrettyPrinter.prettyPrintBar(barVaried3));
+        System.out.println(PrettyPrinter.prettyPrintBar(barVaried4));
+
 
         Pattern pattern1 = new PatternBuilder().addRepeatedBar(bar1, 20)
                 .build();
@@ -72,9 +77,8 @@ public class Main {
         // System.out.println(PrettyPrinter.prettyPrintPattern(pattern1));
 
         MIDIPlayer.createSequence(200); //in slice per beat
-        MIDIPlayer.setTempoBPM(210);
+        MIDIPlayer.setTempoBPM(230);
         music.accept(midiVisitor);
         MIDIPlayer.playSequence();
-
     }
 }
