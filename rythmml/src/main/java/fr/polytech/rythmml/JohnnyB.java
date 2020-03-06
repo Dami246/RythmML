@@ -17,7 +17,7 @@ import fr.polytech.rythmml.section.Section;
 import fr.polytech.rythmml.section.SectionBuilder;
 
 /**
- * Johnny B music
+ * Johnny be good : Chuck Berry
  */
 public class JohnnyB {
     public static void main(String[] args) {

@@ -19,7 +19,7 @@ import fr.polytech.rythmml.section.Section;
 import fr.polytech.rythmml.section.SectionBuilder;
 
 /**
- * Billie Jean music
+ * Billie Jean : Mickael Jackson
  */
 public class Main {
 
