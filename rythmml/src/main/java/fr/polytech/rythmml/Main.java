@@ -18,6 +18,9 @@ import fr.polytech.rythmml.pattern.PatternBuilder;
 import fr.polytech.rythmml.section.Section;
 import fr.polytech.rythmml.section.SectionBuilder;
 
+/**
+ * Billie Jean music
+ */
 public class Main {
 
     public static void main(String[] args) throws CloneNotSupportedException {
