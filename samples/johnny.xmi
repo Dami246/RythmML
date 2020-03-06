@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<rythmml:Music xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rythmml="http://www.example.org/rythmml" name="amusic" title="Johnny B" author="Chuck Berry" bpm="210" resolutionPerSlide="200">
+  <ownedSections name="first_section_1" patterns="//@ownedPatterns.0"/>
+  <ownedPatterns name="fp">
+    <bars bar="//@ownedBars.0" multiplier="64"/>
+  </ownedPatterns>
+  <ownedBars xsi:type="rythmml:ClassicalBar" name="bar" beats="//@ownedBeats.0 //@ownedBeats.1 //@ownedBeats.2 //@ownedBeats.3"/>
+  <ownedBeats name="beat1" notes="//@ownedNotes.2 //@ownedNotes.1">
+    <notePositions>1</notePositions>
+    <notePositions>0</notePositions>
+  </ownedBeats>
+  <ownedBeats name="beat2" notes="//@ownedNotes.2">
+    <notePositions>0</notePositions>
+  </ownedBeats>
+  <ownedBeats name="beat3" notes="//@ownedNotes.2 //@ownedNotes.0">
+    <notePositions>1</notePositions>
+    <notePositions>0</notePositions>
+  </ownedBeats>
+  <ownedBeats name="beat4" notes="//@ownedNotes.2">
+    <notePositions>0</notePositions>
+  </ownedBeats>
+  <ownedNotes name="s" value="S"/>
+  <ownedNotes name="bd" value="BD"/>
+  <ownedNotes name="rc" value="RC"/>
+</rythmml:Music>

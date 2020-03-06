@@ -77,4 +77,5 @@ Note returns Note:
 	'Note' name=EString ':'(value=DrumNoteValue)?;
 
 enum DrumNoteValue returns DrumNoteValue:
-				SD = 'SD' | BD = 'BD' | CH = 'CH' | OH = 'OH' | CC = 'CC' | RC = 'RC' | TM = 'TM' | TO = 'TO' | S = 'S' | WS = 'WS' | L = 'L';
+				SD = 'SD' | BD = 'BD' | CH = 'CH' | OH = 'OH' | CC = 'CC' 
+				| RC = 'RC' | TM = 'TM' | TO = 'TO' | S = 'S' | WS = 'WS' | L = 'L';

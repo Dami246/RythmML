@@ -1,0 +1,20 @@
+Music amusic:
+	title: "Johnny B"
+	author: "Chuck Berry"
+	bpm: 210
+	resolution: 200
+	
+	Note s : S
+	Note bd : BD
+	Note rc : RC
+
+	Beat beat1 : rc,1 | bd,0
+	Beat beat2 : rc,0
+	Beat beat3 : rc,1 | s,0
+	Beat beat4 : rc,0
+		
+	Bar bar : beat1 | beat2 | beat3 | beat4
+	
+	Pattern fp : bar x 64
+	Section  first_section_1 : fp
+		 

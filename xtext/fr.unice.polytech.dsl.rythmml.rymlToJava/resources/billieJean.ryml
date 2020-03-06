@@ -26,6 +26,6 @@ Music amusic:
 	modifications:
 	- beat 3 replace xH by sd
 	
-	Pattern fp : bar x 64 | bar2 x 3
+	Pattern fp : bar x 64 | bar2 x 3 | bar3 x 3
 	Section  first_section_1 : fp
 		 

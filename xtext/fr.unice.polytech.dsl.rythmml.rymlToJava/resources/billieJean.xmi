@@ -4,6 +4,7 @@
   <ownedPatterns name="fp">
     <bars bar="//@ownedBars.0" multiplier="64"/>
     <bars bar="//@ownedBars.1" multiplier="3"/>
+    <bars bar="//@ownedBars.2" multiplier="3"/>
   </ownedPatterns>
   <ownedBars xsi:type="rythmml:ClassicalBar" name="bar" beats="//@ownedBeats.0 //@ownedBeats.1 //@ownedBeats.2 //@ownedBeats.3"/>
   <ownedBars xsi:type="rythmml:ModifiedBar" name="bar2" bar="//@ownedBars.0">

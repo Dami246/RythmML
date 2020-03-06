@@ -1,0 +1,31 @@
+Music amusic:
+	title: "Billie Jean"
+	author: "Walidou"
+	bpm: 210
+	resolution: 200
+	
+	Note sd : SD
+	Note bd : BD
+	Note xH : CH
+
+	Beat beat1 : xH,1 | bd,0
+	Beat beat2 : xH,0
+	Beat beat3 : xH,1 | sd,0
+	Beat beat4 : xH,0
+		
+	Bar bar : beat1 | beat2 | beat3 | beat4
+	
+	Bar bar2 based on bar
+	modifications:
+	- beat 1 add xH at tick 2
+	- delete bd
+	- beat 4 replace xH by bd
+	- beat 3 delete xH
+	
+	Bar bar3 based on bar2
+	modifications:
+	- beat 3 replace xH by sd
+	
+	Pattern fp : bar x 64 | bar2 x 3 | bar3 x 3
+	Section  first_section_1 : fp
+		 
