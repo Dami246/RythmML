@@ -58,4 +58,8 @@ public class Beat implements MIDIVisitable, Cloneable {
     public void setListOfNotes(List<Note> listOfNotes) {
         this.listOfNotes = listOfNotes;
     }
+
+    public void addNote(Note noteToAdd, int division) {
+        listOfNotes.add(noteToAdd);
+    }
 }

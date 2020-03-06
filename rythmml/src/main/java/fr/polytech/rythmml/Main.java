@@ -58,12 +58,14 @@ public class Main {
         Bar barVaried2 = new BarVariationBuilder(bar1).removeNote(BD).build();
         Bar barVaried3 = new BarVariationBuilder(bar1).replaceNoteInSpecificBeat(3, CH, SD).build();
         Bar barVaried4 = new BarVariationBuilder(bar1).removeNoteInSpecificBeat(3, CH).build();
+        Bar barVaried5 = new BarVariationBuilder(bar1).addNoteInSpecificBeat(2, CH, 0).build();
 
         System.out.println(PrettyPrinter.prettyPrintBar(bar1));
         System.out.println(PrettyPrinter.prettyPrintBar(barVaried));
         System.out.println(PrettyPrinter.prettyPrintBar(barVaried2));
         System.out.println(PrettyPrinter.prettyPrintBar(barVaried3));
         System.out.println(PrettyPrinter.prettyPrintBar(barVaried4));
+        System.out.println(PrettyPrinter.prettyPrintBar(barVaried5));
 
 
         Pattern pattern1 = new PatternBuilder().addRepeatedBar(bar1, 20)
@@ -73,8 +75,6 @@ public class Main {
 
         Music music = new MusicBuilder().setAuthor(author).setTitle(title).addSection(section1).prepare().build();
 
-
-        // System.out.println(PrettyPrinter.prettyPrintPattern(pattern1));
 
         MIDIPlayer.createSequence(200); //in slice per beat
         MIDIPlayer.setTempoBPM(230);
