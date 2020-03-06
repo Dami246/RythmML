@@ -1,37 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rythmml" nsURI="http://www.example.org/rythmml" nsPrefix="rythmml">
-  <eClassifiers xsi:type="ecore:EClass" name="Music">
+  <eClassifiers xsi:type="ecore:EClass" name="Music" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="author" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="section" lowerBound="1"
-        upperBound="-1" eType="#//Section"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSections" upperBound="-1"
+        eType="#//Section" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bpm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resolutionPerSlide" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPatterns" upperBound="-1"
+        eType="#//Pattern" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedBars" upperBound="-1"
+        eType="#//Bar" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedBeats" upperBound="-1"
+        eType="#//Beat" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedNotes" upperBound="-1"
+        eType="#//Note" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Section">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
+  <eClassifiers xsi:type="ecore:EClass" name="Section" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patterns" lowerBound="1"
         upperBound="-1" eType="#//Pattern"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Pattern">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bar" lowerBound="1" upperBound="-1"
-        eType="#//Bar"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Pattern" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bars" upperBound="-1" eType="#//BarMultiplier"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Bar">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="beat" lowerBound="1" upperBound="-1"
+  <eClassifiers xsi:type="ecore:EClass" name="Bar" abstract="true" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="beats" lowerBound="1" upperBound="-1"
         eType="#//Beat"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Beat">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbDivision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="note" lowerBound="1" upperBound="-1"
+  <eClassifiers xsi:type="ecore:EClass" name="Beat" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalDivNumber" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="notes" lowerBound="1" upperBound="-1"
         eType="#//Note"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notePositions" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Note">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="notevalue" lowerBound="1"
-        eType="#//NoteValue"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Note" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" unique="false" eType="#//DrumNoteValue"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NoteValue" abstract="true" interface="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DrumNoteValue" eSuperTypes="#//NoteValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DrumNoteValue">
+    <eLiterals name="SD"/>
+    <eLiterals name="BD" value="1"/>
+    <eLiterals name="CH" value="2"/>
+    <eLiterals name="OH" value="3"/>
+    <eLiterals name="CC" value="4"/>
+    <eLiterals name="RC" value="5"/>
+    <eLiterals name="TM" value="6" literal="TM"/>
+    <eLiterals name="TO" value="7"/>
+    <eLiterals name="S" value="8"/>
+    <eLiterals name="WS" value="9"/>
+    <eLiterals name="L" value="10"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassicalBar" eSuperTypes="#//Bar"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifiedBar" eSuperTypes="#//Bar">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bar" lowerBound="1" eType="#//Bar"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BarMultiplier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bar" lowerBound="1" eType="#//Bar"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplier" unique="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -16,7 +16,7 @@ public class Note implements MIDIVisitable, Cloneable {
     private NoteValue noteValue;
 
     // number of ticks of duration
-    private int duration;
+    private int duration = 1;
 
     // position in time
     private int tickNb;

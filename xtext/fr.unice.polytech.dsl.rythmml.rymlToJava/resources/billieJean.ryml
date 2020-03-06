@@ -1,0 +1,30 @@
+Music amusic:
+	title : "Billie Jean"
+	author : "Walidou"
+	bpm : 200
+	resolution per beats : 200
+	
+	Note sd : SD
+	Note cd : BD
+	Note l : L
+
+	Beat abeat1 : 
+		Nb of ticks : 200
+		Notes : sd,0 | cd,1
+	
+	Beat abeat12 : 
+		Nb of ticks : 200
+		Notes : l,0 | sd,1
+		
+	Beat abeat13 :
+		Nb of ticks : 200
+		Notes : sd, 0
+	
+	Beat abeat14 :
+		Nb of ticks : 200
+		Notes : l,0
+		
+	Bar abar : abeat1 | abeat12 | abeat13 | abeat14
+	Pattern fp : abar | abar | abar | abar | abar | abar x 60
+	Section s : fp
+		 

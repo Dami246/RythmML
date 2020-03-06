@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated rythmml -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="fr.unice.polytech.dsl.rythmml.model.rythmml.presentation.RythmmlModelWizardID"
+            name="%_UI_RythmmlModelWizard_label"
+            class="fr.unice.polytech.dsl.rythmml.model.rythmml.presentation.RythmmlModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RythmmlModelFile.gif">
+         <description>%_UI_RythmmlModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated rythmml -->
+      <editor
+            id="fr.unice.polytech.dsl.rythmml.model.rythmml.presentation.RythmmlEditorID"
+            name="%_UI_RythmmlEditor_label"
+            icon="icons/full/obj16/RythmmlModelFile.gif"
+            extensions="rythmml"
+            class="fr.unice.polytech.dsl.rythmml.model.rythmml.presentation.RythmmlEditor"
+            contributorClass="fr.unice.polytech.dsl.rythmml.model.rythmml.presentation.RythmmlActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
