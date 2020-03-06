@@ -73,6 +73,12 @@ public class RythmmlFactoryImpl extends EFactoryImpl implements RythmmlFactory {
 			return createModifiedBar();
 		case RythmmlPackage.BAR_MULTIPLIER:
 			return createBarMultiplier();
+		case RythmmlPackage.NOTE_ADDITION:
+			return createNoteAddition();
+		case RythmmlPackage.NOTE_DELETION:
+			return createNoteDeletion();
+		case RythmmlPackage.NOTE_REPLACEMENT:
+			return createNoteReplacement();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -186,6 +192,36 @@ public class RythmmlFactoryImpl extends EFactoryImpl implements RythmmlFactory {
 	public BarMultiplier createBarMultiplier() {
 		BarMultiplierImpl barMultiplier = new BarMultiplierImpl();
 		return barMultiplier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NoteAddition createNoteAddition() {
+		NoteAdditionImpl noteAddition = new NoteAdditionImpl();
+		return noteAddition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NoteDeletion createNoteDeletion() {
+		NoteDeletionImpl noteDeletion = new NoteDeletionImpl();
+		return noteDeletion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NoteReplacement createNoteReplacement() {
+		NoteReplacementImpl noteReplacement = new NoteReplacementImpl();
+		return noteReplacement;
 	}
 
 	/**

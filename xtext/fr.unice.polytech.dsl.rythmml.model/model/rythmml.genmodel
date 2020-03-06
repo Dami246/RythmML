@@ -40,9 +40,7 @@
     <genClasses ecoreClass="rythmml.ecore#//Pattern">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Pattern/bars"/>
     </genClasses>
-    <genClasses ecoreClass="rythmml.ecore#//Bar">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Bar/beats"/>
-    </genClasses>
+    <genClasses ecoreClass="rythmml.ecore#//Bar"/>
     <genClasses ecoreClass="rythmml.ecore#//Beat">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Beat/totalDivNumber"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//Beat/notes"/>
@@ -54,13 +52,29 @@
     <genClasses image="false" ecoreClass="rythmml.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//NamedElement/name"/>
     </genClasses>
-    <genClasses ecoreClass="rythmml.ecore#//ClassicalBar"/>
+    <genClasses ecoreClass="rythmml.ecore#//ClassicalBar">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//ClassicalBar/beats"/>
+    </genClasses>
     <genClasses ecoreClass="rythmml.ecore#//ModifiedBar">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//ModifiedBar/bar"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//ModifiedBar/operations"/>
     </genClasses>
     <genClasses ecoreClass="rythmml.ecore#//BarMultiplier">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//BarMultiplier/bar"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//BarMultiplier/multiplier"/>
+    </genClasses>
+    <genClasses ecoreClass="rythmml.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rythmml.ecore#//Operation/beatNumber"/>
+    </genClasses>
+    <genClasses ecoreClass="rythmml.ecore#//NoteAddition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//NoteAddition/note"/>
+    </genClasses>
+    <genClasses ecoreClass="rythmml.ecore#//NoteDeletion">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//NoteDeletion/note"/>
+    </genClasses>
+    <genClasses ecoreClass="rythmml.ecore#//NoteReplacement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//NoteReplacement/noteSrc"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rythmml.ecore#//NoteReplacement/newNote"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

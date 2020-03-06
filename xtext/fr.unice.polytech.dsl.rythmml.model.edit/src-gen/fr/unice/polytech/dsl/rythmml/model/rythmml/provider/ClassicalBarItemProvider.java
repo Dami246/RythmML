@@ -4,12 +4,14 @@ package fr.unice.polytech.dsl.rythmml.model.rythmml.provider;
 
 import fr.unice.polytech.dsl.rythmml.model.rythmml.ClassicalBar;
 
+import fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -40,8 +42,24 @@ public class ClassicalBarItemProvider extends BarItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addBeatsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Beats feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBeatsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ClassicalBar_beats_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ClassicalBar_beats_feature",
+								"_UI_ClassicalBar_type"),
+						RythmmlPackage.Literals.CLASSICAL_BAR__BEATS, true, false, true, null, null, null));
 	}
 
 	/**

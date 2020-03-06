@@ -2,7 +2,7 @@
  */
 package fr.unice.polytech.dsl.rythmml.model.rythmml.provider;
 
-import fr.unice.polytech.dsl.rythmml.model.rythmml.Bar;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.Operation;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage;
 
 import java.util.Collection;
@@ -25,12 +25,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.unice.polytech.dsl.rythmml.model.rythmml.Bar} object.
+ * This is the item provider adapter for a {@link fr.unice.polytech.dsl.rythmml.model.rythmml.Operation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class BarItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class OperationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -38,7 +38,7 @@ public class BarItemProvider extends ItemProviderAdapter implements IEditingDoma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BarItemProvider(AdapterFactory adapterFactory) {
+	public OperationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,36 +53,36 @@ public class BarItemProvider extends ItemProviderAdapter implements IEditingDoma
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addBeatNumberPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Beat Number feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addBeatNumberPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_NamedElement_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature",
-								"_UI_NamedElement_type"),
-						RythmmlPackage.Literals.NAMED_ELEMENT__NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+						getResourceLocator(), getString("_UI_Operation_beatNumber_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Operation_beatNumber_feature",
+								"_UI_Operation_type"),
+						RythmmlPackage.Literals.OPERATION__BEAT_NUMBER, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns Bar.gif.
+	 * This returns Operation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Bar"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Operation"));
 	}
 
 	/**
@@ -103,9 +103,8 @@ public class BarItemProvider extends ItemProviderAdapter implements IEditingDoma
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Bar) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Bar_type")
-				: getString("_UI_Bar_type") + " " + label;
+		Operation operation = (Operation) object;
+		return getString("_UI_Operation_type") + " " + operation.getBeatNumber();
 	}
 
 	/**
@@ -119,8 +118,8 @@ public class BarItemProvider extends ItemProviderAdapter implements IEditingDoma
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Bar.class)) {
-		case RythmmlPackage.BAR__NAME:
+		switch (notification.getFeatureID(Operation.class)) {
+		case RythmmlPackage.OPERATION__BEAT_NUMBER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

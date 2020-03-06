@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="ASCII"?>
-<rythmml:Music xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rythmml="http://www.example.org/rythmml" name="amusic" title="Billie Jean" author="Walidou" bpm="200" resolutionPerSlide="200">
-  <ownedSections name="s" patterns="//@ownedPatterns.0"/>
+<rythmml:Music xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rythmml="http://www.example.org/rythmml" name="amusic" title="Billie Jean" author="Walidou" bpm="210" resolutionPerSlide="200">
+  <ownedSections name="first_section_1" patterns="//@ownedPatterns.0"/>
   <ownedPatterns name="fp">
-    <bars bar="//@ownedBars.0"/>
-    <bars bar="//@ownedBars.0"/>
-    <bars bar="//@ownedBars.0"/>
-    <bars bar="//@ownedBars.0"/>
-    <bars bar="//@ownedBars.0"/>
-    <bars bar="//@ownedBars.0" multiplier="60"/>
+    <bars bar="//@ownedBars.0" multiplier="64"/>
+    <bars bar="//@ownedBars.0" multiplier="3"/>
   </ownedPatterns>
   <ownedBars xsi:type="rythmml:ClassicalBar" name="abar" beats="//@ownedBeats.0 //@ownedBeats.1 //@ownedBeats.2 //@ownedBeats.3"/>
-  <ownedBeats name="abeat1" totalDivNumber="200" notes="//@ownedNotes.0 //@ownedNotes.1">
-    <notePositions>0</notePositions>
-    <notePositions>1</notePositions>
-  </ownedBeats>
-  <ownedBeats name="abeat12" totalDivNumber="200" notes="//@ownedNotes.2 //@ownedNotes.0">
-    <notePositions>0</notePositions>
-    <notePositions>1</notePositions>
-  </ownedBeats>
-  <ownedBeats name="abeat13" totalDivNumber="200" notes="//@ownedNotes.0">
+  <ownedBars xsi:type="rythmml:ModifiedBar" name="abar2" bar="//@ownedBars.0">
+    <operations xsi:type="rythmml:NoteAddition" beatNumber="1" note="//@ownedNotes.2"/>
+    <operations xsi:type="rythmml:NoteDeletion" beatNumber="2" note="//@ownedNotes.1"/>
+  </ownedBars>
+  <ownedBeats name="abeat1" notes="//@ownedNotes.2 //@ownedNotes.1">
+    <notePositions>5</notePositions>
     <notePositions>0</notePositions>
   </ownedBeats>
-  <ownedBeats name="abeat14" totalDivNumber="200" notes="//@ownedNotes.2">
+  <ownedBeats name="abeat12" notes="//@ownedNotes.2">
+    <notePositions>0</notePositions>
+  </ownedBeats>
+  <ownedBeats name="abeat13" notes="//@ownedNotes.2 //@ownedNotes.0">
+    <notePositions>5</notePositions>
+    <notePositions>0</notePositions>
+  </ownedBeats>
+  <ownedBeats name="abeat14" notes="//@ownedNotes.2">
     <notePositions>0</notePositions>
   </ownedBeats>
   <ownedNotes name="sd"/>
-  <ownedNotes name="cd" value="BD"/>
-  <ownedNotes name="l" value="L"/>
+  <ownedNotes name="nbd" value="BD"/>
+  <ownedNotes name="xH" value="CH"/>
 </rythmml:Music>

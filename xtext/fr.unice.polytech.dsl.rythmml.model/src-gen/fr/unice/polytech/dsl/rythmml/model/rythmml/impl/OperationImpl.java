@@ -2,9 +2,11 @@
  */
 package fr.unice.polytech.dsl.rythmml.model.rythmml.impl;
 
-import fr.unice.polytech.dsl.rythmml.model.rythmml.Bar;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.Operation;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -12,44 +14,44 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Bar</b></em>'.
+ * An implementation of the model object '<em><b>Operation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BarImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.OperationImpl#getBeatNumber <em>Beat Number</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class BarImpl extends MinimalEObjectImpl.Container implements Bar {
+public abstract class OperationImpl extends MinimalEObjectImpl.Container implements Operation {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getBeatNumber() <em>Beat Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getBeatNumber()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final int BEAT_NUMBER_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getBeatNumber() <em>Beat Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getBeatNumber()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected int beatNumber = BEAT_NUMBER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BarImpl() {
+	protected OperationImpl() {
 		super();
 	}
 
@@ -60,7 +62,7 @@ public abstract class BarImpl extends MinimalEObjectImpl.Container implements Ba
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RythmmlPackage.Literals.BAR;
+		return RythmmlPackage.Literals.OPERATION;
 	}
 
 	/**
@@ -68,8 +70,8 @@ public abstract class BarImpl extends MinimalEObjectImpl.Container implements Ba
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public int getBeatNumber() {
+		return beatNumber;
 	}
 
 	/**
@@ -77,11 +79,12 @@ public abstract class BarImpl extends MinimalEObjectImpl.Container implements Ba
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setBeatNumber(int newBeatNumber) {
+		int oldBeatNumber = beatNumber;
+		beatNumber = newBeatNumber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RythmmlPackage.BAR__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, RythmmlPackage.OPERATION__BEAT_NUMBER, oldBeatNumber,
+					beatNumber));
 	}
 
 	/**
@@ -92,8 +95,8 @@ public abstract class BarImpl extends MinimalEObjectImpl.Container implements Ba
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case RythmmlPackage.BAR__NAME:
-			return getName();
+		case RythmmlPackage.OPERATION__BEAT_NUMBER:
+			return getBeatNumber();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -103,12 +106,11 @@ public abstract class BarImpl extends MinimalEObjectImpl.Container implements Ba
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case RythmmlPackage.BAR__NAME:
-			setName((String) newValue);
+		case RythmmlPackage.OPERATION__BEAT_NUMBER:
+			setBeatNumber((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -122,8 +124,8 @@ public abstract class BarImpl extends MinimalEObjectImpl.Container implements Ba
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case RythmmlPackage.BAR__NAME:
-			setName(NAME_EDEFAULT);
+		case RythmmlPackage.OPERATION__BEAT_NUMBER:
+			setBeatNumber(BEAT_NUMBER_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -137,8 +139,8 @@ public abstract class BarImpl extends MinimalEObjectImpl.Container implements Ba
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case RythmmlPackage.BAR__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case RythmmlPackage.OPERATION__BEAT_NUMBER:
+			return beatNumber != BEAT_NUMBER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,10 +156,10 @@ public abstract class BarImpl extends MinimalEObjectImpl.Container implements Ba
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (beatNumber: ");
+		result.append(beatNumber);
 		result.append(')');
 		return result.toString();
 	}
 
-} //BarImpl
+} //OperationImpl

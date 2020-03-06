@@ -11,6 +11,10 @@ import fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Music;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.NamedElement;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Note;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.NoteDeletion;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.NoteReplacement;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.Operation;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlFactory;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage;
@@ -100,6 +104,34 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 * @generated
 	 */
 	private EClass barMultiplierEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass operationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass noteAdditionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass noteDeletionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass noteReplacementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -312,15 +344,6 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBar_Beats() {
-		return (EReference) barEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getBeat() {
 		return beatEClass;
 	}
@@ -402,6 +425,15 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getClassicalBar_Beats() {
+		return (EReference) classicalBarEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getModifiedBar() {
 		return modifiedBarEClass;
 	}
@@ -413,6 +445,15 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 */
 	public EReference getModifiedBar_Bar() {
 		return (EReference) modifiedBarEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getModifiedBar_Operations() {
+		return (EReference) modifiedBarEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -440,6 +481,87 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 */
 	public EAttribute getBarMultiplier_Multiplier() {
 		return (EAttribute) barMultiplierEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOperation() {
+		return operationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOperation_BeatNumber() {
+		return (EAttribute) operationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNoteAddition() {
+		return noteAdditionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNoteAddition_Note() {
+		return (EReference) noteAdditionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNoteDeletion() {
+		return noteDeletionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNoteDeletion_Note() {
+		return (EReference) noteDeletionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNoteReplacement() {
+		return noteReplacementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNoteReplacement_NoteSrc() {
+		return (EReference) noteReplacementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNoteReplacement_NewNote() {
+		return (EReference) noteReplacementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -498,7 +620,6 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 		createEReference(patternEClass, PATTERN__BARS);
 
 		barEClass = createEClass(BAR);
-		createEReference(barEClass, BAR__BEATS);
 
 		beatEClass = createEClass(BEAT);
 		createEAttribute(beatEClass, BEAT__TOTAL_DIV_NUMBER);
@@ -512,13 +633,28 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
 		classicalBarEClass = createEClass(CLASSICAL_BAR);
+		createEReference(classicalBarEClass, CLASSICAL_BAR__BEATS);
 
 		modifiedBarEClass = createEClass(MODIFIED_BAR);
 		createEReference(modifiedBarEClass, MODIFIED_BAR__BAR);
+		createEReference(modifiedBarEClass, MODIFIED_BAR__OPERATIONS);
 
 		barMultiplierEClass = createEClass(BAR_MULTIPLIER);
 		createEReference(barMultiplierEClass, BAR_MULTIPLIER__BAR);
 		createEAttribute(barMultiplierEClass, BAR_MULTIPLIER__MULTIPLIER);
+
+		operationEClass = createEClass(OPERATION);
+		createEAttribute(operationEClass, OPERATION__BEAT_NUMBER);
+
+		noteAdditionEClass = createEClass(NOTE_ADDITION);
+		createEReference(noteAdditionEClass, NOTE_ADDITION__NOTE);
+
+		noteDeletionEClass = createEClass(NOTE_DELETION);
+		createEReference(noteDeletionEClass, NOTE_DELETION__NOTE);
+
+		noteReplacementEClass = createEClass(NOTE_REPLACEMENT);
+		createEReference(noteReplacementEClass, NOTE_REPLACEMENT__NOTE_SRC);
+		createEReference(noteReplacementEClass, NOTE_REPLACEMENT__NEW_NOTE);
 
 		// Create enums
 		drumNoteValueEEnum = createEEnum(DRUM_NOTE_VALUE);
@@ -561,6 +697,9 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 		noteEClass.getESuperTypes().add(this.getNamedElement());
 		classicalBarEClass.getESuperTypes().add(this.getBar());
 		modifiedBarEClass.getESuperTypes().add(this.getBar());
+		noteAdditionEClass.getESuperTypes().add(this.getOperation());
+		noteDeletionEClass.getESuperTypes().add(this.getOperation());
+		noteReplacementEClass.getESuperTypes().add(this.getOperation());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(musicEClass, Music.class, "Music", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -600,9 +739,6 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(barEClass, Bar.class, "Bar", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBar_Beats(), this.getBeat(), null, "beats", null, 1, -1, Bar.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 
 		initEClass(beatEClass, Beat.class, "Beat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBeat_TotalDivNumber(), ecorePackage.getEInt(), "totalDivNumber", null, 0, 1, Beat.class,
@@ -626,12 +762,18 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 
 		initEClass(classicalBarEClass, ClassicalBar.class, "ClassicalBar", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getClassicalBar_Beats(), this.getBeat(), null, "beats", null, 1, -1, ClassicalBar.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modifiedBarEClass, ModifiedBar.class, "ModifiedBar", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModifiedBar_Bar(), this.getBar(), null, "bar", null, 1, 1, ModifiedBar.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEReference(getModifiedBar_Operations(), this.getOperation(), null, "operations", null, 1, -1,
+				ModifiedBar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(barMultiplierEClass, BarMultiplier.class, "BarMultiplier", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -641,6 +783,32 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 		initEAttribute(getBarMultiplier_Multiplier(), ecorePackage.getEInt(), "multiplier", "1", 1, 1,
 				BarMultiplier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(operationEClass, Operation.class, "Operation", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOperation_BeatNumber(), ecorePackage.getEInt(), "beatNumber", null, 0, 1, Operation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(noteAdditionEClass, NoteAddition.class, "NoteAddition", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getNoteAddition_Note(), this.getNote(), null, "note", null, 1, 1, NoteAddition.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(noteDeletionEClass, NoteDeletion.class, "NoteDeletion", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getNoteDeletion_Note(), this.getNote(), null, "note", null, 1, 1, NoteDeletion.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(noteReplacementEClass, NoteReplacement.class, "NoteReplacement", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getNoteReplacement_NoteSrc(), this.getNote(), null, "noteSrc", null, 1, 1, NoteReplacement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNoteReplacement_NewNote(), this.getNote(), null, "newNote", null, 1, 1, NoteReplacement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(drumNoteValueEEnum, DrumNoteValue.class, "DrumNoteValue");

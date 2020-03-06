@@ -94,6 +94,33 @@ public interface RythmmlFactory extends EFactory {
 	BarMultiplier createBarMultiplier();
 
 	/**
+	 * Returns a new object of class '<em>Note Addition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Note Addition</em>'.
+	 * @generated
+	 */
+	NoteAddition createNoteAddition();
+
+	/**
+	 * Returns a new object of class '<em>Note Deletion</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Note Deletion</em>'.
+	 * @generated
+	 */
+	NoteDeletion createNoteDeletion();
+
+	/**
+	 * Returns a new object of class '<em>Note Replacement</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Note Replacement</em>'.
+	 * @generated
+	 */
+	NoteReplacement createNoteReplacement();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

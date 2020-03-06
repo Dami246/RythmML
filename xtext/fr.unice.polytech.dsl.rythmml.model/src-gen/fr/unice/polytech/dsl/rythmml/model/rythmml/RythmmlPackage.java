@@ -324,22 +324,13 @@ public interface RythmmlPackage extends EPackage {
 	int BAR__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Beats</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BAR__BEATS = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Bar</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BAR_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int BAR_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Bar</em>' class.
@@ -486,7 +477,7 @@ public interface RythmmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSICAL_BAR__BEATS = BAR__BEATS;
+	int CLASSICAL_BAR__BEATS = BAR_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Classical Bar</em>' class.
@@ -495,7 +486,7 @@ public interface RythmmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSICAL_BAR_FEATURE_COUNT = BAR_FEATURE_COUNT + 0;
+	int CLASSICAL_BAR_FEATURE_COUNT = BAR_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Classical Bar</em>' class.
@@ -526,15 +517,6 @@ public interface RythmmlPackage extends EPackage {
 	int MODIFIED_BAR__NAME = BAR__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Beats</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODIFIED_BAR__BEATS = BAR__BEATS;
-
-	/**
 	 * The feature id for the '<em><b>Bar</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -544,13 +526,22 @@ public interface RythmmlPackage extends EPackage {
 	int MODIFIED_BAR__BAR = BAR_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODIFIED_BAR__OPERATIONS = BAR_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Modified Bar</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODIFIED_BAR_FEATURE_COUNT = BAR_FEATURE_COUNT + 1;
+	int MODIFIED_BAR_FEATURE_COUNT = BAR_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Modified Bar</em>' class.
@@ -608,6 +599,190 @@ public interface RythmmlPackage extends EPackage {
 	int BAR_MULTIPLIER_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.OperationImpl <em>Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.OperationImpl
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.RythmmlPackageImpl#getOperation()
+	 * @generated
+	 */
+	int OPERATION = 10;
+
+	/**
+	 * The feature id for the '<em><b>Beat Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__BEAT_NUMBER = 0;
+
+	/**
+	 * The number of structural features of the '<em>Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.NoteAdditionImpl <em>Note Addition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.NoteAdditionImpl
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.RythmmlPackageImpl#getNoteAddition()
+	 * @generated
+	 */
+	int NOTE_ADDITION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Beat Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_ADDITION__BEAT_NUMBER = OPERATION__BEAT_NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_ADDITION__NOTE = OPERATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Note Addition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_ADDITION_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Note Addition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_ADDITION_OPERATION_COUNT = OPERATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.NoteDeletionImpl <em>Note Deletion</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.NoteDeletionImpl
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.RythmmlPackageImpl#getNoteDeletion()
+	 * @generated
+	 */
+	int NOTE_DELETION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Beat Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DELETION__BEAT_NUMBER = OPERATION__BEAT_NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Note</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DELETION__NOTE = OPERATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Note Deletion</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DELETION_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Note Deletion</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_DELETION_OPERATION_COUNT = OPERATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.NoteReplacementImpl <em>Note Replacement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.NoteReplacementImpl
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.RythmmlPackageImpl#getNoteReplacement()
+	 * @generated
+	 */
+	int NOTE_REPLACEMENT = 13;
+
+	/**
+	 * The feature id for the '<em><b>Beat Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_REPLACEMENT__BEAT_NUMBER = OPERATION__BEAT_NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Note Src</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_REPLACEMENT__NOTE_SRC = OPERATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>New Note</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_REPLACEMENT__NEW_NOTE = OPERATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Note Replacement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_REPLACEMENT_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Note Replacement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_REPLACEMENT_OPERATION_COUNT = OPERATION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.DrumNoteValue <em>Drum Note Value</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -615,7 +790,7 @@ public interface RythmmlPackage extends EPackage {
 	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.RythmmlPackageImpl#getDrumNoteValue()
 	 * @generated
 	 */
-	int DRUM_NOTE_VALUE = 10;
+	int DRUM_NOTE_VALUE = 14;
 
 	/**
 	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Music <em>Music</em>}'.
@@ -779,17 +954,6 @@ public interface RythmmlPackage extends EPackage {
 	EClass getBar();
 
 	/**
-	 * Returns the meta object for the reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Bar#getBeats <em>Beats</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Beats</em>'.
-	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Bar#getBeats()
-	 * @see #getBar()
-	 * @generated
-	 */
-	EReference getBar_Beats();
-
-	/**
 	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Beat <em>Beat</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -885,6 +1049,17 @@ public interface RythmmlPackage extends EPackage {
 	EClass getClassicalBar();
 
 	/**
+	 * Returns the meta object for the reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.ClassicalBar#getBeats <em>Beats</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Beats</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.ClassicalBar#getBeats()
+	 * @see #getClassicalBar()
+	 * @generated
+	 */
+	EReference getClassicalBar_Beats();
+
+	/**
 	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar <em>Modified Bar</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -904,6 +1079,17 @@ public interface RythmmlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getModifiedBar_Bar();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar#getOperations <em>Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Operations</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar#getOperations()
+	 * @see #getModifiedBar()
+	 * @generated
+	 */
+	EReference getModifiedBar_Operations();
 
 	/**
 	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.BarMultiplier <em>Bar Multiplier</em>}'.
@@ -936,6 +1122,101 @@ public interface RythmmlPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getBarMultiplier_Multiplier();
+
+	/**
+	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Operation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Operation</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Operation
+	 * @generated
+	 */
+	EClass getOperation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Operation#getBeatNumber <em>Beat Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Beat Number</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Operation#getBeatNumber()
+	 * @see #getOperation()
+	 * @generated
+	 */
+	EAttribute getOperation_BeatNumber();
+
+	/**
+	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition <em>Note Addition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Note Addition</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition
+	 * @generated
+	 */
+	EClass getNoteAddition();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition#getNote <em>Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Note</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition#getNote()
+	 * @see #getNoteAddition()
+	 * @generated
+	 */
+	EReference getNoteAddition_Note();
+
+	/**
+	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteDeletion <em>Note Deletion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Note Deletion</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.NoteDeletion
+	 * @generated
+	 */
+	EClass getNoteDeletion();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteDeletion#getNote <em>Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Note</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.NoteDeletion#getNote()
+	 * @see #getNoteDeletion()
+	 * @generated
+	 */
+	EReference getNoteDeletion_Note();
+
+	/**
+	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteReplacement <em>Note Replacement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Note Replacement</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.NoteReplacement
+	 * @generated
+	 */
+	EClass getNoteReplacement();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteReplacement#getNoteSrc <em>Note Src</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Note Src</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.NoteReplacement#getNoteSrc()
+	 * @see #getNoteReplacement()
+	 * @generated
+	 */
+	EReference getNoteReplacement_NoteSrc();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteReplacement#getNewNote <em>New Note</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>New Note</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.NoteReplacement#getNewNote()
+	 * @see #getNoteReplacement()
+	 * @generated
+	 */
+	EReference getNoteReplacement_NewNote();
 
 	/**
 	 * Returns the meta object for enum '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.DrumNoteValue <em>Drum Note Value</em>}'.
@@ -1099,14 +1380,6 @@ public interface RythmmlPackage extends EPackage {
 		EClass BAR = eINSTANCE.getBar();
 
 		/**
-		 * The meta object literal for the '<em><b>Beats</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BAR__BEATS = eINSTANCE.getBar_Beats();
-
-		/**
 		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BeatImpl <em>Beat</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1187,6 +1460,14 @@ public interface RythmmlPackage extends EPackage {
 		EClass CLASSICAL_BAR = eINSTANCE.getClassicalBar();
 
 		/**
+		 * The meta object literal for the '<em><b>Beats</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASSICAL_BAR__BEATS = eINSTANCE.getClassicalBar_Beats();
+
+		/**
 		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.ModifiedBarImpl <em>Modified Bar</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1203,6 +1484,14 @@ public interface RythmmlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MODIFIED_BAR__BAR = eINSTANCE.getModifiedBar_Bar();
+
+		/**
+		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODIFIED_BAR__OPERATIONS = eINSTANCE.getModifiedBar_Operations();
 
 		/**
 		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.BarMultiplierImpl <em>Bar Multiplier</em>}' class.
@@ -1229,6 +1518,86 @@ public interface RythmmlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BAR_MULTIPLIER__MULTIPLIER = eINSTANCE.getBarMultiplier_Multiplier();
+
+		/**
+		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.OperationImpl <em>Operation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.OperationImpl
+		 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.RythmmlPackageImpl#getOperation()
+		 * @generated
+		 */
+		EClass OPERATION = eINSTANCE.getOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Beat Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATION__BEAT_NUMBER = eINSTANCE.getOperation_BeatNumber();
+
+		/**
+		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.NoteAdditionImpl <em>Note Addition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.NoteAdditionImpl
+		 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.RythmmlPackageImpl#getNoteAddition()
+		 * @generated
+		 */
+		EClass NOTE_ADDITION = eINSTANCE.getNoteAddition();
+
+		/**
+		 * The meta object literal for the '<em><b>Note</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NOTE_ADDITION__NOTE = eINSTANCE.getNoteAddition_Note();
+
+		/**
+		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.NoteDeletionImpl <em>Note Deletion</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.NoteDeletionImpl
+		 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.RythmmlPackageImpl#getNoteDeletion()
+		 * @generated
+		 */
+		EClass NOTE_DELETION = eINSTANCE.getNoteDeletion();
+
+		/**
+		 * The meta object literal for the '<em><b>Note</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NOTE_DELETION__NOTE = eINSTANCE.getNoteDeletion_Note();
+
+		/**
+		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.NoteReplacementImpl <em>Note Replacement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.NoteReplacementImpl
+		 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.impl.RythmmlPackageImpl#getNoteReplacement()
+		 * @generated
+		 */
+		EClass NOTE_REPLACEMENT = eINSTANCE.getNoteReplacement();
+
+		/**
+		 * The meta object literal for the '<em><b>Note Src</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NOTE_REPLACEMENT__NOTE_SRC = eINSTANCE.getNoteReplacement_NoteSrc();
+
+		/**
+		 * The meta object literal for the '<em><b>New Note</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NOTE_REPLACEMENT__NEW_NOTE = eINSTANCE.getNoteReplacement_NewNote();
 
 		/**
 		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.DrumNoteValue <em>Drum Note Value</em>}' enum.
