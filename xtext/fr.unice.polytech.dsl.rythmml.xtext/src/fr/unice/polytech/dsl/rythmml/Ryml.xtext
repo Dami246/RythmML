@@ -13,10 +13,10 @@ Music returns Music:
 		('bpm :' bpm=EInt)?
 		('resolution per beats : ' resolutionPerSlide=EInt)?
 		(ownedNotes+=Note (ownedNotes+=Note)*)?
-		&(ownedBeats+=Beat (ownedBeats+=Beat)*)?
-		&(ownedBars+=Bar (ownedBars+=Bar)*)?
-		&(ownedPatterns+=Pattern (ownedPatterns+=Pattern)*)?
-		&(ownedSections+=Section (ownedSections+=Section)*)?
+		(ownedBeats+=Beat (ownedBeats+=Beat)*)?
+		(ownedBars+=Bar (ownedBars+=Bar)*)?
+		(ownedPatterns+=Pattern (ownedPatterns+=Pattern)*)?
+		(ownedSections+=Section (ownedSections+=Section)*)?
 	;
 
 EString returns ecore::EString:
@@ -38,27 +38,42 @@ Pattern returns Pattern:
 		bars+=BarMultiplier  ( "|" bars+=BarMultiplier)*;
 
 BarMultiplier returns BarMultiplier:
-	bar=[Bar|EString] ('x' multiplier=EInt)?
-;
+	{BarMultiplier}
+	bar=[Bar|EString] ('x' multiplier=EInt)?;
+
+Operation returns Operation:
+	(NoteAddition | NoteDeletion | NoteReplacement);
+
+NoteAddition returns NoteAddition:
+	'beat' beatNumber=EInt 'add' note=[Note|EString];
+
+NoteDeletion returns NoteDeletion:
+	'beat' beatNumber=EInt 'delete' note=[Note|EString];
+
+NoteReplacement returns NoteReplacement:
+	'beat' beatNumber=EInt 'replace' noteSrc=[Note|EString] 'by' newNote=[Note|EString];
 
 Bar returns Bar:
 	(ClassicalBar | ModifiedBar);
 
 ClassicalBar returns ClassicalBar: 
-	'Bar'
-	name=EString
-	':'
-		beats+=[Beat|EString] ( "|" beats+=[Beat|EString])*;
+	{ClassicalBar}
+	'Bar' name=EString ':' beats+=[Beat|EString] ( "|" beats+=[Beat|EString])*;
 
 ModifiedBar returns ModifiedBar:
-	'Bar' name=EString ' based on :' bar=[Bar|EString];
+	{ModifiedBar}
+	'Bar' name=EString 'based on' bar=[Bar|EString]
+	'Modifications:'
+	'-' operations+=Operation 
+	( '-' operations+=Operation )*;
 
 Beat returns Beat:
 	'Beat' name=EString ':'
-		('Nb of ticks : ' totalDivNumber=EInt)?
-		'Notes :' notes+=[Note|EString] ',' notePositions+=EInt ( "|" notes+=[Note|EString] ',' notePositions+=EInt)*;
+		('Nb of ticks :' totalDivNumber=EInt)?
+		notes+=[Note|EString] ',' notePositions+=EInt ( "|" notes+=[Note|EString] ',' notePositions+=EInt)*;
 
 Note returns Note:
+	{Note}
 	'Note' name=EString ':'(value=DrumNoteValue)?;
 
 enum DrumNoteValue returns DrumNoteValue:

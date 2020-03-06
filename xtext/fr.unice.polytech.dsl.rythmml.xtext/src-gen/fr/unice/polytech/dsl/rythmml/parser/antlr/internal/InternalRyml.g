@@ -77,393 +77,333 @@ ruleMusic returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='Music'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getMusicAccess().getMusicKeyword_0());
+		}
 		(
-			{ 
-			  getUnorderedGroupHelper().enter(grammarAccess.getMusicAccess().getUnorderedGroup());
+			(
+				{
+					newCompositeNode(grammarAccess.getMusicAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMusicRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"fr.unice.polytech.dsl.rythmml.Ryml.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getMusicAccess().getColonKeyword_2());
+		}
+		(
+			otherlv_3='title :'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getMusicAccess().getTitleKeyword_3_0());
 			}
 			(
 				(
+					{
+						newCompositeNode(grammarAccess.getMusicAccess().getTitleEStringParserRuleCall_3_1_0());
+					}
+					lv_title_4_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMusicRule());
+						}
+						set(
+							$current,
+							"title",
+							lv_title_4_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
 		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getMusicAccess().getUnorderedGroup(), 0)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getMusicAccess().getUnorderedGroup(), 0);
-				}
-							({true}?=>(otherlv_1='Music'
-							{
-								newLeafNode(otherlv_1, grammarAccess.getMusicAccess().getMusicKeyword_0_0());
-							}
-							(
-								(
-									{
-										newCompositeNode(grammarAccess.getMusicAccess().getNameEStringParserRuleCall_0_1_0());
-									}
-									lv_name_2_0=ruleEString
-									{
-										if ($current==null) {
-											$current = createModelElementForParent(grammarAccess.getMusicRule());
-										}
-										set(
-											$current,
-											"name",
-											lv_name_2_0,
-											"fr.unice.polytech.dsl.rythmml.Ryml.EString");
-										afterParserOrEnumRuleCall();
-									}
-								)
-							)
-							otherlv_3=':'
-							{
-								newLeafNode(otherlv_3, grammarAccess.getMusicAccess().getColonKeyword_0_2());
-							}
-							(
-								otherlv_4='title :'
-								{
-									newLeafNode(otherlv_4, grammarAccess.getMusicAccess().getTitleKeyword_0_3_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getMusicAccess().getTitleEStringParserRuleCall_0_3_1_0());
-										}
-										lv_title_5_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getMusicRule());
-											}
-											set(
-												$current,
-												"title",
-												lv_title_5_0,
-												"fr.unice.polytech.dsl.rythmml.Ryml.EString");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-							)?
-							(
-								otherlv_6='author :'
-								{
-									newLeafNode(otherlv_6, grammarAccess.getMusicAccess().getAuthorKeyword_0_4_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getMusicAccess().getAuthorEStringParserRuleCall_0_4_1_0());
-										}
-										lv_author_7_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getMusicRule());
-											}
-											set(
-												$current,
-												"author",
-												lv_author_7_0,
-												"fr.unice.polytech.dsl.rythmml.Ryml.EString");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-							)?
-							(
-								otherlv_8='bpm :'
-								{
-									newLeafNode(otherlv_8, grammarAccess.getMusicAccess().getBpmKeyword_0_5_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getMusicAccess().getBpmEIntParserRuleCall_0_5_1_0());
-										}
-										lv_bpm_9_0=ruleEInt
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getMusicRule());
-											}
-											set(
-												$current,
-												"bpm",
-												lv_bpm_9_0,
-												"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-							)?
-							(
-								otherlv_10='resolution per beats : '
-								{
-									newLeafNode(otherlv_10, grammarAccess.getMusicAccess().getResolutionPerBeatsKeyword_0_6_0());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getMusicAccess().getResolutionPerSlideEIntParserRuleCall_0_6_1_0());
-										}
-										lv_resolutionPerSlide_11_0=ruleEInt
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getMusicRule());
-											}
-											set(
-												$current,
-												"resolutionPerSlide",
-												lv_resolutionPerSlide_11_0,
-												"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-							)?
-							(
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getMusicAccess().getOwnedNotesNoteParserRuleCall_0_7_0_0());
-										}
-										lv_ownedNotes_12_0=ruleNote
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getMusicRule());
-											}
-											add(
-												$current,
-												"ownedNotes",
-												lv_ownedNotes_12_0,
-												"fr.unice.polytech.dsl.rythmml.Ryml.Note");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getMusicAccess().getOwnedNotesNoteParserRuleCall_0_7_1_0());
-										}
-										lv_ownedNotes_13_0=ruleNote
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getMusicRule());
-											}
-											add(
-												$current,
-												"ownedNotes",
-												lv_ownedNotes_13_0,
-												"fr.unice.polytech.dsl.rythmml.Ryml.Note");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)*
-							)?
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMusicAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getMusicAccess().getUnorderedGroup(), 1)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getMusicAccess().getUnorderedGroup(), 1);
-				}
-							({true}?=>((
-								(
-									{
-										newCompositeNode(grammarAccess.getMusicAccess().getOwnedBeatsBeatParserRuleCall_1_0_0());
-									}
-									lv_ownedBeats_14_0=ruleBeat
-									{
-										if ($current==null) {
-											$current = createModelElementForParent(grammarAccess.getMusicRule());
-										}
-										add(
-											$current,
-											"ownedBeats",
-											lv_ownedBeats_14_0,
-											"fr.unice.polytech.dsl.rythmml.Ryml.Beat");
-										afterParserOrEnumRuleCall();
-									}
-								)
-							)
-							(
-								(
-									{
-										newCompositeNode(grammarAccess.getMusicAccess().getOwnedBeatsBeatParserRuleCall_1_1_0());
-									}
-									lv_ownedBeats_15_0=ruleBeat
-									{
-										if ($current==null) {
-											$current = createModelElementForParent(grammarAccess.getMusicRule());
-										}
-										add(
-											$current,
-											"ownedBeats",
-											lv_ownedBeats_15_0,
-											"fr.unice.polytech.dsl.rythmml.Ryml.Beat");
-										afterParserOrEnumRuleCall();
-									}
-								)
-							)*
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMusicAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getMusicAccess().getUnorderedGroup(), 2)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getMusicAccess().getUnorderedGroup(), 2);
-				}
-							({true}?=>((
-								(
-									{
-										newCompositeNode(grammarAccess.getMusicAccess().getOwnedBarsBarParserRuleCall_2_0_0());
-									}
-									lv_ownedBars_16_0=ruleBar
-									{
-										if ($current==null) {
-											$current = createModelElementForParent(grammarAccess.getMusicRule());
-										}
-										add(
-											$current,
-											"ownedBars",
-											lv_ownedBars_16_0,
-											"fr.unice.polytech.dsl.rythmml.Ryml.Bar");
-										afterParserOrEnumRuleCall();
-									}
-								)
-							)
-							(
-								(
-									{
-										newCompositeNode(grammarAccess.getMusicAccess().getOwnedBarsBarParserRuleCall_2_1_0());
-									}
-									lv_ownedBars_17_0=ruleBar
-									{
-										if ($current==null) {
-											$current = createModelElementForParent(grammarAccess.getMusicRule());
-										}
-										add(
-											$current,
-											"ownedBars",
-											lv_ownedBars_17_0,
-											"fr.unice.polytech.dsl.rythmml.Ryml.Bar");
-										afterParserOrEnumRuleCall();
-									}
-								)
-							)*
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMusicAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getMusicAccess().getUnorderedGroup(), 3)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getMusicAccess().getUnorderedGroup(), 3);
-				}
-							({true}?=>((
-								(
-									{
-										newCompositeNode(grammarAccess.getMusicAccess().getOwnedPatternsPatternParserRuleCall_3_0_0());
-									}
-									lv_ownedPatterns_18_0=rulePattern
-									{
-										if ($current==null) {
-											$current = createModelElementForParent(grammarAccess.getMusicRule());
-										}
-										add(
-											$current,
-											"ownedPatterns",
-											lv_ownedPatterns_18_0,
-											"fr.unice.polytech.dsl.rythmml.Ryml.Pattern");
-										afterParserOrEnumRuleCall();
-									}
-								)
-							)
-							(
-								(
-									{
-										newCompositeNode(grammarAccess.getMusicAccess().getOwnedPatternsPatternParserRuleCall_3_1_0());
-									}
-									lv_ownedPatterns_19_0=rulePattern
-									{
-										if ($current==null) {
-											$current = createModelElementForParent(grammarAccess.getMusicRule());
-										}
-										add(
-											$current,
-											"ownedPatterns",
-											lv_ownedPatterns_19_0,
-											"fr.unice.polytech.dsl.rythmml.Ryml.Pattern");
-										afterParserOrEnumRuleCall();
-									}
-								)
-							)*
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMusicAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getMusicAccess().getUnorderedGroup(), 4)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getMusicAccess().getUnorderedGroup(), 4);
-				}
-							({true}?=>((
-								(
-									{
-										newCompositeNode(grammarAccess.getMusicAccess().getOwnedSectionsSectionParserRuleCall_4_0_0());
-									}
-									lv_ownedSections_20_0=ruleSection
-									{
-										if ($current==null) {
-											$current = createModelElementForParent(grammarAccess.getMusicRule());
-										}
-										add(
-											$current,
-											"ownedSections",
-											lv_ownedSections_20_0,
-											"fr.unice.polytech.dsl.rythmml.Ryml.Section");
-										afterParserOrEnumRuleCall();
-									}
-								)
-							)
-							(
-								(
-									{
-										newCompositeNode(grammarAccess.getMusicAccess().getOwnedSectionsSectionParserRuleCall_4_1_0());
-									}
-									lv_ownedSections_21_0=ruleSection
-									{
-										if ($current==null) {
-											$current = createModelElementForParent(grammarAccess.getMusicRule());
-										}
-										add(
-											$current,
-											"ownedSections",
-											lv_ownedSections_21_0,
-											"fr.unice.polytech.dsl.rythmml.Ryml.Section");
-										afterParserOrEnumRuleCall();
-									}
-								)
-							)*
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMusicAccess().getUnorderedGroup());
-				}
-			)
-		)
-				)+
-				{getUnorderedGroupHelper().canLeave(grammarAccess.getMusicAccess().getUnorderedGroup())}?
-			)
-		)
-			{ 
-			  getUnorderedGroupHelper().leave(grammarAccess.getMusicAccess().getUnorderedGroup());
+			otherlv_5='author :'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getMusicAccess().getAuthorKeyword_4_0());
 			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMusicAccess().getAuthorEStringParserRuleCall_4_1_0());
+					}
+					lv_author_6_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMusicRule());
+						}
+						set(
+							$current,
+							"author",
+							lv_author_6_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		(
+			otherlv_7='bpm :'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getMusicAccess().getBpmKeyword_5_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMusicAccess().getBpmEIntParserRuleCall_5_1_0());
+					}
+					lv_bpm_8_0=ruleEInt
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMusicRule());
+						}
+						set(
+							$current,
+							"bpm",
+							lv_bpm_8_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		(
+			otherlv_9='resolution per beats : '
+			{
+				newLeafNode(otherlv_9, grammarAccess.getMusicAccess().getResolutionPerBeatsKeyword_6_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMusicAccess().getResolutionPerSlideEIntParserRuleCall_6_1_0());
+					}
+					lv_resolutionPerSlide_10_0=ruleEInt
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMusicRule());
+						}
+						set(
+							$current,
+							"resolutionPerSlide",
+							lv_resolutionPerSlide_10_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMusicAccess().getOwnedNotesNoteParserRuleCall_7_0_0());
+					}
+					lv_ownedNotes_11_0=ruleNote
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMusicRule());
+						}
+						add(
+							$current,
+							"ownedNotes",
+							lv_ownedNotes_11_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.Note");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMusicAccess().getOwnedNotesNoteParserRuleCall_7_1_0());
+					}
+					lv_ownedNotes_12_0=ruleNote
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMusicRule());
+						}
+						add(
+							$current,
+							"ownedNotes",
+							lv_ownedNotes_12_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.Note");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+		)?
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMusicAccess().getOwnedBeatsBeatParserRuleCall_8_0_0());
+					}
+					lv_ownedBeats_13_0=ruleBeat
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMusicRule());
+						}
+						add(
+							$current,
+							"ownedBeats",
+							lv_ownedBeats_13_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.Beat");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMusicAccess().getOwnedBeatsBeatParserRuleCall_8_1_0());
+					}
+					lv_ownedBeats_14_0=ruleBeat
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMusicRule());
+						}
+						add(
+							$current,
+							"ownedBeats",
+							lv_ownedBeats_14_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.Beat");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+		)?
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMusicAccess().getOwnedBarsBarParserRuleCall_9_0_0());
+					}
+					lv_ownedBars_15_0=ruleBar
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMusicRule());
+						}
+						add(
+							$current,
+							"ownedBars",
+							lv_ownedBars_15_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.Bar");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMusicAccess().getOwnedBarsBarParserRuleCall_9_1_0());
+					}
+					lv_ownedBars_16_0=ruleBar
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMusicRule());
+						}
+						add(
+							$current,
+							"ownedBars",
+							lv_ownedBars_16_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.Bar");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+		)?
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMusicAccess().getOwnedPatternsPatternParserRuleCall_10_0_0());
+					}
+					lv_ownedPatterns_17_0=rulePattern
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMusicRule());
+						}
+						add(
+							$current,
+							"ownedPatterns",
+							lv_ownedPatterns_17_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.Pattern");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMusicAccess().getOwnedPatternsPatternParserRuleCall_10_1_0());
+					}
+					lv_ownedPatterns_18_0=rulePattern
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMusicRule());
+						}
+						add(
+							$current,
+							"ownedPatterns",
+							lv_ownedPatterns_18_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.Pattern");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+		)?
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMusicAccess().getOwnedSectionsSectionParserRuleCall_11_0_0());
+					}
+					lv_ownedSections_19_0=ruleSection
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMusicRule());
+						}
+						add(
+							$current,
+							"ownedSections",
+							lv_ownedSections_19_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.Section");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMusicAccess().getOwnedSectionsSectionParserRuleCall_11_1_0());
+					}
+					lv_ownedSections_20_0=ruleSection
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMusicRule());
+						}
+						add(
+							$current,
+							"ownedSections",
+							lv_ownedSections_20_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.Section");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+		)?
 	)
 ;
 
@@ -725,6 +665,13 @@ ruleBarMultiplier returns [EObject current=null]
 }:
 	(
 		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getBarMultiplierAccess().getBarMultiplierAction_0(),
+					$current);
+			}
+		)
+		(
 			(
 				{
 					if ($current==null) {
@@ -732,7 +679,7 @@ ruleBarMultiplier returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getBarMultiplierAccess().getBarBarCrossReference_0_0());
+					newCompositeNode(grammarAccess.getBarMultiplierAccess().getBarBarCrossReference_1_0());
 				}
 				ruleEString
 				{
@@ -741,16 +688,16 @@ ruleBarMultiplier returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_1='x'
+			otherlv_2='x'
 			{
-				newLeafNode(otherlv_1, grammarAccess.getBarMultiplierAccess().getXKeyword_1_0());
+				newLeafNode(otherlv_2, grammarAccess.getBarMultiplierAccess().getXKeyword_2_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getBarMultiplierAccess().getMultiplierEIntParserRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getBarMultiplierAccess().getMultiplierEIntParserRuleCall_2_1_0());
 					}
-					lv_multiplier_2_0=ruleEInt
+					lv_multiplier_3_0=ruleEInt
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getBarMultiplierRule());
@@ -758,13 +705,264 @@ ruleBarMultiplier returns [EObject current=null]
 						set(
 							$current,
 							"multiplier",
-							lv_multiplier_2_0,
+							lv_multiplier_3_0,
 							"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
+	)
+;
+
+// Entry rule entryRuleOperation
+entryRuleOperation returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getOperationRule()); }
+	iv_ruleOperation=ruleOperation
+	{ $current=$iv_ruleOperation.current; }
+	EOF;
+
+// Rule Operation
+ruleOperation returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getOperationAccess().getNoteAdditionParserRuleCall_0());
+		}
+		this_NoteAddition_0=ruleNoteAddition
+		{
+			$current = $this_NoteAddition_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getOperationAccess().getNoteDeletionParserRuleCall_1());
+		}
+		this_NoteDeletion_1=ruleNoteDeletion
+		{
+			$current = $this_NoteDeletion_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getOperationAccess().getNoteReplacementParserRuleCall_2());
+		}
+		this_NoteReplacement_2=ruleNoteReplacement
+		{
+			$current = $this_NoteReplacement_2.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleNoteAddition
+entryRuleNoteAddition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNoteAdditionRule()); }
+	iv_ruleNoteAddition=ruleNoteAddition
+	{ $current=$iv_ruleNoteAddition.current; }
+	EOF;
+
+// Rule NoteAddition
+ruleNoteAddition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='beat'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getNoteAdditionAccess().getBeatKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getNoteAdditionAccess().getBeatNumberEIntParserRuleCall_1_0());
+				}
+				lv_beatNumber_1_0=ruleEInt
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getNoteAdditionRule());
+					}
+					set(
+						$current,
+						"beatNumber",
+						lv_beatNumber_1_0,
+						"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='add'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getNoteAdditionAccess().getAddKeyword_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNoteAdditionRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getNoteAdditionAccess().getNoteNoteCrossReference_3_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleNoteDeletion
+entryRuleNoteDeletion returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNoteDeletionRule()); }
+	iv_ruleNoteDeletion=ruleNoteDeletion
+	{ $current=$iv_ruleNoteDeletion.current; }
+	EOF;
+
+// Rule NoteDeletion
+ruleNoteDeletion returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='beat'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getNoteDeletionAccess().getBeatKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getNoteDeletionAccess().getBeatNumberEIntParserRuleCall_1_0());
+				}
+				lv_beatNumber_1_0=ruleEInt
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getNoteDeletionRule());
+					}
+					set(
+						$current,
+						"beatNumber",
+						lv_beatNumber_1_0,
+						"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='delete'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getNoteDeletionAccess().getDeleteKeyword_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNoteDeletionRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getNoteDeletionAccess().getNoteNoteCrossReference_3_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleNoteReplacement
+entryRuleNoteReplacement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNoteReplacementRule()); }
+	iv_ruleNoteReplacement=ruleNoteReplacement
+	{ $current=$iv_ruleNoteReplacement.current; }
+	EOF;
+
+// Rule NoteReplacement
+ruleNoteReplacement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='beat'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getNoteReplacementAccess().getBeatKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getNoteReplacementAccess().getBeatNumberEIntParserRuleCall_1_0());
+				}
+				lv_beatNumber_1_0=ruleEInt
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getNoteReplacementRule());
+					}
+					set(
+						$current,
+						"beatNumber",
+						lv_beatNumber_1_0,
+						"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='replace'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getNoteReplacementAccess().getReplaceKeyword_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNoteReplacementRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getNoteReplacementAccess().getNoteSrcNoteCrossReference_3_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4='by'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getNoteReplacementAccess().getByKeyword_4());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNoteReplacementRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getNoteReplacementAccess().getNewNoteNoteCrossReference_5_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -820,16 +1018,23 @@ ruleClassicalBar returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Bar'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getClassicalBarAccess().getClassicalBarAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='Bar'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getClassicalBarAccess().getBarKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getClassicalBarAccess().getBarKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getClassicalBarAccess().getNameEStringParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getClassicalBarAccess().getNameEStringParserRuleCall_2_0());
 				}
-				lv_name_1_0=ruleEString
+				lv_name_2_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getClassicalBarRule());
@@ -837,15 +1042,15 @@ ruleClassicalBar returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_2_0,
 						"fr.unice.polytech.dsl.rythmml.Ryml.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_2=':'
+		otherlv_3=':'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getClassicalBarAccess().getColonKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getClassicalBarAccess().getColonKeyword_3());
 		}
 		(
 			(
@@ -855,7 +1060,7 @@ ruleClassicalBar returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getClassicalBarAccess().getBeatsBeatCrossReference_3_0());
+					newCompositeNode(grammarAccess.getClassicalBarAccess().getBeatsBeatCrossReference_4_0());
 				}
 				ruleEString
 				{
@@ -864,9 +1069,9 @@ ruleClassicalBar returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_4='|'
+			otherlv_5='|'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getClassicalBarAccess().getVerticalLineKeyword_4_0());
+				newLeafNode(otherlv_5, grammarAccess.getClassicalBarAccess().getVerticalLineKeyword_5_0());
 			}
 			(
 				(
@@ -876,7 +1081,7 @@ ruleClassicalBar returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getClassicalBarAccess().getBeatsBeatCrossReference_4_1_0());
+						newCompositeNode(grammarAccess.getClassicalBarAccess().getBeatsBeatCrossReference_5_1_0());
 					}
 					ruleEString
 					{
@@ -904,16 +1109,23 @@ ruleModifiedBar returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Bar'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getModifiedBarAccess().getModifiedBarAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='Bar'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getModifiedBarAccess().getBarKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getModifiedBarAccess().getBarKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModifiedBarAccess().getNameEStringParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getModifiedBarAccess().getNameEStringParserRuleCall_2_0());
 				}
-				lv_name_1_0=ruleEString
+				lv_name_2_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getModifiedBarRule());
@@ -921,15 +1133,15 @@ ruleModifiedBar returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_2_0,
 						"fr.unice.polytech.dsl.rythmml.Ryml.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_2=' based on :'
+		otherlv_3='based on'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getModifiedBarAccess().getBasedOnKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getModifiedBarAccess().getBasedOnKeyword_3());
 		}
 		(
 			(
@@ -939,7 +1151,7 @@ ruleModifiedBar returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getModifiedBarAccess().getBarBarCrossReference_3_0());
+					newCompositeNode(grammarAccess.getModifiedBarAccess().getBarBarCrossReference_4_0());
 				}
 				ruleEString
 				{
@@ -947,6 +1159,58 @@ ruleModifiedBar returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_5='Modifications:'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getModifiedBarAccess().getModificationsKeyword_5());
+		}
+		otherlv_6='-'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getModifiedBarAccess().getHyphenMinusKeyword_6());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getModifiedBarAccess().getOperationsOperationParserRuleCall_7_0());
+				}
+				lv_operations_7_0=ruleOperation
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getModifiedBarRule());
+					}
+					add(
+						$current,
+						"operations",
+						lv_operations_7_0,
+						"fr.unice.polytech.dsl.rythmml.Ryml.Operation");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_8='-'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getModifiedBarAccess().getHyphenMinusKeyword_8_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getModifiedBarAccess().getOperationsOperationParserRuleCall_8_1_0());
+					}
+					lv_operations_9_0=ruleOperation
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getModifiedBarRule());
+						}
+						add(
+							$current,
+							"operations",
+							lv_operations_9_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.Operation");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
 	)
 ;
 
@@ -994,7 +1258,7 @@ ruleBeat returns [EObject current=null]
 			newLeafNode(otherlv_2, grammarAccess.getBeatAccess().getColonKeyword_2());
 		}
 		(
-			otherlv_3='Nb of ticks : '
+			otherlv_3='Nb of ticks :'
 			{
 				newLeafNode(otherlv_3, grammarAccess.getBeatAccess().getNbOfTicksKeyword_3_0());
 			}
@@ -1018,10 +1282,6 @@ ruleBeat returns [EObject current=null]
 				)
 			)
 		)?
-		otherlv_5='Notes :'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getBeatAccess().getNotesKeyword_4());
-		}
 		(
 			(
 				{
@@ -1030,7 +1290,7 @@ ruleBeat returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getBeatAccess().getNotesNoteCrossReference_5_0());
+					newCompositeNode(grammarAccess.getBeatAccess().getNotesNoteCrossReference_4_0());
 				}
 				ruleEString
 				{
@@ -1038,16 +1298,16 @@ ruleBeat returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_7=','
+		otherlv_6=','
 		{
-			newLeafNode(otherlv_7, grammarAccess.getBeatAccess().getCommaKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getBeatAccess().getCommaKeyword_5());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getBeatAccess().getNotePositionsEIntParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getBeatAccess().getNotePositionsEIntParserRuleCall_6_0());
 				}
-				lv_notePositions_8_0=ruleEInt
+				lv_notePositions_7_0=ruleEInt
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBeatRule());
@@ -1055,16 +1315,16 @@ ruleBeat returns [EObject current=null]
 					add(
 						$current,
 						"notePositions",
-						lv_notePositions_8_0,
+						lv_notePositions_7_0,
 						"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_9='|'
+			otherlv_8='|'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getBeatAccess().getVerticalLineKeyword_8_0());
+				newLeafNode(otherlv_8, grammarAccess.getBeatAccess().getVerticalLineKeyword_7_0());
 			}
 			(
 				(
@@ -1074,7 +1334,7 @@ ruleBeat returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getBeatAccess().getNotesNoteCrossReference_8_1_0());
+						newCompositeNode(grammarAccess.getBeatAccess().getNotesNoteCrossReference_7_1_0());
 					}
 					ruleEString
 					{
@@ -1082,16 +1342,16 @@ ruleBeat returns [EObject current=null]
 					}
 				)
 			)
-			otherlv_11=','
+			otherlv_10=','
 			{
-				newLeafNode(otherlv_11, grammarAccess.getBeatAccess().getCommaKeyword_8_2());
+				newLeafNode(otherlv_10, grammarAccess.getBeatAccess().getCommaKeyword_7_2());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getBeatAccess().getNotePositionsEIntParserRuleCall_8_3_0());
+						newCompositeNode(grammarAccess.getBeatAccess().getNotePositionsEIntParserRuleCall_7_3_0());
 					}
-					lv_notePositions_12_0=ruleEInt
+					lv_notePositions_11_0=ruleEInt
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getBeatRule());
@@ -1099,7 +1359,7 @@ ruleBeat returns [EObject current=null]
 						add(
 							$current,
 							"notePositions",
-							lv_notePositions_12_0,
+							lv_notePositions_11_0,
 							"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
 						afterParserOrEnumRuleCall();
 					}
@@ -1125,16 +1385,23 @@ ruleNote returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Note'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getNoteAccess().getNoteAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='Note'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getNoteAccess().getNoteKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getNoteAccess().getNoteKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getNoteAccess().getNameEStringParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getNoteAccess().getNameEStringParserRuleCall_2_0());
 				}
-				lv_name_1_0=ruleEString
+				lv_name_2_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getNoteRule());
@@ -1142,22 +1409,22 @@ ruleNote returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_2_0,
 						"fr.unice.polytech.dsl.rythmml.Ryml.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_2=':'
+		otherlv_3=':'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getNoteAccess().getColonKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getNoteAccess().getColonKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getNoteAccess().getValueDrumNoteValueEnumRuleCall_3_0());
+					newCompositeNode(grammarAccess.getNoteAccess().getValueDrumNoteValueEnumRuleCall_4_0());
 				}
-				lv_value_3_0=ruleDrumNoteValue
+				lv_value_4_0=ruleDrumNoteValue
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getNoteRule());
@@ -1165,7 +1432,7 @@ ruleNote returns [EObject current=null]
 					set(
 						$current,
 						"value",
-						lv_value_3_0,
+						lv_value_4_0,
 						"fr.unice.polytech.dsl.rythmml.Ryml.DrumNoteValue");
 					afterParserOrEnumRuleCall();
 				}

@@ -13,6 +13,10 @@ import fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Music;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.NamedElement;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Note;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.NoteDeletion;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.NoteReplacement;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.Operation;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Section;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.util.RythmmlSwitch;
@@ -108,10 +112,35 @@ public class RymlSwitchPrinter extends RythmmlSwitch<String>{
 	public String caseModifiedBar(ModifiedBar bar) {
 		StringBuilder stringBuilder = new StringBuilder();
 		
-		stringBuilder.append(String.format("Bar %s = new BarBuilder()", bar.getName()));
-		//TODO
+		stringBuilder.append(String.format("Bar %s = new BarVariationBuilder(%s)", bar.getName(), bar.getBar().getName()));
+		for (Operation operation : bar.getOperations()) {
+			stringBuilder.append(caseOperation(operation));
+		}
 		stringBuilder.append(".build(); \n");
 		return stringBuilder.toString();
+	}
+	
+	
+
+	@Override
+	public String caseOperation(Operation object) {
+		if(object instanceof NoteDeletion) return caseNoteDeletion(((NoteDeletion) object));
+		else return "";
+	}
+
+	@Override
+	public String caseNoteAddition(NoteAddition object) {
+		return String.format(".addNote(%s)",object.getNote().getName());
+	}
+
+	@Override
+	public String caseNoteDeletion(NoteDeletion object) {
+		return String.format(".removeNote(%s)",object.getNote().getName());
+	}
+
+	@Override
+	public String caseNoteReplacement(NoteReplacement object) {
+		return String.format(".replaceNote(%s,%s)",object.getNoteSrc().getName(), object.getNewNote().getName());
 	}
 
 	@Override
@@ -123,7 +152,7 @@ public class RymlSwitchPrinter extends RythmmlSwitch<String>{
 			stringBuilder.append(String.format(".addNote(%s,%d)"
 					, beat.getNotes().get(i).getName(), beat.getNotePositions().get(i)));
 		
-		stringBuilder.append(".build(); \n");
+		stringBuilder.append(String.format(".setNbDivision(%d).build(); \n", ((Music)beat.eContainer()).getResolutionPerSlide()));
 		return stringBuilder.toString();
 	}
 

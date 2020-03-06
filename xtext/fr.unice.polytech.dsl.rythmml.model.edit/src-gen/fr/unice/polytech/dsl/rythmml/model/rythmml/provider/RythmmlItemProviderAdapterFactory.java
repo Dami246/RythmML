@@ -257,6 +257,75 @@ public class RythmmlItemProviderAdapterFactory extends RythmmlAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NoteAdditionItemProvider noteAdditionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNoteAdditionAdapter() {
+		if (noteAdditionItemProvider == null) {
+			noteAdditionItemProvider = new NoteAdditionItemProvider(this);
+		}
+
+		return noteAdditionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteDeletion} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NoteDeletionItemProvider noteDeletionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteDeletion}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNoteDeletionAdapter() {
+		if (noteDeletionItemProvider == null) {
+			noteDeletionItemProvider = new NoteDeletionItemProvider(this);
+		}
+
+		return noteDeletionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteReplacement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NoteReplacementItemProvider noteReplacementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteReplacement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNoteReplacementAdapter() {
+		if (noteReplacementItemProvider == null) {
+			noteReplacementItemProvider = new NoteReplacementItemProvider(this);
+		}
+
+		return noteReplacementItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -371,6 +440,12 @@ public class RythmmlItemProviderAdapterFactory extends RythmmlAdapterFactory
 			modifiedBarItemProvider.dispose();
 		if (barMultiplierItemProvider != null)
 			barMultiplierItemProvider.dispose();
+		if (noteAdditionItemProvider != null)
+			noteAdditionItemProvider.dispose();
+		if (noteDeletionItemProvider != null)
+			noteDeletionItemProvider.dispose();
+		if (noteReplacementItemProvider != null)
+			noteReplacementItemProvider.dispose();
 	}
 
 }

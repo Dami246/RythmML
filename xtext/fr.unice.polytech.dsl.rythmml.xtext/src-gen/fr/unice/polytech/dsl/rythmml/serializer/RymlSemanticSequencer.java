@@ -10,6 +10,9 @@ import fr.unice.polytech.dsl.rythmml.model.rythmml.ClassicalBar;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.ModifiedBar;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Music;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Note;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.NoteDeletion;
+import fr.unice.polytech.dsl.rythmml.model.rythmml.NoteReplacement;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Pattern;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage;
 import fr.unice.polytech.dsl.rythmml.model.rythmml.Section;
@@ -56,6 +59,15 @@ public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case RythmmlPackage.NOTE:
 				sequence_Note(context, (Note) semanticObject); 
+				return; 
+			case RythmmlPackage.NOTE_ADDITION:
+				sequence_NoteAddition(context, (NoteAddition) semanticObject); 
+				return; 
+			case RythmmlPackage.NOTE_DELETION:
+				sequence_NoteDeletion(context, (NoteDeletion) semanticObject); 
+				return; 
+			case RythmmlPackage.NOTE_REPLACEMENT:
+				sequence_NoteReplacement(context, (NoteReplacement) semanticObject); 
 				return; 
 			case RythmmlPackage.PATTERN:
 				sequence_Pattern(context, (Pattern) semanticObject); 
@@ -111,19 +123,10 @@ public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ModifiedBar returns ModifiedBar
 	 *
 	 * Constraint:
-	 *     (name=EString bar=[Bar|EString])
+	 *     (name=EString bar=[Bar|EString] operations+=Operation operations+=Operation*)
 	 */
 	protected void sequence_ModifiedBar(ISerializationContext context, ModifiedBar semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.NAMED_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.NAMED_ELEMENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.MODIFIED_BAR__BAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.MODIFIED_BAR__BAR));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getModifiedBarAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getModifiedBarAccess().getBarBarEStringParserRuleCall_3_0_1(), semanticObject.eGet(RythmmlPackage.Literals.MODIFIED_BAR__BAR, false));
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -133,22 +136,89 @@ public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         (
-	 *             name=EString 
-	 *             title=EString? 
-	 *             author=EString? 
-	 *             bpm=EInt? 
-	 *             resolutionPerSlide=EInt? 
-	 *             (ownedNotes+=Note ownedNotes+=Note*)?
-	 *         ) | 
-	 *         (ownedBeats+=Beat ownedBeats+=Beat*) | 
-	 *         (ownedBars+=Bar ownedBars+=Bar*) | 
-	 *         (ownedPatterns+=Pattern ownedPatterns+=Pattern*) | 
-	 *         (ownedSections+=Section ownedSections+=Section*)
-	 *     )+
+	 *         name=EString 
+	 *         title=EString? 
+	 *         author=EString? 
+	 *         bpm=EInt? 
+	 *         resolutionPerSlide=EInt? 
+	 *         (ownedNotes+=Note ownedNotes+=Note*)? 
+	 *         (ownedBeats+=Beat ownedBeats+=Beat*)? 
+	 *         (ownedBars+=Bar ownedBars+=Bar*)? 
+	 *         (ownedPatterns+=Pattern ownedPatterns+=Pattern*)? 
+	 *         (ownedSections+=Section ownedSections+=Section*)?
+	 *     )
 	 */
 	protected void sequence_Music(ISerializationContext context, Music semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Operation returns NoteAddition
+	 *     NoteAddition returns NoteAddition
+	 *
+	 * Constraint:
+	 *     (beatNumber=EInt note=[Note|EString])
+	 */
+	protected void sequence_NoteAddition(ISerializationContext context, NoteAddition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.OPERATION__BEAT_NUMBER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.OPERATION__BEAT_NUMBER));
+			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.NOTE_ADDITION__NOTE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.NOTE_ADDITION__NOTE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNoteAdditionAccess().getBeatNumberEIntParserRuleCall_1_0(), semanticObject.getBeatNumber());
+		feeder.accept(grammarAccess.getNoteAdditionAccess().getNoteNoteEStringParserRuleCall_3_0_1(), semanticObject.eGet(RythmmlPackage.Literals.NOTE_ADDITION__NOTE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Operation returns NoteDeletion
+	 *     NoteDeletion returns NoteDeletion
+	 *
+	 * Constraint:
+	 *     (beatNumber=EInt note=[Note|EString])
+	 */
+	protected void sequence_NoteDeletion(ISerializationContext context, NoteDeletion semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.OPERATION__BEAT_NUMBER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.OPERATION__BEAT_NUMBER));
+			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.NOTE_DELETION__NOTE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.NOTE_DELETION__NOTE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNoteDeletionAccess().getBeatNumberEIntParserRuleCall_1_0(), semanticObject.getBeatNumber());
+		feeder.accept(grammarAccess.getNoteDeletionAccess().getNoteNoteEStringParserRuleCall_3_0_1(), semanticObject.eGet(RythmmlPackage.Literals.NOTE_DELETION__NOTE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Operation returns NoteReplacement
+	 *     NoteReplacement returns NoteReplacement
+	 *
+	 * Constraint:
+	 *     (beatNumber=EInt noteSrc=[Note|EString] newNote=[Note|EString])
+	 */
+	protected void sequence_NoteReplacement(ISerializationContext context, NoteReplacement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.OPERATION__BEAT_NUMBER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.OPERATION__BEAT_NUMBER));
+			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.NOTE_REPLACEMENT__NOTE_SRC) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.NOTE_REPLACEMENT__NOTE_SRC));
+			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.NOTE_REPLACEMENT__NEW_NOTE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.NOTE_REPLACEMENT__NEW_NOTE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNoteReplacementAccess().getBeatNumberEIntParserRuleCall_1_0(), semanticObject.getBeatNumber());
+		feeder.accept(grammarAccess.getNoteReplacementAccess().getNoteSrcNoteEStringParserRuleCall_3_0_1(), semanticObject.eGet(RythmmlPackage.Literals.NOTE_REPLACEMENT__NOTE_SRC, false));
+		feeder.accept(grammarAccess.getNoteReplacementAccess().getNewNoteNoteEStringParserRuleCall_5_0_1(), semanticObject.eGet(RythmmlPackage.Literals.NOTE_REPLACEMENT__NEW_NOTE, false));
+		feeder.finish();
 	}
 	
 	

@@ -117,6 +117,26 @@ public class RythmmlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseOperation(Operation object) {
+			return createOperationAdapter();
+		}
+
+		@Override
+		public Adapter caseNoteAddition(NoteAddition object) {
+			return createNoteAdditionAdapter();
+		}
+
+		@Override
+		public Adapter caseNoteDeletion(NoteDeletion object) {
+			return createNoteDeletionAdapter();
+		}
+
+		@Override
+		public Adapter caseNoteReplacement(NoteReplacement object) {
+			return createNoteReplacementAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -272,6 +292,62 @@ public class RythmmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBarMultiplierAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.Operation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.Operation
+	 * @generated
+	 */
+	public Adapter createOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition <em>Note Addition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition
+	 * @generated
+	 */
+	public Adapter createNoteAdditionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteDeletion <em>Note Deletion</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.NoteDeletion
+	 * @generated
+	 */
+	public Adapter createNoteDeletionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteReplacement <em>Note Replacement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.NoteReplacement
+	 * @generated
+	 */
+	public Adapter createNoteReplacementAdapter() {
 		return null;
 	}
 

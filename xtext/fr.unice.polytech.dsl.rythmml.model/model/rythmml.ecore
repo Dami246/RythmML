@@ -25,10 +25,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="bars" upperBound="-1" eType="#//BarMultiplier"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Bar" abstract="true" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="beats" lowerBound="1" upperBound="-1"
-        eType="#//Beat"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bar" abstract="true" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Beat" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalDivNumber" unique="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -56,14 +53,34 @@
     <eLiterals name="WS" value="9"/>
     <eLiterals name="L" value="10"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ClassicalBar" eSuperTypes="#//Bar"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassicalBar" eSuperTypes="#//Bar">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="beats" lowerBound="1" upperBound="-1"
+        eType="#//Beat"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModifiedBar" eSuperTypes="#//Bar">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bar" lowerBound="1" eType="#//Bar"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" lowerBound="1"
+        upperBound="-1" eType="#//Operation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BarMultiplier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="bar" lowerBound="1" eType="#//Bar"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplier" unique="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beatNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NoteAddition" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="note" lowerBound="1" eType="#//Note"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NoteDeletion" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="note" lowerBound="1" eType="#//Note"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NoteReplacement" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="noteSrc" lowerBound="1"
+        eType="#//Note"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newNote" lowerBound="1"
+        eType="#//Note"/>
   </eClassifiers>
 </ecore:EPackage>
