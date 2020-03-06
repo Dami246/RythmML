@@ -47,7 +47,7 @@ public class RymlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cBpmAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
 		private final RuleCall cBpmEIntParserRuleCall_5_1_0 = (RuleCall)cBpmAssignment_5_1.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cResolutionPerBeatsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cResolutionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cResolutionPerSlideAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cResolutionPerSlideEIntParserRuleCall_6_1_0 = (RuleCall)cResolutionPerSlideAssignment_6_1.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
@@ -79,16 +79,14 @@ public class RymlGrammarAccess extends AbstractGrammarElementFinder {
 		//Music:
 		//	'Music'
 		//	name=EString
-		//	':' ('title :' title=EString)? ('author :' author=EString)? ('bpm :' bpm=EInt)? ('resolution per beats : '
-		//	resolutionPerSlide=EInt)? (ownedNotes+=Note ownedNotes+=Note*)? (ownedBeats+=Beat ownedBeats+=Beat*)? (ownedBars+=Bar
-		//	ownedBars+=Bar*)? (ownedPatterns+=Pattern ownedPatterns+=Pattern*)? (ownedSections+=Section
-		//	ownedSections+=Section*)?;
+		//	':' ('title:' title=EString)? ('author:' author=EString)? ('bpm:' bpm=EInt)? ('resolution:' resolutionPerSlide=EInt)?
+		//	(ownedNotes+=Note ownedNotes+=Note*)? (ownedBeats+=Beat ownedBeats+=Beat*)? (ownedBars+=Bar ownedBars+=Bar*)?
+		//	(ownedPatterns+=Pattern ownedPatterns+=Pattern*)? (ownedSections+=Section ownedSections+=Section*)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Music' name=EString ':' ('title :' title=EString)? ('author :' author=EString)? ('bpm :' bpm=EInt)?
-		//('resolution per beats : ' resolutionPerSlide=EInt)? (ownedNotes+=Note ownedNotes+=Note*)? (ownedBeats+=Beat
-		//ownedBeats+=Beat*)? (ownedBars+=Bar ownedBars+=Bar*)? (ownedPatterns+=Pattern ownedPatterns+=Pattern*)?
-		//(ownedSections+=Section ownedSections+=Section*)?
+		//'Music' name=EString ':' ('title:' title=EString)? ('author:' author=EString)? ('bpm:' bpm=EInt)? ('resolution:'
+		//resolutionPerSlide=EInt)? (ownedNotes+=Note ownedNotes+=Note*)? (ownedBeats+=Beat ownedBeats+=Beat*)? (ownedBars+=Bar
+		//ownedBars+=Bar*)? (ownedPatterns+=Pattern ownedPatterns+=Pattern*)? (ownedSections+=Section ownedSections+=Section*)?
 		public Group getGroup() { return cGroup; }
 		
 		//'Music'
@@ -103,10 +101,10 @@ public class RymlGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
-		//('title :' title=EString)?
+		//('title:' title=EString)?
 		public Group getGroup_3() { return cGroup_3; }
 		
-		//'title :'
+		//'title:'
 		public Keyword getTitleKeyword_3_0() { return cTitleKeyword_3_0; }
 		
 		//title=EString
@@ -115,10 +113,10 @@ public class RymlGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getTitleEStringParserRuleCall_3_1_0() { return cTitleEStringParserRuleCall_3_1_0; }
 		
-		//('author :' author=EString)?
+		//('author:' author=EString)?
 		public Group getGroup_4() { return cGroup_4; }
 		
-		//'author :'
+		//'author:'
 		public Keyword getAuthorKeyword_4_0() { return cAuthorKeyword_4_0; }
 		
 		//author=EString
@@ -127,10 +125,10 @@ public class RymlGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getAuthorEStringParserRuleCall_4_1_0() { return cAuthorEStringParserRuleCall_4_1_0; }
 		
-		//('bpm :' bpm=EInt)?
+		//('bpm:' bpm=EInt)?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'bpm :'
+		//'bpm:'
 		public Keyword getBpmKeyword_5_0() { return cBpmKeyword_5_0; }
 		
 		//bpm=EInt
@@ -139,11 +137,11 @@ public class RymlGrammarAccess extends AbstractGrammarElementFinder {
 		//EInt
 		public RuleCall getBpmEIntParserRuleCall_5_1_0() { return cBpmEIntParserRuleCall_5_1_0; }
 		
-		//('resolution per beats : ' resolutionPerSlide=EInt)?
+		//('resolution:' resolutionPerSlide=EInt)?
 		public Group getGroup_6() { return cGroup_6; }
 		
-		//'resolution per beats : '
-		public Keyword getResolutionPerBeatsKeyword_6_0() { return cResolutionPerBeatsKeyword_6_0; }
+		//'resolution:'
+		public Keyword getResolutionKeyword_6_0() { return cResolutionKeyword_6_0; }
 		
 		//resolutionPerSlide=EInt
 		public Assignment getResolutionPerSlideAssignment_6_1() { return cResolutionPerSlideAssignment_6_1; }
@@ -449,135 +447,159 @@ public class RymlGrammarAccess extends AbstractGrammarElementFinder {
 	public class NoteAdditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.dsl.rythmml.Ryml.NoteAddition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cBeatKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cBeatNumberAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cBeatNumberEIntParserRuleCall_1_0 = (RuleCall)cBeatNumberAssignment_1.eContents().get(0);
-		private final Keyword cAddKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNoteAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cNoteNoteCrossReference_3_0 = (CrossReference)cNoteAssignment_3.eContents().get(0);
-		private final RuleCall cNoteNoteEStringParserRuleCall_3_0_1 = (RuleCall)cNoteNoteCrossReference_3_0.eContents().get(1);
+		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
+		private final Keyword cBeatKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cBeatNumberAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cBeatNumberEIntParserRuleCall_0_1_0 = (RuleCall)cBeatNumberAssignment_0_1.eContents().get(0);
+		private final Keyword cAddKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNoteAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cNoteNoteCrossReference_2_0 = (CrossReference)cNoteAssignment_2.eContents().get(0);
+		private final RuleCall cNoteNoteEStringParserRuleCall_2_0_1 = (RuleCall)cNoteNoteCrossReference_2_0.eContents().get(1);
+		private final Keyword cAtTickKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cDivisionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDivisionEIntParserRuleCall_4_0 = (RuleCall)cDivisionAssignment_4.eContents().get(0);
 		
 		//NoteAddition:
-		//	'beat' beatNumber=EInt 'add' note=[Note|EString];
+		//	('beat' beatNumber=EInt)? 'add' note=[Note|EString] 'at tick' division=EInt;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'beat' beatNumber=EInt 'add' note=[Note|EString]
+		//('beat' beatNumber=EInt)? 'add' note=[Note|EString] 'at tick' division=EInt
 		public Group getGroup() { return cGroup; }
 		
+		//('beat' beatNumber=EInt)?
+		public Group getGroup_0() { return cGroup_0; }
+		
 		//'beat'
-		public Keyword getBeatKeyword_0() { return cBeatKeyword_0; }
+		public Keyword getBeatKeyword_0_0() { return cBeatKeyword_0_0; }
 		
 		//beatNumber=EInt
-		public Assignment getBeatNumberAssignment_1() { return cBeatNumberAssignment_1; }
+		public Assignment getBeatNumberAssignment_0_1() { return cBeatNumberAssignment_0_1; }
 		
 		//EInt
-		public RuleCall getBeatNumberEIntParserRuleCall_1_0() { return cBeatNumberEIntParserRuleCall_1_0; }
+		public RuleCall getBeatNumberEIntParserRuleCall_0_1_0() { return cBeatNumberEIntParserRuleCall_0_1_0; }
 		
 		//'add'
-		public Keyword getAddKeyword_2() { return cAddKeyword_2; }
+		public Keyword getAddKeyword_1() { return cAddKeyword_1; }
 		
 		//note=[Note|EString]
-		public Assignment getNoteAssignment_3() { return cNoteAssignment_3; }
+		public Assignment getNoteAssignment_2() { return cNoteAssignment_2; }
 		
 		//[Note|EString]
-		public CrossReference getNoteNoteCrossReference_3_0() { return cNoteNoteCrossReference_3_0; }
+		public CrossReference getNoteNoteCrossReference_2_0() { return cNoteNoteCrossReference_2_0; }
 		
 		//EString
-		public RuleCall getNoteNoteEStringParserRuleCall_3_0_1() { return cNoteNoteEStringParserRuleCall_3_0_1; }
+		public RuleCall getNoteNoteEStringParserRuleCall_2_0_1() { return cNoteNoteEStringParserRuleCall_2_0_1; }
+		
+		//'at tick'
+		public Keyword getAtTickKeyword_3() { return cAtTickKeyword_3; }
+		
+		//division=EInt
+		public Assignment getDivisionAssignment_4() { return cDivisionAssignment_4; }
+		
+		//EInt
+		public RuleCall getDivisionEIntParserRuleCall_4_0() { return cDivisionEIntParserRuleCall_4_0; }
 	}
 	public class NoteDeletionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.dsl.rythmml.Ryml.NoteDeletion");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cBeatKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cBeatNumberAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cBeatNumberEIntParserRuleCall_1_0 = (RuleCall)cBeatNumberAssignment_1.eContents().get(0);
-		private final Keyword cDeleteKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNoteAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cNoteNoteCrossReference_3_0 = (CrossReference)cNoteAssignment_3.eContents().get(0);
-		private final RuleCall cNoteNoteEStringParserRuleCall_3_0_1 = (RuleCall)cNoteNoteCrossReference_3_0.eContents().get(1);
+		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
+		private final Keyword cBeatKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cBeatNumberAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cBeatNumberEIntParserRuleCall_0_1_0 = (RuleCall)cBeatNumberAssignment_0_1.eContents().get(0);
+		private final Keyword cDeleteKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNoteAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cNoteNoteCrossReference_2_0 = (CrossReference)cNoteAssignment_2.eContents().get(0);
+		private final RuleCall cNoteNoteEStringParserRuleCall_2_0_1 = (RuleCall)cNoteNoteCrossReference_2_0.eContents().get(1);
 		
 		//NoteDeletion:
-		//	'beat' beatNumber=EInt 'delete' note=[Note|EString];
+		//	('beat' beatNumber=EInt)? 'delete' note=[Note|EString];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'beat' beatNumber=EInt 'delete' note=[Note|EString]
+		//('beat' beatNumber=EInt)? 'delete' note=[Note|EString]
 		public Group getGroup() { return cGroup; }
 		
+		//('beat' beatNumber=EInt)?
+		public Group getGroup_0() { return cGroup_0; }
+		
 		//'beat'
-		public Keyword getBeatKeyword_0() { return cBeatKeyword_0; }
+		public Keyword getBeatKeyword_0_0() { return cBeatKeyword_0_0; }
 		
 		//beatNumber=EInt
-		public Assignment getBeatNumberAssignment_1() { return cBeatNumberAssignment_1; }
+		public Assignment getBeatNumberAssignment_0_1() { return cBeatNumberAssignment_0_1; }
 		
 		//EInt
-		public RuleCall getBeatNumberEIntParserRuleCall_1_0() { return cBeatNumberEIntParserRuleCall_1_0; }
+		public RuleCall getBeatNumberEIntParserRuleCall_0_1_0() { return cBeatNumberEIntParserRuleCall_0_1_0; }
 		
 		//'delete'
-		public Keyword getDeleteKeyword_2() { return cDeleteKeyword_2; }
+		public Keyword getDeleteKeyword_1() { return cDeleteKeyword_1; }
 		
 		//note=[Note|EString]
-		public Assignment getNoteAssignment_3() { return cNoteAssignment_3; }
+		public Assignment getNoteAssignment_2() { return cNoteAssignment_2; }
 		
 		//[Note|EString]
-		public CrossReference getNoteNoteCrossReference_3_0() { return cNoteNoteCrossReference_3_0; }
+		public CrossReference getNoteNoteCrossReference_2_0() { return cNoteNoteCrossReference_2_0; }
 		
 		//EString
-		public RuleCall getNoteNoteEStringParserRuleCall_3_0_1() { return cNoteNoteEStringParserRuleCall_3_0_1; }
+		public RuleCall getNoteNoteEStringParserRuleCall_2_0_1() { return cNoteNoteEStringParserRuleCall_2_0_1; }
 	}
 	public class NoteReplacementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.dsl.rythmml.Ryml.NoteReplacement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cBeatKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cBeatNumberAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cBeatNumberEIntParserRuleCall_1_0 = (RuleCall)cBeatNumberAssignment_1.eContents().get(0);
-		private final Keyword cReplaceKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNoteSrcAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cNoteSrcNoteCrossReference_3_0 = (CrossReference)cNoteSrcAssignment_3.eContents().get(0);
-		private final RuleCall cNoteSrcNoteEStringParserRuleCall_3_0_1 = (RuleCall)cNoteSrcNoteCrossReference_3_0.eContents().get(1);
-		private final Keyword cByKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cNewNoteAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cNewNoteNoteCrossReference_5_0 = (CrossReference)cNewNoteAssignment_5.eContents().get(0);
-		private final RuleCall cNewNoteNoteEStringParserRuleCall_5_0_1 = (RuleCall)cNewNoteNoteCrossReference_5_0.eContents().get(1);
+		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
+		private final Keyword cBeatKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cBeatNumberAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cBeatNumberEIntParserRuleCall_0_1_0 = (RuleCall)cBeatNumberAssignment_0_1.eContents().get(0);
+		private final Keyword cReplaceKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNoteSrcAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cNoteSrcNoteCrossReference_2_0 = (CrossReference)cNoteSrcAssignment_2.eContents().get(0);
+		private final RuleCall cNoteSrcNoteEStringParserRuleCall_2_0_1 = (RuleCall)cNoteSrcNoteCrossReference_2_0.eContents().get(1);
+		private final Keyword cByKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cNewNoteAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cNewNoteNoteCrossReference_4_0 = (CrossReference)cNewNoteAssignment_4.eContents().get(0);
+		private final RuleCall cNewNoteNoteEStringParserRuleCall_4_0_1 = (RuleCall)cNewNoteNoteCrossReference_4_0.eContents().get(1);
 		
 		//NoteReplacement:
-		//	'beat' beatNumber=EInt 'replace' noteSrc=[Note|EString] 'by' newNote=[Note|EString];
+		//	('beat' beatNumber=EInt)? 'replace' noteSrc=[Note|EString] 'by' newNote=[Note|EString];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'beat' beatNumber=EInt 'replace' noteSrc=[Note|EString] 'by' newNote=[Note|EString]
+		//('beat' beatNumber=EInt)? 'replace' noteSrc=[Note|EString] 'by' newNote=[Note|EString]
 		public Group getGroup() { return cGroup; }
 		
+		//('beat' beatNumber=EInt)?
+		public Group getGroup_0() { return cGroup_0; }
+		
 		//'beat'
-		public Keyword getBeatKeyword_0() { return cBeatKeyword_0; }
+		public Keyword getBeatKeyword_0_0() { return cBeatKeyword_0_0; }
 		
 		//beatNumber=EInt
-		public Assignment getBeatNumberAssignment_1() { return cBeatNumberAssignment_1; }
+		public Assignment getBeatNumberAssignment_0_1() { return cBeatNumberAssignment_0_1; }
 		
 		//EInt
-		public RuleCall getBeatNumberEIntParserRuleCall_1_0() { return cBeatNumberEIntParserRuleCall_1_0; }
+		public RuleCall getBeatNumberEIntParserRuleCall_0_1_0() { return cBeatNumberEIntParserRuleCall_0_1_0; }
 		
 		//'replace'
-		public Keyword getReplaceKeyword_2() { return cReplaceKeyword_2; }
+		public Keyword getReplaceKeyword_1() { return cReplaceKeyword_1; }
 		
 		//noteSrc=[Note|EString]
-		public Assignment getNoteSrcAssignment_3() { return cNoteSrcAssignment_3; }
+		public Assignment getNoteSrcAssignment_2() { return cNoteSrcAssignment_2; }
 		
 		//[Note|EString]
-		public CrossReference getNoteSrcNoteCrossReference_3_0() { return cNoteSrcNoteCrossReference_3_0; }
+		public CrossReference getNoteSrcNoteCrossReference_2_0() { return cNoteSrcNoteCrossReference_2_0; }
 		
 		//EString
-		public RuleCall getNoteSrcNoteEStringParserRuleCall_3_0_1() { return cNoteSrcNoteEStringParserRuleCall_3_0_1; }
+		public RuleCall getNoteSrcNoteEStringParserRuleCall_2_0_1() { return cNoteSrcNoteEStringParserRuleCall_2_0_1; }
 		
 		//'by'
-		public Keyword getByKeyword_4() { return cByKeyword_4; }
+		public Keyword getByKeyword_3() { return cByKeyword_3; }
 		
 		//newNote=[Note|EString]
-		public Assignment getNewNoteAssignment_5() { return cNewNoteAssignment_5; }
+		public Assignment getNewNoteAssignment_4() { return cNewNoteAssignment_4; }
 		
 		//[Note|EString]
-		public CrossReference getNewNoteNoteCrossReference_5_0() { return cNewNoteNoteCrossReference_5_0; }
+		public CrossReference getNewNoteNoteCrossReference_4_0() { return cNewNoteNoteCrossReference_4_0; }
 		
 		//EString
-		public RuleCall getNewNoteNoteEStringParserRuleCall_5_0_1() { return cNewNoteNoteEStringParserRuleCall_5_0_1; }
+		public RuleCall getNewNoteNoteEStringParserRuleCall_4_0_1() { return cNewNoteNoteEStringParserRuleCall_4_0_1; }
 	}
 	public class BarElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.unice.polytech.dsl.rythmml.Ryml.Bar");
@@ -685,11 +707,11 @@ public class RymlGrammarAccess extends AbstractGrammarElementFinder {
 		//ModifiedBar:
 		//	{ModifiedBar}
 		//	'Bar' name=EString 'based on' bar=[Bar|EString]
-		//	'Modifications:'
+		//	'modifications:'
 		//	'-' operations+=Operation ('-' operations+=Operation)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ModifiedBar} 'Bar' name=EString 'based on' bar=[Bar|EString] 'Modifications:' '-' operations+=Operation ('-'
+		//{ModifiedBar} 'Bar' name=EString 'based on' bar=[Bar|EString] 'modifications:' '-' operations+=Operation ('-'
 		//operations+=Operation)*
 		public Group getGroup() { return cGroup; }
 		
@@ -717,7 +739,7 @@ public class RymlGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getBarBarEStringParserRuleCall_4_0_1() { return cBarBarEStringParserRuleCall_4_0_1; }
 		
-		//'Modifications:'
+		//'modifications:'
 		public Keyword getModificationsKeyword_5() { return cModificationsKeyword_5; }
 		
 		//'-'
@@ -1057,10 +1079,9 @@ public class RymlGrammarAccess extends AbstractGrammarElementFinder {
 	//Music:
 	//	'Music'
 	//	name=EString
-	//	':' ('title :' title=EString)? ('author :' author=EString)? ('bpm :' bpm=EInt)? ('resolution per beats : '
-	//	resolutionPerSlide=EInt)? (ownedNotes+=Note ownedNotes+=Note*)? (ownedBeats+=Beat ownedBeats+=Beat*)? (ownedBars+=Bar
-	//	ownedBars+=Bar*)? (ownedPatterns+=Pattern ownedPatterns+=Pattern*)? (ownedSections+=Section
-	//	ownedSections+=Section*)?;
+	//	':' ('title:' title=EString)? ('author:' author=EString)? ('bpm:' bpm=EInt)? ('resolution:' resolutionPerSlide=EInt)?
+	//	(ownedNotes+=Note ownedNotes+=Note*)? (ownedBeats+=Beat ownedBeats+=Beat*)? (ownedBars+=Bar ownedBars+=Bar*)?
+	//	(ownedPatterns+=Pattern ownedPatterns+=Pattern*)? (ownedSections+=Section ownedSections+=Section*)?;
 	public MusicElements getMusicAccess() {
 		return pMusic;
 	}
@@ -1136,7 +1157,7 @@ public class RymlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//NoteAddition:
-	//	'beat' beatNumber=EInt 'add' note=[Note|EString];
+	//	('beat' beatNumber=EInt)? 'add' note=[Note|EString] 'at tick' division=EInt;
 	public NoteAdditionElements getNoteAdditionAccess() {
 		return pNoteAddition;
 	}
@@ -1146,7 +1167,7 @@ public class RymlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//NoteDeletion:
-	//	'beat' beatNumber=EInt 'delete' note=[Note|EString];
+	//	('beat' beatNumber=EInt)? 'delete' note=[Note|EString];
 	public NoteDeletionElements getNoteDeletionAccess() {
 		return pNoteDeletion;
 	}
@@ -1156,7 +1177,7 @@ public class RymlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//NoteReplacement:
-	//	'beat' beatNumber=EInt 'replace' noteSrc=[Note|EString] 'by' newNote=[Note|EString];
+	//	('beat' beatNumber=EInt)? 'replace' noteSrc=[Note|EString] 'by' newNote=[Note|EString];
 	public NoteReplacementElements getNoteReplacementAccess() {
 		return pNoteReplacement;
 	}
@@ -1189,7 +1210,7 @@ public class RymlGrammarAccess extends AbstractGrammarElementFinder {
 	//ModifiedBar:
 	//	{ModifiedBar}
 	//	'Bar' name=EString 'based on' bar=[Bar|EString]
-	//	'Modifications:'
+	//	'modifications:'
 	//	'-' operations+=Operation ('-' operations+=Operation)*;
 	public ModifiedBarElements getModifiedBarAccess() {
 		return pModifiedBar;

@@ -664,13 +664,22 @@ public interface RythmmlPackage extends EPackage {
 	int NOTE_ADDITION__NOTE = OPERATION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Division</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE_ADDITION__DIVISION = OPERATION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Note Addition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NOTE_ADDITION_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
+	int NOTE_ADDITION_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Note Addition</em>' class.
@@ -1166,6 +1175,17 @@ public interface RythmmlPackage extends EPackage {
 	EReference getNoteAddition_Note();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition#getDivision <em>Division</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Division</em>'.
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition#getDivision()
+	 * @see #getNoteAddition()
+	 * @generated
+	 */
+	EAttribute getNoteAddition_Division();
+
+	/**
 	 * Returns the meta object for class '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteDeletion <em>Note Deletion</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1554,6 +1574,14 @@ public interface RythmmlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference NOTE_ADDITION__NOTE = eINSTANCE.getNoteAddition_Note();
+
+		/**
+		 * The meta object literal for the '<em><b>Division</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NOTE_ADDITION__DIVISION = eINSTANCE.getNoteAddition_Division();
 
 		/**
 		 * The meta object literal for the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.NoteDeletionImpl <em>Note Deletion</em>}' class.

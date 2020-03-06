@@ -524,6 +524,15 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getNoteAddition_Division() {
+		return (EAttribute) noteAdditionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getNoteDeletion() {
 		return noteDeletionEClass;
 	}
@@ -648,6 +657,7 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 
 		noteAdditionEClass = createEClass(NOTE_ADDITION);
 		createEReference(noteAdditionEClass, NOTE_ADDITION__NOTE);
+		createEAttribute(noteAdditionEClass, NOTE_ADDITION__DIVISION);
 
 		noteDeletionEClass = createEClass(NOTE_DELETION);
 		createEReference(noteDeletionEClass, NOTE_DELETION__NOTE);
@@ -786,7 +796,7 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 
 		initEClass(operationEClass, Operation.class, "Operation", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOperation_BeatNumber(), ecorePackage.getEInt(), "beatNumber", null, 0, 1, Operation.class,
+		initEAttribute(getOperation_BeatNumber(), ecorePackage.getEInt(), "beatNumber", "-1", 0, 1, Operation.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(noteAdditionEClass, NoteAddition.class, "NoteAddition", !IS_ABSTRACT, !IS_INTERFACE,
@@ -794,6 +804,8 @@ public class RythmmlPackageImpl extends EPackageImpl implements RythmmlPackage {
 		initEReference(getNoteAddition_Note(), this.getNote(), null, "note", null, 1, 1, NoteAddition.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNoteAddition_Division(), ecorePackage.getEInt(), "division", null, 0, 1, NoteAddition.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(noteDeletionEClass, NoteDeletion.class, "NoteDeletion", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

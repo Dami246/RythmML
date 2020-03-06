@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.NoteAdditionImpl#getNote <em>Note</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.impl.NoteAdditionImpl#getDivision <em>Division</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,6 +35,25 @@ public class NoteAdditionImpl extends OperationImpl implements NoteAddition {
 	 * @ordered
 	 */
 	protected Note note;
+
+	/**
+	 * The default value of the '{@link #getDivision() <em>Division</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDivision()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int DIVISION_EDEFAULT = 0;
+	/**
+	 * The cached value of the '{@link #getDivision() <em>Division</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDivision()
+	 * @generated
+	 * @ordered
+	 */
+	protected int division = DIVISION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,6 +118,28 @@ public class NoteAdditionImpl extends OperationImpl implements NoteAddition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getDivision() {
+		return division;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDivision(int newDivision) {
+		int oldDivision = division;
+		division = newDivision;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RythmmlPackage.NOTE_ADDITION__DIVISION, oldDivision,
+					division));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -105,6 +147,8 @@ public class NoteAdditionImpl extends OperationImpl implements NoteAddition {
 			if (resolve)
 				return getNote();
 			return basicGetNote();
+		case RythmmlPackage.NOTE_ADDITION__DIVISION:
+			return getDivision();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,6 +163,9 @@ public class NoteAdditionImpl extends OperationImpl implements NoteAddition {
 		switch (featureID) {
 		case RythmmlPackage.NOTE_ADDITION__NOTE:
 			setNote((Note) newValue);
+			return;
+		case RythmmlPackage.NOTE_ADDITION__DIVISION:
+			setDivision((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,6 +182,9 @@ public class NoteAdditionImpl extends OperationImpl implements NoteAddition {
 		case RythmmlPackage.NOTE_ADDITION__NOTE:
 			setNote((Note) null);
 			return;
+		case RythmmlPackage.NOTE_ADDITION__DIVISION:
+			setDivision(DIVISION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -149,8 +199,27 @@ public class NoteAdditionImpl extends OperationImpl implements NoteAddition {
 		switch (featureID) {
 		case RythmmlPackage.NOTE_ADDITION__NOTE:
 			return note != null;
+		case RythmmlPackage.NOTE_ADDITION__DIVISION:
+			return division != DIVISION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (division: ");
+		result.append(division);
+		result.append(')');
+		return result.toString();
 	}
 
 } //NoteAdditionImpl

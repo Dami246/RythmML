@@ -105,7 +105,7 @@ ruleMusic returns [EObject current=null]
 			newLeafNode(otherlv_2, grammarAccess.getMusicAccess().getColonKeyword_2());
 		}
 		(
-			otherlv_3='title :'
+			otherlv_3='title:'
 			{
 				newLeafNode(otherlv_3, grammarAccess.getMusicAccess().getTitleKeyword_3_0());
 			}
@@ -130,7 +130,7 @@ ruleMusic returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_5='author :'
+			otherlv_5='author:'
 			{
 				newLeafNode(otherlv_5, grammarAccess.getMusicAccess().getAuthorKeyword_4_0());
 			}
@@ -155,7 +155,7 @@ ruleMusic returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_7='bpm :'
+			otherlv_7='bpm:'
 			{
 				newLeafNode(otherlv_7, grammarAccess.getMusicAccess().getBpmKeyword_5_0());
 			}
@@ -180,9 +180,9 @@ ruleMusic returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_9='resolution per beats : '
+			otherlv_9='resolution:'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getMusicAccess().getResolutionPerBeatsKeyword_6_0());
+				newLeafNode(otherlv_9, grammarAccess.getMusicAccess().getResolutionKeyword_6_0());
 			}
 			(
 				(
@@ -776,32 +776,34 @@ ruleNoteAddition returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='beat'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getNoteAdditionAccess().getBeatKeyword_0());
-		}
 		(
+			otherlv_0='beat'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getNoteAdditionAccess().getBeatKeyword_0_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getNoteAdditionAccess().getBeatNumberEIntParserRuleCall_1_0());
-				}
-				lv_beatNumber_1_0=ruleEInt
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getNoteAdditionRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getNoteAdditionAccess().getBeatNumberEIntParserRuleCall_0_1_0());
 					}
-					set(
-						$current,
-						"beatNumber",
-						lv_beatNumber_1_0,
-						"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
-					afterParserOrEnumRuleCall();
-				}
+					lv_beatNumber_1_0=ruleEInt
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getNoteAdditionRule());
+						}
+						set(
+							$current,
+							"beatNumber",
+							lv_beatNumber_1_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)
+		)?
 		otherlv_2='add'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getNoteAdditionAccess().getAddKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getNoteAdditionAccess().getAddKeyword_1());
 		}
 		(
 			(
@@ -811,10 +813,33 @@ ruleNoteAddition returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getNoteAdditionAccess().getNoteNoteCrossReference_3_0());
+					newCompositeNode(grammarAccess.getNoteAdditionAccess().getNoteNoteCrossReference_2_0());
 				}
 				ruleEString
 				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4='at tick'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getNoteAdditionAccess().getAtTickKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getNoteAdditionAccess().getDivisionEIntParserRuleCall_4_0());
+				}
+				lv_division_5_0=ruleEInt
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getNoteAdditionRule());
+					}
+					set(
+						$current,
+						"division",
+						lv_division_5_0,
+						"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -838,32 +863,34 @@ ruleNoteDeletion returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='beat'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getNoteDeletionAccess().getBeatKeyword_0());
-		}
 		(
+			otherlv_0='beat'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getNoteDeletionAccess().getBeatKeyword_0_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getNoteDeletionAccess().getBeatNumberEIntParserRuleCall_1_0());
-				}
-				lv_beatNumber_1_0=ruleEInt
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getNoteDeletionRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getNoteDeletionAccess().getBeatNumberEIntParserRuleCall_0_1_0());
 					}
-					set(
-						$current,
-						"beatNumber",
-						lv_beatNumber_1_0,
-						"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
-					afterParserOrEnumRuleCall();
-				}
+					lv_beatNumber_1_0=ruleEInt
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getNoteDeletionRule());
+						}
+						set(
+							$current,
+							"beatNumber",
+							lv_beatNumber_1_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)
+		)?
 		otherlv_2='delete'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getNoteDeletionAccess().getDeleteKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getNoteDeletionAccess().getDeleteKeyword_1());
 		}
 		(
 			(
@@ -873,7 +900,7 @@ ruleNoteDeletion returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getNoteDeletionAccess().getNoteNoteCrossReference_3_0());
+					newCompositeNode(grammarAccess.getNoteDeletionAccess().getNoteNoteCrossReference_2_0());
 				}
 				ruleEString
 				{
@@ -900,32 +927,34 @@ ruleNoteReplacement returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='beat'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getNoteReplacementAccess().getBeatKeyword_0());
-		}
 		(
+			otherlv_0='beat'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getNoteReplacementAccess().getBeatKeyword_0_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getNoteReplacementAccess().getBeatNumberEIntParserRuleCall_1_0());
-				}
-				lv_beatNumber_1_0=ruleEInt
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getNoteReplacementRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getNoteReplacementAccess().getBeatNumberEIntParserRuleCall_0_1_0());
 					}
-					set(
-						$current,
-						"beatNumber",
-						lv_beatNumber_1_0,
-						"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
-					afterParserOrEnumRuleCall();
-				}
+					lv_beatNumber_1_0=ruleEInt
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getNoteReplacementRule());
+						}
+						set(
+							$current,
+							"beatNumber",
+							lv_beatNumber_1_0,
+							"fr.unice.polytech.dsl.rythmml.Ryml.EInt");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)
+		)?
 		otherlv_2='replace'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getNoteReplacementAccess().getReplaceKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getNoteReplacementAccess().getReplaceKeyword_1());
 		}
 		(
 			(
@@ -935,7 +964,7 @@ ruleNoteReplacement returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getNoteReplacementAccess().getNoteSrcNoteCrossReference_3_0());
+					newCompositeNode(grammarAccess.getNoteReplacementAccess().getNoteSrcNoteCrossReference_2_0());
 				}
 				ruleEString
 				{
@@ -945,7 +974,7 @@ ruleNoteReplacement returns [EObject current=null]
 		)
 		otherlv_4='by'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getNoteReplacementAccess().getByKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getNoteReplacementAccess().getByKeyword_3());
 		}
 		(
 			(
@@ -955,7 +984,7 @@ ruleNoteReplacement returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getNoteReplacementAccess().getNewNoteNoteCrossReference_5_0());
+					newCompositeNode(grammarAccess.getNoteReplacementAccess().getNewNoteNoteCrossReference_4_0());
 				}
 				ruleEString
 				{
@@ -1159,7 +1188,7 @@ ruleModifiedBar returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_5='Modifications:'
+		otherlv_5='modifications:'
 		{
 			newLeafNode(otherlv_5, grammarAccess.getModifiedBarAccess().getModificationsKeyword_5());
 		}

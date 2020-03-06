@@ -8,10 +8,10 @@ Music returns Music:
 	'Music'
 	name=EString
 	':'
-		('title :' title=EString)?
-		('author :' author=EString)?
-		('bpm :' bpm=EInt)?
-		('resolution per beats : ' resolutionPerSlide=EInt)?
+		('title:' title=EString)?
+		('author:' author=EString)?
+		('bpm:' bpm=EInt)?
+		('resolution:' resolutionPerSlide=EInt)?
 		(ownedNotes+=Note (ownedNotes+=Note)*)?
 		(ownedBeats+=Beat (ownedBeats+=Beat)*)?
 		(ownedBars+=Bar (ownedBars+=Bar)*)?
@@ -45,13 +45,13 @@ Operation returns Operation:
 	(NoteAddition | NoteDeletion | NoteReplacement);
 
 NoteAddition returns NoteAddition:
-	'beat' beatNumber=EInt 'add' note=[Note|EString];
+	('beat' beatNumber=EInt)? 'add' note=[Note|EString] 'at tick' division=EInt;
 
 NoteDeletion returns NoteDeletion:
-	'beat' beatNumber=EInt 'delete' note=[Note|EString];
+	('beat' beatNumber=EInt)? 'delete' note=[Note|EString];
 
 NoteReplacement returns NoteReplacement:
-	'beat' beatNumber=EInt 'replace' noteSrc=[Note|EString] 'by' newNote=[Note|EString];
+	('beat' beatNumber=EInt)? 'replace' noteSrc=[Note|EString] 'by' newNote=[Note|EString];
 
 Bar returns Bar:
 	(ClassicalBar | ModifiedBar);
@@ -63,7 +63,7 @@ ClassicalBar returns ClassicalBar:
 ModifiedBar returns ModifiedBar:
 	{ModifiedBar}
 	'Bar' name=EString 'based on' bar=[Bar|EString]
-	'Modifications:'
+	'modifications:'
 	'-' operations+=Operation 
 	( '-' operations+=Operation )*;
 

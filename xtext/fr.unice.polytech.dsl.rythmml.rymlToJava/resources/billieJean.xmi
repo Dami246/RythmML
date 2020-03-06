@@ -3,28 +3,33 @@
   <ownedSections name="first_section_1" patterns="//@ownedPatterns.0"/>
   <ownedPatterns name="fp">
     <bars bar="//@ownedBars.0" multiplier="64"/>
-    <bars bar="//@ownedBars.0" multiplier="3"/>
+    <bars bar="//@ownedBars.1" multiplier="3"/>
   </ownedPatterns>
-  <ownedBars xsi:type="rythmml:ClassicalBar" name="abar" beats="//@ownedBeats.0 //@ownedBeats.1 //@ownedBeats.2 //@ownedBeats.3"/>
-  <ownedBars xsi:type="rythmml:ModifiedBar" name="abar2" bar="//@ownedBars.0">
-    <operations xsi:type="rythmml:NoteAddition" beatNumber="1" note="//@ownedNotes.2"/>
-    <operations xsi:type="rythmml:NoteDeletion" beatNumber="2" note="//@ownedNotes.1"/>
+  <ownedBars xsi:type="rythmml:ClassicalBar" name="bar" beats="//@ownedBeats.0 //@ownedBeats.1 //@ownedBeats.2 //@ownedBeats.3"/>
+  <ownedBars xsi:type="rythmml:ModifiedBar" name="bar2" bar="//@ownedBars.0">
+    <operations xsi:type="rythmml:NoteAddition" beatNumber="1" note="//@ownedNotes.2" division="2"/>
+    <operations xsi:type="rythmml:NoteDeletion" note="//@ownedNotes.1"/>
+    <operations xsi:type="rythmml:NoteReplacement" beatNumber="4" noteSrc="//@ownedNotes.2" newNote="//@ownedNotes.1"/>
+    <operations xsi:type="rythmml:NoteDeletion" beatNumber="3" note="//@ownedNotes.2"/>
   </ownedBars>
-  <ownedBeats name="abeat1" notes="//@ownedNotes.2 //@ownedNotes.1">
-    <notePositions>5</notePositions>
+  <ownedBars xsi:type="rythmml:ModifiedBar" name="bar3" bar="//@ownedBars.1">
+    <operations xsi:type="rythmml:NoteReplacement" beatNumber="3" noteSrc="//@ownedNotes.2" newNote="//@ownedNotes.0"/>
+  </ownedBars>
+  <ownedBeats name="beat1" notes="//@ownedNotes.2 //@ownedNotes.1">
+    <notePositions>1</notePositions>
     <notePositions>0</notePositions>
   </ownedBeats>
-  <ownedBeats name="abeat12" notes="//@ownedNotes.2">
+  <ownedBeats name="beat2" notes="//@ownedNotes.2">
     <notePositions>0</notePositions>
   </ownedBeats>
-  <ownedBeats name="abeat13" notes="//@ownedNotes.2 //@ownedNotes.0">
-    <notePositions>5</notePositions>
+  <ownedBeats name="beat3" notes="//@ownedNotes.2 //@ownedNotes.0">
+    <notePositions>1</notePositions>
     <notePositions>0</notePositions>
   </ownedBeats>
-  <ownedBeats name="abeat14" notes="//@ownedNotes.2">
+  <ownedBeats name="beat4" notes="//@ownedNotes.2">
     <notePositions>0</notePositions>
   </ownedBeats>
   <ownedNotes name="sd"/>
-  <ownedNotes name="nbd" value="BD"/>
+  <ownedNotes name="bd" value="BD"/>
   <ownedNotes name="xH" value="CH"/>
 </rythmml:Music>

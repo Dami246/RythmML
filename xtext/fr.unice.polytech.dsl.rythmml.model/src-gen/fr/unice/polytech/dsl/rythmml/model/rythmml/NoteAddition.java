@@ -12,6 +12,7 @@ package fr.unice.polytech.dsl.rythmml.model.rythmml;
  * </p>
  * <ul>
  *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition#getNote <em>Note</em>}</li>
+ *   <li>{@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition#getDivision <em>Division</em>}</li>
  * </ul>
  *
  * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getNoteAddition()
@@ -45,4 +46,30 @@ public interface NoteAddition extends Operation {
 	 * @generated
 	 */
 	void setNote(Note value);
+
+	/**
+	 * Returns the value of the '<em><b>Division</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Division</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Division</em>' attribute.
+	 * @see #setDivision(int)
+	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getNoteAddition_Division()
+	 * @model
+	 * @generated
+	 */
+	int getDivision();
+
+	/**
+	 * Sets the value of the '{@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition#getDivision <em>Division</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Division</em>' attribute.
+	 * @see #getDivision()
+	 * @generated
+	 */
+	void setDivision(int value);
 } // NoteAddition

@@ -125,21 +125,27 @@ public class RymlSwitchPrinter extends RythmmlSwitch<String>{
 	@Override
 	public String caseOperation(Operation object) {
 		if(object instanceof NoteDeletion) return caseNoteDeletion(((NoteDeletion) object));
-		else return "";
+		else if(object instanceof NoteAddition) return caseNoteAddition(((NoteAddition) object));
+		else return caseNoteReplacement(((NoteReplacement) object));
 	}
 
 	@Override
 	public String caseNoteAddition(NoteAddition object) {
-		return String.format(".addNote(%s)",object.getNote().getName());
+		return String.format(".addNoteInSpecificBeat(%d,%s,%d)", 
+				object.getBeatNumber(), object.getNote().getName(), object.getDivision());
 	}
 
 	@Override
 	public String caseNoteDeletion(NoteDeletion object) {
-		return String.format(".removeNote(%s)",object.getNote().getName());
+		if(object.getBeatNumber() != -1 ) 
+			return String.format(".removeNoteInSpecificBeat(%d, %s)", object.getBeatNumber(), object.getNote().getName());
+		else return String.format(".removeNote(%s)",object.getNote().getName());
 	}
 
 	@Override
 	public String caseNoteReplacement(NoteReplacement object) {
+		if(object.getBeatNumber() != -1) 
+			String.format(".replaceNoteInSpecificBeat(%d, %s)", object.getBeatNumber(), object.getNoteSrc().getName(), object.getNewNote().getName());
 		return String.format(".replaceNote(%s,%s)",object.getNoteSrc().getName(), object.getNewNote().getName());
 	}
 

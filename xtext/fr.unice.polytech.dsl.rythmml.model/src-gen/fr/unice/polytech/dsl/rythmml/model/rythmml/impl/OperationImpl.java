@@ -34,7 +34,7 @@ public abstract class OperationImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int BEAT_NUMBER_EDEFAULT = 0;
+	protected static final int BEAT_NUMBER_EDEFAULT = -1;
 
 	/**
 	 * The cached value of the '{@link #getBeatNumber() <em>Beat Number</em>}' attribute.

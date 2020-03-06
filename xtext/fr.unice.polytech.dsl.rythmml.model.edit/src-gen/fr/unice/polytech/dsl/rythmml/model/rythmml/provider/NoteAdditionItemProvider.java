@@ -13,6 +13,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link fr.unice.polytech.dsl.rythmml.model.rythmml.NoteAddition} object.
@@ -43,6 +45,7 @@ public class NoteAdditionItemProvider extends OperationItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addNotePropertyDescriptor(object);
+			addDivisionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -60,6 +63,22 @@ public class NoteAdditionItemProvider extends OperationItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_NoteAddition_note_feature",
 								"_UI_NoteAddition_type"),
 						RythmmlPackage.Literals.NOTE_ADDITION__NOTE, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Division feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDivisionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_NoteAddition_division_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_NoteAddition_division_feature",
+								"_UI_NoteAddition_type"),
+						RythmmlPackage.Literals.NOTE_ADDITION__DIVISION, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -105,6 +124,12 @@ public class NoteAdditionItemProvider extends OperationItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(NoteAddition.class)) {
+		case RythmmlPackage.NOTE_ADDITION__DIVISION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		}
 		super.notifyChanged(notification);
 	}
 

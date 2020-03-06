@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface Operation extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Beat Number</b></em>' attribute.
+	 * The default value is <code>"-1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Beat Number</em>' attribute isn't clear,
@@ -32,7 +33,7 @@ public interface Operation extends EObject {
 	 * @return the value of the '<em>Beat Number</em>' attribute.
 	 * @see #setBeatNumber(int)
 	 * @see fr.unice.polytech.dsl.rythmml.model.rythmml.RythmmlPackage#getOperation_BeatNumber()
-	 * @model
+	 * @model default="-1"
 	 * @generated
 	 */
 	int getBeatNumber();

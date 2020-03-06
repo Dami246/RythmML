@@ -24,9 +24,7 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -159,19 +157,10 @@ public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     NoteAddition returns NoteAddition
 	 *
 	 * Constraint:
-	 *     (beatNumber=EInt note=[Note|EString])
+	 *     (beatNumber=EInt? note=[Note|EString] division=EInt)
 	 */
 	protected void sequence_NoteAddition(ISerializationContext context, NoteAddition semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.OPERATION__BEAT_NUMBER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.OPERATION__BEAT_NUMBER));
-			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.NOTE_ADDITION__NOTE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.NOTE_ADDITION__NOTE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNoteAdditionAccess().getBeatNumberEIntParserRuleCall_1_0(), semanticObject.getBeatNumber());
-		feeder.accept(grammarAccess.getNoteAdditionAccess().getNoteNoteEStringParserRuleCall_3_0_1(), semanticObject.eGet(RythmmlPackage.Literals.NOTE_ADDITION__NOTE, false));
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -181,19 +170,10 @@ public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     NoteDeletion returns NoteDeletion
 	 *
 	 * Constraint:
-	 *     (beatNumber=EInt note=[Note|EString])
+	 *     (beatNumber=EInt? note=[Note|EString])
 	 */
 	protected void sequence_NoteDeletion(ISerializationContext context, NoteDeletion semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.OPERATION__BEAT_NUMBER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.OPERATION__BEAT_NUMBER));
-			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.NOTE_DELETION__NOTE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.NOTE_DELETION__NOTE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNoteDeletionAccess().getBeatNumberEIntParserRuleCall_1_0(), semanticObject.getBeatNumber());
-		feeder.accept(grammarAccess.getNoteDeletionAccess().getNoteNoteEStringParserRuleCall_3_0_1(), semanticObject.eGet(RythmmlPackage.Literals.NOTE_DELETION__NOTE, false));
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -203,22 +183,10 @@ public class RymlSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     NoteReplacement returns NoteReplacement
 	 *
 	 * Constraint:
-	 *     (beatNumber=EInt noteSrc=[Note|EString] newNote=[Note|EString])
+	 *     (beatNumber=EInt? noteSrc=[Note|EString] newNote=[Note|EString])
 	 */
 	protected void sequence_NoteReplacement(ISerializationContext context, NoteReplacement semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.OPERATION__BEAT_NUMBER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.OPERATION__BEAT_NUMBER));
-			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.NOTE_REPLACEMENT__NOTE_SRC) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.NOTE_REPLACEMENT__NOTE_SRC));
-			if (transientValues.isValueTransient(semanticObject, RythmmlPackage.Literals.NOTE_REPLACEMENT__NEW_NOTE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RythmmlPackage.Literals.NOTE_REPLACEMENT__NEW_NOTE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNoteReplacementAccess().getBeatNumberEIntParserRuleCall_1_0(), semanticObject.getBeatNumber());
-		feeder.accept(grammarAccess.getNoteReplacementAccess().getNoteSrcNoteEStringParserRuleCall_3_0_1(), semanticObject.eGet(RythmmlPackage.Literals.NOTE_REPLACEMENT__NOTE_SRC, false));
-		feeder.accept(grammarAccess.getNoteReplacementAccess().getNewNoteNoteEStringParserRuleCall_5_0_1(), semanticObject.eGet(RythmmlPackage.Literals.NOTE_REPLACEMENT__NEW_NOTE, false));
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
